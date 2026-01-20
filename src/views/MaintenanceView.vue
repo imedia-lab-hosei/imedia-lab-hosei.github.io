@@ -38,7 +38,7 @@
           </div>
 
           <p class="text-slate-400 text-base md:text-lg max-w-md mx-auto leading-relaxed pt-4">
-            当前页面维护中，请稍后再来吧 >.<
+            当前页面维护中，请稍后再来吧 O.O
           </p>
         </div>
 
