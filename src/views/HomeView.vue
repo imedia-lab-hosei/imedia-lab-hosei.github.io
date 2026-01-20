@@ -8,8 +8,6 @@
       >
         最新文章
       </h2>
-
-      <ThemeBtn />
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
@@ -27,7 +25,6 @@
 <script setup lang="ts">
 import HeroSection from '@/components/HeroSection/HeroSection.vue'
 import PostCard from '@/components/PostCard/PostCard.vue'
-import ThemeBtn from '@/components/ThemeBtn/ThemeBtn.vue' // 确保这里引入的是新版组件
 import { usePosts } from '@/composables/usePosts'
 
 const { posts } = usePosts()

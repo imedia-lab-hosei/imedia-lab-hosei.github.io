@@ -12,11 +12,7 @@
           class="text-4xl md:text-6xl lg:text-7xl font-extrabold text-foreground leading-tight transition-colors"
         >
           欢迎来到
-          <span
-            class="text-transparent bg-clip-text bg-linear-to-r from-gradient-start to-gradient-end animate-gradient-x"
-          >
-            MOMOCHA
-          </span>
+          <span class="bg-clip-text text-foreground animate-gradient-x"> MOMOCHA </span>
           <br />
           的茶室
         </h1>
@@ -31,14 +27,14 @@
           <a-button
             type="primary"
             size="large"
-            class="h-12! px-8! rounded-xl! bg-primary! text-primary-foreground! border-none! hover:scale-105! transition-transform shadow-lg shadow-primary/20"
+            class="h-12 px-8 rounded-xl bg-primary text-primary-foreground border-none hover:scale-105 transition-transform shadow-lg shadow-primary/20"
           >
             阅读文章
           </a-button>
           <a-button
             ghost
             size="large"
-            class="h-12! leading-8! px-8! rounded-xl! text-muted-foreground! border-border! hover:border-primary! hover:text-primary! hover:scale-105! transition-transform"
+            class="h-12 leading-8 px-8 rounded-xl text-muted-foreground border-border hover:border-primary hover:text-primary hover:scale-105 transition-transform"
             href="https://github.com/2446405787"
           >
             GitHub

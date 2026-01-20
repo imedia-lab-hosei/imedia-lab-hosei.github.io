@@ -4,17 +4,16 @@
   >
     <TheHeader />
 
-    <main class="grow overflow-y-auto custom-scrollbar">
+    <UMain class="grow overflow-y-auto custom-scrollbar">
       <div class="max-w-7xl mx-auto px-4 md:px-8 py-10">
         <slot />
       </div>
-
-      <footer
+      <UFooter
         class="border-t border-border bg-muted/30 backdrop-blur-sm py-12 text-center mt-12 transition-colors duration-300"
       >
         <p class="text-muted-foreground text-sm">© 2026 Dev.Log. Built with Vue 3 & Tailwind v4.</p>
-      </footer>
-    </main>
+      </UFooter>
+    </UMain>
   </div>
 </template>
 

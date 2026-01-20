@@ -1,5 +1,6 @@
 import { globalIgnores } from 'eslint/config'
 import { defineConfigWithVueTs, vueTsConfigs } from '@vue/eslint-config-typescript'
+import eslintConfigPrettier from 'eslint-config-prettier'
 import pluginVue from 'eslint-plugin-vue'
 import pluginCypress from 'eslint-plugin-cypress'
 import pluginVitest from '@vitest/eslint-plugin'
@@ -23,10 +24,7 @@ export default defineConfigWithVueTs(
 
   {
     ...pluginCypress.configs.recommended,
-    files: [
-      'cypress/e2e/**/*.{cy,spec}.{js,ts,jsx,tsx}',
-      'cypress/support/**/*.{js,ts,jsx,tsx}',
-    ],
+    files: ['cypress/e2e/**/*.{cy,spec}.{js,ts,jsx,tsx}', 'cypress/support/**/*.{js,ts,jsx,tsx}'],
   },
 
   {
@@ -35,4 +33,6 @@ export default defineConfigWithVueTs(
   },
 
   skipFormatting,
+
+  eslintConfigPrettier,
 )
