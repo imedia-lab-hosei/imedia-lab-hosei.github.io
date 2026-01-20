@@ -1,7 +1,6 @@
 <template>
-  <UHeader toggle-side="left">
+  <UHeader toggle-side="left" mode="drawer">
     <template #title>
-      <Logo class="h-6 w-auto" />
       <div>MOMOCHA.LOG</div>
     </template>
 
@@ -10,7 +9,7 @@
     <template #right>
       <!-- <UColorModeSwitch /> -->
 
-      <UTooltip text="Open on GitHub" :kbds="['meta', 'G']">
+      <UTooltip text="Change Theme">
         <ThemeBtn />
       </UTooltip>
     </template>
@@ -29,6 +28,7 @@ import ThemeBtn from '@/components/ThemeBtn/ThemeBtn.vue'
 const route = useRoute()
 
 const isHome = computed(() => route.name === 'home')
+const isMaintenance = computed(() => route.name === 'maintenance')
 
 const items = computed<NavigationMenuItem[]>(() => [
   {
@@ -41,7 +41,7 @@ const items = computed<NavigationMenuItem[]>(() => [
     label: 'Components',
     to: '/maintenance',
     icon: 'i-lucide-box',
-    active: route.path.startsWith('/maintenance'),
+    active: isMaintenance.value,
   },
 ])
 </script>

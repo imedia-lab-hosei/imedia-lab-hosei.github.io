@@ -1,6 +1,6 @@
 <template>
-  <div class="h-screen flex flex-col overflow-hidden bg-background text-foreground">
-    <TheHeader class="h-48 sticky top-0 z-50" />
+  <div class="h-screen flex flex-col overflow-hidden">
+    <TheHeader class="h-12" />
 
     <div
       class="absolute inset-0 z-0 opacity-40 pointer-events-none"
