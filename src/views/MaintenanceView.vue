@@ -11,7 +11,7 @@
     ></div>
 
     <div
-      class="relative z-10 w-full max-w-2xl p-[1px] rounded-3xl bg-gradient-to-br from-cyan-500 via-blue-600 to-purple-600 animate-gradient-xy"
+      class="relative z-10 w-full max-w-2xl p-px rounded-3xl bg-linear-to-br from-cyan-500 via-blue-600 to-purple-600 animate-gradient-xy"
     >
       <div class="bg-slate-950 rounded-[23px] p-8 md:p-16 text-center backdrop-blur-3xl">
         <div class="relative w-24 h-24 mx-auto mb-8">
@@ -26,7 +26,7 @@
         <div class="space-y-4">
           <h1 class="text-3xl md:text-5xl font-black text-white tracking-tighter">
             UNDER
-            <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500"
+            <span class="text-transparent bg-clip-text bg-linear-to-r from-cyan-400 to-blue-500"
               >CONSTRUCTION</span
             >
           </h1>
@@ -46,7 +46,7 @@
           <a-button
             type="primary"
             ghost
-            class="!border-slate-700 !text-slate-300 hover:!border-cyan-500 hover:!text-cyan-400 !h-12 !px-8 !rounded-full transition-all group overflow-hidden"
+            class="border-slate-700! text-slate-300! hover:border-cyan-500! hover:text-cyan-400! h-12! px-8! rounded-full! transition-all group overflow-hidden"
             @click="$router.push('/')"
           >
             <div class="flex items-center justify-center gap-2">
@@ -70,7 +70,6 @@
 </template>
 <script setup lang="ts">
 import { LoadingOutlined, LeftOutlined } from '@ant-design/icons-vue'
-import AnimatedModal from '@/components/PostCard/PostCard.vue'
 </script>
 
 <style scoped>

@@ -2,7 +2,7 @@
   <div class="h-screen flex flex-col overflow-hidden bg-slate-950 text-slate-200">
     <TheHeader />
 
-    <main class="flex-grow overflow-y-auto custom-scrollbar">
+    <main class="grow overflow-y-auto custom-scrollbar">
       <div class="max-w-7xl mx-auto px-4 md:px-8 py-10">
         <slot />
       </div>
