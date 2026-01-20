@@ -3,7 +3,7 @@
     <a-button
       type="primary"
       shape="round"
-      class="!bg-cyan-600 hover:!bg-cyan-500 !border-none !h-12 !px-8 shadow-lg shadow-cyan-900/20 active:scale-95 transition-all"
+      class="bg-cyan-600! hover:bg-cyan-500! border-none! h-12! px-8! shadow-lg shadow-cyan-900/20 active:scale-95 transition-all"
       @click="handleSubscribe"
     >
       <template #icon><heart-filled /></template>

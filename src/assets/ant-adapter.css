@@ -1,0 +1,43 @@
+/* src/assets/css/ant-adapter.css */
+
+@layer base {
+  :root {
+    /* --- 主色调 --- */
+    --ant-color-primary: var(--primary);
+    --ant-color-primary-hover: var(--primary);
+    --ant-color-primary-active: var(--primary);
+    --ant-color-link: var(--primary);
+    --ant-color-link-hover: var(--primary);
+
+    /* --- 关键修复：修复暗黑模式下 Primary 按钮文本颜色 --- */
+    /* 当 Primary 变为白色时，按钮文字必须变黑 */
+    --ant-color-text-light-solid: var(--primary-foreground);
+
+    /* --- 背景色 --- */
+    --ant-color-bg-layout: var(--background);
+    --ant-color-bg-container: var(--card);
+    --ant-color-bg-elevated: var(--popover);
+
+    /* --- 文字颜色 --- */
+    --ant-color-text: var(--foreground);
+    --ant-color-text-heading: var(--foreground);
+    --ant-color-text-secondary: var(--muted-foreground);
+    --ant-color-text-description: var(--muted-foreground);
+    --ant-color-text-placeholder: var(--muted-foreground);
+    --ant-color-icon: var(--foreground);
+
+    /* --- 边框 --- */
+    --ant-color-border: var(--border);
+    --ant-color-border-secondary: var(--border);
+    --ant-line-width: 1px;
+    --ant-border-radius: var(--radius);
+
+    /* --- 功能色 --- */
+    --ant-color-error: var(--destructive);
+    --ant-color-error-bg: var(--destructive);
+    --ant-color-error-text: var(--destructive-foreground);
+
+    /* --- 组件覆盖 --- */
+    --ant-control-outline: var(--ring);
+  }
+}

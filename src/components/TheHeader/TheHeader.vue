@@ -4,9 +4,9 @@
   >
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex justify-between items-center h-16">
-        <div class="flex-shrink-0 flex items-center cursor-pointer">
+        <div class="shrink-0 flex items-center cursor-pointer">
           <span
-            class="text-2xl font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent"
+            class="text-2xl font-bold bg-linear-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent"
           >
             Inm.Log
           </span>
@@ -51,7 +51,7 @@
       <div class="flex flex-col h-full bg-slate-900 text-white p-6 space-y-6">
         <div class="flex justify-between items-center mb-4">
           <span
-            class="text-xl font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent"
+            class="text-xl font-bold bg-linear-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent"
             >Menu</span
           >
           <button @click="drawerVisible = false" class="text-slate-400 hover:text-white">
@@ -68,7 +68,7 @@
         <a
           v-for="item in menuItems"
           :key="item.key"
-          class="text-lg font-medium !text-slate-300 hover:!text-cyan-400 border-b border-slate-800 pb-2"
+          class="text-lg font-medium text-slate-300! hover:text-cyan-400! border-b border-slate-800 pb-2"
           @click="goToDetail(item)"
         >
           {{ item.label }}

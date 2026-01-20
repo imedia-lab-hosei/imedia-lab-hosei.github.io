@@ -1,9 +1,0 @@
-/* color palette from <https://github.com/vuejs/theme> */
-.ant-btn {
-  @apply inline-flex items-center justify-center;
-}
-
-/* 修正图标和文字之间的间距 */
-.ant-btn > .anticon + span {
-  @apply ml-2;
-}
