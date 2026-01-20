@@ -1,16 +1,14 @@
 <template>
   <div class="relative inline-block">
-    <a-button
-      type="primary"
+    <u-button
       shape="round"
       class="inline-flex items-center justify-center border-none"
       @click="handleSubscribe"
     >
       <div class="flex items-center justify-center gap-2 relative z-10">
-        <heart-filled class="text-lg group-active:scale-125" />
         <span class="font-bold tracking-wide">Subscribe</span>
       </div>
-    </a-button>
+    </u-button>
 
     <transition-group name="float">
       <div
@@ -19,7 +17,6 @@
         class="absolute pointer-events-none flex items-center gap-1 font-bold select-none z-20"
         :style="{ left: effect.x + 'px', top: effect.y + 'px' }"
       >
-        <like-outlined class="text-lg text-primary" />
         <span class="text-sm text-primary neon-text">+1</span>
       </div>
     </transition-group>
@@ -28,7 +25,6 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
-import { HeartFilled, LikeOutlined } from '@ant-design/icons-vue'
 
 interface ClickEffect {
   id: number
@@ -73,7 +69,7 @@ const handleSubscribe = () => {
 
 .float-enter-to {
   opacity: 0;
-  transform: translateY(-60px) scale(1.5); /* 向上飘并放大 */
+  transform: translateY(60px) scale(1.5); /* 向上飘并放大 */
 }
 
 .float-leave-active {

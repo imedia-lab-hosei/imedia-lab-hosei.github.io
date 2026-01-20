@@ -1,16 +1,23 @@
 <template>
-  <div
-    class="h-screen flex flex-col overflow-hidden bg-background text-foreground transition-colors duration-300"
-  >
-    <TheHeader />
+  <div class="h-screen flex flex-col overflow-hidden bg-background text-foreground">
+    <TheHeader class="h-48 sticky top-0 z-50" />
 
+    <div
+      class="absolute inset-0 z-0 opacity-40 pointer-events-none"
+      style="
+        background-image:
+          linear-gradient(var(--color-border) 1px, transparent 1px),
+          linear-gradient(90deg, var(--color-border) 1px, transparent 1px);
+        background-size: 40px 40px;
+        mask-image: radial-gradient(circle at center, black 40%, transparent 100%);
+        -webkit-mask-image: radial-gradient(circle at center, black 40%, transparent 100%);
+      "
+    ></div>
     <UMain class="grow overflow-y-auto custom-scrollbar">
-      <div class="max-w-7xl mx-auto px-4 md:px-8 py-10">
+      <UContainer class="relative z-10">
         <slot />
-      </div>
-      <UFooter
-        class="border-t border-border bg-muted/30 backdrop-blur-sm py-12 text-center mt-12 transition-colors duration-300"
-      >
+      </UContainer>
+      <UFooter class="border-t border-border bg-muted/30 backdrop-blur-sm py-12 text-center mt-12">
         <p class="text-muted-foreground text-sm">© 2026 Dev.Log. Built with Vue 3 & Tailwind v4.</p>
       </UFooter>
     </UMain>

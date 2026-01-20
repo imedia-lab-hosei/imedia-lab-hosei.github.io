@@ -2,3 +2,11 @@
 @import 'tw-animate-css';
 @import '@nuxt/ui';
 @import './theme.css';
+
+/* :root {
+  --ui-primary: var(--ui-color-primary-900);
+}
+
+.dark {
+  --ui-primary: var(--ui-color-primary-200);
+} */

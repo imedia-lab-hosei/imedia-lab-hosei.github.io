@@ -26,7 +26,6 @@
     "@nuxt/ui": "^4.3.0",
     "@tailwindcss/vite": "^4.1.18",
     "@vueuse/core": "^14.1.0",
-    "ant-design-vue": "^4.2.6",
     "motion-v": "^1.9.0",
     "pinia": "^3.0.4",
     "tailwindcss": "^4.1.18",
