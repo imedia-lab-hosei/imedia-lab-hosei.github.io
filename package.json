@@ -19,7 +19,7 @@
     "lint": "eslint . --fix --cache",
     "format": "prettier --write --experimental-cli src/",
     "push:current": "git add . && git commit -m 'update' && git push",
-    "push:other": "cd ../dist && git add . && git commit -m 'sync' && git push",
+    "push:other": "cd ../dist && git add . && git commit -m 'sync' && git push --force",
     "deploy": "npm run build && npm run push:current && npm run push:other"
   },
   "dependencies": {
