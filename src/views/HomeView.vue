@@ -5,7 +5,7 @@
       <div
         class="text-3xl font-bold text-foreground border-l-4 border-primary pl-4 transition-colors"
       >
-        最新文章
+        {{ $t('HomeView.newArticle') }}
       </div>
     </div>
 

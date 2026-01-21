@@ -13,8 +13,7 @@
 
         <div class="space-y-6">
           <div>
-            UNDER
-            <span>CONSTRUCTION</span>
+            {{ $t('maintenanceView.mainInfor') }}
           </div>
 
           <div class="flex items-center justify-center gap-3 font-mono text-sm text-primary/90">
@@ -28,7 +27,7 @@
           </div>
 
           <p class="text-muted-foreground text-base md:text-lg max-w-md mx-auto leading-relaxed">
-            当前页面维护中，请稍后再来吧 O.O
+            {{ $t('maintenanceView.desc') }}
           </p>
         </div>
 
@@ -36,7 +35,7 @@
           <UButton ghost @click="$router.push('/')">
             <div class="px-2 py-1 flex items-center justify-center gap-2">
               <UIcon name="line-md:arrow-left" class="size-5" />
-              <span>返回首页</span>
+              <span> {{ $t('maintenanceView.back') }}</span>
             </div>
           </UButton>
         </div>

@@ -1,4 +1,5 @@
 import { ref } from 'vue'
+
 interface Post {
   id: number
   title: string

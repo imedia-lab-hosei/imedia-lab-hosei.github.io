@@ -5,18 +5,19 @@
         <div
           class="inline-block px-3 py-1 rounded-full bg-muted border border-border text-primary text-sm font-mono"
         >
-          Hello, Guest
+          {{ $t('heroSection.guest') }}
         </div>
 
         <h1 class="text-4xl md:text-6xl lg:text-7xl font-extrabold text-foreground leading-tight">
-          欢迎来到
-          <span class="text-primary"> MOMOCHA </span>
+          {{ $t('heroSection.welcome') }}
           <br />
-          的茶室
+          <span class="text-primary"> {{ $t('heroSection.athour') }} </span>
+          <br />
+          {{ $t('heroSection.room') }}
         </h1>
 
         <p class="text-muted-foreground text-base md:text-xl max-w-2xl mx-auto md:mx-0">
-          基于 Vue 3 / NuxtUI / Tailwind 的个人博客。 响应式设计。
+          {{ $t('heroSection.desc') }}
         </p>
 
         <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start pt-4">
@@ -24,7 +25,7 @@
             size="xl"
             class="px-8 rounded-xl hover:scale-105 transition-transform shadow-lg shadow-primary/20"
           >
-            阅读文章
+            {{ $t('heroSection.readArticle') }}
           </UButton>
 
           <UButton
@@ -34,7 +35,7 @@
             href="https://github.com/2446405787"
             target="_blank"
           >
-            GitHub
+            {{ $t('heroSection.github') }}
           </UButton>
         </div>
       </div>
