@@ -18,6 +18,7 @@
       "@/*": ["./src/*"],
       "#build/ui/*": ["./node_modules/.nuxt-ui/ui/*"]
     },
-    "baseUrl": "."
+    "baseUrl": ".",
+    "types": ["vite/client"]
   }
 }
