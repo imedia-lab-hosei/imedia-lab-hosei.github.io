@@ -39,7 +39,6 @@
     <p class="mb-4 line-clamp-3 flex-1 text-sm text-muted-foreground">
       {{ post.desc }}
     </p>
-
     <div class="flex items-center justify-between border-t border-border pt-4">
       <div class="flex flex-wrap gap-2">
         <UBadge
@@ -57,7 +56,7 @@
       <div
         class="flex items-center text-sm font-medium text-primary transition-colors hover:text-primary/80"
       >
-        <span>Read</span>
+        <div class="cursor-pointer text-nowrap" @click="showModal = true">{{ $t('read') }}</div>
         <UIcon
           name="i-heroicons-arrow-right"
           class="ml-1 h-4 w-4 transition-transform group-hover:translate-x-1"
@@ -65,11 +64,12 @@
       </div>
     </div>
   </div>
+  <AnimatedModal v-model:open="showModal" />
 </template>
 
 <script setup lang="ts">
 import TimeAgo from './components/TimeAgo.vue'
-
+import AnimatedModal from './components/AnimatedModal/index.vue'
 interface Post {
   title: string
   desc: string
@@ -82,4 +82,7 @@ interface Post {
 defineProps<{
   post: Post
 }>()
+
+import { ref } from 'vue'
+const showModal = ref(false)
 </script>

@@ -13,7 +13,7 @@
       <div
         v-for="post in posts"
         :key="post.id"
-        class="group relative bg-card text-card-foreground border border-border rounded-2xl overflow-hidden hover:-translate-y-2 transition-all duration-300 shadow-lg hover:shadow-primary/20"
+        class="flex flex-col h-full group relative bg-card text-card-foreground border border-border rounded-2xl overflow-hidden hover:-translate-y-2 transition-all duration-300 shadow-lg hover:shadow-primary/20"
       >
         <PostCard :post="post" />
       </div>

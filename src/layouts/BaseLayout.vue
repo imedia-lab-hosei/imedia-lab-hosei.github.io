@@ -18,7 +18,9 @@
         <slot />
       </UContainer>
       <UFooter class="border-t border-border bg-muted/30 backdrop-blur-sm py-12 text-center mt-12">
-        <p class="text-muted-foreground text-sm">© 2026 Dev.Log. Built with Vue 3 & Tailwind v4.</p>
+        <p class="text-muted-foreground text-sm">
+          {{ $t('footer.desc') }}
+        </p>
       </UFooter>
     </UMain>
   </div>
@@ -44,13 +46,13 @@ import TheHeader from '@/components/TheHeader/TheHeader.vue'
   /* 旧写法: background: rgba(6, 182, 212, 0.2);
      新写法: 使用 var(--primary) 并混合 80% 的透明色
   */
-  background: color-mix(in srgb, var(--primary), transparent 80%);
+  background: color-mix(in srgb, var(--ui-primary), transparent 80%);
   border-radius: 10px;
   transition: background 0.3s;
 }
 
 .custom-scrollbar::-webkit-scrollbar-thumb:hover {
   /* 悬停时加深颜色，混合 50% 透明色 */
-  background: color-mix(in srgb, var(--primary), transparent 50%);
+  background: color-mix(in srgb, var(--ui-primary), transparent 50%);
 }
 </style>

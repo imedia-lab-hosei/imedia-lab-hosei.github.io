@@ -24,6 +24,7 @@
           <UButton
             size="xl"
             class="px-8 rounded-xl hover:scale-105 transition-transform shadow-lg shadow-primary/20"
+            @click="handleNavigate"
           >
             {{ $t('heroSection.readArticle') }}
           </UButton>
@@ -61,4 +62,14 @@
 
 <script lang="ts" setup>
 // 如果需要逻辑可在此添加
+import { useRouter } from 'vue-router'
+
+const router = useRouter()
+
+const handleNavigate = () => {
+  // 这里可以写其他逻辑...
+
+  // 使用 name 进行跳转
+  router.push({ name: 'articles' })
+}
 </script>

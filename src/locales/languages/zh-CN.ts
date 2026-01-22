@@ -1,9 +1,12 @@
 export default {
+  read: '阅读',
   header: {
     changeTheme: '改变主题',
     changeLanguage: '改变语言',
+    changeColor: '改变颜色',
     home: '主页',
-    game: '游戏',
+    games: '游戏',
+    articles: '文章',
   },
   maintenanceView: {
     mainInfor: '正在维护',
@@ -63,8 +66,28 @@ export default {
       desc: '事已至此，与其纠结，不如大声喊出那句：我也想做啊！',
     },
   },
-  time: {
+  colors: {
+    green: '绿色',
+    teal: '蓝绿',
+    cyan: '青色',
+    sky: '天蓝',
+    blue: '蓝色',
+    indigo: '靛蓝',
+    violet: '紫罗兰',
+    purple: '紫色',
+    fuchsia: '洋红',
+    pink: '粉色',
+    rose: '玫瑰红',
+    red: '红色',
+    orange: '橙色',
+    amber: '琥珀色',
+    yellow: '黄色',
+    lime: '青柠',
+    gray: '灰色',
+  },
+  timeAgo: {
     just_now: '刚刚',
+    invalid: '无效值',
     past: '{0}前',
     future: '{0}后',
     second: '{0}秒',
@@ -82,5 +105,8 @@ export default {
     next_month: '下个月',
     last_year: '去年',
     next_year: '明年',
+  },
+  footer: {
+    desc: '© 2026 MOMOCHA.Log。 使用 Vue 3 & Tailwind v4 构建。',
   },
 }
