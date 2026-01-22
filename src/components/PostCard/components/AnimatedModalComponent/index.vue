@@ -47,7 +47,7 @@
 
 <script setup lang="ts">
 defineOptions({
-  name: 'AnimatedModal',
+  name: 'AnimatedModalComponent',
 })
 const open = defineModel<boolean>('open', {
   default: false,

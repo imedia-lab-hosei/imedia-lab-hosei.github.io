@@ -64,12 +64,12 @@
       </div>
     </div>
   </div>
-  <AnimatedModal v-model:open="showModal" />
+  <AnimatedModalComponent v-model:open="showModal" />
 </template>
 
 <script setup lang="ts">
 import TimeAgo from './components/TimeAgo.vue'
-import AnimatedModal from './components/AnimatedModal/index.vue'
+import AnimatedModalComponent from './components/AnimatedModalComponent/index.vue'
 interface Post {
   title: string
   desc: string
