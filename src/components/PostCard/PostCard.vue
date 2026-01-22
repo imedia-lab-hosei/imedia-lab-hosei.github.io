@@ -77,6 +77,7 @@ interface Post {
   date?: string | Date
   tags?: string[]
   path?: string
+  
 }
 
 defineProps<{
