@@ -1,38 +1,50 @@
 // src/stores/theme.ts
 import { defineStore } from 'pinia'
-import { ref, watchEffect } from 'vue'
+import { ref } from 'vue'
 
 export const useThemeStore = defineStore('theme', () => {
-  // 1. 初始化状态：优先读取 localStorage，其次读取系统偏好
-  const getInitialTheme = (): boolean => {
-    if (typeof window !== 'undefined') {
-      const saved = localStorage.getItem('theme')
-      if (saved) return saved === 'dark'
-      return window.matchMedia('(prefers-color-scheme: dark)').matches
+  const isDark = ref(false)
+
+  // 1. 初始化主题（读取本地存储或系统偏好）
+  const initTheme = () => {
+    // 优先读取本地存储
+    const savedTheme = localStorage.getItem('theme')
+
+    if (savedTheme) {
+      isDark.value = savedTheme === 'dark'
+    } else {
+      // 如果没有本地存储，跟随系统设置
+      const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches
+      isDark.value = systemDark
     }
-    return false
+
+    // 应用到 DOM
+    applyThemeToDom()
   }
 
-  const isDark = ref<boolean>(getInitialTheme())
-
-  // 2. 切换动作
+  // 2. 切换主题
   const toggleTheme = () => {
     isDark.value = !isDark.value
+
+    // 保存到本地存储
+    localStorage.setItem('theme', isDark.value ? 'dark' : 'light')
+
+    // 应用到 DOM
+    applyThemeToDom()
   }
 
-  // src/stores/theme.ts
-  // ... 保持不变
-  watchEffect(() => {
-    const html = document.documentElement
+  // 3. 私有辅助函数：操作 HTML 标签的 class
+  const applyThemeToDom = () => {
     if (isDark.value) {
-      html.classList.add('dark') // 你的 CSS .dark 会生效，进而改变 --primary
+      document.documentElement.classList.add('dark')
     } else {
-      html.classList.remove('dark')
+      document.documentElement.classList.remove('dark')
     }
-  })
+  }
 
   return {
     isDark,
     toggleTheme,
+    initTheme,
   }
 })

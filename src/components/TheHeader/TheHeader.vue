@@ -1,7 +1,7 @@
 <template>
   <UHeader toggle-side="left" mode="drawer">
     <template #title>
-      <div>MOMOCHA.LOG</div>
+      <div class="font-bold"><span class="text-primary">MOMOCHA</span>.LOG</div>
     </template>
 
     <UNavigationMenu :items="items" />
@@ -15,6 +15,9 @@
       <UTooltip :text="$t('header.changeLanguage')">
         <LanguageSwitcher></LanguageSwitcher>
       </UTooltip>
+      <UTooltip :text="$t('header.changeLanguage')">
+        <ThemeSwitcher></ThemeSwitcher>
+      </UTooltip>
     </template>
 
     <template #body>
@@ -27,8 +30,9 @@
 import type { NavigationMenuItem } from '@nuxt/ui'
 import { computed } from 'vue'
 import { useRoute } from 'vue-router'
-import ThemeBtn from '@/components/ThemeBtn/ThemeBtn.vue'
-import LanguageSwitcher from '../LanguageSwitcher/LanguageSwitcher.vue'
+import ThemeBtn from './components/ThemeBtn/ThemeBtn.vue'
+import LanguageSwitcher from './components/LanguageSwitcher/LanguageSwitcher.vue'
+import ThemeSwitcher from './components/ThemeSwitcher/ThemeSwitcher.vue'
 
 import { useI18n } from 'vue-i18n'
 

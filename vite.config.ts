@@ -8,7 +8,21 @@ import tailwindcss from '@tailwindcss/vite'
 import ui from '@nuxt/ui/vite'
 
 export default defineConfig({
-  plugins: [vue(), vueJsx(), vueDevTools(), tailwindcss(), ui()],
+  plugins: [
+    vue(),
+    vueJsx(),
+    vueDevTools(),
+    tailwindcss(),
+    ui({
+      // ui: {
+      //   colors: {
+      //     primary: 'blue',
+      //     secondary: 'purple',
+      //     neutral: 'zinc',
+      //   },
+      // },
+    }),
+  ],
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url)),

@@ -14,14 +14,21 @@
     </transition>
   </UButton>
 </template>
+
 <script setup lang="ts">
+import { onMounted } from 'vue' // 引入 onMounted
 import { useThemeStore } from '@/stores/theme'
 
-// 直接使用 Store
 const themeStore = useThemeStore()
+
+// 核心修改：组件挂载时初始化，读取 LocalStorage
+onMounted(() => {
+  themeStore.initTheme()
+})
 </script>
+
 <style scoped>
-/* 旋转动画 */
+/* 你的动画代码保持不变 */
 .icon-rotate-enter-active,
 .icon-rotate-leave-active {
   transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);

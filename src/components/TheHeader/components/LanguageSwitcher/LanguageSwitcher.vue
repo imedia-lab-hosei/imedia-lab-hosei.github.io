@@ -3,7 +3,7 @@
     <UButton
       :icon="currentIcon"
       variant="ghost"
-      class="w-10 h-10 flex items-center justify-center text-xl"
+      class="w-8 h-8 flex items-center justify-center text-xl"
     >
     </UButton>
     <template #checked-trailing>
