@@ -11,10 +11,8 @@ const router = createRouter({
       redirect: '/zh'
     },
     {
-      // 这里的 path 定义不变
       path: '/:locale',
       component: { render: () => h(RouterView) },
-      // ❌ 删除这里的 beforeEnter
       children: [
         {
           path: '',
@@ -31,35 +29,45 @@ const router = createRouter({
           name: 'articles',
           component: () => import('../views/Articles/ArticlesView.vue'),
         },
+
+        // ✅ 新增：404 捕获路由 (必须放在 children 的最后)
+        // 匹配规则：/:locale/ 下的任何未定义路径都会命中这里
+        {
+          path: ':pathMatch(.*)*',
+          name: 'NotFound',
+          // 这里可以换成你专门写的 404 页面组件
+          component: () => import('../views/NotFound/NotFoundView.vue')
+        }
       ]
     }
   ]
 })
 
-// ✅ 新增：使用全局守卫处理语言切换
+// 全局守卫 (逻辑保持专注：只负责校验语言是否合法)
 router.beforeEach((to, from, next) => {
-  // 获取路由参数中的 locale
   const localeParam = to.params.locale as string
 
-  // 如果当前路由没有 locale 参数（比如是 404 页面或其他特殊页面），直接放行
+  // 1. 如果没有 locale 参数（极其罕见的情况），放行
   if (!localeParam) {
     return next()
   }
 
-  // 1. 检查语言是否在白名单中
+  // 2. 检查语言是否在白名单中
+  // 如果用户访问 /jp/games (jp 不在白名单)，这里会拦截并重定向到 /zh
+  // 如果用户访问 /zh/blabla (zh 在白名单)，这里会放行
   if (!SUPPORT_LOCALES.includes(localeParam as LocaleType)) {
-    // 如果是无效语言，重定向到当前有效的语言，或者默认语言
     return next(`/${i18n.global.locale.value}`)
   }
 
-  // 2. 核心：如果 URL 语言有效，且与当前 i18n 状态不一致，则切换 i18n
+  // 3. 同步 i18n 状态
   if (i18n.global.locale.value !== localeParam) {
     i18n.global.locale.value = localeParam as LocaleType
-
-    // 设置 HTML lang 属性
     document.querySelector('html')?.setAttribute('lang', localeParam)
   }
 
+  // 4. 这里的 next() 会继续路由解析
+  // 如果路径是 /zh/games，Router 会渲染 Games 组件
+  // 如果路径是 /zh/abcd，Router 发现 abcd 没定义，会自动匹配到上面的 ':pathMatch(.*)*'，渲染 404 组件
   return next()
 })
 

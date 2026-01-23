@@ -32,7 +32,7 @@
         </div>
 
         <div class="mt-10">
-          <UButton ghost @click="$router.push('/')">
+          <UButton ghost @click="$router.push({ name: 'home', params: { locale: locale } })">
             <div class="px-2 py-1 flex items-center justify-center gap-2">
               <UIcon name="line-md:arrow-left" class="size-5" />
               <span> {{ $t('maintenanceView.back') }}</span>
@@ -44,6 +44,14 @@
   </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { useI18n } from 'vue-i18n'
+// 1. 获取当前语言状态
+const { locale } = useI18n()
+
+
+
+</script>
+
 
 <style scoped></style>
