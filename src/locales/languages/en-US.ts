@@ -1,3 +1,5 @@
+import test from 'node:test'
+
 export default {
   read: 'Read',
   header: {
@@ -108,5 +110,10 @@ export default {
   },
   footer: {
     desc: '© 2026 MOMOCHA.Log. Built with Vue 3 & Tailwind v4.',
+  },
+  notFoundView: {
+    notFound: 'Page Not Found',
+    goHome: 'Back to Home',
+    message: 'Sorry, the page you are looking for does not exist.',
   },
 }

@@ -32,11 +32,8 @@
         </div>
 
         <div class="mt-10">
-          <UButton ghost @click="$router.push({ name: 'home', params: { locale: locale } })">
-            <div class="px-2 py-1 flex items-center justify-center gap-2">
-              <UIcon name="line-md:arrow-left" class="size-5" />
-              <span> {{ $t('maintenanceView.back') }}</span>
-            </div>
+          <UButton ghost icon="line-md:arrow-left" @click="$router.push({ name: 'home', params: { locale: locale } })">
+            {{ $t('maintenanceView.back') }}
           </UButton>
         </div>
       </div>

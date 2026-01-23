@@ -1,3 +1,5 @@
+import test from 'node:test'
+
 export default {
   read: '阅读',
   header: {
@@ -108,5 +110,10 @@ export default {
   },
   footer: {
     desc: '© 2026 MOMOCHA.Log。 使用 Vue 3 & Tailwind v4 构建。',
+  },
+  notFoundView: {
+    notFound: '页面未找到',
+    goHome: '返回首页',
+    message: '抱歉，您访问的页面不存在。',
   },
 }

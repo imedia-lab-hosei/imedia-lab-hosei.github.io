@@ -109,4 +109,10 @@ export default {
   footer: {
     desc: '© 2026 MOMOCHA.Log。 Vue 3 & Tailwind v4 で構築。',
   },
+  notFoundView: {
+    notFound: 'ページが見つかりません',
+    goHome: 'ホームに戻る',
+    message: '申し訳ありませんが、お探しのページは存在しません。',
+  },
+
 }

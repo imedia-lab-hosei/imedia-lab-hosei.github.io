@@ -2,12 +2,13 @@
 <UError
     :error="{
       statusCode: 404,
-      statusMessage: 'Page not found',
-      message: 'The page you are looking for does not exist.'
+      statusMessage: $t('notFoundView.notFound'),
+      message: $t('notFoundView.message')
     }"
     :clear="{
-      variant:'ghost',
-      onClick: () => { $router.push({ name: 'home', params: { locale: locale } }) }
+      onClick: () => { $router.push({ name: 'home', params: { locale: locale } }) },
+      label: $t('notFoundView.goHome'),
+      icon: 'line-md:arrow-left'
     }"
 
   />
