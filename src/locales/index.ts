@@ -26,4 +26,7 @@ const i18n = createI18n({
   },
 })
 
+export const SUPPORT_LOCALES = ['zh', 'en', 'ja'] as const
+export type LocaleType = typeof SUPPORT_LOCALES[number]
+
 export default i18n

@@ -15,8 +15,14 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import { useI18n } from 'vue-i18n'
+import { useRouter, useRoute } from 'vue-router'
+import type { LocaleType } from '@/locales'
 
-const { locale } = useI18n()
+const { locale } = useI18n() // 注意：这里拿到的是 Ref<string>
+const router = useRouter()
+const route = useRoute()
+
+
 
 // 1. 定义语言配置（配置表）
 const languages = [
@@ -31,11 +37,22 @@ const currentIcon = computed(() => {
   return lang ? lang.icon : '🌐'
 })
 
-// 3. 核心切换逻辑
-const setLang = (langCode: string) => {
-  locale.value = langCode
-  localStorage.setItem('locale', langCode)
-  document.querySelector('html')?.setAttribute('lang', langCode)
+// // 3. 核心切换逻辑
+// const setLang = (langCode: string) => {
+//   locale.value = langCode
+//   localStorage.setItem('locale', langCode)
+//   document.querySelector('html')?.setAttribute('lang', langCode)
+// }
+
+
+const setLang = (newLang: LocaleType) => {
+  // 核心：路由跳转，保留当前页面其他参数，只替换 locale
+  router.replace({
+    params: {
+      ...route.params, // 保留其他动态参数（如果有）
+      locale: newLang
+    }
+  })
 }
 
 // 4. 构建 UDropdown 需要的 items 数据结构
@@ -47,7 +64,7 @@ const items = computed(() => [
     // icon: locale.value === lang.code ? 'i-heroicons-check' : lang.icon, // 可选：选中时显示勾选图标
     slot: locale.value === lang.code ? 'checked' : undefined,
     // 点击事件
-    onSelect: () => setLang(lang.code),
+    onSelect: () => setLang(lang.code as LocaleType),
   })),
 ])
 </script>

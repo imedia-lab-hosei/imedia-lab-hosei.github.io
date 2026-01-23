@@ -28,39 +28,39 @@
 import type { NavigationMenuItem } from '@nuxt/ui'
 import { computed } from 'vue'
 import { useRoute } from 'vue-router'
+import { useI18n } from 'vue-i18n' // 引入 useI18n
 import ThemeBtn from './components/ThemeBtn/ThemeBtn.vue'
 import LanguageSwitcher from './components/LanguageSwitcher/LanguageSwitcher.vue'
 import ThemeSwitcher from './components/ThemeSwitcher/ThemeSwitcher.vue'
 
-import { useI18n } from 'vue-i18n'
-
-const { t } = useI18n()
+// 1. 获取当前语言状态
+const { t, locale } = useI18n()
 
 const route = useRoute()
 
-const isAPIActive = (name: string) => route.name?.toString().startsWith(name)
+// 辅助函数：判断当前路由名称是否匹配
+const isAPIActive = (name: string) => route.name === name
 
 const items = computed<NavigationMenuItem[]>(() => [
   {
     label: t('header.home'),
-    to: '/',
+    // 2. 核心修改：使用对象格式，带上 name 和 params
+    // 这样 router 会自动生成 /zh 或 /en
+    to: { name: 'home', params: { locale: locale.value } },
     icon: 'lucide:house',
-    // 首页通常需要严格匹配，防止匹配到空字符串
-    active: route.name === 'home',
+    active: isAPIActive('home'),
   },
   {
     label: t('header.games'),
-    to: '/games',
+    to: { name: 'games', params: { locale: locale.value } },
     icon: 'lucide:gamepad-2',
     active: isAPIActive('games'),
   },
   {
     label: t('header.articles'),
-    to: '/articles',
+    to: { name: 'articles', params: { locale: locale.value } },
     icon: 'i-lucide-book-open',
     active: isAPIActive('articles'),
   },
 ])
 </script>
-
-<style scoped></style>
