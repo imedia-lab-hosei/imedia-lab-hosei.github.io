@@ -115,4 +115,22 @@ export default {
     goHome: '返回首页',
     message: '抱歉，您访问的页面不存在。',
   },
+  processView: {
+    kickoff: {
+      title: '项目启动 (Project Kickoff)',
+      description: '完成团队组建与资源分配，确立核心里程碑。',
+    },
+    design: {
+      title: '设计阶段 (Design Phase)',
+      description: '用户调研与交互设计，输出高保真原型图。',
+    },
+    development: {
+      title: '核心开发 (Development)',
+      description: '前后端核心功能开发，API 对接与联调。',
+    },
+    deployment: {
+      title: '测试与部署 (Deployment)',
+      description: '全链路 QA 测试，性能优化与正式上线。',
+    },
+  },
 }

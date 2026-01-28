@@ -2,41 +2,18 @@
   <div class="relative min-h-[80vh] flex items-center justify-center">
     <div class="relative z-10 w-full max-w-2xl p-px shadow-2xl">
       <div class="bg-card/90 rounded-[23px] p-8 md:p-16">
-        <UProgress v-model="value" />
-        <UTimeline :items="items" />
+        <div>
+          <span class="text-2xl font-bold text-foreground font-mono"> {{ progressValue }}% </span>
+        </div>
+
+        <div class="mb-10">
+          <UProgress v-model="progressValue" />
+        </div>
+        <div>
+          <UTimeline size="xs" :default-value="2" :items="items" />
+        </div>
         <div class="text-center backdrop-blur-xl">
-          <div class="relative w-24 h-24 mx-auto mb-8">
-            <div
-              class="absolute inset-0 rounded-full border-2 border-primary/30 animate-ping"
-            ></div>
-            <div
-              class="absolute inset-0 rounded-full border border-primary/50 flex items-center justify-center bg-card"
-            >
-              <UIcon name="line-md:loading-loop" class="size-12" />
-            </div>
-          </div>
-
-          <div class="space-y-6">
-            <div>
-              {{ $t('maintenanceView.mainInfor') }}
-            </div>
-
-            <div class="flex items-center justify-center gap-3 font-mono text-sm text-primary/90">
-              <span class="px-2 py-1 border border-primary/30 rounded bg-primary/5"
-                >STATUS: YAJYU</span
-              >
-              <span class="animate-pulse text-primary">●</span>
-              <span class="px-2 py-1 border border-primary/30 rounded bg-primary/5"
-                >VER: 11.4.514</span
-              >
-            </div>
-
-            <p class="text-muted-foreground text-base md:text-lg max-w-md mx-auto leading-relaxed">
-              {{ $t('maintenanceView.desc') }}
-            </p>
-          </div>
-
-          <div class="mt-10">
+          <div>
             <UButton
               ghost
               icon="line-md:arrow-left"
@@ -53,41 +30,43 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
 import { useI18n } from 'vue-i18n'
 
 // 1. 获取当前语言状态
 const { t, locale } = useI18n()
-const value = ref(50)
+const progressValue = ref(20)
 import type { TimelineItem } from '@nuxt/ui'
 
-const items = ref<TimelineItem[]>([
+const items = computed<TimelineItem[]>(() => [
   {
-    date: 'Mar 15, 2025',
-    title: 'Project Kickoff',
-    description:
-      'Kicked off the project with team alignment. Set up project milestones and allocated resources.',
+    date: '2025-03-15',
+    // 使用 t('key') 替代硬编码字符串
+    title: t('processView.kickoff.title'),
+    description: t('processView.kickoff.description'),
     icon: 'i-lucide-rocket',
+    status: 'completed',
   },
   {
-    date: 'Mar 22 2025',
-    title: 'Design Phase',
-    description:
-      'User research and design workshops. Created wireframes and prototypes for user testing.',
+    date: '2025-03-22',
+    title: t('processView.design.title'),
+    description: t('processView.design.description'),
     icon: 'i-lucide-palette',
+    status: 'completed',
   },
   {
-    date: 'Mar 29 2025',
-    title: 'Development Sprint',
-    description:
-      'Frontend and backend development. Implemented core features and integrated with APIs.',
+    date: '2025-03-29',
+    title: t('processView.development.title'),
+    description: t('processView.development.description'),
     icon: 'i-lucide-code',
+    status: 'current',
   },
   {
-    date: 'Apr 5 2025',
-    title: 'Testing & Deployment',
-    description: 'QA testing and performance optimization. Deployed the application to production.',
+    date: '2025-04-05',
+    title: t('processView.deployment.title'),
+    description: t('processView.deployment.description'),
     icon: 'i-lucide-check-circle',
+    status: 'pending',
   },
 ])
 </script>
