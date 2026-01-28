@@ -8,7 +8,7 @@ const router = createRouter({
   routes: [
     {
       path: '/',
-      redirect: '/zh'
+      redirect: '/zh',
     },
     {
       path: '/:locale',
@@ -29,18 +29,22 @@ const router = createRouter({
           name: 'articles',
           component: () => import('../views/Articles/ArticlesView.vue'),
         },
-
+        {
+          path: 'process',
+          name: 'process',
+          component: () => import('../views/Process/ProcessView.vue'),
+        },
         // ✅ 新增：404 捕获路由 (必须放在 children 的最后)
         // 匹配规则：/:locale/ 下的任何未定义路径都会命中这里
         {
           path: ':pathMatch(.*)*',
           name: 'NotFound',
           // 这里可以换成你专门写的 404 页面组件
-          component: () => import('../views/NotFound/NotFoundView.vue')
-        }
-      ]
-    }
-  ]
+          component: () => import('../views/NotFound/NotFoundView.vue'),
+        },
+      ],
+    },
+  ],
 })
 
 // 全局守卫 (逻辑保持专注：只负责校验语言是否合法)

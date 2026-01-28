@@ -62,5 +62,11 @@ const items = computed<NavigationMenuItem[]>(() => [
     icon: 'i-lucide-book-open',
     active: isAPIActive('articles'),
   },
+    {
+    label: t('header.process'),
+    to: { name: 'process', params: { locale: locale.value } },
+    icon: 'lucide:clipboard-clock',
+    active: isAPIActive('process'),
+  },
 ])
 </script>

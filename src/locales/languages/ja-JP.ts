@@ -7,6 +7,7 @@ export default {
     home: 'ホーム',
     games: 'ゲーム',
     articles: '記事',
+    process: '開発進捗',
   },
   maintenanceView: {
     mainInfor: 'メンテナンス中',
@@ -114,5 +115,4 @@ export default {
     goHome: 'ホームに戻る',
     message: '申し訳ありませんが、お探しのページは存在しません。',
   },
-
 }

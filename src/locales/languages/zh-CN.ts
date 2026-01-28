@@ -1,5 +1,3 @@
-import test from 'node:test'
-
 export default {
   read: '阅读',
   header: {
@@ -9,6 +7,7 @@ export default {
     home: '主页',
     games: '游戏',
     articles: '文章',
+    process: '开发进度',
   },
   maintenanceView: {
     mainInfor: '正在维护',

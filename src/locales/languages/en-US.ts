@@ -1,5 +1,3 @@
-import test from 'node:test'
-
 export default {
   read: 'Read',
   header: {
@@ -9,6 +7,7 @@ export default {
     home: 'Home',
     games: 'Games',
     articles: 'Articles',
+    process: 'Progress',
   },
   maintenanceView: {
     mainInfor: 'UNDER CONSTRUCTION',

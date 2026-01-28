@@ -1,0 +1,95 @@
+<template>
+  <div class="relative min-h-[80vh] flex items-center justify-center">
+    <div class="relative z-10 w-full max-w-2xl p-px shadow-2xl">
+      <div class="bg-card/90 rounded-[23px] p-8 md:p-16">
+        <UProgress v-model="value" />
+        <UTimeline :items="items" />
+        <div class="text-center backdrop-blur-xl">
+          <div class="relative w-24 h-24 mx-auto mb-8">
+            <div
+              class="absolute inset-0 rounded-full border-2 border-primary/30 animate-ping"
+            ></div>
+            <div
+              class="absolute inset-0 rounded-full border border-primary/50 flex items-center justify-center bg-card"
+            >
+              <UIcon name="line-md:loading-loop" class="size-12" />
+            </div>
+          </div>
+
+          <div class="space-y-6">
+            <div>
+              {{ $t('maintenanceView.mainInfor') }}
+            </div>
+
+            <div class="flex items-center justify-center gap-3 font-mono text-sm text-primary/90">
+              <span class="px-2 py-1 border border-primary/30 rounded bg-primary/5"
+                >STATUS: YAJYU</span
+              >
+              <span class="animate-pulse text-primary">●</span>
+              <span class="px-2 py-1 border border-primary/30 rounded bg-primary/5"
+                >VER: 11.4.514</span
+              >
+            </div>
+
+            <p class="text-muted-foreground text-base md:text-lg max-w-md mx-auto leading-relaxed">
+              {{ $t('maintenanceView.desc') }}
+            </p>
+          </div>
+
+          <div class="mt-10">
+            <UButton
+              ghost
+              icon="line-md:arrow-left"
+              @click="$router.push({ name: 'home', params: { locale: locale } })"
+            >
+              {{ $t('maintenanceView.back') }}
+            </UButton>
+          </div>
+        </div>
+      </div>
+    </div>
+    <FluidCursor />
+  </div>
+</template>
+
+<script setup lang="ts">
+import { ref } from 'vue'
+import { useI18n } from 'vue-i18n'
+
+// 1. 获取当前语言状态
+const { t, locale } = useI18n()
+const value = ref(50)
+import type { TimelineItem } from '@nuxt/ui'
+
+const items = ref<TimelineItem[]>([
+  {
+    date: 'Mar 15, 2025',
+    title: 'Project Kickoff',
+    description:
+      'Kicked off the project with team alignment. Set up project milestones and allocated resources.',
+    icon: 'i-lucide-rocket',
+  },
+  {
+    date: 'Mar 22 2025',
+    title: 'Design Phase',
+    description:
+      'User research and design workshops. Created wireframes and prototypes for user testing.',
+    icon: 'i-lucide-palette',
+  },
+  {
+    date: 'Mar 29 2025',
+    title: 'Development Sprint',
+    description:
+      'Frontend and backend development. Implemented core features and integrated with APIs.',
+    icon: 'i-lucide-code',
+  },
+  {
+    date: 'Apr 5 2025',
+    title: 'Testing & Deployment',
+    description: 'QA testing and performance optimization. Deployed the application to production.',
+    icon: 'i-lucide-check-circle',
+  },
+])
+</script>
+
+<style scoped></style>

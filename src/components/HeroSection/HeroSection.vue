@@ -10,15 +10,22 @@
 
         <h1 class="text-4xl md:text-6xl lg:text-7xl font-extrabold text-foreground leading-tight">
           {{ $t('heroSection.welcome') }}
-          <br />
-          <span class="text-primary"> {{ $t('heroSection.athour') }} </span>
-          <br />
+          <HyperText
+            class="text-primary justify-center md:justify-start"
+            :text="$t('heroSection.athour')"
+            :duration="800"
+            :animate-on-load="true"
+          />
+
           {{ $t('heroSection.room') }}
         </h1>
 
-        <p class="text-muted-foreground text-base md:text-xl max-w-2xl mx-auto md:mx-0">
-          {{ $t('heroSection.desc') }}
-        </p>
+        <EncryptedText
+          :text="$t('heroSection.desc')"
+          encrypted-class="text-muted-foreground/60 text-base md:text-xl max-w-2xl mx-auto md:mx-0"
+          revealed-class="text-muted-foreground text-base md:text-xl max-w-2xl mx-auto md:mx-0"
+          :reveal-delay-ms="revealDelayMs"
+        />
 
         <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start pt-4">
           <UButton
@@ -63,6 +70,7 @@
 <script lang="ts" setup>
 // 如果需要逻辑可在此添加
 import { useRouter } from 'vue-router'
+import EncryptedText from '@/components/ui/encrypted-text/EncryptedText.vue'
 
 const router = useRouter()
 
@@ -72,4 +80,6 @@ const handleNavigate = () => {
   // 使用 name 进行跳转
   router.push({ name: 'articles' })
 }
+
+const revealDelayMs = 50
 </script>
