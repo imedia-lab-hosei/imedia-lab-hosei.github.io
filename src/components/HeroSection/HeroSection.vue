@@ -19,13 +19,14 @@
 
           {{ $t('heroSection.room') }}
         </h1>
-
-        <EncryptedText
-          :text="$t('heroSection.desc')"
-          encrypted-class="text-muted-foreground/60 text-base md:text-xl max-w-2xl mx-auto md:mx-0"
-          revealed-class="text-muted-foreground text-base md:text-xl max-w-2xl mx-auto md:mx-0"
-          :reveal-delay-ms="revealDelayMs"
-        />
+        <div class="h-8 md:h-16">
+          <EncryptedText
+            :text="$t('heroSection.desc')"
+            encrypted-class="text-muted-foreground/60 text-base md:text-xl max-w-2xl mx-auto md:mx-0"
+            revealed-class="text-muted-foreground text-base md:text-xl max-w-2xl mx-auto md:mx-0"
+            :reveal-delay-ms="revealDelayMs"
+          />
+        </div>
 
         <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start pt-4">
           <UButton
