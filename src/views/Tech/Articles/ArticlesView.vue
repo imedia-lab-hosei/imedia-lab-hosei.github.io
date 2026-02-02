@@ -1,7 +1,7 @@
 <template>
-  <div class="relative min-h-[80vh] flex items-center justify-center">
-    <div class="relative z-10 w-full max-w-2xl p-px shadow-2xl">
-      <div class="bg-card/90 rounded-[23px] p-8 md:p-16 text-center backdrop-blur-xl">
+  <BgCard>
+    <template #content>
+      <div>
         <div class="relative w-24 h-24 mx-auto mb-8">
           <div class="absolute inset-0 rounded-full border-2 border-primary/30 animate-ping"></div>
           <div
@@ -32,23 +32,24 @@
         </div>
 
         <div class="mt-10">
-          <UButton ghost icon="line-md:arrow-left" @click="$router.push({ name: 'home', params: { locale: locale } })">
+          <UButton
+            ghost
+            icon="line-md:arrow-left"
+            @click="$router.push({ name: 'home', params: { locale: locale } })"
+          >
             {{ $t('maintenanceView.back') }}
           </UButton>
         </div>
       </div>
-    </div>
-  </div>
+    </template>
+  </BgCard>
 </template>
 
 <script setup lang="ts">
 import { useI18n } from 'vue-i18n'
 // 1. 获取当前语言状态
 const { locale } = useI18n()
-
-
-
+import BgCard from '@/components/BgCard/BgCard.vue'
 </script>
-
 
 <style scoped></style>

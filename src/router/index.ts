@@ -25,17 +25,26 @@ const router = createRouter({
           component: () => import('../views/Maintenance/MaintenanceView.vue'),
         },
         {
-          path: 'articles',
-          name: 'articles',
-          component: () => import('../views/Articles/ArticlesView.vue'),
+          path: 'tech',
+          children: [
+            {
+              path: 'articles',
+              name: 'articles',
+              component: () => import('../views/Tech/Articles/ArticlesView.vue'),
+            },
+            {
+              path: 'webtools',
+              name: 'webtools',
+              component: () => import('../views/Tech/Webtools/WebtoolsView.vue'),
+            },
+          ],
         },
         {
           path: 'process',
           name: 'process',
-          component: () => import('../views/Process/ProcessView.vue'),
+          component: () => import('../views/Tech/Process/ProcessView.vue'),
         },
-        // ✅ 新增：404 捕获路由 (必须放在 children 的最后)
-        // 匹配规则：/:locale/ 下的任何未定义路径都会命中这里
+
         {
           path: ':pathMatch(.*)*',
           name: 'NotFound',

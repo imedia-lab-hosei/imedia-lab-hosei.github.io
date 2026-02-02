@@ -4,7 +4,7 @@
       <div class="font-bold"><span class="text-primary">MOMOCHA</span>.LOG</div>
     </template>
 
-    <UNavigationMenu :items="items" />
+    <UNavigationMenu content-orientation="vertical" :items="items" />
 
     <template #right>
       <!-- <UColorModeSwitch /> -->
@@ -19,7 +19,7 @@
     </template>
 
     <template #body>
-      <UNavigationMenu :items="items" orientation="vertical" class="-mx-2.5" />
+      <UNavigationMenu :items="items" class="-mx-2.5" orientation="vertical" />
     </template>
   </UHeader>
 </template>
@@ -40,6 +40,7 @@ const route = useRoute()
 
 // 辅助函数：判断当前路由名称是否匹配
 const isAPIActive = (name: string) => route.name === name
+const isGroupActive = (names: string[]) => names.includes(route.name as string)
 
 const items = computed<NavigationMenuItem[]>(() => [
   {
@@ -51,18 +52,32 @@ const items = computed<NavigationMenuItem[]>(() => [
     active: isAPIActive('home'),
   },
   {
-    label: t('header.games'),
+    label: t('header.entretament'),
     to: { name: 'games', params: { locale: locale.value } },
     icon: 'lucide:gamepad-2',
     active: isAPIActive('games'),
   },
   {
-    label: t('header.articles'),
-    to: { name: 'articles', params: { locale: locale.value } },
-    icon: 'i-lucide-book-open',
-    active: isAPIActive('articles'),
+    label: t('header.tech'),
+    icon: 'lucide:text-search',
+    active: isGroupActive(['articles', 'webtools']),
+    children: [
+      {
+        label: t('header.articles'),
+        to: { name: 'articles', params: { locale: locale.value } },
+        icon: 'lucide:book',
+        active: isAPIActive('articles'),
+      },
+
+      {
+        label: t('header.webtools'),
+        to: { name: 'webtools', params: { locale: locale.value } },
+        icon: 'lucide:tool-case',
+        active: isAPIActive('webtools'),
+      },
+    ],
   },
-    {
+  {
     label: t('header.process'),
     to: { name: 'process', params: { locale: locale.value } },
     icon: 'lucide:clipboard-clock',

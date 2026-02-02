@@ -3,22 +3,22 @@
     <div class="flex flex-col md:flex-row items-center gap-12">
       <div class="flex-1 text-center md:text-left space-y-6 z-10">
         <div
-          class="inline-block px-3 py-1 rounded-full bg-muted border border-border text-primary text-sm font-mono"
+          class="inline-block px-3 py-1 rounded-full bg-muted border border-border text-primary text-sm"
         >
           {{ $t('heroSection.guest') }}
         </div>
 
-        <h1 class="text-4xl md:text-6xl lg:text-7xl font-extrabold text-foreground leading-tight">
+        <div class="text-4xl md:text-6xl lg:text-7xl font-extrabold text-foreground leading-tight">
           {{ $t('heroSection.welcome') }}
           <HyperText
-            class="text-primary justify-center md:justify-start"
+            class="text-primary justify-center md:justify-start font-sans"
             :text="$t('heroSection.athour')"
             :duration="800"
             :animate-on-load="true"
           />
 
           {{ $t('heroSection.room') }}
-        </h1>
+        </div>
         <div class="h-8 md:h-16">
           <EncryptedText
             :text="$t('heroSection.desc')"

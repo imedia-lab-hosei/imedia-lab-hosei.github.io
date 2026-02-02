@@ -1,13 +1,16 @@
 export default {
   read: 'Read',
   header: {
-    changeTheme: 'Change Theme',
-    changeLanguage: 'Change Language',
+    changeTheme: 'Toggle Theme',
+    changeLanguage: 'Switch Language',
     changeColor: 'Change Color',
     home: 'Home',
     games: 'Games',
     articles: 'Articles',
-    process: 'Progress',
+    process: 'Roadmap', // 或者用 Development Process
+    tech: 'Technology',
+    entretament: 'Entertainment',
+    webtools: 'Web Tools',
   },
   maintenanceView: {
     mainInfor: 'UNDER CONSTRUCTION',
@@ -114,5 +117,72 @@ export default {
     notFound: 'Page Not Found',
     goHome: 'Back to Home',
     message: 'Sorry, the page you are looking for does not exist.',
+  },
+  processView: {
+    start: {
+      title: 'Project Kickoff',
+      description: 'Initial commit to GitHub.',
+    },
+    mainPage: {
+      title: 'Core Framework Established',
+      description:
+        'Home page completed with mobile responsive design. Achieved modular decoupling within the framework.',
+    },
+    language: {
+      title: 'Framework Refinement',
+      description: 'Implemented real-time theme color switching and multi-language support.',
+    },
+    deployment: {
+      title: 'Future Roadmap',
+      description: 'Continuously developing new features...',
+    },
+    router: {
+      title: 'Navigation Guard Integration',
+      description:
+        'Integrated language prefix into the URL; implemented route filtering and 404 redirection.',
+    },
+    webtools: {
+      title: 'Web Tools Page Added',
+      description: 'Implemented secondary menu logic and launched the Web Tools collection page.',
+    },
+  },
+  webtoolsView: {
+    bookmarks: {
+      title: 'Tool Recommendations',
+      subtitle:
+        'A curated collection of my favorite development tools, design inspiration, and productivity hacks.',
+      search_placeholder: 'Search tools...',
+      no_results: 'No tools found matching "{query}"',
+      categories: {
+        dev: 'Frameworks',
+        design: 'Design Inspiration',
+        productivity: 'Productivity',
+      },
+      items: {
+        vue_desc:
+          'An approachable, performant, and versatile framework for building web user interfaces.',
+        nuxt_desc: 'A modern UI component library built for Nuxt and Tailwind CSS.',
+        tailwind_desc:
+          'A utility-first CSS framework for rapidly building modern websites without leaving your HTML.',
+        vite_desc: 'Next-generation frontend tooling with lightning-fast cold starts.',
+        dribbble_desc:
+          'The world’s leading community for creatives to share design work and find UI/UX inspiration.',
+        coolors_desc:
+          'The superfast color palettes generator! Create the perfect matching colors for your next project.',
+        lucide_desc:
+          'Beautiful & consistent icons made by the community, perfectly suited for various design styles.',
+        chatgpt_desc: 'An AI chatbot developed by OpenAI, capable of conversational interaction.',
+        gemini_desc:
+          'Google’s multimodal AI model, designed for a wide range of tasks and creative work.',
+        inspira_desc:
+          'A stunning UI library with selective import support, perfectly compatible with Vue and Nuxt UI.',
+        icones_desc:
+          'A comprehensive icon explorer compatible with Nuxt UI, offering free access to various icon sets.',
+        pinia_desc:
+          'The intuitive store for Vue.js. Type-safe, extensible, and modular by design. You’ll forget you’re even using a store.',
+        wix_desc:
+          'Build websites online with one-click cloud deployment and powerful pre-set components.',
+      },
+    },
   },
 }

@@ -1,13 +1,16 @@
 export default {
   read: '読む',
   header: {
-    changeTheme: 'テーマ変更',
-    changeLanguage: '言語切替',
+    changeTheme: 'テーマ切り替え',
+    changeLanguage: '言語切り替え',
     changeColor: 'カラー変更',
     home: 'ホーム',
     games: 'ゲーム',
-    articles: '記事',
+    articles: '記事一覧',
     process: '開発進捗',
+    tech: '技術',
+    entretament: 'エンタメ',
+    webtools: 'ツール',
   },
   maintenanceView: {
     mainInfor: 'メンテナンス中',
@@ -15,7 +18,7 @@ export default {
     back: 'ホームページへ',
   },
   heroSection: {
-    athour: '抹抹茶',
+    athour: 'モモチャ',
     welcome: 'ようこそ',
     room: 'の茶室へ',
     desc: 'Vue 3 / NuxtUI / Tailwind ベースの個人ブログ。レスポンシブ対応、モバイル端末をサポート。',
@@ -114,5 +117,68 @@ export default {
     notFound: 'ページが見つかりません',
     goHome: 'ホームに戻る',
     message: '申し訳ありませんが、お探しのページは存在しません。',
+  },
+  processView: {
+    start: {
+      title: 'プロジェクト始動',
+      description: 'GitHubへの初コミット。',
+    },
+    mainPage: {
+      title: 'サイトの基本フレームワーク完成',
+      description:
+        'ホームページの機能実装とレスポンシブデザインを完了。機能ごとのデカップリング（疎結合化）を実現。',
+    },
+    language: {
+      title: 'フレームワークのブラッシュアップ',
+      description: 'テーマカラーのリアルタイム変更機能と多言語切り替え機能を実装。',
+    },
+    deployment: {
+      title: '今後の開発予定',
+      description: '現在、新機能を開発中...',
+    },
+    router: {
+      title: 'ナビゲーションガードの導入',
+      description:
+        'URLパスへの言語コード自動付与、および不正アクセスのフィルタリングと404リダイレクトを実装。',
+    },
+    webtools: {
+      title: 'ツール紹介ページの追加',
+      description: 'サブメニューのロジックを実装し、実用的なツールをまとめた専用ページを追加。',
+    },
+  },
+  webtoolsView: {
+    bookmarks: {
+      title: 'おすすめツール',
+      subtitle:
+        '普段愛用している開発ツール、デザインのインスピレーション、効率化ツールをまとめました。',
+      search_placeholder: 'ツールを検索...',
+      no_results: '"{query}" に一致するツールは見つかりませんでした',
+      categories: {
+        dev: '開発フレームワーク',
+        design: 'デザイン・着想',
+        productivity: '生産性・効率化',
+      },
+      items: {
+        vue_desc:
+          '学習しやすく、パフォーマンスに優れた、汎用性の高いWebフロントエンドフレームワーク。',
+        nuxt_desc: 'NuxtとTailwind CSSをベースにしたモダンなUIコンポーネントライブラリ。',
+        tailwind_desc:
+          'HTMLから離れることなく、モダンなサイトを迅速に構築できるユーティリティファーストのCSSフレームワーク。',
+        vite_desc: '極速なコールドスタートを実現する、次世代フロントエンド開発・ビルドツール。',
+        dribbble_desc: '世界中のトップデザイナーが集まるコミュニティ。UI/UXデザインの参考に。',
+        coolors_desc: '完璧なカラーパレットを瞬時に作成できる、超便利な配色ジェネレーター。',
+        lucide_desc:
+          '美しく一貫性のあるオープンソース・アイコンライブラリ。あらゆるスタイルにマッチ。',
+        chatgpt_desc: 'OpenAIによって開発された、対話型AIチャットボットプログラム。',
+        gemini_desc: 'Googleが開発したマルチモーダルAI。多様なタスクやクリエイティブ作業に対応。',
+        inspira_desc:
+          '選択的インポートに対応した超クールなUIライブラリ。VueやNuxt UIとの相性も抜群。',
+        icones_desc: 'Nuxt UIに対応したアイコンライブラリ。多種多様なアイコンを無料で利用可能。',
+        pinia_desc:
+          'Vue.jsのための直感的なストア。型安全、拡張可能、そしてモジュール化された設計。',
+        wix_desc:
+          'オンラインでウェブサイトを作成し、ワンクリックでクラウドへデプロイ。強力なプリセットコンポーネントを搭載。',
+      },
+    },
   },
 }

@@ -8,6 +8,9 @@ export default {
     games: '游戏',
     articles: '文章',
     process: '开发进度',
+    tech: '技术',
+    entretament: '娱乐',
+    webtools: '实用工具',
   },
   maintenanceView: {
     mainInfor: '正在维护',
@@ -116,21 +119,57 @@ export default {
     message: '抱歉，您访问的页面不存在。',
   },
   processView: {
-    kickoff: {
-      title: '项目启动 (Project Kickoff)',
-      description: '完成团队组建与资源分配，确立核心里程碑。',
+    start: {
+      title: '个人网站项目启动',
+      description: '首次Github提交。',
     },
-    design: {
-      title: '设计阶段 (Design Phase)',
-      description: '用户调研与交互设计，输出高保真原型图。',
+    mainPage: {
+      title: '网站基础框架完成',
+      description: '网站首页功能完成，并且加入移动端响应式设计，框架部分实现各功能解耦。',
     },
-    development: {
-      title: '核心开发 (Development)',
-      description: '前后端核心功能开发，API 对接与联调。',
+    language: {
+      title: '框架完善',
+      description: '加入主色调实时变更，多语言切换。',
     },
     deployment: {
-      title: '测试与部署 (Deployment)',
-      description: '全链路 QA 测试，性能优化与正式上线。',
+      title: '未来开发',
+      description: '正在开发中...',
+    },
+    router: {
+      title: '加入路由守卫',
+      description: '实现多语言拼接到地址栏后，并且对非法地址进行过滤与404重定向。',
+    },
+    webtools: {
+      title: '添加实用工具页面',
+      description: '添加二级菜单逻辑，并且加入实用工具页面',
+    },
+  },
+  webtoolsView: {
+    bookmarks: {
+      title: '工具推荐',
+      subtitle: '收集了一些我常用的开发工具、设计灵感和效率神器。',
+      search_placeholder: '搜索工具...',
+      no_results: '没有找到与 "{query}" 相关的工具',
+      categories: {
+        dev: '开发框架',
+        design: '设计灵感',
+        productivity: '效率工具',
+      },
+      items: {
+        vue_desc: '易学易用，性能出色，适用场景丰富的 Web 前端框架。',
+        nuxt_desc: '基于 Nuxt 和 Tailwind CSS 的现代化 UI 组件库。',
+        tailwind_desc: '只需书写 HTML 即可快速构建现代网站的原子化 CSS 框架。',
+        vite_desc: '下一代前端开发与构建工具，极速冷启动。',
+        dribbble_desc: '全球顶尖设计师的灵感社区，寻找 UI/UX 设计参考。',
+        coolors_desc: '超好用的配色生成器，快速创建完美的调色板。',
+        lucide_desc: '美观且一致的开源图标库，完美适配各种设计风格。',
+        chatgpt_desc: 'OpenAI 开发的人工智能聊天机器人程序。',
+        gemini_desc: 'Google 开发的人工智能机器人，适合各种任务。',
+        inspira_desc: '超级酷炫的 UI 库，支持选择性导入，完美适配 Vue 与 Nuxt UI。',
+        icones_desc: '支持 Nuxt UI 的图标库，免费使用各种图标。',
+        pinia_desc: 'Vue.js 的直观存储，类型安全、可扩展且模块化设计。忘记你甚至在使用存储。',
+        wix_desc: '在线搭建网站，一键式部署到云端，预设组件功能强大。',
+      },
     },
   },
 }

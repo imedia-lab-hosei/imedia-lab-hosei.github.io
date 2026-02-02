@@ -31,28 +31,5 @@ import TheHeader from '@/components/TheHeader/TheHeader.vue'
 </script>
 
 <style scoped>
-/* 改造滚动条：使用 CSS 变量
-  注意：由于我们使用了 oklch 变量，推荐使用 color-mix 来处理透明度
-*/
-.custom-scrollbar::-webkit-scrollbar {
-  width: 6px;
-}
 
-.custom-scrollbar::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-.custom-scrollbar::-webkit-scrollbar-thumb {
-  /* 旧写法: background: rgba(6, 182, 212, 0.2);
-     新写法: 使用 var(--primary) 并混合 80% 的透明色
-  */
-  background: color-mix(in srgb, var(--ui-primary), transparent 80%);
-  border-radius: 10px;
-  transition: background 0.3s;
-}
-
-.custom-scrollbar::-webkit-scrollbar-thumb:hover {
-  /* 悬停时加深颜色，混合 50% 透明色 */
-  background: color-mix(in srgb, var(--ui-primary), transparent 50%);
-}
 </style>
