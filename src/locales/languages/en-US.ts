@@ -187,6 +187,8 @@ export default {
           'The intuitive store for Vue.js. Type-safe, extensible, and modular by design. You’ll forget you’re even using a store.',
         wix_desc:
           'Build websites online with one-click cloud deployment and powerful pre-set components.',
+        lorem_picsum_desc:
+          'A free service providing placeholder images of various sizes and styles.',
       },
     },
   },

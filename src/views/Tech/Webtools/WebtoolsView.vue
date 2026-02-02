@@ -167,6 +167,12 @@ const rawData: CategoryGroup[] = [
         url: 'https://icones.js.org/',
         icon: 'lucide:star',
       },
+      {
+        name: 'Lorem Picsum',
+        descKey: 'webtoolsView.bookmarks.items.lorem_picsum_desc',
+        url: 'https://picsum.photos/',
+        icon: 'lucide:image',
+      },
     ],
   },
   {

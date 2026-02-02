@@ -175,6 +175,7 @@ export default {
         icones_desc: '支持 Nuxt UI 的图标库，免费使用各种图标。',
         pinia_desc: 'Vue.js 的直观存储，类型安全、可扩展且模块化设计，忘记你甚至在使用存储。',
         wix_desc: '在线搭建网站，一键式部署到云端，预设组件功能强大。',
+        lorem_picsum_desc: '一个免费的图片占位符服务，提供各种尺寸和风格的随机图片。',
       },
     },
   },
