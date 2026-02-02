@@ -1,6 +1,8 @@
 <template>
-  <UContainer class="py-12">
-    <div class="mb-12 text-center space-y-4">
+  <div
+    class="sticky top-0 z-50 bg-background/80 backdrop-blur-md py-6 mb-8 border-b border-border/40 -mx-4 px-4 sm:mx-0 sm:px-0"
+  >
+    <UContainer class="text-center space-y-4">
       <h1 class="text-4xl font-bold tracking-tight text-foreground">
         {{ $t('webtoolsView.bookmarks.title') }}
       </h1>
@@ -14,11 +16,12 @@
           icon="i-heroicons-magnifying-glass"
           :placeholder="$t('webtoolsView.bookmarks.search_placeholder')"
           size="lg"
-          class="w-full"
+          class="w-full shadow-sm"
         />
       </div>
-    </div>
-
+    </UContainer>
+  </div>
+  <UContainer>
     <div v-for="group in filteredData" :key="group.categoryKey" class="mb-12">
       <div class="flex items-center gap-2 mb-6 border-b border-border pb-2">
         <UIcon :name="group.icon" class="text-primary w-6 h-6" />

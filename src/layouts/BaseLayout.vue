@@ -17,7 +17,7 @@
       <UContainer class="relative z-10">
         <slot />
       </UContainer>
-      <UFooter class="border-t border-border bg-muted/30 backdrop-blur-sm py-12 text-center mt-12">
+      <UFooter class="border-t border-border bg-muted/30 backdrop-blur-sm md:py-12 text-center">
         <p class="text-muted-foreground text-sm">
           {{ $t('footer.desc') }}
         </p>
@@ -30,6 +30,4 @@
 import TheHeader from '@/components/TheHeader/TheHeader.vue'
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>
