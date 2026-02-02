@@ -36,7 +36,7 @@ export default {
 
   tags: {
     shimokita: '下北泽',
-    food: '美食(?)',
+    food: '美食',
     interview: '面试技巧',
     roar: '咆哮系',
     mussel: '牡蛎',
@@ -52,12 +52,73 @@ export default {
   },
   post_list: {
     '1': {
-      title: '关于在下北泽红茶馆的深度调研',
-      desc: '这就尴尬了，这种事情我怎么可能不知道呢？总之先点一杯非常新鲜的红茶吧。',
+      title: '基于路由守卫的 i18n 自动化切换方案',
+      desc: '探索如何通过全栈路由拦截技术，实现多语言环境下零延迟、SEO 友好的语言切换体验。',
+      content: `
+    <p>
+      在国际化 Web 应用中，<strong>路由守卫 (Route Guard)</strong> 是处理语言切换的最佳关口。它能确保用户在渲染组件前，系统已经准备好了正确的语言包。
+    </p>
+
+    <h2>1. 核心工作原理</h2>
+    <p>
+      路由守卫通过拦截每一个导航动作，解析 URL 中的语言标识符（如 <code>/en/</code> 或 <code>/zh/</code>）。如果不符合预期的语言环境，它可以立即重定向或加载缺少的资源。
+    </p>
+
+    <h2>2. 实现步骤</h2>
+    <ul>
+      <li>
+        <strong>动态路径匹配：</strong> 定义 <code>/:lang/dashboard</code> 格式的路由，利用 Params 捕获语言参数。
+      </li>
+      <li>
+        <strong>前置守卫拦截：</strong> 在 <code>router.beforeEach</code> 中检测 <code>to.params.lang</code>，并与 Vue I18n 实例同步。
+      </li>
+      <li>
+        <strong>异步加载语言包：</strong> 避免一次性加载所有语言，仅在切换时通过 <code>import()</code> 动态加载对应的 JSON 资源。
+      </li>
+    </ul>
+    <blockquote>
+      “这种方式不仅提升了用户体验（消除了页面闪烁），还极大地利于搜索引擎抓取不同语言版本的页面内容，提升 SEO 排名。”
+    </blockquote>
+    <p>
+      相比于传统的 localStorage 存储方案，基于路由的方案能够让用户直接通过链接分享特定语言的页面，是目前最佳的实践方式。
+    </p>
+  `,
     },
     '2': {
-      title: '论声音响亮在面试中的重要性',
-      desc: '作为一名学生，声音大一点不仅能体现精神面貌，还能让面试官感受到你的诚意。',
+      title: 'Tailwind CSS + 路由守卫：多语言与主题动态切换实践',
+      desc: '通过 Tailwind CSS 的原子化特性，实现支持亮暗模式和自定义主题色的 v-html 内容渲染。',
+      content: `
+    <div class="prose dark:prose-invert max-w-none">
+      <p class="text-gray-700 dark:text-gray-300 mb-6">
+        在 Tailwind CSS 的加持下，亮暗模式和主题色的切换变得异常简单。我们可以在 <code>v-html</code> 渲染的内容中直接应用 Tailwind 的工具类，完美响应全局主题。
+      </p>
+
+      <h3 class="text-2xl font-semibold mb-4 text-primary-600 dark:text-primary-400 border-l-4 border-primary-500 pl-4">
+        1. 为什么选择 Tailwind CSS?
+      </h3>
+      <ul class="list-disc list-inside text-gray-700 dark:text-gray-300 space-y-2">
+        <li><strong>原子化：</strong> 类名直接对应样式，易于理解和组合。</li>
+        <li><strong>响应式设计：</strong> 内置 <code>dark:</code> 变体，轻松实现亮暗模式。</li>
+        <li><strong>JIT 编译：</strong> 按需生成 CSS，减小文件体积。</li>
+      </ul>
+
+      <p class="mt-6 text-gray-700 dark:text-gray-300">
+        通过在 HTML 元素上添加 <code>dark:</code> 前缀的类，Tailwind 会自动在暗黑模式下应用这些样式。
+      </p>
+
+
+
+      <h3 class="text-2xl font-semibold mb-4 text-primary-600 dark:text-primary-400 border-l-4 border-primary-500 pl-4 mt-8">
+        2. 如何实现主题色切换？
+      </h3>
+      <p class="text-gray-700 dark:text-gray-300">
+        Tailwind CSS 允许你在 <code>tailwind.config.js</code> 中扩展主题。你可以定义一个 <code>primary</code> 颜色系列，然后在内容中直接使用 <code>text-primary-500</code>、<code>bg-primary-100</code> 等类。
+      </p>
+      <blockquote class="bg-primary-50 dark:bg-primary-900 border-l-4 border-primary-500 text-primary-700 dark:text-primary-200 p-4 mt-6 rounded">
+        “利用 Tailwind 的 <code>dark:</code> 变体和自定义颜色扩展，我们能够创建出既美观又灵活的多主题内容界面。”
+      </blockquote>
+    </div>
+  `,
     },
     '3': {
       title: '如何在炎炎夏日保持良好的心态',
@@ -160,6 +221,7 @@ export default {
         dev: '开发框架',
         design: '设计灵感',
         productivity: '效率工具',
+        treasure: '宝藏网站',
       },
       items: {
         vue_desc: '易学易用，性能出色，适用场景丰富的 Web 前端框架。',
@@ -176,7 +238,21 @@ export default {
         pinia_desc: 'Vue.js 的直观存储，类型安全、可扩展且模块化设计，忘记你甚至在使用存储。',
         wix_desc: '在线搭建网站，一键式部署到云端，预设组件功能强大。',
         lorem_picsum_desc: '一个免费的图片占位符服务，提供各种尺寸和风格的随机图片。',
+        congyu_desc: '穿越城墙的妙妙工具，助你轻松获取各类网站资源。',
+        figma_desc: '基于云端的设计工具，支持多人实时协作与强大插件生态。',
+        wplace_desc: '全球作画平台，感受世界的美好。',
       },
     },
+  },
+  articles: {
+    title: '文章与随笔',
+    subtitle: '分享关于技术、设计以及生活的思考碎片。',
+    search_placeholder: '搜索文章标题或内容...',
+    filter_all: '全部',
+    read_more: '阅读全文',
+    no_results_title: '未找到相关文章',
+    no_results_desc: '尝试更换关键词 "{query}" 或清除过滤条件。',
+    clear_filter: '清除所有筛选',
+    body_empty: '暂无正文内容。',
   },
 }

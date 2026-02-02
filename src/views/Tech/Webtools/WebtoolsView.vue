@@ -173,6 +173,12 @@ const rawData: CategoryGroup[] = [
         url: 'https://picsum.photos/',
         icon: 'lucide:image',
       },
+      {
+        name: 'Figma',
+        descKey: 'webtoolsView.bookmarks.items.figma_desc',
+        url: 'https://figma.com/',
+        icon: 'simple-icons:figma',
+      },
     ],
   },
   {
@@ -190,6 +196,24 @@ const rawData: CategoryGroup[] = [
         descKey: 'webtoolsView.bookmarks.items.gemini_desc',
         url: 'https://gemini.google.com/app',
         icon: 'simple-icons:googlegemini',
+      },
+    ],
+  },
+  {
+    categoryKey: 'webtoolsView.bookmarks.categories.treasure',
+    icon: 'lucide:coins',
+    items: [
+      {
+        name: 'CongYuYun',
+        descKey: 'webtoolsView.bookmarks.items.congyu_desc',
+        url: 'https://congyu.moe/',
+        icon: 'lucide:plane',
+      },
+      {
+        name: 'Wplace',
+        descKey: 'webtoolsView.bookmarks.items.wplace_desc',
+        url: 'https://wplace.live/',
+        icon: 'lucide:earth',
       },
     ],
   },

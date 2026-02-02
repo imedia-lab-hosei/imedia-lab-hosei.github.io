@@ -11,7 +11,7 @@
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
       <div
-        v-for="post in posts"
+        v-for="post in articles"
         :key="post.id"
         class="flex flex-col h-full group relative bg-card text-card-foreground border border-border rounded-2xl overflow-hidden hover:-translate-y-2 transition-all duration-300 shadow-lg hover:shadow-primary/20"
       >
@@ -24,7 +24,10 @@
 <script setup lang="ts">
 import HeroSection from '@/components/HeroSection/HeroSection.vue'
 import PostCard from '@/components/PostCard/PostCard.vue'
-import { usePosts } from '@/composables/usePosts'
+import { usePosts, type Post } from '@/composables/usePosts'
+import { computed } from 'vue'
 
 const { posts } = usePosts()
+
+const articles = computed<Post[]>(() => posts.value.slice(0, 3))
 </script>

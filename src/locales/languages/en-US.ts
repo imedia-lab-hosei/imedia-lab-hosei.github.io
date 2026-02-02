@@ -35,7 +35,7 @@ export default {
   },
   tags: {
     shimokita: 'Shimokitazawa',
-    food: 'Gourmet(?)',
+    food: 'Gourmet',
     interview: 'Interview Tips',
     roar: 'Roaring Style',
     mussel: 'Oyster',
@@ -162,6 +162,7 @@ export default {
         dev: 'Frameworks',
         design: 'Design Inspiration',
         productivity: 'Productivity',
+        treasure: 'Treasure Sites',
       },
       items: {
         vue_desc:
@@ -189,7 +190,22 @@ export default {
           'Build websites online with one-click cloud deployment and powerful pre-set components.',
         lorem_picsum_desc:
           'A free service providing placeholder images of various sizes and styles.',
+        congyu_desc: 'A nifty tool to bypass restrictions and easily access various web resources.',
+        figma_desc:
+          'A cloud-based design tool supporting real-time collaboration and a robust plugin ecosystem.',
+        wplace_desc: 'A global drawing platform to experience the beauty of the world.',
       },
     },
+  },
+  articles: {
+    title: 'Articles & Thoughts',
+    subtitle: 'Sharing fragments of thoughts on tech, design, and life.',
+    search_placeholder: 'Search articles...',
+    filter_all: 'All',
+    read_more: 'Read Article',
+    no_results_title: 'No articles found',
+    no_results_desc: 'Try adjusting your search for "{query}" or clear filters.',
+    clear_filter: 'Clear all filters',
+    body_empty: 'No content available.',
   },
 }

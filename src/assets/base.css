@@ -3,6 +3,8 @@
 @import '@nuxt/ui';
 @import './theme.css';
 
+@plugin "@tailwindcss/typography";
+
 @theme static {
   --color-background: var(--ui-bg);
   --color-foreground: var(--ui-text);

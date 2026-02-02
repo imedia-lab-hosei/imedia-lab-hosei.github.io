@@ -35,7 +35,7 @@ export default {
   },
   tags: {
     shimokita: '下北沢',
-    food: '美食(?)',
+    food: '美食',
     interview: '面接テクニック',
     roar: '咆哮系',
     mussel: '牡蠣',
@@ -162,6 +162,7 @@ export default {
         dev: '開発フレームワーク',
         design: 'デザイン・着想',
         productivity: '生産性・効率化',
+        treasure: '宝藏サイト',
       },
       items: {
         vue_desc:
@@ -185,7 +186,23 @@ export default {
           'オンラインでウェブサイトを作成し、ワンクリックでクラウドへデプロイ。強力なプリセットコンポーネントを搭載。',
         lorem_picsum_desc:
           '様々なサイズとスタイルのランダム画像を提供する、無料の画像プレースホルダーサービス。',
+        congyu_desc: '城墙を越える妙妙ツール。様々なウェブリソースの取得を簡単にサポート。',
+        figma_desc:
+          'クラウドベースのデザインツール。リアルタイムの共同作業と強力なプラグインエコシステムをサポート。',
+        wplace_desc: 'グローバルな描画プラットフォーム。世界の美しさを感じてください。',
       },
     },
+  },
+  articles: {
+    title: '記事と随筆',
+    subtitle: 'Tech、デザイン、生活に関する思考の断片を共有します。',
+    search_placeholder: '記事を検索...',
+    filter_all: 'すべて',
+    read_more: '記事を読む',
+    no_results_title: '記事が見つかりません',
+    no_results_desc:
+      '"{query}" に一致する記事が見つかりませんでした。検索条件を調整するか、フィルターをクリアしてください。',
+    clear_filter: 'フィルターをクリア',
+    body_empty: '本文がありません。',
   },
 }

@@ -50,7 +50,7 @@
           size="md"
           class="rounded font-medium"
         >
-          #{{ tag }}
+          #{{ $t(`tags.${tag}`) }}
         </UBadge>
       </div>
 
@@ -73,6 +73,7 @@
 <script setup lang="ts">
 import TimeAgo from './components/TimeAgo.vue'
 import AnimatedModalComponent from './components/AnimatedModalComponent/index.vue'
+
 interface Post {
   title: string
   desc: string
@@ -81,6 +82,7 @@ interface Post {
   tags?: string[]
   path?: string
   label?: string
+  content?: string
 }
 
 defineProps<{

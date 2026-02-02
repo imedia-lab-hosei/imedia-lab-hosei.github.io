@@ -66,16 +66,18 @@ export function usePosts() {
     },
   ]
 
-  // 2. 使用 computed 生成最终的 posts
-  // 必须使用 computed，否则切换语言时，数据不会自动刷新
   const posts = computed<Post[]>(() => {
-    return rawPosts.map((post) => ({
+    const sortedRawPosts = [...rawPosts].sort((a, b) => {
+      return new Date(b.date).getTime() - new Date(a.date).getTime()
+    })
+
+    // 2. 映射为带翻译的数据
+    return sortedRawPosts.map((post) => ({
       id: post.id,
-      // 动态拼接 key: post_list.1.title
       title: t(`post_list.${post.id}.title`),
       desc: t(`post_list.${post.id}.desc`),
-      // 遍历 tagKeys，翻译每一个 tag
-      tags: post.tagKeys.map((key) => t(`tags.${key}`)),
+      content: t(`post_list.${post.id}.content`),
+      tags: post.tagKeys,
       cover: post.cover,
       date: post.date,
       label: post.label ? t(`tags.${post.label}`) : undefined,
