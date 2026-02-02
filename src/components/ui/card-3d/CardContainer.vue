@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { provide } from "vue";
-import { useMouseState } from "~/composables/useMouseState";
+import { provide, useTemplateRef } from "vue";
+import { useMouseState } from "@/composables/useMouseState";
 
 interface Props {
   class?: string;

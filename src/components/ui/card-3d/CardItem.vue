@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import type { useMouseState } from "~/composables/useMouseState";
+import { inject, ref, watch, type Ref } from "vue";
+import type { useMouseState } from "@/composables/useMouseState";
 
 interface Props {
   as?: string;

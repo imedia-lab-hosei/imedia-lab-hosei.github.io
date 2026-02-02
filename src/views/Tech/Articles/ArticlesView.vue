@@ -15,7 +15,7 @@
           :placeholder="$t('articles.search_placeholder')"
           size="lg"
           class="w-full"
-          :ui="{ icon: { trailing: { pointer: '' } } }"
+          clearable
         />
       </div>
     </div>

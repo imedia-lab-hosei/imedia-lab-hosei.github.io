@@ -145,7 +145,9 @@ onMounted(() => {
     updateCanvasSize();
   });
   intersectionObserver = new IntersectionObserver(
-    ([entry]) => {
+    (entries) => {
+      const entry = entries[0];
+      if (!entry) return;
       isInView.value = entry.isIntersecting;
       animationFrameId = requestAnimationFrame(animate);
     },
