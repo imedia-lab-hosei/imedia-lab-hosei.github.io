@@ -1,5 +1,9 @@
 export default {
-  read: '読む',
+  base: {
+    cancel: 'キャンセル',
+    confirm: '確認',
+    read: '読む',
+  },
   header: {
     changeTheme: 'テーマ切り替え',
     changeLanguage: '言語切り替え',
@@ -43,6 +47,7 @@ export default {
     footwork: 'フットワーク',
     philosophy: '哲学',
     hot_blood: '熱血',
+    tech: '技術',
   },
   post_list: {
     '1': {

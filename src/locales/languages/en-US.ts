@@ -1,5 +1,9 @@
 export default {
-  read: 'Read',
+  base: {
+    cancel: 'Cancel',
+    confirm: 'Confirm',
+    read: 'Read',
+  },
   header: {
     changeTheme: 'Toggle Theme',
     changeLanguage: 'Switch Language',
@@ -43,6 +47,7 @@ export default {
     footwork: 'Footwork',
     philosophy: 'Philosophy',
     hot_blood: 'Hot-blooded',
+    tech: 'technology',
   },
   post_list: {
     '1': {

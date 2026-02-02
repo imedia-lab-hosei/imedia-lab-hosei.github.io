@@ -1,5 +1,9 @@
 export default {
-  read: '阅读',
+  base: {
+    cancel: '关闭',
+    confirm: '确定',
+    read: '阅读',
+  },
   header: {
     changeTheme: '改变主题',
     changeLanguage: '改变语言',
@@ -29,6 +33,7 @@ export default {
   HomeView: {
     newArticle: '最新文章',
   },
+
   tags: {
     shimokita: '下北泽',
     food: '美食(?)',
@@ -43,6 +48,7 @@ export default {
     footwork: '步法',
     philosophy: '哲学',
     hot_blood: '热血',
+    tech: '技术',
   },
   post_list: {
     '1': {

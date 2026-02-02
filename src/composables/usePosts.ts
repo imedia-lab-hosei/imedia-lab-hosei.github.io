@@ -9,6 +9,7 @@ export interface Post {
   tags: string[]
   cover: string
   date: string
+  label?: string
 }
 
 // 定义纯粹的元数据接口 (不包含需要翻译的文本，但包含翻译所需的 Keys)
@@ -17,6 +18,7 @@ interface PostMetadata {
   tagKeys: string[] // 这里存 key，而不是中文
   cover: string
   date: string
+  label?: string
 }
 
 export function usePosts() {
@@ -30,6 +32,7 @@ export function usePosts() {
       tagKeys: ['shimokita', 'food'], // 对应 json 里的 tags key
       cover: 'https://picsum.photos/id/1060/400/250',
       date: '2025-01-15',
+      label: 'tech',
     },
     {
       id: 2,
@@ -75,6 +78,7 @@ export function usePosts() {
       tags: post.tagKeys.map((key) => t(`tags.${key}`)),
       cover: post.cover,
       date: post.date,
+      label: post.label ? t(`tags.${post.label}`) : undefined,
     }))
   })
 

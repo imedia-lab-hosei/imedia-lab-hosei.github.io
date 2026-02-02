@@ -12,7 +12,8 @@
 
     <div class="absolute top-3 left-3">
       <UBadge
-        label="Tech"
+        v-if="post.label"
+        :label="post.label"
         variant="solid"
         class="transition-colors backdrop-blur-md bg-background/80 text-foreground border border-border/50"
       />
@@ -56,7 +57,9 @@
       <div
         class="flex items-center text-sm font-medium text-primary transition-colors hover:text-primary/80"
       >
-        <div class="cursor-pointer text-nowrap" @click="showModal = true">{{ $t('read') }}</div>
+        <div class="cursor-pointer text-nowrap" @click="showModal = true">
+          {{ $t('base.read') }}
+        </div>
         <UIcon
           name="i-heroicons-arrow-right"
           class="ml-1 h-4 w-4 transition-transform group-hover:translate-x-1"
@@ -64,7 +67,7 @@
       </div>
     </div>
   </div>
-  <AnimatedModalComponent v-model:open="showModal" />
+  <AnimatedModalComponent :post="post" v-model:open="showModal" />
 </template>
 
 <script setup lang="ts">
@@ -77,7 +80,7 @@ interface Post {
   date?: string | Date
   tags?: string[]
   path?: string
-  
+  label?: string
 }
 
 defineProps<{
