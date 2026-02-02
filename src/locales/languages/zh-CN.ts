@@ -167,7 +167,7 @@ export default {
         gemini_desc: 'Google 开发的人工智能机器人，适合各种任务。',
         inspira_desc: '超级酷炫的 UI 库，支持选择性导入，完美适配 Vue 与 Nuxt UI。',
         icones_desc: '支持 Nuxt UI 的图标库，免费使用各种图标。',
-        pinia_desc: 'Vue.js 的直观存储，类型安全、可扩展且模块化设计。忘记你甚至在使用存储。',
+        pinia_desc: 'Vue.js 的直观存储，类型安全、可扩展且模块化设计，忘记你甚至在使用存储。',
         wix_desc: '在线搭建网站，一键式部署到云端，预设组件功能强大。',
       },
     },
