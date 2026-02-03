@@ -90,55 +90,46 @@ export default {
     </div>
   `,
     },
-  //   '2': {
-  //     title: 'Tailwind CSSによるダークモードとテーマカラーの動的切り替え',
-  //     desc: 'Tailwind CSSのユーティリティ特性を活かし、ダークモードとカスタムテーマカラーに対応したUIレンダリングを実現します。',
-  //     content: `
-  //   <div class="prose prose-slate dark:prose-invert max-w-none">
-  //     <p class="text-balance leading-relaxed ">
-  //       モダンなWeb開発において、<strong class="text-primary">テーマシステム</strong>は単なるライト/ダークの切り替えに留まりません。
-  //       <strong>動的なブランドカラー</strong>と<strong>ダークモード</strong>を組み合わせた、高度なカスタマイズが求められています。
-  //       Piniaの永続化機能と組み合わせることで、応答性が高く、柔軟なUI体系を構築できます。
-  //     </p>
+    '2': {
+      title: 'Tailwind CSSによるダークモードとテーマカラーの動的切り替え',
+      desc: 'Tailwind CSSのユーティリティ特性を活かし、ダークモードとカスタムテーマカラーに対応したUIレンダリングを実現します。',
+      content: `
+    <div class="prose prose-slate dark:prose-invert max-w-none">
+      <p class="text-balance leading-relaxed ">
+        モダンなWeb開発において、<strong class="text-primary">テーマシステム</strong>は単なるライト/ダークの切り替えに留まりません。
+        <strong>動的なブランドカラー</strong>と<strong>ダークモード</strong>を組み合わせた、高度なカスタマイズが求められています。
+        Piniaの永続化機能と組み合わせることで、応答性が高く、柔軟なUI体系を構築できます。
+      </p>
 
-  //     <h2 class="text-primary border-b border-muted pb-2">1. コア技術構成</h2>
-  //     <p>
-  //       本ソリューションでは「2つのアプローチ」を採用しています。DOMルートノードの
-  //       <code>classList</code> 操作によるダークモードの切り替えと、<code>CSS変数</code> を利用したグローバルテーマカラーの動的な書き換えです。
-  //     </p>
+      <h2 class="text-primary border-b border-muted pb-2">1. コア技術構成</h2>
+      <p>
+        本ソリューションでは「2つのアプローチ」を採用しています。DOMルートノードの
+        <code>classList</code> 操作によるダークモードの切り替えと、<code>CSS変数</code> を利用したグローバルテーマカラーの動的な書き換えです。
+      </p>
 
-  //     <h2 class="text-primary border-b border-muted pb-2">2. 実装の詳細</h2>
-  //     <ul class="marker:text-primary space-y-4">
-  //       <li>
-  //         <strong class="text-main">リアクティブな状態管理：</strong> Piniaで <code>isDark</code> と
-  //         <code>primaryColor</code> を定義します。変更を監視し <code>localStorage</code> と同期させることで、セッションを跨いだ永続化を実現します。
-  //       </li>
-  //       <li>
-  //         <strong class="text-main">ダークモードの注入：</strong> <code>applyThemeToDom</code> 関数を実行します。
-  //         <code>isDark.value</code> が真の場合、<code>document.documentElement</code> に <code>dark</code> クラスを付与し、Tailwindの <code>dark:</code> バリアントを有効にします。
-  //       </li>
-  //       <li>
-  //         <strong class="text-main">動的なCSS変数：</strong> <code>document.documentElement.style.setProperty</code>
-  //         を使用して、コア変数 <code>--ui-primary</code> を直接操作します。これにより、CSSを再コンパイルすることなくサイト全体の配色を変更できます。
-  //       </li>
-  //     </ul>
+      <h2 class="text-primary border-b border-muted pb-2">2. 実装の詳細</h2>
+      <ul class="marker:text-primary space-y-4">
+        <li>
+          <strong class="text-main">リアクティブな状態管理：</strong> Piniaで <code>isDark</code> と
+          <code>primaryColor</code> を定義します。変更を監視し <code>localStorage</code> と同期させることで、セッションを跨いだ永続化を実現します。
+        </li>
+        <li>
+          <strong class="text-main">ダークモードの注入：</strong> <code>applyThemeToDom</code> 関数を実行します。
+          <code>isDark.value</code> が真の場合、<code>document.documentElement</code> に <code>dark</code> クラスを付与し、Tailwindの <code>dark:</code> バリアントを有効にします。
+        </li>
+        <li>
+          <strong class="text-main">動的なCSS変数：</strong> <code>document.documentElement.style.setProperty</code>
+          を使用して、コア変数 <code>--ui-primary</code> を直接操作します。これにより、CSSを再コンパイルすることなくサイト全体の配色を変更できます。
+        </li>
+      </ul>
 
-  //     <div class="grid grid-cols-1 md:grid-cols-2 gap-4 my-6">
-  //       <div class="p-4 rounded-lg bg-muted/20 border border-muted">
-  //         <h3 class="text-sm font-bold mb-2">ダークモードのロジック</h3>
-  //         <pre class="text-xs bg-slate-900 text-slate-100 p-3 rounded"><code>if (isDark.value) { document.documentElement.classList.add('dark') } else { document.documentElement.classList.remove('dark') }</code></pre>
-  //       </div>
-  //       <div class="p-4 rounded-lg bg-muted/20 border border-muted">
-  //         <h3 class="text-sm font-bold mb-2">テーマカラーの動的上書き</h3>
-  //         <pre class="text-xs bg-slate-900 text-slate-100 p-3 rounded"><code>const colorHex = colorMap[colorName]; document.documentElement.style.setProperty('--ui-primary', colorHex || '#00c951');</code></pre>
-  //       </div>
-  //     </div>
-  //     <p class="text-muted text-sm mt-6">
-  //       テーマカラーを変数化し、Tailwindの柔軟な設定と組み合わせることで、開発者はランタイムでユーザーに完全なインターフェースのカスタマイズ権限を提供できます。
-  //     </p>
-  //   </div>
-  // `,
-  //   },
+
+      <p class="text-muted text-sm mt-6">
+        テーマカラーを変数化し、Tailwindの柔軟な設定と組み合わせることで、開発者はランタイムでユーザーに完全なインターフェースのカスタマイズ権限を提供できます。
+      </p>
+    </div>
+  `,
+    },
   //   '3': {
   //     title: '炎天下で良好なメンタルを保つ方法',
   //     desc: '天気は暑いですが、平常心を保てば、海辺のような涼しさを感じられます（水温的な意味で）。',

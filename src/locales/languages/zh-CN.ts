@@ -91,79 +91,65 @@ export default {
     </div>
   `,
     },
-  //   '2': {
-  //     title: '通过 Tailwind CSS 实现亮暗模式与主题色切换',
-  //     desc: '通过 Tailwind CSS 的原子化特性，实现支持亮暗模式和自定义主题色的内容渲染。',
-  //     content: `
-  //       <div class="prose prose-slate dark:prose-invert max-w-none">
-  //   <p class="text-balance leading-relaxed ">
-  //     在现代 Web 开发中，<strong class="text-primary">主题系统 (Theme System)</strong>
-  //     不再仅仅是简单的亮暗切换，而是包含<strong>动态品牌色</strong>与<strong>深色模式</strong>的深度定制。结合
-  //     Pinia 的持久化能力，我们可以构建一套响应迅速、配置灵活的 UI 体系。
-  //   </p>
+    '2': {
+      title: '通过 Tailwind CSS 实现亮暗模式与主题色切换',
+      desc: '通过 Tailwind CSS 的原子化特性，实现支持亮暗模式和自定义主题色的内容渲染。',
+      content: `
+        <div class="prose prose-slate dark:prose-invert max-w-none">
+    <p class="text-balance leading-relaxed ">
+      在现代 Web 开发中，<strong class="text-primary">主题系统 (Theme System)</strong>
+      不再仅仅是简单的亮暗切换，而是包含<strong>动态品牌色</strong>与<strong>深色模式</strong>的深度定制。结合
+      Pinia 的持久化能力，我们可以构建一套响应迅速、配置灵活的 UI 体系。
+    </p>
 
-  //   <h2 class="text-primary border-b border-muted pb-2">1. 核心技术方案</h2>
-  //   <p>
-  //     本方案采用“双管齐下”的策略：通过修改 DOM 根节点的
-  //     <code>classList</code> 实现亮暗视觉切换，同时利用 <code>CSS 变量</code> 动态改写全局主题色。
-  //   </p>
+    <h2 class="text-primary border-b border-muted pb-2">1. 核心技术方案</h2>
+    <p>
+      本方案采用“双管齐下”的策略：通过修改 DOM 根节点的
+      <code>classList</code> 实现亮暗视觉切换，同时利用 <code>CSS 变量</code> 动态改写全局主题色。
+    </p>
 
-  //   <h2 class="text-primary border-b border-muted pb-2">2. 实现细节</h2>
-  //   <ul class="marker:text-primary space-y-4">
-  //     <li>
-  //       <strong class="text-main">响应式状态管理：</strong> 在 Pinia 中定义 <code>isDark</code> 与
-  //       <code>primaryColor</code>。通过监听变化，确保状态同步至
-  //       <code>localStorage</code>，实现跨会话持久化。
-  //     </li>
-  //     <li>
-  //       <strong class="text-main">亮暗模式 DOM 注入：</strong> 执行
-  //       <code>applyThemeToDom</code> 函数。当 <code>isDark.value</code> 为真时，为
-  //       <code>document.documentElement</code> 添加 <code>dark</code> 类名，触发 Tailwind 的
-  //       <code>dark:</code> 变体。
-  //     </li>
-  //     <li>
-  //       <strong class="text-main">动态 CSS 变量：</strong> 通过
-  //       <code>document.documentElement.style.setProperty</code> 直接操作核心变量
-  //       <code>--ui-primary</code>。这使得我们无需重新编译 CSS 即可改变整站的品牌色调。
-  //     </li>
-  //   </ul>
+    <h2 class="text-primary border-b border-muted pb-2">2. 实现细节</h2>
+    <ul class="marker:text-primary space-y-4">
+      <li>
+        <strong class="text-main">响应式状态管理：</strong> 在 Pinia 中定义 <code>isDark</code> 与
+        <code>primaryColor</code>。通过监听变化，确保状态同步至
+        <code>localStorage</code>，实现跨会话持久化。
+      </li>
+      <li>
+        <strong class="text-main">亮暗模式 DOM 注入：</strong> 执行
+        <code>applyThemeToDom</code> 函数。当 <code>isDark.value</code> 为真时，为
+        <code>document.documentElement</code> 添加 <code>dark</code> 类名，触发 Tailwind 的
+        <code>dark:</code> 变体。
+      </li>
+      <li>
+        <strong class="text-main">动态 CSS 变量：</strong> 通过
+        <code>document.documentElement.style.setProperty</code> 直接操作核心变量
+        <code>--ui-primary</code>。这使得我们无需重新编译 CSS 即可改变整站的品牌色调。
+      </li>
+    </ul>
 
-  //   <div class="grid grid-cols-1 md:grid-cols-2 gap-4 my-6">
-  //     <div class="p-4 rounded-lg bg-muted/20 border border-muted">
-  //       <h3 class="text-sm font-bold mb-2">亮暗切换逻辑</h3>
-  //       <pre
-  //         class="text-xs bg-slate-900 text-slate-100 p-3 rounded"
-  //       ><code>if (isDark.value) { document.documentElement.classList.add('dark') } else { document.documentElement.classList.remove('dark') }</code></pre>
-  //     </div>
-  //     <div class="p-4 rounded-lg bg-muted/20 border border-muted">
-  //       <h3 class="text-sm font-bold mb-2">主题色动态覆盖</h3>
-  //       <pre
-  //         class="text-xs bg-slate-900 text-slate-100 p-3 rounded"
-  //       ><code>const colorHex = colorMap[colorName] document.documentElement.style .setProperty('--ui-primary', colorHex || '#00c951')</code></pre>
-  //     </div>
-  //   </div>
-  //   <p class="text-muted text-sm mt-6">
-  //     通过将主题色变量化，配合 Tailwind 的灵活配置，开发者可以在运行时赋予用户完全的界面定制权。
-  //   </p>
-  // </div>
-  //  `,
-  //   },
-  //   '3': {
-  //     title: '如何在炎炎夏日保持良好的心态',
-  //     desc: '虽说天气很热，但只要保持平常心，就能像在海边一样感受到清凉（指水温）。',
-  //   },
-  //   '4': {
-  //     title: '关于“目力”训练的进阶指南',
-  //     desc: '当你看到不该看的东西时，眼神要犀利，甚至可以发出一些意义不明的咆哮。',
-  //   },
-  //   '5': {
-  //     title: '下个楼梯也能成为艺术：步法解析',
-  //     desc: '这就是所谓的“王道征途”吗？每一步都走得异常沉稳且富有节奏感。',
-  //   },
-  //   '6': {
-  //     title: '三杯茶后的哲学思考',
-  //     desc: '事已至此，与其纠结，不如大声喊出那句：我也想做啊！',
-  //   },
+    <p class="text-muted text-sm mt-6">
+      通过将主题色变量化，配合 Tailwind 的灵活配置，开发者可以在运行时赋予用户完全的界面定制权。
+    </p>
+  </div>
+   `,
+    },
+    //   '3': {
+    //     title: '如何在炎炎夏日保持良好的心态',
+    //     desc: '虽说天气很热，但只要保持平常心，就能像在海边一样感受到清凉（指水温）。',
+    //   },
+    //   '4': {
+    //     title: '关于“目力”训练的进阶指南',
+    //     desc: '当你看到不该看的东西时，眼神要犀利，甚至可以发出一些意义不明的咆哮。',
+    //   },
+    //   '5': {
+    //     title: '下个楼梯也能成为艺术：步法解析',
+    //     desc: '这就是所谓的“王道征途”吗？每一步都走得异常沉稳且富有节奏感。',
+    //   },
+    //   '6': {
+    //     title: '三杯茶后的哲学思考',
+    //     desc: '事已至此，与其纠结，不如大声喊出那句：我也想做啊！',
+    //   },
   },
   colors: {
     green: '绿色',
