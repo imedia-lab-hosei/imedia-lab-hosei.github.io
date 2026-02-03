@@ -29,16 +29,16 @@ export function usePosts() {
   const rawPosts: PostMetadata[] = [
     {
       id: 1,
-      tagKeys: ['shimokita', 'food'], // 对应 json 里的 tags key
-      cover: 'https://picsum.photos/id/1060/400/250',
-      date: '2025-01-15',
-      label: 'tech',
+      tagKeys: ['tech', 'vue'], // 对应 json 里的 tags key
+      cover: 'https://picsum.photos/id/60/400/250',
+      date: '2026-02-02',
+      label: 'original',
     },
     {
       id: 2,
-      tagKeys: ['interview', 'roar', 'mussel'],
-      cover: 'https://picsum.photos/id/433/400/250',
-      date: '2026-01-10',
+      tagKeys: ['tech', 'tailwind'],
+      cover: 'https://picsum.photos/id/60/400/250',
+      date: '2026-01-23',
     },
     {
       id: 3,

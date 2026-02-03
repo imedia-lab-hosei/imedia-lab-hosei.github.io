@@ -48,11 +48,46 @@ export default {
     philosophy: 'Philosophy',
     hot_blood: 'Hot-blooded',
     tech: 'technology',
+    vue: 'Vue.js',
+    original: 'Original',
+    tailwind: 'Tailwind CSS',
   },
   post_list: {
     '1': {
-      title: 'In-depth Research at the Shimokitazawa Tea House',
-      desc: "This is awkward. How could I not know such a thing? Anyway, let's order some very fresh iced tea.",
+      title: 'ナビゲーションガードによる i18n 自動切り替えソリューション',
+      desc: 'ルートインターセプト技術を活用し、低遅延でSEOに強い多言語切り替えエクスペリエンスを実現する方法を探ります。',
+      content: `
+    <div class="prose prose-slate dark:prose-invert max-w-none">
+      <p class="text-balance leading-relaxed text-secondary">
+        グローバルなWebアプリケーションにおいて、<strong class="text-primary">ナビゲーションガード (Route Guard)</strong> は言語切り替えを処理するための最適なゲートウェイです。コンポーネントがレンダリングされる前に、システムが正しい言語リソースを準備することを保証します。
+      </p>
+      <h2 class="text-primary">1. 動作原理</h2>
+      <p>
+        ナビゲーションガードはすべてのナビゲーションをインターセプトし、URL内の言語識別子（例：<code>/en/</code> や <code>/ja/</code>）を解析します。期待されるロケールに一致しない場合、即座にリダイレクトやリソースのロードを行います。
+      </p>
+
+      <h2 class="text-primary">2. 実装ステップ</h2>
+      <ul class="marker:text-primary">
+        <li>
+          <strong class="text-main">動的ルートマッチング：</strong> <code>/:lang/dashboard</code> 形式のルートを定義し、Paramsを利用して言語パラメータをキャプチャします。
+        </li>
+        <li>
+          <strong class="text-main">ガードによるインターセプト：</strong> <code>router.beforeEach</code> 内で <code>to.params.lang</code> を検出し、Vue I18nインスタンスと同期させます。
+        </li>
+        <li>
+          <strong class="text-main">言語パックの非同期ロード：</strong> すべての言語を一度に読み込むのではなく、切り替え時に <code>import()</code> を使用して動的にロードします。
+        </li>
+      </ul>
+
+      <blockquote class="border-s-primary bg-muted/30 p-4 rounded-e-lg italic quote">
+        「この手法はユーザーエクスペリエンスを向上させるだけでなく、検索エンジンが異なる言語バージョンのコンテンツをクロールしやすくなるため、SEO順位の向上にも大きく貢献します。」
+      </blockquote>
+
+      <p class="text-muted text-sm mt-6">
+        従来の <code>localStorage</code> による保存策と比較して、ルートベースの構成は<strong>リンクの直接共有</strong>が可能であり、現在のベストプラクティスとされています。
+      </p>
+    </div>
+  `,
     },
     '2': {
       title: 'On the Importance of Being Loud in Interviews',

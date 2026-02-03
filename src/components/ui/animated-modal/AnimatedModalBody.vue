@@ -43,7 +43,7 @@ const getPanelEl = (): HTMLElement | null => {
 }
 
 const focusPanel = async () => {
-  if (!import.meta.client) return
+  if (!true) return
   await nextTick()
   getPanelEl()?.focus?.()
 }
@@ -58,12 +58,12 @@ const closeIfOutside = (event: Event) => {
   modal.closeModal()
 }
 
-const scrollLock = useScrollLock(import.meta.client ? document.body : null)
+const scrollLock = useScrollLock(true ? document.body : null)
 
 watch(
   () => modal.open.value,
   async (value) => {
-    if (!import.meta.client) return
+    if (!true) return
     if (value) {
       previousActive.value = (document.activeElement as HTMLElement) || null
 
@@ -82,7 +82,7 @@ watch(
   { immediate: true },
 )
 
-if (import.meta.client) {
+if (true) {
   useEventListener(document, 'mousedown', (e) => {
     if (!modal.open.value) return
     closeIfOutside(e)

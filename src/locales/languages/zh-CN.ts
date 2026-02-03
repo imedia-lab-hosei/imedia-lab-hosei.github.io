@@ -49,44 +49,50 @@ export default {
     philosophy: '哲学',
     hot_blood: '热血',
     tech: '技术',
+    vue: 'Vue.js',
+    original: '原创',
+    tailwind: 'Tailwind CSS',
   },
   post_list: {
     '1': {
       title: '基于路由守卫的 i18n 自动化切换方案',
       desc: '探索如何通过全栈路由拦截技术，实现多语言环境下零延迟、SEO 友好的语言切换体验。',
       content: `
-    <p>
-      在国际化 Web 应用中，<strong>路由守卫 (Route Guard)</strong> 是处理语言切换的最佳关口。它能确保用户在渲染组件前，系统已经准备好了正确的语言包。
-    </p>
+   <div class="prose prose-slate dark:prose-invert max-w-none">
+      <p class="text-balance leading-relaxed text-secondary">
+        在国际化 Web 应用中，<strong class="text-primary">路由守卫 (Route Guard)</strong> 是处理语言切换的最佳关口。它能确保用户在渲染组件前，系统已经准备好了正确的语言包。
+      </p>
+      <h2 class="text-primary">1. 核心工作原理</h2>
+      <p>
+        路由守卫通过拦截每一个导航动作，解析 URL 中的语言标识符（如 <code>/en/</code> 或 <code>/zh/</code>）。如果不符合预期的语言环境，它可以立即重定向或加载缺少的资源。
+      </p>
 
-    <h2>1. 核心工作原理</h2>
-    <p>
-      路由守卫通过拦截每一个导航动作，解析 URL 中的语言标识符（如 <code>/en/</code> 或 <code>/zh/</code>）。如果不符合预期的语言环境，它可以立即重定向或加载缺少的资源。
-    </p>
+      <h2 class="text-primary">2. 实现步骤</h2>
+      <ul class="marker:text-primary">
+        <li>
+          <strong class="text-main">动态路径匹配：</strong> 定义 <code>/:lang/dashboard</code> 格式的路由，利用 Params 捕获语言参数。
+        </li>
+        <li>
+          <strong class="text-main">前置守卫拦截：</strong> 在 <code>router.beforeEach</code> 中检测 <code>to.params.lang</code>，并与 Vue I18n 实例同步。
+        </li>
+        <li>
+          <strong class="text-main">异步加载语言包：</strong> 避免一次性加载所有语言，仅在切换时通过 <code>import()</code> 动态加载。
+        </li>
+      </ul>
 
-    <h2>2. 实现步骤</h2>
-    <ul>
-      <li>
-        <strong>动态路径匹配：</strong> 定义 <code>/:lang/dashboard</code> 格式的路由，利用 Params 捕获语言参数。
-      </li>
-      <li>
-        <strong>前置守卫拦截：</strong> 在 <code>router.beforeEach</code> 中检测 <code>to.params.lang</code>，并与 Vue I18n 实例同步。
-      </li>
-      <li>
-        <strong>异步加载语言包：</strong> 避免一次性加载所有语言，仅在切换时通过 <code>import()</code> 动态加载对应的 JSON 资源。
-      </li>
-    </ul>
-    <blockquote>
-      “这种方式不仅提升了用户体验（消除了页面闪烁），还极大地利于搜索引擎抓取不同语言版本的页面内容，提升 SEO 排名。”
-    </blockquote>
-    <p>
-      相比于传统的 localStorage 存储方案，基于路由的方案能够让用户直接通过链接分享特定语言的页面，是目前最佳的实践方式。
-    </p>
+      <blockquote class="border-s-primary bg-muted/30 p-4 rounded-e-lg italic quote">
+        “这种方式不仅提升了用户体验，还极大地利于搜索引擎抓取不同语言版本的页面内容，提升 SEO 排名。”
+      </blockquote>
+
+      <p class="text-muted text-sm mt-6">
+        相比于传统的 localStorage 存储方案，基于路由的方案支持<strong>链接直接分享</strong>，是目前的最佳实践。
+      </p>
+    </div>
   `,
     },
     '2': {
-      title: 'Tailwind CSS + 路由守卫：多语言与主题动态切换实践',
-      desc: '通过 Tailwind CSS 的原子化特性，实现支持亮暗模式和自定义主题色的 v-html 内容渲染。',
+      title: '通过 Tailwind CSS 实现亮暗模式与主题色切换',
+      desc: '通过 Tailwind CSS 的原子化特性，实现支持亮暗模式和自定义主题色的内容渲染。',
       content: `
     <div class="prose dark:prose-invert max-w-none">
       <p class="text-gray-700 dark:text-gray-300 mb-6">
@@ -111,7 +117,7 @@ export default {
       <h3 class="text-2xl font-semibold mb-4 text-primary border-l-4 border-primary-500 pl-4 mt-8">
         2. 如何实现主题色切换？
       </h3>
-      <p class="text-gray-700 dark:text-gray-300">
+      <p class="">
         Tailwind CSS 允许你在 <code>tailwind.config.js</code> 中扩展主题。你可以定义一个 <code>primary</code> 颜色系列，然后在内容中直接使用 <code>text-primary-500</code>、<code>bg-primary-100</code> 等类。
       </p>
       <blockquote class="bg-muted border-l-4 border-primary-500 text-primary-700 dark:text-primary-200 p-4 mt-6 rounded">
