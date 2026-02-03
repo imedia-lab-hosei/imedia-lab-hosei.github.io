@@ -90,75 +90,75 @@ export default {
     </div>
   `,
     },
-    '2': {
-      title: 'Dynamic Dark Mode and Theme Switching with Tailwind CSS',
-      desc: 'Leveraging Tailwind CSS utility classes to implement a theme system supporting dark mode and custom primary colors.',
-      content: `
-    <div class="prose prose-slate dark:prose-invert max-w-none">
-      <p class="text-balance leading-relaxed ">
-        In modern web development, a <strong class="text-primary">Theme System</strong>
-        is no longer just a simple toggle between light and dark; it involves deep customization including
-        <strong>dynamic branding colors</strong> and <strong>dark mode variants</strong>. By combining
-        Pinia's persistence capabilities, we can build a responsive and flexible UI architecture.
-      </p>
+    //   '2': {
+    //     title: 'Dynamic Dark Mode and Theme Switching with Tailwind CSS',
+    //     desc: 'Leveraging Tailwind CSS utility classes to implement a theme system supporting dark mode and custom primary colors.',
+    //     content: `
+    //   <div class="prose prose-slate dark:prose-invert max-w-none">
+    //     <p class="text-balance leading-relaxed ">
+    //       In modern web development, a <strong class="text-primary">Theme System</strong>
+    //       is no longer just a simple toggle between light and dark; it involves deep customization including
+    //       <strong>dynamic branding colors</strong> and <strong>dark mode variants</strong>. By combining
+    //       Pinia's persistence capabilities, we can build a responsive and flexible UI architecture.
+    //     </p>
 
-      <h2 class="text-primary border-b border-muted pb-2">1. Core Strategy</h2>
-      <p>
-        This solution employs a two-pronged approach: manipulating the <code>classList</code> of the root DOM
-        node for dark mode visual toggling, while utilizing <code>CSS Variables</code> to dynamically rewrite the global theme colors.
-      </p>
+    //     <h2 class="text-primary border-b border-muted pb-2">1. Core Strategy</h2>
+    //     <p>
+    //       This solution employs a two-pronged approach: manipulating the <code>classList</code> of the root DOM
+    //       node for dark mode visual toggling, while utilizing <code>CSS Variables</code> to dynamically rewrite the global theme colors.
+    //     </p>
 
-      <h2 class="text-primary border-b border-muted pb-2">2. Implementation Details</h2>
-      <ul class="marker:text-primary space-y-4">
-        <li>
-          <strong class="text-main">Reactive State Management:</strong> Define <code>isDark</code> and
-          <code>primaryColor</code> in Pinia. Sync these states to <code>localStorage</code> via watchers
-          to ensure persistence across sessions.
-        </li>
-        <li>
-          <strong class="text-main">Dark Mode Injection:</strong> Use the <code>applyThemeToDom</code> function.
-          When <code>isDark.value</code> is true, the <code>dark</code> class is added to
-          <code>document.documentElement</code>, triggering Tailwind's <code>dark:</code> variants.
-        </li>
-        <li>
-          <strong class="text-main">Dynamic CSS Variables:</strong> Directly manipulate the
-          <code>--ui-primary</code> variable using <code>document.documentElement.style.setProperty</code>.
-          This allows brand color changes across the entire site without recompiling CSS.
-        </li>
-      </ul>
+    //     <h2 class="text-primary border-b border-muted pb-2">2. Implementation Details</h2>
+    //     <ul class="marker:text-primary space-y-4">
+    //       <li>
+    //         <strong class="text-main">Reactive State Management:</strong> Define <code>isDark</code> and
+    //         <code>primaryColor</code> in Pinia. Sync these states to <code>localStorage</code> via watchers
+    //         to ensure persistence across sessions.
+    //       </li>
+    //       <li>
+    //         <strong class="text-main">Dark Mode Injection:</strong> Use the <code>applyThemeToDom</code> function.
+    //         When <code>isDark.value</code> is true, the <code>dark</code> class is added to
+    //         <code>document.documentElement</code>, triggering Tailwind's <code>dark:</code> variants.
+    //       </li>
+    //       <li>
+    //         <strong class="text-main">Dynamic CSS Variables:</strong> Directly manipulate the
+    //         <code>--ui-primary</code> variable using <code>document.documentElement.style.setProperty</code>.
+    //         This allows brand color changes across the entire site without recompiling CSS.
+    //       </li>
+    //     </ul>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 my-6">
-        <div class="p-4 rounded-lg bg-muted/20 border border-muted">
-          <h3 class="text-sm font-bold mb-2">Dark Mode Logic</h3>
-          <pre class="text-xs bg-slate-900 text-slate-100 p-3 rounded"><code>if (isDark.value) { document.documentElement.classList.add('dark') } else { document.documentElement.classList.remove('dark') }</code></pre>
-        </div>
-        <div class="p-4 rounded-lg bg-muted/20 border border-muted">
-          <h3 class="text-sm font-bold mb-2">Theme Color Override</h3>
-          <pre class="text-xs bg-slate-900 text-slate-100 p-3 rounded"><code>const colorHex = colorMap[colorName]; document.documentElement.style.setProperty('--ui-primary', colorHex || '#00c951');</code></pre>
-        </div>
-      </div>
-      <p class="text-muted text-sm mt-6">
-        By variabilizing theme colors and pairing them with Tailwind's flexible configuration, developers can grant users full UI customization at runtime.
-      </p>
-    </div>
-  `,
-    },
-    '3': {
-      title: 'How to Maintain a Good Mindset in the Scorching Summer',
-      desc: "Although it's hot, if you keep a calm mind, you can feel the coolness like being at the beach (referring to water temperature).",
-    },
-    '4': {
-      title: "Advanced Guide to 'Eye Power' Training",
-      desc: "When you see something you shouldn't, your gaze must be sharp; you can even let out some incoherent roaring.",
-    },
-    '5': {
-      title: 'Descending Stairs as Art: Footwork Analysis',
-      desc: "Is this the so-called 'Royal Road'? Every step is taken with extreme steadiness and rhythmic flow.",
-    },
-    '6': {
-      title: 'Philosophical Thoughts After Three Cups of Tea',
-      desc: 'At this point, instead of hesitating, just shout it out loud: I want to do it too!',
-    },
+    //     <div class="grid grid-cols-1 md:grid-cols-2 gap-4 my-6">
+    //       <div class="p-4 rounded-lg bg-muted/20 border border-muted">
+    //         <h3 class="text-sm font-bold mb-2">Dark Mode Logic</h3>
+    //         <pre class="text-xs bg-slate-900 text-slate-100 p-3 rounded"><code>if (isDark.value) { document.documentElement.classList.add('dark') } else { document.documentElement.classList.remove('dark') }</code></pre>
+    //       </div>
+    //       <div class="p-4 rounded-lg bg-muted/20 border border-muted">
+    //         <h3 class="text-sm font-bold mb-2">Theme Color Override</h3>
+    //         <pre class="text-xs bg-slate-900 text-slate-100 p-3 rounded"><code>const colorHex = colorMap[colorName]; document.documentElement.style.setProperty('--ui-primary', colorHex || '#00c951');</code></pre>
+    //       </div>
+    //     </div>
+    //     <p class="text-muted text-sm mt-6">
+    //       By variabilizing theme colors and pairing them with Tailwind's flexible configuration, developers can grant users full UI customization at runtime.
+    //     </p>
+    //   </div>
+    // `,
+    //   },
+    //   '3': {
+    //     title: 'How to Maintain a Good Mindset in the Scorching Summer',
+    //     desc: "Although it's hot, if you keep a calm mind, you can feel the coolness like being at the beach (referring to water temperature).",
+    //   },
+    //   '4': {
+    //     title: "Advanced Guide to 'Eye Power' Training",
+    //     desc: "When you see something you shouldn't, your gaze must be sharp; you can even let out some incoherent roaring.",
+    //   },
+    //   '5': {
+    //     title: 'Descending Stairs as Art: Footwork Analysis',
+    //     desc: "Is this the so-called 'Royal Road'? Every step is taken with extreme steadiness and rhythmic flow.",
+    //   },
+    //   '6': {
+    //     title: 'Philosophical Thoughts After Three Cups of Tea',
+    //     desc: 'At this point, instead of hesitating, just shout it out loud: I want to do it too!',
+    //   },
   },
   colors: {
     green: 'Green',
