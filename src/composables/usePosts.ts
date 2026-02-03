@@ -33,13 +33,13 @@ export function usePosts() {
       cover: 'https://picsum.photos/id/60/400/250',
       date: '2026-02-02',
     },
-    // {
-    //   id: 2,
-    //   tagKeys: ['tech', 'tailwind', 'pinia'],
-    //   cover: 'https://picsum.photos/id/160/400/250',
-    //   date: '2026-01-23',
-    //   label: 'original',
-    // },
+    {
+      id: 2,
+      tagKeys: ['tech', 'tailwind', 'pinia'],
+      cover: 'https://picsum.photos/id/160/400/250',
+      date: '2026-01-23',
+      label: 'original',
+    },
     // {
     //   id: 3,
     //   tagKeys: ['summer', 'swimming'],
