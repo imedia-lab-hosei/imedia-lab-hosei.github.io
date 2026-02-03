@@ -93,7 +93,7 @@ export default {
         在 Tailwind CSS 的加持下，亮暗模式和主题色的切换变得异常简单。我们可以在 <code>v-html</code> 渲染的内容中直接应用 Tailwind 的工具类，完美响应全局主题。
       </p>
 
-      <h3 class="text-2xl font-semibold mb-4 text-primary-600 dark:text-primary-400 border-l-4 border-primary-500 pl-4">
+      <h3 class="text-2xl font-semibold mb-4 text-primary border-l-4 border-primary-500 pl-4">
         1. 为什么选择 Tailwind CSS?
       </h3>
       <ul class="list-disc list-inside text-gray-700 dark:text-gray-300 space-y-2">
@@ -108,13 +108,13 @@ export default {
 
 
 
-      <h3 class="text-2xl font-semibold mb-4 text-primary-600 dark:text-primary-400 border-l-4 border-primary-500 pl-4 mt-8">
+      <h3 class="text-2xl font-semibold mb-4 text-primary border-l-4 border-primary-500 pl-4 mt-8">
         2. 如何实现主题色切换？
       </h3>
       <p class="text-gray-700 dark:text-gray-300">
         Tailwind CSS 允许你在 <code>tailwind.config.js</code> 中扩展主题。你可以定义一个 <code>primary</code> 颜色系列，然后在内容中直接使用 <code>text-primary-500</code>、<code>bg-primary-100</code> 等类。
       </p>
-      <blockquote class="bg-primary-50 dark:bg-primary-900 border-l-4 border-primary-500 text-primary-700 dark:text-primary-200 p-4 mt-6 rounded">
+      <blockquote class="bg-muted border-l-4 border-primary-500 text-primary-700 dark:text-primary-200 p-4 mt-6 rounded">
         “利用 Tailwind 的 <code>dark:</code> 变体和自定义颜色扩展，我们能够创建出既美观又灵活的多主题内容界面。”
       </blockquote>
     </div>
