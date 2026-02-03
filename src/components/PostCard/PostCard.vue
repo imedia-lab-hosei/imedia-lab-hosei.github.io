@@ -67,7 +67,7 @@
       </div>
     </div>
   </div>
-  <!-- <AnimatedModalComponent :post="post" v-model:open="showModal" /> -->
+  <AnimatedModalComponent :post="post" v-model:open="showModal" />
 </template>
 
 <script setup lang="ts">
