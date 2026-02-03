@@ -42,13 +42,12 @@ const router = createRouter({
         {
           path: 'process',
           name: 'process',
-          component: () => import('../views/Tech/Process/ProcessView.vue'),
+          component: () => import('../views/Process/ProcessView.vue'),
         },
 
         {
           path: ':pathMatch(.*)*',
           name: 'NotFound',
-          // 这里可以换成你专门写的 404 页面组件
           component: () => import('../views/NotFound/NotFoundView.vue'),
         },
       ],

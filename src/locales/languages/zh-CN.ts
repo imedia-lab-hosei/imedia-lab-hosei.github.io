@@ -10,7 +10,7 @@ export default {
     changeColor: '改变颜色',
     home: '主页',
     games: '游戏',
-    articles: '文章',
+    articles: '文章与随笔',
     process: '开发进度',
     tech: '技术',
     entretament: '娱乐',
@@ -52,6 +52,7 @@ export default {
     vue: 'Vue.js',
     original: '原创',
     tailwind: 'Tailwind CSS',
+    pinia: 'Pinia',
   },
   post_list: {
     '1': {
@@ -59,7 +60,7 @@ export default {
       desc: '探索如何通过全栈路由拦截技术，实现多语言环境下零延迟、SEO 友好的语言切换体验。',
       content: `
    <div class="prose prose-slate dark:prose-invert max-w-none">
-      <p class="text-balance leading-relaxed text-secondary">
+      <p class="text-balance leading-relaxed ">
         在国际化 Web 应用中，<strong class="text-primary">路由守卫 (Route Guard)</strong> 是处理语言切换的最佳关口。它能确保用户在渲染组件前，系统已经准备好了正确的语言包。
       </p>
       <h2 class="text-primary">1. 核心工作原理</h2>
@@ -94,37 +95,58 @@ export default {
       title: '通过 Tailwind CSS 实现亮暗模式与主题色切换',
       desc: '通过 Tailwind CSS 的原子化特性，实现支持亮暗模式和自定义主题色的内容渲染。',
       content: `
-    <div class="prose dark:prose-invert max-w-none">
-      <p class="text-gray-700 dark:text-gray-300 mb-6">
-        在 Tailwind CSS 的加持下，亮暗模式和主题色的切换变得异常简单。我们可以在 <code>v-html</code> 渲染的内容中直接应用 Tailwind 的工具类，完美响应全局主题。
-      </p>
+        <div class="prose prose-slate dark:prose-invert max-w-none">
+    <p class="text-balance leading-relaxed ">
+      在现代 Web 开发中，<strong class="text-primary">主题系统 (Theme System)</strong>
+      不再仅仅是简单的亮暗切换，而是包含<strong>动态品牌色</strong>与<strong>深色模式</strong>的深度定制。结合
+      Pinia 的持久化能力，我们可以构建一套响应迅速、配置灵活的 UI 体系。
+    </p>
 
-      <h3 class="text-2xl font-semibold mb-4 text-primary border-l-4 border-primary-500 pl-4">
-        1. 为什么选择 Tailwind CSS?
-      </h3>
-      <ul class="list-disc list-inside text-gray-700 dark:text-gray-300 space-y-2">
-        <li><strong>原子化：</strong> 类名直接对应样式，易于理解和组合。</li>
-        <li><strong>响应式设计：</strong> 内置 <code>dark:</code> 变体，轻松实现亮暗模式。</li>
-        <li><strong>JIT 编译：</strong> 按需生成 CSS，减小文件体积。</li>
-      </ul>
+    <h2 class="text-primary border-b border-muted pb-2">1. 核心技术方案</h2>
+    <p>
+      本方案采用“双管齐下”的策略：通过修改 DOM 根节点的
+      <code>classList</code> 实现亮暗视觉切换，同时利用 <code>CSS 变量</code> 动态改写全局主题色。
+    </p>
 
-      <p class="mt-6 text-gray-700 dark:text-gray-300">
-        通过在 HTML 元素上添加 <code>dark:</code> 前缀的类，Tailwind 会自动在暗黑模式下应用这些样式。
-      </p>
+    <h2 class="text-primary border-b border-muted pb-2">2. 实现细节</h2>
+    <ul class="marker:text-primary space-y-4">
+      <li>
+        <strong class="text-main">响应式状态管理：</strong> 在 Pinia 中定义 <code>isDark</code> 与
+        <code>primaryColor</code>。通过监听变化，确保状态同步至
+        <code>localStorage</code>，实现跨会话持久化。
+      </li>
+      <li>
+        <strong class="text-main">亮暗模式 DOM 注入：</strong> 执行
+        <code>applyThemeToDom</code> 函数。当 <code>isDark.value</code> 为真时，为
+        <code>document.documentElement</code> 添加 <code>dark</code> 类名，触发 Tailwind 的
+        <code>dark:</code> 变体。
+      </li>
+      <li>
+        <strong class="text-main">动态 CSS 变量：</strong> 通过
+        <code>document.documentElement.style.setProperty</code> 直接操作核心变量
+        <code>--ui-primary</code>。这使得我们无需重新编译 CSS 即可改变整站的品牌色调。
+      </li>
+    </ul>
 
-
-
-      <h3 class="text-2xl font-semibold mb-4 text-primary border-l-4 border-primary-500 pl-4 mt-8">
-        2. 如何实现主题色切换？
-      </h3>
-      <p class="">
-        Tailwind CSS 允许你在 <code>tailwind.config.js</code> 中扩展主题。你可以定义一个 <code>primary</code> 颜色系列，然后在内容中直接使用 <code>text-primary-500</code>、<code>bg-primary-100</code> 等类。
-      </p>
-      <blockquote class="bg-muted border-l-4 border-primary-500 text-primary-700 dark:text-primary-200 p-4 mt-6 rounded">
-        “利用 Tailwind 的 <code>dark:</code> 变体和自定义颜色扩展，我们能够创建出既美观又灵活的多主题内容界面。”
-      </blockquote>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 my-6">
+      <div class="p-4 rounded-lg bg-muted/20 border border-muted">
+        <h3 class="text-sm font-bold mb-2">亮暗切换逻辑</h3>
+        <pre
+          class="text-xs bg-slate-900 text-slate-100 p-3 rounded"
+        ><code>if (isDark.value) { document.documentElement.classList.add('dark') } else { document.documentElement.classList.remove('dark') }</code></pre>
+      </div>
+      <div class="p-4 rounded-lg bg-muted/20 border border-muted">
+        <h3 class="text-sm font-bold mb-2">主题色动态覆盖</h3>
+        <pre
+          class="text-xs bg-slate-900 text-slate-100 p-3 rounded"
+        ><code>const colorHex = colorMap[colorName] document.documentElement.style .setProperty('--ui-primary', colorHex || '#00c951')</code></pre>
+      </div>
     </div>
-  `,
+    <p class="text-muted text-sm mt-6">
+      通过将主题色变量化，配合 Tailwind 的灵活配置，开发者可以在运行时赋予用户完全的界面定制权。
+    </p>
+  </div>
+   `,
     },
     '3': {
       title: '如何在炎炎夏日保持良好的心态',
@@ -215,6 +237,10 @@ export default {
     webtools: {
       title: '添加实用工具页面',
       description: '添加二级菜单逻辑，并且加入实用工具页面',
+    },
+    articles: {
+      title: '添加文章与随笔页面',
+      description: '加入文章与随笔页面，优化点击页面展开详情，能够查看文章内容。',
     },
   },
   webtoolsView: {

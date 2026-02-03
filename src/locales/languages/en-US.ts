@@ -10,7 +10,7 @@ export default {
     changeColor: 'Change Color',
     home: 'Home',
     games: 'Games',
-    articles: 'Articles',
+    articles: 'Articles & Thoughts',
     process: 'Roadmap', // 或者用 Development Process
     tech: 'Technology',
     entretament: 'Entertainment',
@@ -51,47 +51,97 @@ export default {
     vue: 'Vue.js',
     original: 'Original',
     tailwind: 'Tailwind CSS',
+    pinia: 'Pinia',
   },
   post_list: {
     '1': {
-      title: 'ナビゲーションガードによる i18n 自動切り替えソリューション',
-      desc: 'ルートインターセプト技術を活用し、低遅延でSEOに強い多言語切り替えエクスペリエンスを実現する方法を探ります。',
+      title: 'Route Guard-Based i18n Automation',
+      desc: 'Exploring how to leverage full-stack route interception to achieve zero-latency, SEO-friendly language switching.',
       content: `
     <div class="prose prose-slate dark:prose-invert max-w-none">
-      <p class="text-balance leading-relaxed text-secondary">
-        グローバルなWebアプリケーションにおいて、<strong class="text-primary">ナビゲーションガード (Route Guard)</strong> は言語切り替えを処理するための最適なゲートウェイです。コンポーネントがレンダリングされる前に、システムが正しい言語リソースを準備することを保証します。
+      <p class="text-balance leading-relaxed ">
+        In internationalized web applications, <strong class="text-primary">Route Guards</strong> serve as the optimal gateway for handling language switching. They ensure the system prepares the correct language pack before the component is rendered.
       </p>
-      <h2 class="text-primary">1. 動作原理</h2>
+      <h2 class="text-primary">1. Core Principles</h2>
       <p>
-        ナビゲーションガードはすべてのナビゲーションをインターセプトし、URL内の言語識別子（例：<code>/en/</code> や <code>/ja/</code>）を解析します。期待されるロケールに一致しない場合、即座にリダイレクトやリソースのロードを行います。
+        Route guards intercept every navigation action to parse the language identifier (e.g., <code>/en/</code> or <code>/ja/</code>) from the URL. If the locale is invalid or missing, it can immediately redirect or load the required resources.
       </p>
 
-      <h2 class="text-primary">2. 実装ステップ</h2>
+      <h2 class="text-primary">2. Implementation Steps</h2>
       <ul class="marker:text-primary">
         <li>
-          <strong class="text-main">動的ルートマッチング：</strong> <code>/:lang/dashboard</code> 形式のルートを定義し、Paramsを利用して言語パラメータをキャプチャします。
+          <strong class="text-main">Dynamic Route Matching:</strong> Define routes in <code>/:lang/dashboard</code> format and capture language parameters via Params.
         </li>
         <li>
-          <strong class="text-main">ガードによるインターセプト：</strong> <code>router.beforeEach</code> 内で <code>to.params.lang</code> を検出し、Vue I18nインスタンスと同期させます。
+          <strong class="text-main">Navigation Interception:</strong> Detect <code>to.params.lang</code> within <code>router.beforeEach</code> and sync it with the Vue I18n instance.
         </li>
         <li>
-          <strong class="text-main">言語パックの非同期ロード：</strong> すべての言語を一度に読み込むのではなく、切り替え時に <code>import()</code> を使用して動的にロードします。
+          <strong class="text-main">Lazy Loading Language Packs:</strong> Instead of loading everything at once, use <code>import()</code> to load specific languages dynamically upon switching.
         </li>
       </ul>
 
       <blockquote class="border-s-primary bg-muted/30 p-4 rounded-e-lg italic quote">
-        「この手法はユーザーエクスペリエンスを向上させるだけでなく、検索エンジンが異なる言語バージョンのコンテンツをクロールしやすくなるため、SEO順位の向上にも大きく貢献します。」
+        "This approach not only enhances user experience but also allows search engines to crawl different language versions, significantly boosting SEO rankings."
       </blockquote>
 
       <p class="text-muted text-sm mt-6">
-        従来の <code>localStorage</code> による保存策と比較して、ルートベースの構成は<strong>リンクの直接共有</strong>が可能であり、現在のベストプラクティスとされています。
+        Compared to traditional <code>localStorage</code> storage, a route-based solution supports <strong>direct link sharing</strong>, making it the current industry best practice.
       </p>
     </div>
   `,
     },
     '2': {
-      title: 'On the Importance of Being Loud in Interviews',
-      desc: 'As a student, a loud voice not only demonstrates your spirit but also lets the interviewer feel your sincerity.',
+      title: 'Dynamic Dark Mode and Theme Switching with Tailwind CSS',
+      desc: 'Leveraging Tailwind CSS utility classes to implement a theme system supporting dark mode and custom primary colors.',
+      content: `
+    <div class="prose prose-slate dark:prose-invert max-w-none">
+      <p class="text-balance leading-relaxed ">
+        In modern web development, a <strong class="text-primary">Theme System</strong>
+        is no longer just a simple toggle between light and dark; it involves deep customization including
+        <strong>dynamic branding colors</strong> and <strong>dark mode variants</strong>. By combining
+        Pinia's persistence capabilities, we can build a responsive and flexible UI architecture.
+      </p>
+
+      <h2 class="text-primary border-b border-muted pb-2">1. Core Strategy</h2>
+      <p>
+        This solution employs a two-pronged approach: manipulating the <code>classList</code> of the root DOM
+        node for dark mode visual toggling, while utilizing <code>CSS Variables</code> to dynamically rewrite the global theme colors.
+      </p>
+
+      <h2 class="text-primary border-b border-muted pb-2">2. Implementation Details</h2>
+      <ul class="marker:text-primary space-y-4">
+        <li>
+          <strong class="text-main">Reactive State Management:</strong> Define <code>isDark</code> and
+          <code>primaryColor</code> in Pinia. Sync these states to <code>localStorage</code> via watchers
+          to ensure persistence across sessions.
+        </li>
+        <li>
+          <strong class="text-main">Dark Mode Injection:</strong> Use the <code>applyThemeToDom</code> function.
+          When <code>isDark.value</code> is true, the <code>dark</code> class is added to
+          <code>document.documentElement</code>, triggering Tailwind's <code>dark:</code> variants.
+        </li>
+        <li>
+          <strong class="text-main">Dynamic CSS Variables:</strong> Directly manipulate the
+          <code>--ui-primary</code> variable using <code>document.documentElement.style.setProperty</code>.
+          This allows brand color changes across the entire site without recompiling CSS.
+        </li>
+      </ul>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 my-6">
+        <div class="p-4 rounded-lg bg-muted/20 border border-muted">
+          <h3 class="text-sm font-bold mb-2">Dark Mode Logic</h3>
+          <pre class="text-xs bg-slate-900 text-slate-100 p-3 rounded"><code>if (isDark.value) { document.documentElement.classList.add('dark') } else { document.documentElement.classList.remove('dark') }</code></pre>
+        </div>
+        <div class="p-4 rounded-lg bg-muted/20 border border-muted">
+          <h3 class="text-sm font-bold mb-2">Theme Color Override</h3>
+          <pre class="text-xs bg-slate-900 text-slate-100 p-3 rounded"><code>const colorHex = colorMap[colorName]; document.documentElement.style.setProperty('--ui-primary', colorHex || '#00c951');</code></pre>
+        </div>
+      </div>
+      <p class="text-muted text-sm mt-6">
+        By variabilizing theme colors and pairing them with Tailwind's flexible configuration, developers can grant users full UI customization at runtime.
+      </p>
+    </div>
+  `,
     },
     '3': {
       title: 'How to Maintain a Good Mindset in the Scorching Summer',
@@ -184,6 +234,11 @@ export default {
     webtools: {
       title: 'Web Tools Page Added',
       description: 'Implemented secondary menu logic and launched the Web Tools collection page.',
+    },
+    articles: {
+      title: 'Articles & Thoughts Page Added',
+      description:
+        'Launched the Articles & Thoughts section with expandable content viewing functionality.',
     },
   },
   webtoolsView: {

@@ -32,38 +32,38 @@ export function usePosts() {
       tagKeys: ['tech', 'vue'], // 对应 json 里的 tags key
       cover: 'https://picsum.photos/id/60/400/250',
       date: '2026-02-02',
-      label: 'original',
     },
     {
       id: 2,
-      tagKeys: ['tech', 'tailwind'],
-      cover: 'https://picsum.photos/id/60/400/250',
+      tagKeys: ['tech', 'tailwind', 'pinia'],
+      cover: 'https://picsum.photos/id/160/400/250',
       date: '2026-01-23',
+      label: 'original',
     },
-    {
-      id: 3,
-      tagKeys: ['summer', 'swimming'],
-      cover: 'https://picsum.photos/id/124/400/250',
-      date: '2026-02-10',
-    },
-    {
-      id: 4,
-      tagKeys: ['expression', 'eye_power'],
-      cover: 'https://picsum.photos/id/659/400/250',
-      date: '2026-01-10',
-    },
-    {
-      id: 5,
-      tagKeys: ['sports', 'footwork'],
-      cover: 'https://picsum.photos/id/1031/400/250',
-      date: '2026-03-01',
-    },
-    {
-      id: 6,
-      tagKeys: ['philosophy', 'hot_blood'],
-      cover: 'https://picsum.photos/id/883/400/250',
-      date: '2026-03-15',
-    },
+    // {
+    //   id: 3,
+    //   tagKeys: ['summer', 'swimming'],
+    //   cover: 'https://picsum.photos/id/124/400/250',
+    //   date: '2026-02-10',
+    // },
+    // {
+    //   id: 4,
+    //   tagKeys: ['expression', 'eye_power'],
+    //   cover: 'https://picsum.photos/id/659/400/250',
+    //   date: '2026-01-10',
+    // },
+    // {
+    //   id: 5,
+    //   tagKeys: ['sports', 'footwork'],
+    //   cover: 'https://picsum.photos/id/1031/400/250',
+    //   date: '2026-03-01',
+    // },
+    // {
+    //   id: 6,
+    //   tagKeys: ['philosophy', 'hot_blood'],
+    //   cover: 'https://picsum.photos/id/883/400/250',
+    //   date: '2026-03-15',
+    // },
   ]
 
   const posts = computed<Post[]>(() => {

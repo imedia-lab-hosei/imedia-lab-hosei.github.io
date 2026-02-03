@@ -44,7 +44,7 @@ const progressValue = ref(25)
 import type { TimelineItem } from '@nuxt/ui'
 import BgCard from '@/components/BgCard/BgCard.vue'
 
-const active = ref<string | number>('webtools')
+const active = ref<string | number>('articles')
 
 const items = computed<TimelineItem[]>(() => [
   {
@@ -53,6 +53,13 @@ const items = computed<TimelineItem[]>(() => [
     description: t('processView.deployment.description'),
     icon: 'lucide:bolt',
     value: 'deployment',
+  },
+  {
+    date: '2026-02-03',
+    title: t('processView.articles.title'),
+    description: t('processView.articles.description'),
+    icon: 'lucide:pencil',
+    value: 'articles',
   },
   {
     date: '2026-02-02',

@@ -1,29 +1,29 @@
 <script setup lang="ts">
-import { computed, inject } from "vue";
-import { ANIMATED_MODAL_KEY } from "./AnimatedModalContext";
+import { computed, inject } from 'vue'
+import { ANIMATED_MODAL_KEY } from './AnimatedModalContext'
 
 interface Props {
-  as?: string;
-  disabled?: boolean;
+  as?: string
+  disabled?: boolean
 }
 
 const props = withDefaults(defineProps<Props>(), {
-  as: "button",
+  as: 'button',
   disabled: false,
-});
+})
 
-const modal = inject(ANIMATED_MODAL_KEY, null);
+const modal = inject(ANIMATED_MODAL_KEY, null)
 if (!modal) {
-  throw new Error("AnimatedModalTrigger must be used within <AnimatedModal>");
+  throw new Error('AnimatedModalTrigger must be used within <AnimatedModal>')
 }
 
-const isButton = computed(() => props.as === "button");
+const isButton = computed(() => props.as === 'button')
 
 const onClick = (event: MouseEvent) => {
-  if (props.disabled) return;
-  event.preventDefault();
-  modal.openModal();
-};
+  if (props.disabled) return
+  event.preventDefault()
+  modal.openModal()
+}
 </script>
 
 <template>
