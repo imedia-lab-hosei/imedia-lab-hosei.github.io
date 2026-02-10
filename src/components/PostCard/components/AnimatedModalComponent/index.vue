@@ -50,10 +50,76 @@
               {{ post.desc }}
             </p>
 
-            <hr class="border-border/60" />
+            <div
+              class="max-w-3xl mx-auto space-y-12"
+              v-if="post.content && post.content.length > 0"
+            >
+              <template v-for="block in post.content" :key="block.id">
+                <div v-if="block.type === 'intro'" class="relative">
+                  <p class="text-xl md:text-2xl font-light leading-relaxed text-foreground/90">
+                    {{ block.content }}
+                  </p>
+                  <div class="mt-6 h-1 w-20 bg-primary rounded-full"></div>
+                </div>
 
-            <div class="prose prose-lg prose-primary dark:prose-invert max-w-none">
-              <div v-html="post.content || `<p>${$t('articles.body_empty')}</p>`"></div>
+                <section v-else-if="block.type === 'section'" class="space-y-6">
+                  <h2
+                    class="text-2xl font-bold tracking-tight text-foreground flex items-center gap-3"
+                  >
+                    <span
+                      class="flex h-8 w-8 items-center justify-center rounded-lg bg-primary/10 text-primary text-sm font-bold"
+                      >#</span
+                    >
+                    {{ block.title }}
+                  </h2>
+
+                  <p
+                    v-if="block.content"
+                    class="text-base leading-7 text-muted-foreground bg-muted/30 p-4 rounded-lg border border-border/50"
+                  >
+                    {{ block.content }}
+                  </p>
+
+                  <div v-if="block.listItems" class="grid gap-4 sm:grid-cols-1">
+                    <div
+                      v-for="(item, idx) in block.listItems"
+                      :key="idx"
+                      class="group relative overflow-hidden rounded-xl border border-border bg-card p-5 hover:border-primary/50 hover:shadow-md transition-all duration-300"
+                    >
+                      <div
+                        class="absolute left-0 top-0 bottom-0 w-1 bg-primary/0 group-hover:bg-primary transition-colors duration-300"
+                      ></div>
+
+                      <h3
+                        class="font-semibold text-foreground text-lg mb-2 group-hover:text-primary transition-colors"
+                      >
+                        {{ item.label }}
+                      </h3>
+                      <p class="text-sm leading-6 text-muted-foreground">
+                        {{ item.desc }}
+                      </p>
+                    </div>
+                  </div>
+                </section>
+
+                <aside
+                  v-else-if="block.type === 'note'"
+                  class="flex flex-col sm:flex-row gap-4 items-start rounded-lg border border-primary/20 bg-primary/5 p-6"
+                >
+                  <UIcon name="lucide:info" class="w-6 h-6 text-primary shrink-0" />
+                  <div class="space-y-1">
+                    <p
+                      class="font-medium text-foreground text-sm uppercase tracking-wider opacity-70"
+                    >
+                      Key Takeaway
+                    </p>
+                    <p class="text-foreground/80 leading-relaxed italic">
+                      {{ block.content }}
+                    </p>
+                  </div>
+                </aside>
+                <p v-else-if="block.type === 'html'" v-html="block.content"></p>
+              </template>
             </div>
           </div>
         </div>
@@ -67,6 +133,7 @@
 </template>
 
 <script setup lang="ts">
+import type { TypePost } from '@/composables/usePosts'
 defineOptions({
   name: 'AnimatedModalComponent',
 })
@@ -75,18 +142,7 @@ const open = defineModel<boolean>('open', {
   required: true,
 })
 
-interface Post {
-  title: string
-  desc: string
-  cover: string
-  date?: string | Date
-  tags?: string[]
-  path?: string
-  label?: string
-  content?: string
-}
-
 defineProps<{
-  post: Post
+  post: TypePost
 }>()
 </script>

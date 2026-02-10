@@ -57,82 +57,50 @@ export default {
     '1': {
       title: 'Route Guard-Based i18n Automation',
       desc: 'Exploring how to leverage full-stack route interception to achieve zero-latency, SEO-friendly language switching.',
-      content: `
-    <div class="prose prose-slate dark:prose-invert max-w-none">
-      <p class="text-balance leading-relaxed ">
-        In internationalized web applications, <strong class="text-primary">Route Guards</strong> serve as the optimal gateway for handling language switching. They ensure the system prepares the correct language pack before the component is rendered.
-      </p>
-      <h2 class="text-primary">1. Core Principles</h2>
-      <p>
-        Route guards intercept every navigation action to parse the language identifier (e.g., <code>/en/</code> or <code>/ja/</code>) from the URL. If the locale is invalid or missing, it can immediately redirect or load the required resources.
-      </p>
-
-      <h2 class="text-primary">2. Implementation Steps</h2>
-      <ul class="marker:text-primary">
-        <li>
-          <strong class="text-main">Dynamic Route Matching:</strong> Define routes in <code>/:lang/dashboard</code> format and capture language parameters via Params.
-        </li>
-        <li>
-          <strong class="text-main">Navigation Interception:</strong> Detect <code>to.params.lang</code> within <code>router.beforeEach</code> and sync it with the Vue I18n instance.
-        </li>
-        <li>
-          <strong class="text-main">Lazy Loading Language Packs:</strong> Instead of loading everything at once, use <code>import()</code> to load specific languages dynamically upon switching.
-        </li>
-      </ul>
-
-      <blockquote class="border-s-primary bg-muted/30 p-4 rounded-e-lg italic quote">
-        "This approach not only enhances user experience but also allows search engines to crawl different language versions, significantly boosting SEO rankings."
-      </blockquote>
-
-      <p class="text-muted text-sm mt-6">
-        Compared to traditional <code>localStorage</code> storage, a route-based solution supports <strong>direct link sharing</strong>, making it the current industry best practice.
-      </p>
-    </div>
-  `,
+      content: {
+        title: 'Route Guard-Based i18n Automation',
+        desc: 'Exploring how to leverage route interception to achieve zero-latency, SEO-friendly language switching.',
+        intro:
+          'In internationalized web applications, Route Guards serve as the optimal gateway for handling language switching. They ensure the system prepares the correct language pack before the component is rendered.',
+        h2_1: '1. Core Principles',
+        p_1: 'Route guards intercept every navigation action to parse the language identifier (e.g., /en/ or /zh/) from the URL. If the locale is invalid, it can immediately redirect or load the required resources.',
+        h2_2: '2. Implementation Steps',
+        li_1_label: 'Dynamic Route Matching',
+        li_1_desc:
+          'Define routes in /:lang/dashboard format and capture language parameters via Params.',
+        li_2_label: 'Navigation Interception',
+        li_2_desc:
+          'Detect to.params.lang within router.beforeEach and sync it with the Vue I18n instance.',
+        li_3_label: 'Lazy Loading Language Packs',
+        li_3_desc:
+          'Avoid loading all languages at once; use import() to load specific languages dynamically upon switching.',
+        quote:
+          'This approach not only enhances user experience but also allows search engines to crawl different language versions, significantly boosting SEO rankings.',
+        footer_note:
+          'Compared to traditional localStorage storage, a route-based solution supports direct link sharing, making it the current industry best practice.',
+      },
     },
     '2': {
       title: 'Dynamic Dark Mode and Theme Switching with Tailwind CSS',
       desc: 'Leveraging Tailwind CSS utility classes to implement a theme system supporting dark mode and custom primary colors.',
-      content: `
-      <div class="prose prose-slate dark:prose-invert max-w-none">
-        <p class="text-balance leading-relaxed ">
-          In modern web development, a <strong class="text-primary">Theme System</strong>
-          is no longer just a simple toggle between light and dark; it involves deep customization including
-          <strong>dynamic branding colors</strong> and <strong>dark mode variants</strong>. By combining
-          Pinia's persistence capabilities, we can build a responsive and flexible UI architecture.
-        </p>
-
-        <h2 class="text-primary border-b border-muted pb-2">1. Core Strategy</h2>
-        <p>
-          This solution employs a two-pronged approach: manipulating the <code>classList</code> of the root DOM
-          node for dark mode visual toggling, while utilizing <code>CSS Variables</code> to dynamically rewrite the global theme colors.
-        </p>
-
-        <h2 class="text-primary border-b border-muted pb-2">2. Implementation Details</h2>
-        <ul class="marker:text-primary space-y-4">
-          <li>
-            <strong class="text-main">Reactive State Management:</strong> Define <code>isDark</code> and
-            <code>primaryColor</code> in Pinia. Sync these states to <code>localStorage</code> via watchers
-            to ensure persistence across sessions.
-          </li>
-          <li>
-            <strong class="text-main">Dark Mode Injection:</strong> Use the <code>applyThemeToDom</code> function.
-            When <code>isDark.value</code> is true, the <code>dark</code> class is added to
-            <code>document.documentElement</code>, triggering Tailwind's <code>dark:</code> variants.
-          </li>
-          <li>
-            <strong class="text-main">Dynamic CSS Variables:</strong> Directly manipulate the
-            <code>--ui-primary</code> variable using <code>document.documentElement.style.setProperty</code>.
-            This allows brand color changes across the entire site without recompiling CSS.
-          </li>
-        </ul>
-
-
-        <p class="text-muted text-sm mt-6">
-          By variabilizing theme colors and pairing them with Tailwind's flexible configuration, developers can grant users full UI customization at runtime.
-        </p>
-      </div>
-    `,
+      content: {
+        intro:
+          "In modern web development, a Theme System is no longer just a simple toggle between light and dark; it involves deep customization including dynamic branding colors and dark mode variants. By combining Pinia's persistence capabilities, we can build a responsive and flexible UI architecture.",
+        h2_1: '1. Core Strategy',
+        p_1: 'This solution employs a two-pronged approach: manipulating the classList of the root DOM node for dark mode visual toggling, while utilizing CSS Variables to dynamically rewrite the global theme colors.',
+        h2_2: '2. Implementation Details',
+        li_1_label: 'Reactive State Management',
+        li_1_desc:
+          'Define isDark and primaryColor in Pinia. Sync these states to localStorage via watchers to ensure persistence across sessions.',
+        li_2_label: 'Dark Mode Injection',
+        li_2_desc:
+          "Use the applyThemeToDom function. When isDark.value is true, the dark class is added to document.documentElement, triggering Tailwind's dark: variants.",
+        li_3_label: 'Dynamic CSS Variables',
+        li_3_desc:
+          'Directly manipulate the --ui-primary variable using document.documentElement.style.setProperty. This allows brand color changes across the entire site without recompiling CSS.',
+        footer_note:
+          "By variabilizing theme colors and pairing them with Tailwind's flexible configuration, developers can grant users full UI customization at runtime.",
+      },
     },
     //   '3': {
     //     title: 'How to Maintain a Good Mindset in the Scorching Summer',
@@ -230,6 +198,9 @@ export default {
       title: 'Articles & Thoughts Page Added',
       description:
         'Launched the Articles & Thoughts section with expandable content viewing functionality.',
+      title_2: 'Optimized Article Secondary Page Display Logic',
+      description_2:
+        'Optimized the content display logic of the article page to support multiple content structures and HTML customization.',
     },
   },
   webtoolsView: {

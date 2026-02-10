@@ -69,13 +69,13 @@
 import { ref, computed } from 'vue'
 import PostCard from '@/components/PostCard/PostCard.vue'
 import { usePosts } from '@/composables/usePosts'
-import type { Post } from '@/composables/usePosts'
+import type { TypePost } from '@/composables/usePosts'
 
 const { posts } = usePosts()
 
 // --- 数据源 (模拟 JSON) ---
 // 实际开发中，这里可以替换为 Content 模块的 queryContent() 或者 API 调用
-const articles = computed<Post[]>(() => posts.value)
+const articles = computed<TypePost[]>(() => posts.value)
 // --- 状态与逻辑 ---
 const searchQuery = ref('')
 const selectedTag = ref('All')
@@ -83,7 +83,11 @@ const selectedTag = ref('All')
 // 1. 提取所有唯一的标签
 const allTags = computed(() => {
   const tags = new Set<string>()
-  articles.value.forEach((article) => article.tags.forEach((tag) => tags.add(tag)))
+  articles.value.forEach((article) => {
+    if (article.tags) {
+      article.tags.forEach((tag: string) => tags.add(tag))
+    }
+  })
   return ['All', ...Array.from(tags)]
 })
 
@@ -94,7 +98,7 @@ const filteredArticles = computed(() => {
 
   return articles.value.filter((article) => {
     // 标签匹配
-    const matchesTag = tag === 'All' || article.tags.includes(tag)
+    const matchesTag = tag === 'All' || (article.tags && article.tags.includes(tag))
 
     // 搜索匹配 (标题或摘要)
     const matchesSearch =

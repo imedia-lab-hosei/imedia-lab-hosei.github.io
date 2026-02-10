@@ -73,20 +73,10 @@
 <script setup lang="ts">
 import TimeAgo from './components/TimeAgo.vue'
 import AnimatedModalComponent from './components/AnimatedModalComponent/index.vue'
-
-interface Post {
-  title: string
-  desc: string
-  cover: string
-  date?: string | Date
-  tags?: string[]
-  path?: string
-  label?: string
-  content?: string
-}
+import type { TypePost } from '@/composables/usePosts'
 
 defineProps<{
-  post: Post
+  post: TypePost
 }>()
 
 import { ref } from 'vue'

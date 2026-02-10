@@ -57,95 +57,102 @@ export default {
     '1': {
       title: 'ナビゲーションガードによる i18n 自動切り替えソリューション',
       desc: 'ルートインターセプト技術を活用し、低遅延でSEOに強い多言語切り替えエクスペリエンスを実現する方法を探ります。',
-      content: `
-    <div class="prose prose-slate dark:prose-invert max-w-none">
-      <p class="text-balance leading-relaxed ">
-        グローバルなWebアプリケーションにおいて、<strong class="text-primary">ナビゲーションガード (Route Guard)</strong> は言語切り替えを処理するための最適なゲートウェイです。コンポーネントがレンダリングされる前に、システムが正しい言語リソースを準備することを保証します。
-      </p>
-      <h2 class="text-primary">1. 動作原理</h2>
-      <p>
-        ナビゲーションガードはすべてのナビゲーションをインターセプトし、URL内の言語識別子（例：<code>/en/</code> や <code>/ja/</code>）を解析します。期待されるロケールに一致しない場合、即座にリダイレクトやリソースのロードを行います。
-      </p>
-
-      <h2 class="text-primary">2. 実装ステップ</h2>
-      <ul class="marker:text-primary">
-        <li>
-          <strong class="text-main">動的ルートマッチング：</strong> <code>/:lang/dashboard</code> 形式のルートを定義し、Paramsを利用して言語パラメータをキャプチャします。
-        </li>
-        <li>
-          <strong class="text-main">ガードによるインターセプト：</strong> <code>router.beforeEach</code> 内で <code>to.params.lang</code> を検出し、Vue I18nインスタンスと同期させます。
-        </li>
-        <li>
-          <strong class="text-main">言語パックの非同期ロード：</strong> すべての言語を一度に読み込むのではなく、切り替え時に <code>import()</code> を使用して動的にロードします。
-        </li>
-      </ul>
-
-      <blockquote class="border-s-primary bg-muted/30 p-4 rounded-e-lg italic quote">
-        「この手法はユーザーエクスペリエンスを向上させるだけでなく、検索エンジンが異なる言語バージョンのコンテンツをクロールしやすくなるため、SEO順位の向上にも大きく貢献します。」
-      </blockquote>
-
-      <p class="text-muted text-sm mt-6">
-        従来の <code>localStorage</code> による保存策と比較して、ルートベースの構成は<strong>リンクの直接共有</strong>が可能であり、現在のベストプラクティスとされています。
-      </p>
-    </div>
-  `,
+      content: {
+        title: 'ナビゲーションガードによる i18n 自動切り替え',
+        desc: 'ルートインターセプト技術を活用した SEO に強い多言語化...',
+        intro:
+          'グローバルなWebアプリケーションにおいて、ナビゲーションガードは言語切り替えを処理するための最適なゲートウェイです。コンポーネントがレンダリングされる前に、システムが正しい言語リソースを準備することを保証します。',
+        h2_1: '1. 動作原理',
+        p_1: 'ナビゲーションガードはすべてのナビゲーションをインターセプトし、URL内の言語識別子を解析します。期待されるロケールに一致しない場合、即座にリダイレクトやリソースのロードを行います。',
+        h2_2: '2. 実装ステップ',
+        li_1_label: '動的ルートマッチング',
+        li_1_desc:
+          '/:lang/dashboard 形式のルートを定義し、Paramsを利用して言語パラメータをキャプチャします。',
+        li_2_label: 'ガードによるインターセプト',
+        li_2_desc:
+          'router.beforeEach 内で to.params.lang を検出し、Vue I18nインスタンスと同期させます。',
+        li_3_label: '言語パックの非同期ロード',
+        li_3_desc:
+          'すべての言語を一度に読み込むのではなく、切り替え時に import() を使用して動的にロードします。',
+        quote:
+          'この手法はユーザーエクスペリエンスを向上させるだけでなく、検索エンジンが異なる言語バージョンのコンテンツをクロールしやすくなるため、SEO順位の向上にも大きく貢献します。',
+        footer_note:
+          '従来の localStorage による保存策と比較して、ルートベースの構成はリンクの直接共有が可能であり、現在のベストプラクティスとされています。',
+      },
     },
     '2': {
       title: 'Tailwind CSSによるダークモードとテーマカラーの動的切り替え',
       desc: 'Tailwind CSSのユーティリティ特性を活かし、ダークモードとカスタムテーマカラーに対応したUIレンダリングを実現します。',
-      content: `
-    <div class="prose prose-slate dark:prose-invert max-w-none">
-      <p class="text-balance leading-relaxed ">
-        モダンなWeb開発において、<strong class="text-primary">テーマシステム</strong>は単なるライト/ダークの切り替えに留まりません。
-        <strong>動的なブランドカラー</strong>と<strong>ダークモード</strong>を組み合わせた、高度なカスタマイズが求められています。
-        Piniaの永続化機能と組み合わせることで、応答性が高く、柔軟なUI体系を構築できます。
-      </p>
+      content: {
+        intro:
+          'モダンなWeb開発において、テーマシステム (Theme System) は単なるライト/ダークの切り替えに留まりません。動的なブランドカラーとダークモードを組み合わせた、高度なカスタマイズが求められています。Piniaの永続化機能と組み合わせることで、応答性が高く、柔軟なUI体系を構築できます。',
+        h2_1: '1. コア技術構成',
+        p_1: '本ソリューションでは「2つのアプローチ」を採用しています。DOMルートノードの classList 操作によるダークモードの切り替えと、CSS変数を利用したグローバルテーマカラーの動的な書き換えです。',
+        h2_2: '2. 実装の詳細',
+        li_1_label: 'リアクティブな状態管理',
+        li_1_desc:
+          'Piniaで isDark と primaryColor を定義します。変更を監視し localStorage と同期させることで、セッションを跨いだ永続化を実現します。',
+        li_2_label: 'ダークモードの注入',
+        li_2_desc:
+          'applyThemeToDom 関数を実行します。isDark.value が真の場合、document.documentElement に dark クラスを付与し、Tailwindの dark: バリアントを有効にします。',
+        li_3_label: '動的なCSS変数',
+        li_3_desc:
+          'document.documentElement.style.setProperty を使用して、コア変数 --ui-primary を直接操作します。これにより、CSSを再コンパイルすることなくサイト全体の配色を変更できます。',
+        footer_note:
+          'テーマカラーを変数化し、Tailwindの柔軟な設定と組み合わせることで、開発者はランタイムでユーザーに完全なインターフェースのカスタマイズ権限を提供できます。',
+      },
+      //     content: `
+      //   <div class="prose prose-slate dark:prose-invert max-w-none">
+      //     <p class="text-balance leading-relaxed ">
+      //       モダンなWeb開発において、<strong class="text-primary">テーマシステム</strong>は単なるライト/ダークの切り替えに留まりません。
+      //       <strong>動的なブランドカラー</strong>と<strong>ダークモード</strong>を組み合わせた、高度なカスタマイズが求められています。
+      //       Piniaの永続化機能と組み合わせることで、応答性が高く、柔軟なUI体系を構築できます。
+      //     </p>
 
-      <h2 class="text-primary border-b border-muted pb-2">1. コア技術構成</h2>
-      <p>
-        本ソリューションでは「2つのアプローチ」を採用しています。DOMルートノードの
-        <code>classList</code> 操作によるダークモードの切り替えと、<code>CSS変数</code> を利用したグローバルテーマカラーの動的な書き換えです。
-      </p>
+      //     <h2 class="text-primary border-b border-muted pb-2">1. コア技術構成</h2>
+      //     <p>
+      //       本ソリューションでは「2つのアプローチ」を採用しています。DOMルートノードの
+      //       <code>classList</code> 操作によるダークモードの切り替えと、<code>CSS変数</code> を利用したグローバルテーマカラーの動的な書き換えです。
+      //     </p>
 
-      <h2 class="text-primary border-b border-muted pb-2">2. 実装の詳細</h2>
-      <ul class="marker:text-primary space-y-4">
-        <li>
-          <strong class="text-main">リアクティブな状態管理：</strong> Piniaで <code>isDark</code> と
-          <code>primaryColor</code> を定義します。変更を監視し <code>localStorage</code> と同期させることで、セッションを跨いだ永続化を実現します。
-        </li>
-        <li>
-          <strong class="text-main">ダークモードの注入：</strong> <code>applyThemeToDom</code> 関数を実行します。
-          <code>isDark.value</code> が真の場合、<code>document.documentElement</code> に <code>dark</code> クラスを付与し、Tailwindの <code>dark:</code> バリアントを有効にします。
-        </li>
-        <li>
-          <strong class="text-main">動的なCSS変数：</strong> <code>document.documentElement.style.setProperty</code>
-          を使用して、コア変数 <code>--ui-primary</code> を直接操作します。これにより、CSSを再コンパイルすることなくサイト全体の配色を変更できます。
-        </li>
-      </ul>
+      //     <h2 class="text-primary border-b border-muted pb-2">2. 実装の詳細</h2>
+      //     <ul class="marker:text-primary space-y-4">
+      //       <li>
+      //         <strong class="text-main">リアクティブな状態管理：</strong> Piniaで <code>isDark</code> と
+      //         <code>primaryColor</code> を定義します。変更を監視し <code>localStorage</code> と同期させることで、セッションを跨いだ永続化を実現します。
+      //       </li>
+      //       <li>
+      //         <strong class="text-main">ダークモードの注入：</strong> <code>applyThemeToDom</code> 関数を実行します。
+      //         <code>isDark.value</code> が真の場合、<code>document.documentElement</code> に <code>dark</code> クラスを付与し、Tailwindの <code>dark:</code> バリアントを有効にします。
+      //       </li>
+      //       <li>
+      //         <strong class="text-main">動的なCSS変数：</strong> <code>document.documentElement.style.setProperty</code>
+      //         を使用して、コア変数 <code>--ui-primary</code> を直接操作します。これにより、CSSを再コンパイルすることなくサイト全体の配色を変更できます。
+      //       </li>
+      //     </ul>
 
-
-      <p class="text-muted text-sm mt-6">
-        テーマカラーを変数化し、Tailwindの柔軟な設定と組み合わせることで、開発者はランタイムでユーザーに完全なインターフェースのカスタマイズ権限を提供できます。
-      </p>
-    </div>
-  `,
+      //     <p class="text-muted text-sm mt-6">
+      //       テーマカラーを変数化し、Tailwindの柔軟な設定と組み合わせることで、開発者はランタイムでユーザーに完全なインターフェースのカスタマイズ権限を提供できます。
+      //     </p>
+      //   </div>
+      // `,
     },
-  //   '3': {
-  //     title: '炎天下で良好なメンタルを保つ方法',
-  //     desc: '天気は暑いですが、平常心を保てば、海辺のような涼しさを感じられます（水温的な意味で）。',
-  //   },
-  //   '4': {
-  //     title: '「目力」トレーニングの上級ガイド',
-  //     desc: '見てはいけないものを見た時、眼光は鋭く、意味不明な咆哮を上げても構いません。',
-  //   },
-  //   '5': {
-  //     title: '階段降りも芸術になる：歩法解析',
-  //     desc: 'これがいわゆる「王道を往く」というやつですか？一歩一歩が異常に安定しており、リズミカルです。',
-  //   },
-  //   '6': {
-  //     title: '紅茶三杯の後の哲学的思考',
-  //     desc: '事ここに至っては、悩むより大声で叫ぶべきです。「私もやりたいです」と！',
-  //   },
+    //   '3': {
+    //     title: '炎天下で良好なメンタルを保つ方法',
+    //     desc: '天気は暑いですが、平常心を保てば、海辺のような涼しさを感じられます（水温的な意味で）。',
+    //   },
+    //   '4': {
+    //     title: '「目力」トレーニングの上級ガイド',
+    //     desc: '見てはいけないものを見た時、眼光は鋭く、意味不明な咆哮を上げても構いません。',
+    //   },
+    //   '5': {
+    //     title: '階段降りも芸術になる：歩法解析',
+    //     desc: 'これがいわゆる「王道を往く」というやつですか？一歩一歩が異常に安定しており、リズミカルです。',
+    //   },
+    //   '6': {
+    //     title: '紅茶三杯の後の哲学的思考',
+    //     desc: '事ここに至っては、悩むより大声で叫ぶべきです。「私もやりたいです」と！',
+    //   },
   },
   colors: {
     green: '緑',
@@ -225,6 +232,9 @@ export default {
     articles: {
       title: '記事と随筆ページの追加',
       description: '記事と随筆の閲覧機能を実装。クリックで詳細が展開され、内容を確認可能に。',
+      title_2: '記事の二次ページ表示ロジックの最適化',
+      description_2:
+        '記事ページのコンテンツ表示ロジックを最適化し、多様な内容構造の記事レンダリングとHTMLカスタマイズをサポート。',
     },
   },
   webtoolsView: {

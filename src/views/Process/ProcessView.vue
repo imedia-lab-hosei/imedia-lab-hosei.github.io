@@ -55,6 +55,13 @@ const items = computed<TimelineItem[]>(() => [
     value: 'deployment',
   },
   {
+    date: '2026-02-10',
+    title: t('processView.articles.title_2'),
+    description: t('processView.articles.description_2'),
+    icon: 'lucide:pencil',
+    value: 'articles',
+  },
+  {
     date: '2026-02-03',
     title: t('processView.articles.title'),
     description: t('processView.articles.description'),

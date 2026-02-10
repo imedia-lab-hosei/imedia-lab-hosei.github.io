@@ -24,10 +24,10 @@
 <script setup lang="ts">
 import HeroSection from '@/components/HeroSection/HeroSection.vue'
 import PostCard from '@/components/PostCard/PostCard.vue'
-import { usePosts, type Post } from '@/composables/usePosts'
+import { usePosts, type TypePost } from '@/composables/usePosts'
 import { computed } from 'vue'
 
 const { posts } = usePosts()
 
-const articles = computed<Post[]>(() => posts.value.slice(0, 3))
+const articles = computed<TypePost[]>(() => posts.value.slice(0, 3))
 </script>

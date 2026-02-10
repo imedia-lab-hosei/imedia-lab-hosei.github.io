@@ -58,81 +58,47 @@ export default {
     '1': {
       title: '基于路由守卫的 i18n 自动化切换方案',
       desc: '探索如何通过全栈路由拦截技术，实现多语言环境下零延迟、SEO 友好的语言切换体验。',
-      content: `
-   <div class="prose prose-slate dark:prose-invert max-w-none">
-      <p class="text-balance leading-relaxed ">
-        在国际化 Web 应用中，<strong class="text-primary">路由守卫 (Route Guard)</strong> 是处理语言切换的最佳关口。它能确保用户在渲染组件前，系统已经准备好了正确的语言包。
-      </p>
-      <h2 class="text-primary">1. 核心工作原理</h2>
-      <p>
-        路由守卫通过拦截每一个导航动作，解析 URL 中的语言标识符（如 <code>/en/</code> 或 <code>/zh/</code>）。如果不符合预期的语言环境，它可以立即重定向或加载缺少的资源。
-      </p>
-
-      <h2 class="text-primary">2. 实现步骤</h2>
-      <ul class="marker:text-primary">
-        <li>
-          <strong class="text-main">动态路径匹配：</strong> 定义 <code>/:lang/dashboard</code> 格式的路由，利用 Params 捕获语言参数。
-        </li>
-        <li>
-          <strong class="text-main">前置守卫拦截：</strong> 在 <code>router.beforeEach</code> 中检测 <code>to.params.lang</code>，并与 Vue I18n 实例同步。
-        </li>
-        <li>
-          <strong class="text-main">异步加载语言包：</strong> 避免一次性加载所有语言，仅在切换时通过 <code>import()</code> 动态加载。
-        </li>
-      </ul>
-
-      <blockquote class="border-s-primary bg-muted/30 p-4 rounded-e-lg italic quote">
-        “这种方式不仅提升了用户体验，还极大地利于搜索引擎抓取不同语言版本的页面内容，提升 SEO 排名。”
-      </blockquote>
-
-      <p class="text-muted text-sm mt-6">
-        相比于传统的 localStorage 存储方案，基于路由的方案支持<strong>链接直接分享</strong>，是目前的最佳实践。
-      </p>
-    </div>
-  `,
+      content: {
+        title: '基于路由守卫的 i18n 自动化切换方案',
+        desc: '探索如何通过全栈路由拦截技术，实现多语言环境下零延迟、SEO 友好的语言切换体验。',
+        intro:
+          '在国际化 Web 应用中，导航守卫 (Route Guard) 是处理语言切换的最佳关口。它能确保用户在渲染组件前，系统已经准备好了正确的语言包。',
+        h2_1: '1. 核心工作原理',
+        p_1: '路由守卫通过拦截每一个导航动作，解析 URL 中的语言标识符（如 /en/ 或 /zh/）。如果不符合预期的语言环境，它可以立即重定向或加载缺少的资源。',
+        h2_2: '2. 实现步骤',
+        li_1_label: '动态路径匹配',
+        li_1_desc: '定义 /:lang/dashboard 格式的路由，利用 Params 捕获语言参数。',
+        li_2_label: '前置守卫拦截',
+        li_2_desc: '在 router.beforeEach 中检测 to.params.lang，并与 Vue I18n 实例同步。',
+        li_3_label: '异步加载语言包',
+        li_3_desc: '避免一次性加载所有语言，仅在切换时通过 import() 动态加载。',
+        quote:
+          '这种方式不仅提升了用户体验，还极大地利于搜索引擎抓取不同语言版本的页面内容，提升 SEO 排名。',
+        footer_note:
+          '相比于传统的 localStorage 存储方案，基于路由的方案支持链接直接分享，是目前的最佳实践。',
+      },
     },
     '2': {
       title: '通过 Tailwind CSS 实现亮暗模式与主题色切换',
       desc: '通过 Tailwind CSS 的原子化特性，实现支持亮暗模式和自定义主题色的内容渲染。',
-      content: `
-        <div class="prose prose-slate dark:prose-invert max-w-none">
-    <p class="text-balance leading-relaxed ">
-      在现代 Web 开发中，<strong class="text-primary">主题系统 (Theme System)</strong>
-      不再仅仅是简单的亮暗切换，而是包含<strong>动态品牌色</strong>与<strong>深色模式</strong>的深度定制。结合
-      Pinia 的持久化能力，我们可以构建一套响应迅速、配置灵活的 UI 体系。
-    </p>
-
-    <h2 class="text-primary border-b border-muted pb-2">1. 核心技术方案</h2>
-    <p>
-      本方案采用“双管齐下”的策略：通过修改 DOM 根节点的
-      <code>classList</code> 实现亮暗视觉切换，同时利用 <code>CSS 变量</code> 动态改写全局主题色。
-    </p>
-
-    <h2 class="text-primary border-b border-muted pb-2">2. 实现细节</h2>
-    <ul class="marker:text-primary space-y-4">
-      <li>
-        <strong class="text-main">响应式状态管理：</strong> 在 Pinia 中定义 <code>isDark</code> 与
-        <code>primaryColor</code>。通过监听变化，确保状态同步至
-        <code>localStorage</code>，实现跨会话持久化。
-      </li>
-      <li>
-        <strong class="text-main">亮暗模式 DOM 注入：</strong> 执行
-        <code>applyThemeToDom</code> 函数。当 <code>isDark.value</code> 为真时，为
-        <code>document.documentElement</code> 添加 <code>dark</code> 类名，触发 Tailwind 的
-        <code>dark:</code> 变体。
-      </li>
-      <li>
-        <strong class="text-main">动态 CSS 变量：</strong> 通过
-        <code>document.documentElement.style.setProperty</code> 直接操作核心变量
-        <code>--ui-primary</code>。这使得我们无需重新编译 CSS 即可改变整站的品牌色调。
-      </li>
-    </ul>
-
-    <p class="text-muted text-sm mt-6">
-      通过将主题色变量化，配合 Tailwind 的灵活配置，开发者可以在运行时赋予用户完全的界面定制权。
-    </p>
-  </div>
-   `,
+      content: {
+        intro:
+          '在现代 Web 开发中，主题系统 (Theme System) 不再仅仅是简单的亮暗切换，而是包含动态品牌色与深色模式的深度定制。结合 Pinia 的持久化能力，我们可以构建一套响应迅速、配置灵活的 UI 体系。',
+        h2_1: '1. 核心技术方案',
+        p_1: '本方案采用“双管齐下”的策略：通过修改 DOM 根节点的 classList 实现亮暗视觉切换，同时利用 CSS 变量 动态改写全局主题色。',
+        h2_2: '2. 实现细节',
+        li_1_label: '响应式状态管理',
+        li_1_desc:
+          '在 Pinia 中定义 isDark 与 primaryColor。通过监听变化，确保状态同步至 localStorage，实现跨会话持久化。',
+        li_2_label: '亮暗模式 DOM 注入',
+        li_2_desc:
+          '执行 applyThemeToDom 函数。当 isDark.value 为真时，为 document.documentElement 添加 dark 类名，触发 Tailwind 的 dark: 变体。',
+        li_3_label: '动态 CSS 变量',
+        li_3_desc:
+          '通过 document.documentElement.style.setProperty 直接操作核心变量 --ui-primary。这使得我们无需重新编译 CSS 即可改变整站的品牌色调。',
+        footer_note:
+          '通过将主题色变量化，配合 Tailwind 的灵活配置，开发者可以在运行时赋予用户完全的界面定制权。',
+      },
     },
     //   '3': {
     //     title: '如何在炎炎夏日保持良好的心态',
@@ -227,6 +193,8 @@ export default {
     articles: {
       title: '添加文章与随笔页面',
       description: '加入文章与随笔页面，优化点击页面展开详情，能够查看文章内容。',
+      title_2: '优化文章二级页面展示逻辑',
+      description_2: '优化文章页面的内容展示逻辑，支持多种内容结构的文章渲染和 html 自定义。',
     },
   },
   webtoolsView: {
