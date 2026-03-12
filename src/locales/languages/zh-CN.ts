@@ -198,7 +198,7 @@ export default {
     },
     nginx: {
       title: '修改网站后端',
-      description: '将网站后端从github pages迁移到nginx服务器，优化部署流程和性能。',
+      description: '将网站后端从 github pages 迁移到 nginx 服务器，优化部署流程和性能。',
     },
   },
   webtoolsView: {
