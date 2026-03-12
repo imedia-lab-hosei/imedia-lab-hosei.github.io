@@ -236,6 +236,10 @@ export default {
       description_2:
         '記事ページのコンテンツ表示ロジックを最適化し、多様な内容構造の記事レンダリングとHTMLカスタマイズをサポート。',
     },
+    nginx: {
+      title: 'サイトのバックエンドを変更',
+      description: 'サイトのバックエンドをGitHub PagesからNginxサーバーに移行し、デプロイメントプロセスとパフォーマンスを最適化。',
+    },
   },
   webtoolsView: {
     bookmarks: {

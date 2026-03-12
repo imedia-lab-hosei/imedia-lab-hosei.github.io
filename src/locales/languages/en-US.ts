@@ -202,6 +202,11 @@ export default {
       description_2:
         'Optimized the content display logic of the article page to support multiple content structures and HTML customization.',
     },
+    nginx: {
+      title: 'Backend Migration to Nginx',
+      description:
+        'Migrated the backend from GitHub Pages to an Nginx server, optimizing deployment processes and performance.',
+    },
   },
   webtoolsView: {
     bookmarks: {

@@ -196,6 +196,10 @@ export default {
       title_2: '优化文章二级页面展示逻辑',
       description_2: '优化文章页面的内容展示逻辑，支持多种内容结构的文章渲染和 html 自定义。',
     },
+    nginx: {
+      title: '修改网站后端',
+      description: '将网站后端从github pages迁移到nginx服务器，优化部署流程和性能。',
+    },
   },
   webtoolsView: {
     bookmarks: {
