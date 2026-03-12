@@ -289,6 +289,11 @@ export default {
       description:
         'サイトのバックエンドをGitHub PagesからNginxサーバーに移行し、デプロイメントプロセスとパフォーマンスを最適化。',
     },
+    compile: {
+      title: 'リリースとビルドプロセスの最適化',
+      description:
+        'ローカルでのビルドとデプロイメントプロセスをGitHub Actionsによる自動化に最適化し、リリースの効率と安定性を向上。サーバーへの二次的な手動同期も不要になり、真の意味でのワンクリックデプロイメントを実現。',
+    },
   },
   webtoolsView: {
     bookmarks: {

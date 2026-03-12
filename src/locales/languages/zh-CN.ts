@@ -246,6 +246,11 @@ export default {
       title: '修改网站后端',
       description: '将网站后端从 github pages 迁移到 nginx 服务器，优化部署流程和性能。',
     },
+    compile: {
+      title: '发布及编译流程优化',
+      description:
+        '将本地编译发包流程优化为 github actions 自动化部署，提升发布效率和稳定性。也无需服务器二次手动同步，实现真正意义上的一键部署。',
+    },
   },
   webtoolsView: {
     bookmarks: {

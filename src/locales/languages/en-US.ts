@@ -254,6 +254,11 @@ export default {
       description:
         'Migrated the backend from GitHub Pages to an Nginx server, optimizing deployment processes and performance.',
     },
+    compile: {
+      title: 'Release and Build Process Optimization',
+      description:
+        'Optimized the local build and deployment process to an automated GitHub Actions workflow, improving release efficiency and stability. Eliminated the need for manual server synchronization, achieving true one-click deployment.',
+    },
   },
   webtoolsView: {
     bookmarks: {

@@ -44,7 +44,7 @@ const progressValue = ref(25)
 import type { TimelineItem } from '@nuxt/ui'
 import BgCard from '@/components/BgCard/BgCard.vue'
 
-const active = ref<string | number>('nginx')
+const active = ref<string | number>('compile')
 
 const items = computed<TimelineItem[]>(() => [
   {
@@ -53,6 +53,13 @@ const items = computed<TimelineItem[]>(() => [
     description: t('processView.deployment.description'),
     icon: 'lucide:bolt',
     value: 'deployment',
+  },
+  {
+    date: '2026-03-12',
+    title: t('processView.compile.title'),
+    description: t('processView.compile.description'),
+    icon: 'lucide:computer',
+    value: 'compile',
   },
   {
     date: '2026-03-12',
