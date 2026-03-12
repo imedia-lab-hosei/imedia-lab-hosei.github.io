@@ -117,18 +117,80 @@ export function usePosts() {
         },
       ],
     },
-    // {
-    //   id: 3,
-    //   tagKeys: ['summer', 'swimming'],
-    //   cover: 'https://picsum.photos/id/124/400/250',
-    //   date: '2026-02-10',
-    // },
-    // {
-    //   id: 4,
-    //   tagKeys: ['expression', 'eye_power'],
-    //   cover: 'https://picsum.photos/id/659/400/250',
-    //   date: '2026-01-10',
-    // },
+    {
+      id: 3,
+      tagKeys: ['tech', 'github_actions', 'aliyun'],
+      cover: 'https://picsum.photos/id/201/400/250',
+      date: '2026-03-12 16:14:00',
+      contentStructure: [
+        {
+          type: 'intro',
+          contentKey: 'intro',
+        },
+        {
+          type: 'section',
+          titleKey: 'h2_1',
+          contentKey: 'p_1',
+        },
+        {
+          type: 'section',
+          titleKey: 'h2_4', // 新增：deploy.yml 编写部分
+          contentKey: 'p_3',
+        },
+        {
+          type: 'section',
+          titleKey: 'h2_2',
+          listItems: [
+            { labelKey: 'li_1_label', descKey: 'li_1_desc' },
+            { labelKey: 'li_2_label', descKey: 'li_2_desc' },
+            { labelKey: 'li_3_label', descKey: 'li_3_desc' },
+          ],
+        },
+        {
+          type: 'section',
+          titleKey: 'h2_3',
+          contentKey: 'p_2',
+        },
+        {
+          type: 'note',
+          contentKey: 'footer_note',
+        },
+      ],
+    },
+    {
+      id: 4,
+      tagKeys: ['tech', 'nginx', 'linux'],
+      cover: 'https://picsum.photos/id/160/400/250',
+      date: '2026-03-12 15:14:00',
+      contentStructure: [
+        {
+          type: 'intro',
+          contentKey: 'intro',
+        },
+        {
+          type: 'section',
+          titleKey: 'h2_1',
+          contentKey: 'p_1',
+        },
+        {
+          type: 'section',
+          titleKey: 'h2_2',
+          listItems: [
+            { labelKey: 'li_1_label', descKey: 'li_1_desc' },
+            { labelKey: 'li_2_label', descKey: 'li_2_desc' },
+          ],
+        },
+        {
+          type: 'section',
+          titleKey: 'h2_3',
+          contentKey: 'p_2',
+        },
+        {
+          type: 'note',
+          contentKey: 'footer_note',
+        },
+      ],
+    },
     // {
     //   id: 5,
     //   tagKeys: ['sports', 'footwork'],

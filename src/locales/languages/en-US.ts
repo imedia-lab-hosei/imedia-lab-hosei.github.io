@@ -52,6 +52,10 @@ export default {
     original: 'Original',
     tailwind: 'Tailwind CSS',
     pinia: 'Pinia',
+    github_actions: 'GitHub Actions',
+    aliyun: 'Alibaba Cloud',
+    nginx: 'Nginx',
+    linux: 'Linux',
   },
   post_list: {
     '1': {
@@ -102,14 +106,57 @@ export default {
           "By variabilizing theme colors and pairing them with Tailwind's flexible configuration, developers can grant users full UI customization at runtime.",
       },
     },
-    //   '3': {
-    //     title: 'How to Maintain a Good Mindset in the Scorching Summer',
-    //     desc: "Although it's hot, if you keep a calm mind, you can feel the coolness like being at the beach (referring to water temperature).",
-    //   },
-    //   '4': {
-    //     title: "Advanced Guide to 'Eye Power' Training",
-    //     desc: "When you see something you shouldn't, your gaze must be sharp; you can even let out some incoherent roaring.",
-    //   },
+    '3': {
+      title: 'Automating DevOps: A Guide to Deploying Vue Projects via GitHub Actions',
+      desc: 'A comprehensive guide on building a CI/CD pipeline from local push to automated cloud deployment on Alibaba Cloud.',
+      content: {
+        intro:
+          'Manual deployment is a repetitive chore. This article demonstrates how to configure a production-ready GitHub Actions workflow for your Vue 3 + Vite projects.',
+        h2_1: '1. Designing the CI/CD Strategy',
+        p_1: 'The core approach is decoupling "building" from "deployment." A GitHub-hosted runner handles build tasks, while an encrypted SSH tunnel synchronizes the "dist" assets directly to Alibaba Cloud.',
+
+        h2_4: '2. Crafting the deploy.yml File', // Added
+        p_3: 'Create deploy.yml in the .github/workflows directory. It defines the lifecycle of the pipeline: triggering on a push to the main branch, setting up the Node environment, and executing "npm run build". The key is matching the "source" (dist/*) and "target" paths correctly so assets land in the Nginx root.',
+
+        h2_2: '3. Key Configuration Steps',
+        li_1_label: 'Node 24 Environment Locking',
+        li_1_desc:
+          'Specifying node-version: 24.13.0 ensures the cloud build matches your local setup perfectly.',
+        li_2_label: 'Encrypted Secrets Management',
+        li_2_desc:
+          'Store SSH_HOST and SSH_PRIVATE_KEY in GitHub Secrets to keep credentials secure and out of the source code.',
+        li_3_label: 'Automated SCP Synchronization',
+        li_3_desc:
+          'Use the scp-action plugin with strip_components to achieve automated directory cleanup and precise file overwriting.',
+
+        h2_3: '4. Common Troubleshooting',
+        p_2: 'The "ParsePrivateKey" error is common for beginners. Ensure the Secret includes the full BEGIN/END headers with no trailing spaces. Also, verify that the "admin" user has write permissions for the Nginx folder.',
+
+        footer_note:
+          'This CI/CD architecture allows developers to focus 100% on logic. That green checkmark in GitHub Actions represents the true elegance of modern web development.',
+      },
+    },
+    '4': {
+      title: 'The Foundation: Installing Nginx and Configuring SPA Environment',
+      desc: 'Before diving into automation, we must establish a robust Nginx environment on the server to support modern Single Page Applications.',
+      content: {
+        intro:
+          'Nginx is more than just a web server; it is the bridge between your frontend application and its users. Proper configuration of Nginx logic and permissions is a critical prerequisite for any automated deployment.',
+        h2_1: '1. Installation and Basic Management',
+        p_1: 'We install Nginx via the system package manager on Linux and enable it to start on boot. Mastering systemctl commands for starting, stopping, and reloading is fundamental for all future server maintenance.',
+        h2_2: '2. Core Configuration Logic',
+        li_1_label: 'SPA Routing Compatibility',
+        li_1_desc:
+          'For frameworks like Vue using History mode, we use the try_files directive to ensure all unmatched paths redirect to index.html, preventing 404 errors on page refresh.',
+        li_2_label: 'Static Asset Handling',
+        li_2_desc:
+          'Defining specific rules for static asset directories allows for caching strategies and prevents the server from returning HTML for missing JS/CSS files, which avoids MIME type errors.',
+        h2_3: '3. Permissions and Directory Security',
+        p_2: 'It is essential to ensure the web root directory has correct read/write permissions. By assigning ownership to a non-root user (e.g., admin) and setting permissions to 755, we ensure Nginx can serve files while keeping the environment secure for automation scripts.',
+        footer_note:
+          'Configuring Nginx is like laying down the tracks; once finished, your automation pipelines can run smoothly at high speed.',
+      },
+    },
     //   '5': {
     //     title: 'Descending Stairs as Art: Footwork Analysis',
     //     desc: "Is this the so-called 'Royal Road'? Every step is taken with extreme steadiness and rhythmic flow.",

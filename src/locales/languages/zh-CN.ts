@@ -53,6 +53,10 @@ export default {
     original: '原创',
     tailwind: 'Tailwind CSS',
     pinia: 'Pinia',
+    github_actions: 'GitHub Actions',
+    aliyun: '阿里云',
+    nginx: 'Nginx',
+    linux: 'Linux',
   },
   post_list: {
     '1': {
@@ -100,14 +104,56 @@ export default {
           '通过将主题色变量化，配合 Tailwind 的灵活配置，开发者可以在运行时赋予用户完全的界面定制权。',
       },
     },
-    //   '3': {
-    //     title: '如何在炎炎夏日保持良好的心态',
-    //     desc: '虽说天气很热，但只要保持平常心，就能像在海边一样感受到清凉（指水温）。',
-    //   },
-    //   '4': {
-    //     title: '关于“目力”训练的进阶指南',
-    //     desc: '当你看到不该看的东西时，眼神要犀利，甚至可以发出一些意义不明的咆哮。',
-    //   },
+    '3': {
+      title: '自动化运维：GitHub Actions 部署 Vue 项目全流程',
+      desc: '从本地代码推送，到 GitHub 云端构建，最后自动同步至阿里云服务器的 CI/CD 实践指南。',
+      content: {
+        intro:
+          '手动部署网站就像“搬砖”，不仅枯燥而且容易出错。本文将带你配置一套生产级别的 GitHub Actions 工作流，实现每次 git push 后自动更新。',
+        h2_1: '1. 工作流设计思路',
+        p_1: '核心方案是将“编译”和“部署”分离：GitHub 提供的云端 Runner 负责编译任务，而我们通过加密的 SSH 通道将生成的静态资源（dist）精准推送到阿里云的 Nginx 目录。',
+
+        h2_4: '2. 编写 deploy.yml 核心文件', // 新增
+        p_3: '在项目根目录的 .github/workflows 文件夹下创建 deploy.yml。它定义了流水线的“生命周期”：从 master 分支的 push 触发，到 Node 环境安装，再到执行 npm run build。关键在于配置 source: "dist/*" 与 target 路径，确保打包产物能准确落入 Nginx 的根目录。',
+
+        h2_2: '3. 关键配置细节',
+        li_1_label: 'Node 24 环境锁定',
+        li_1_desc:
+          '在配置文件中通过 node-version 显式指定版本为 24.13.0，确保打包逻辑与本地开发环境完全一致。',
+        li_2_label: '加密变量 (Secrets) 管理',
+        li_2_desc:
+          '在 GitHub 仓库设置中存储 SSH_HOST 和 SSH_PRIVATE_KEY，通过非对称加密保护服务器访问凭证。',
+        li_3_label: 'SCP 自动化同步',
+        li_3_desc:
+          '利用 appleboy/scp-action 插件，配合 strip_components 参数，实现产物目录的自动清洗与覆盖安装。',
+
+        h2_3: '4. 常见坑点排查',
+        p_2: '初次配置时最容易遇到 ParsePrivateKey 错误，这通常是因为私钥格式不完整。务必确保 Secret 中包含了 BEGIN 和 END 的页眉页脚，且没有多余的空格干扰。同时，Nginx 目录的权限需确保 admin 用户有写入权限。',
+
+        footer_note:
+          '通过这套体系，开发者可以专注于代码逻辑。当你看到 GitHub Actions 那颗跳动的绿勾时，你会发现这才是现代 Web 开发应有的优雅。',
+      },
+    },
+    '4': {
+      title: '奠基之路：服务器端 Nginx 安装与 SPA 环境配置',
+      desc: '在部署自动化流水线之前，我们需要先在服务器上搭建稳健的 Nginx 环境，以支持现代单页面应用。',
+      content: {
+        intro:
+          'Nginx 不仅仅是一个简单的 Web 服务器，它更是前端应用与用户之间的桥梁。在进行自动化部署之前，正确配置 Nginx 的处理逻辑和权限系统是至关重要的一步。',
+        h2_1: '1. 环境安装与基础管理',
+        p_1: '在 Linux 服务器上，我们通过系统包管理器安装 Nginx 并将其设置为开机自启。掌握 systemctl 的启动、停止与重载命令，是后续所有运维操作的基础。',
+        h2_2: '2. 核心配置逻辑',
+        li_1_label: 'SPA 路由兼容性',
+        li_1_desc:
+          '针对 Vue 等前端框架的 History 模式，通过配置 try_files 指令，确保所有未匹配的路径都能正确重定向到 index.html，避免页面刷新出现 404。',
+        li_2_label: '静态资源精准拦截',
+        li_2_desc:
+          '独立配置静态资源目录的访问规则，设置缓存策略并防止资源找不到时错误地返回 HTML 内容，从而解决常见的 MIME 类型解析报错。',
+        h2_3: '3. 权限与目录安全',
+        p_2: '确保 Web 根目录具备正确的读写权限。我们通常将目录所有权赋予非 root 用户（如 admin），并配合 755 权限设置，既保证了 Nginx 的读取效能，也为后续的自动化脚本留出了操作空间。',
+        footer_note: '配置好 Nginx 就像是铺好了铁轨，接下来的自动化流水线才能在这之上飞驰。',
+      },
+    },
     //   '5': {
     //     title: '下个楼梯也能成为艺术：步法解析',
     //     desc: '这就是所谓的“王道征途”吗？每一步都走得异常沉稳且富有节奏感。',
