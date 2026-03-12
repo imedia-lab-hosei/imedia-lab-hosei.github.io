@@ -259,6 +259,11 @@ export default {
       description:
         'Optimized the local build and deployment process to an automated GitHub Actions workflow, improving release efficiency and stability. Eliminated the need for manual server synchronization, achieving true one-click deployment.',
     },
+    ssh: {
+      title: 'HTTPS Added and Git Repository Structure Optimized',
+      description:
+        'Added HTTPS certificate validation and restructured the Git repository to prepare for future front-end and back-end separation in a single Git project.',
+    },
   },
   webtoolsView: {
     bookmarks: {

@@ -251,6 +251,11 @@ export default {
       description:
         '将本地编译发包流程优化为 github actions 自动化部署，提升发布效率和稳定性。也无需服务器二次手动同步，实现真正意义上的一键部署。',
     },
+    ssh: {
+      title: '添加 HTTPS，优化 Git 仓库文件结构',
+      description:
+        '添加 HTTPS 证书验证，并且拆分 Git 仓库文件结构，使得未来单 Git 项目前后端分离做准备。',
+    },
   },
   webtoolsView: {
     bookmarks: {

@@ -294,6 +294,11 @@ export default {
       description:
         'ローカルでのビルドとデプロイメントプロセスをGitHub Actionsによる自動化に最適化し、リリースの効率と安定性を向上。サーバーへの二次的な手動同期も不要になり、真の意味でのワンクリックデプロイメントを実現。',
     },
+    ssh: {
+      title: 'HTTPSの追加とGitリポジトリ構造の最適化',
+      description:
+        'HTTPS証明書の検証を追加し、Gitリポジトリの構造を分割して、将来の単一Gitプロジェクトでのフロントエンドとバックエンドの分離に備える。',
+    },
   },
   webtoolsView: {
     bookmarks: {
