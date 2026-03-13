@@ -18,7 +18,7 @@
 
           <div class="flex items-center justify-center gap-3 font-mono text-sm text-primary/90">
             <span class="px-2 py-1 border border-primary/30 rounded bg-primary/5"
-              >STATUS: YAJYUSENBAI 0.19</span
+              >STATUS: YAJYUSENBAI 3.13.12.48</span
             >
             <span class="animate-pulse text-primary">●</span>
             <span class="px-2 py-1 border border-primary/30 rounded bg-primary/5"

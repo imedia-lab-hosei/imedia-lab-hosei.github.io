@@ -4,9 +4,9 @@ on:
   push:
     branches:
       - main
-    # 💡 只有当 client 文件夹或此工作流文件变动时才触发，改后端代码不触发前端部署
+    # 💡 只有当 frontend 文件夹或此工作流文件变动时才触发，改后端代码不触发前端部署
     paths:
-      - 'client/**'
+      - 'frontend/**'
       - '.github/workflows/**'
 
 jobs:
@@ -21,14 +21,14 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '24.13.0'
-          # 💡 指定缓存 client 下的 package-lock.json
+          # 💡 指定缓存 frontend 下的 package-lock.json
           cache: 'npm'
-          cache-dependency-path: 'client/package-lock.json'
+          cache-dependency-path: 'frontend/package-lock.json'
 
       - name: 安装依赖与打包
-        # 💡 核心：进入 client 目录执行命令
+        # 💡 核心：进入 frontend 目录执行命令
         run: |
-          cd client
+          cd frontend
           npm install
           npm run build
 
@@ -39,10 +39,10 @@ jobs:
           username: ${{ secrets.SSH_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           port: 22
-          # 💡 这里的路径变了，构建产物在 client/dist
-          source: 'client/dist/*'
+          # 💡 这里的路径变了，构建产物在 frontend/dist
+          source: 'frontend/dist/*'
           target: '/var/www/yzdWebsite'
-          # 💡 关键：这里要写 2。因为路径是 client/dist/，我们要剥掉这两层目录
+          # 💡 关键：这里要写 2。因为路径是 frontend/dist/，我们要剥掉这两层目录
           strip_components: 2
           overwrite: true
 
