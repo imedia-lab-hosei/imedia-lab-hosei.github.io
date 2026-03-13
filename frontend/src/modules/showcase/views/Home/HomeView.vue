@@ -1,5 +1,9 @@
 <template>
   <HeroSection />
+  <div v-if="loading">加载中...</div>
+    <div v-else class="text-primary font-bold">
+      {{ message }}
+    </div>
   <div class="max-w-7xl mx-auto px-6 py-12">
     <div class="flex items-center justify-between mb-8">
       <div
@@ -27,7 +31,35 @@ import PostCard from '@/modules/showcase/components/PostCard/PostCard.vue'
 import { usePosts, type TypePost } from '@/modules/showcase/composables/usePosts'
 import { computed } from 'vue'
 
+
+
+
 const { posts } = usePosts()
+//------------------------------------------------------
+import { ref, onMounted } from 'vue'
+import { getHelloMessage } from '@/modules/showcase/api/getFristMsg'
+const message = ref<string>('')
+const loading = ref(false)
+const loadData = async () => {
+  loading.value = true
+  try {
+    // 像调用普通函数一样使用它
+    const res = await getHelloMessage()
+    if (res.success) {
+      message.value = res.data
+    }
+  } catch (error) {
+    console.error('获取失败')
+  } finally {
+    loading.value = false
+  }
+}
+
+onMounted(() => {
+  loadData()
+})
+//------------------------------------------------------
+
 
 const articles = computed<TypePost[]>(() => posts.value.slice(0, 3))
 </script>
