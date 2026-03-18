@@ -31,5 +31,5 @@ jobs:
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          folder: dist    # 打包后的文件夹名称
+          folder: frontend/dist   # 打包后的文件夹名称
           branch: gh-pages # 部署到的目标分支
