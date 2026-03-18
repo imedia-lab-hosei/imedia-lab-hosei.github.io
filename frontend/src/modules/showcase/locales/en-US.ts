@@ -475,6 +475,57 @@ export default {
       event_bbq_2018: { title: 'Summer BBQ Party' },
     },
   },
+  visit: {
+    header: {
+      title: 'Information for Prospective Students 2025',
+      update_info: 'Last Updated: 2025/3/25',
+      description:
+        'We are developing Intelligent Media Processing Systems based on AI, image processing, and hardware implementation technologies to contribute to the next-generation information society.',
+    },
+    themes: {
+      title: 'Research Groups',
+      ai: {
+        title: 'AI Image Processing',
+        desc: 'Focusing on automatic image/video generation, super-resolution, and deep learning models.',
+      },
+      sensor: {
+        title: 'Low-Power Image Sensors',
+        desc: 'Compressive sensing and sparse information reconstruction algorithms for hardware.',
+      },
+      compression: {
+        title: 'Video Compression',
+        desc: 'Deep learning-based video coding and hardware design for the latest compression standards.',
+      },
+    },
+    environment: {
+      title: 'Global Research Environment',
+      description:
+        'We emphasize global active learning. Students practice presenting, discussing, and writing in English, leading to numerous publications in major international conferences.',
+    },
+    resources: {
+      title: 'Resources & Links',
+      overview: 'Lab Overview PDF',
+      themes: 'Research Themes PDF',
+      video_1: 'Intro Video 1',
+      video_2: 'Intro Video 2',
+      video_3: 'Intro Video 3',
+    },
+    tours: {
+      title: 'Lab Tours & Q&A Schedule',
+      cat_open: 'Open Seminar',
+      cat_intro: 'Senior Support',
+      cat_qa: 'Professor Q&A',
+      open_semi: 'Open Seminar Experience',
+      open_semi_note: 'Location changed from W211 to W202',
+      senior_qa: 'Lab Intro & Q&A by Senior Students',
+      prof_qa: 'Consultation with Professor',
+      date_open: '2025/4/7 (Mon) 2nd Period',
+      date_intro: '2025/4/7 (Mon) - 4/10 (Thu) 13:20~15:00',
+      date_qa_1: '2025/4/7 (Mon) 13:20~15:00',
+      date_qa_2: '2025/4/8 (Tue) 13:20~15:00',
+      date_qa_3: '2025/4/9 (Wed) 15:10~17:00',
+    },
+  },
   home: {
     hero: {
       title: 'Intelligent Media Processing Lab',
@@ -539,6 +590,7 @@ export default {
     meetings: 'Research Meetings',
     publications: 'Publications',
     activities: 'Activities',
+    visit: 'Lab Visit',
   },
   colors: {
     green: 'Green',

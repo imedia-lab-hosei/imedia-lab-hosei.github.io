@@ -117,5 +117,11 @@ const items = computed<NavigationMenuItem[]>(() => [
     // icon: 'lucide:house',
     active: isAPIActive('activities'),
   },
+  {
+    label: t('header.visit'),
+    to: { name: 'visit', params: { locale: locale.value } },
+    // icon: 'lucide:house',
+    active: isAPIActive('visit'),
+  },
 ])
 </script>

@@ -57,4 +57,9 @@ export const showcaseRoutes: RouteRecordRaw[] = [
     name: 'activities',
     component: () => import('../views/Activities/ActivitiesView.vue'),
   },
+  {
+    path: 'visit',
+    name: 'visit',
+    component: () => import('../views/Visit/LabVisit/LabVisit.vue'),
+  },
 ]
