@@ -4,6 +4,9 @@ on:
   push:
     branches:
       - main  # 只有推送到 main 分支时才触发。如果你用的是 master，请修改这里
+    paths:
+      - 'frontend/**'
+      - '.github/workflows/**' 
 
 permissions:
   contents: write  # 赋予 Actions 写入仓库内容的权限（用于推送 gh-pages 分支）
