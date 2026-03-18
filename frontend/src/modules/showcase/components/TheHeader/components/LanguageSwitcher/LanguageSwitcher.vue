@@ -22,11 +22,9 @@ const { locale } = useI18n() // 注意：这里拿到的是 Ref<string>
 const router = useRouter()
 const route = useRoute()
 
-
-
 // 1. 定义语言配置（配置表）
 const languages = [
-  { code: 'zh', label: '简体中文', icon: 'circle-flags:cn' },
+  // { code: 'zh', label: '简体中文', icon: 'circle-flags:cn' },
   { code: 'en', label: 'English', icon: 'circle-flags:us' },
   { code: 'ja', label: '日本語', icon: 'circle-flags:ja' },
 ]
@@ -44,14 +42,13 @@ const currentIcon = computed(() => {
 //   document.querySelector('html')?.setAttribute('lang', langCode)
 // }
 
-
 const setLang = (newLang: LocaleType) => {
   // 核心：路由跳转，保留当前页面其他参数，只替换 locale
   router.replace({
     params: {
       ...route.params, // 保留其他动态参数（如果有）
-      locale: newLang
-    }
+      locale: newLang,
+    },
   })
 }
 

@@ -5,31 +5,56 @@ export const showcaseRoutes: RouteRecordRaw[] = [
   {
     path: '', // 对应 /:locale/
     name: 'home',
-    component: () => import('../views/Home/HomeView.vue'),
+    component: () => import('../views/IndexPage/IndexPage.vue'),
   },
   {
-    path: 'games',
-    name: 'games',
-    component: () => import('../views/Maintenance/MaintenanceView.vue'),
-  },
-  {
-    path: 'tech',
+    path: 'research',
     children: [
       {
-        path: 'articles',
-        name: 'articles',
-        component: () => import('../views/Tech/Articles/ArticlesView.vue'),
+        path: 'sensing',
+        name: 'sensing',
+        component: () => import('../views/Research/Sensing/SensingView.vue'),
       },
       {
-        path: 'webtools',
-        name: 'webtools',
-        component: () => import('../views/Tech/Webtools/WebtoolsView.vue'),
+        path: 'coding',
+        name: 'coding',
+        component: () => import('../views/Research/Coding/CodingView.vue'),
+      },
+      {
+        path: 'processing',
+        name: 'processing',
+        component: () => import('../views/Research/Processing/ProcessingView.vue'),
       },
     ],
   },
   {
-    path: 'process',
-    name: 'process',
-    component: () => import('../views/Process/ProcessView.vue'),
+    path: 'aboutUs',
+    children: [
+      {
+        path: 'members',
+        name: 'members',
+        component: () => import('../views/AboutUs/Members/MembersView.vue'),
+      },
+      {
+        path: 'facilities',
+        name: 'facilities',
+        component: () => import('../views/AboutUs/Facilities/FacilitiesView.vue'),
+      },
+      {
+        path: 'meetings',
+        name: 'meetings',
+        component: () => import('../views/AboutUs/Meetings/MeetingsView.vue'),
+      },
+    ],
+  },
+  {
+    path: 'publications',
+    name: 'publications',
+    component: () => import('../views/Publications/PublicationsView.vue'),
+  },
+  {
+    path: 'activities',
+    name: 'activities',
+    component: () => import('../views/Activities/ActivitiesView.vue'),
   },
 ]

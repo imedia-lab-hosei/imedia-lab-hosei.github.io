@@ -19,7 +19,7 @@ const getLocale = () => {
   if (savedLocale) return savedLocale
 
   const language = navigator.language.toLowerCase()
-  return language.includes('zh') ? 'zh' : 'en'
+  return language.includes('en') ? 'en' : 'ja'
 }
 
 // 创建实例
@@ -37,7 +37,8 @@ const i18n = createI18n({
   },
 })
 
-export const SUPPORT_LOCALES = ['zh', 'en', 'ja'] as const
+// export const SUPPORT_LOCALES = ['zh', 'en', 'ja'] as const
+export const SUPPORT_LOCALES = ['en', 'ja'] as const
 export type LocaleType = (typeof SUPPORT_LOCALES)[number]
 
 export default i18n

@@ -1,7 +1,7 @@
 <template>
   <UHeader toggle-side="left" mode="drawer">
     <template #title>
-      <div class="font-bold"><span class="text-primary">MOMOCHA</span>.LOG</div>
+      <div class="font-bold"><span class="text-primary">iMedia</span> Lab</div>
     </template>
 
     <UNavigationMenu content-orientation="vertical" :items="items" />
@@ -48,40 +48,74 @@ const items = computed<NavigationMenuItem[]>(() => [
     // 2. 核心修改：使用对象格式，带上 name 和 params
     // 这样 router 会自动生成 /zh 或 /en
     to: { name: 'home', params: { locale: locale.value } },
-    icon: 'lucide:house',
+    // icon: 'lucide:house',
     active: isAPIActive('home'),
   },
   {
-    label: t('header.entretament'),
-    to: { name: 'games', params: { locale: locale.value } },
-    icon: 'lucide:gamepad-2',
-    active: isAPIActive('games'),
-  },
-  {
-    label: t('header.tech'),
-    icon: 'lucide:text-search',
-    active: isGroupActive(['articles', 'webtools']),
+    label: t('header.research'),
+    // icon: 'lucide:text-search',
+    active: isGroupActive(['sensing', 'coding', 'processing']),
     children: [
       {
-        label: t('header.articles'),
-        to: { name: 'articles', params: { locale: locale.value } },
-        icon: 'lucide:book',
-        active: isAPIActive('articles'),
+        label: t('header.sensing'),
+        to: { name: 'sensing', params: { locale: locale.value } },
+        // icon: 'lucide:book',
+        active: isAPIActive('sensing'),
       },
 
       {
-        label: t('header.webtools'),
-        to: { name: 'webtools', params: { locale: locale.value } },
-        icon: 'lucide:tool-case',
-        active: isAPIActive('webtools'),
+        label: t('header.coding'),
+        to: { name: 'coding', params: { locale: locale.value } },
+        // icon: 'lucide:code',
+        active: isAPIActive('coding'),
+      },
+
+      {
+        label: t('header.processing'),
+        to: { name: 'processing', params: { locale: locale.value } },
+        // icon: 'lucide:tool-case',
+        active: isAPIActive('processing'),
       },
     ],
   },
   {
-    label: t('header.process'),
-    to: { name: 'process', params: { locale: locale.value } },
-    icon: 'lucide:clipboard-clock',
-    active: isAPIActive('process'),
+    label: t('header.aboutUs'),
+    // icon: 'lucide:text-search',
+    active: isGroupActive(['members', 'facilities', 'meetings']),
+    children: [
+      {
+        label: t('header.members'),
+        to: { name: 'members', params: { locale: locale.value } },
+        // icon: 'lucide:book',
+        active: isAPIActive('members'),
+      },
+
+      {
+        label: t('header.facilities'),
+        to: { name: 'facilities', params: { locale: locale.value } },
+        // icon: 'lucide:building',
+        active: isAPIActive('facilities'),
+      },
+
+      {
+        label: t('header.meetings'),
+        to: { name: 'meetings', params: { locale: locale.value } },
+        // icon: 'lucide:tool-case',
+        active: isAPIActive('meetings'),
+      },
+    ],
+  },
+  {
+    label: t('header.publications'),
+    to: { name: 'publications', params: { locale: locale.value } },
+    // icon: 'lucide:house',
+    active: isAPIActive('publications'),
+  },
+  {
+    label: t('header.activities'),
+    to: { name: 'activities', params: { locale: locale.value } },
+    // icon: 'lucide:house',
+    active: isAPIActive('activities'),
   },
 ])
 </script>

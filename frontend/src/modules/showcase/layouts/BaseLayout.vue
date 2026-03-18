@@ -22,9 +22,29 @@
       <UFooter
         class="border-t border-border bg-muted/30 backdrop-blur-sm md:py-12 text-center shrink-0"
       >
-        <p class="text-muted-foreground text-sm">
+        <!-- <p class="text-muted-foreground text-sm">
           {{ $t('footer.desc') }}
-        </p>
+        </p> -->
+        <div
+          class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-center gap-8 md:gap-12"
+        >
+          <div class="text-sm md:text-base font-light tracking-wide opacity-90">
+            <span class="font-semibold mr-1"> {{ $t('footer.address') }}:</span>
+            {{ $t('footer.address_desc') }}
+          </div>
+
+          <div class="hidden md:block h-12 w-[1px] bg-border/40 dark:bg-white/20"></div>
+          <div class="flex flex-col gap-1 text-sm md:text-base font-light opacity-90">
+            <div>
+              <span class="font-semibold mr-1">{{ $t('footer.tel') }}:</span>
+              + 042 387 6188
+            </div>
+            <div>
+              <span class="font-semibold mr-1">{{ $t('footer.email') }}:</span>
+              zhou@hosei.ac.jp
+            </div>
+          </div>
+        </div>
       </UFooter>
     </UMain>
   </div>

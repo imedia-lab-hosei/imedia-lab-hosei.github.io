@@ -1,4 +1,524 @@
 export default {
+  project_detail: {
+    intro:
+      'This research focuses on the whole image acquisition system, and proposes to integrate the compressive sensing (CS) based measurement domain image sensing and the corresponding measurement domain data compression. Comparing with the conventional solution, the power of the whole system is expected to be reduced by more than 90%.',
+    labels: {
+      abstract: 'Abstract',
+      published: 'Published',
+      related_papers: 'Related Papers',
+    },
+    links: {
+      paper: 'Paper',
+      code: 'Code',
+    },
+    video_caption:
+      '[Hosei Research Brand vol.9 (Video)] Next-generation technology for processing enormous dynamic data (Associate Professor Jinjia Zhou, Graduate School of Science and Engineering)',
+    sections: {
+      s1: {
+        title:
+          'CS-MCNet: A Video Compressive Sensing Reconstruction Network with Interpretable Motion Compensation',
+        abstract:
+          'In this paper, a deep neural network with interpretable motion compensation called CS-MCNet is proposed to realize high-quality and real-time decoding of video compressive sensing. Firstly, explicit multi-hypothesis motion compensation is applied in our network to extract correlation information of adjacent frames(as shown in Fig. 1), which improves the recover performance. And then, a residual module further narrows down the gap between reconstruction result and original signal. The overall architecture is interpretable by using algorithm unrolling, which brings the benefits of being able to transfer prior knowledge about the conventional algorithms. As a result, a PSNR of 22dB can be achieved at 64x compression ratio, which is about 4% to 9% better than state-of-the-art methods. In addition, due to the feed-forward architecture, the reconstruction can be processed by our network in real time and up to three orders of magnitude faster than traditional iterative methods.',
+        published: 'Asian Conference on Computer Vision 2020 (ACCV), Virtual Tokyo. Nov. 2020.',
+      },
+      s2: {
+        title:
+          'Bi-directional intra prediction based measurement coding for compressive sensing images',
+        abstract:
+          'This work proposes a bi-directional intra prediction-based measurement coding algorithm for compressive sensing images. Compressive sensing is capable of reducing the size of the sparse signals, in which the high-dimensional signals are represented by the under-determined linear measurements. In order to explore the spatial redundancy in measurements, the corresponding pixel domain information extracted using the structure of measurement matrix. Firstly, the mono-directional prediction modes (i.e. horizontal mode and vertical mode), which refer to the nearest information of neighboring pixel blocks, areobtained by the structure of the measurement matrix. Secondly, we design bi-directional intra prediction modes (i.e. Diagonal +Horizontal, Diagonal + Vertical) base on the already obtained mono-directional prediction modes. Experimental results show that this work improves 0.01 - 0.02 dB PSNR improvement and the birate reductions of on average 19%, up to 36% compared to the state-of-the-art.',
+        published:
+          '2020 IEEE 22nd International Workshop on Multimedia Signal Processing (MMSP), Sep. 2020.',
+      },
+    },
+  },
+  project_detail_coding: {
+    intro: 'We are developing the deep learning based video coding systems.',
+    labels: {
+      abstract: 'Abstract',
+      published: 'Published',
+      related_papers: 'Related Papers',
+    },
+    links: {
+      paper: 'Paper',
+      code: 'Code',
+      video: 'Video',
+    },
+    video_caption:
+      '[Hosei Research Brand vol.9 (Video)] Next-generation technology for processing enormous dynamic data (Associate Professor Jinjia Zhou, Graduate School of Science and Engineering)',
+    sections: {
+      s1: {
+        title:
+          'RR-DnCNN v2.0: Enhanced Restoration-Reconstruction Deep Neural Network for Down-Sampling Based Video Coding',
+        abstract:
+          'we proposed an end-to-end restoration-reconstruction deep neural network (RR-DnCNN) using the degradation-aware technique, which entirely solves degradation from compression and sub-sampling. Besides, we proved that the compression degradation produced by Random Access configuration is rich enough to cover other degradation types, such as Low Delay P and All Intra, for training. Since the straightforward network RR-DnCNN with many layers as a chain has poor learning capability suffering from the gradient vanishing problem, we redesign the network architecture to let reconstruction leverages the captured features from restoration using up-sampling skip connections. Our novel architecture is called restoration-reconstruction u-shaped deep neural network (RR-DnCNN v2.0). As a result, our RR-DnCNN v2.0 outperforms the previous works and can attain 17.02% BD-rate reduction on UHD resolution for all-intra anchored by the standard H.265/HEVC. ',
+        published:
+          'IEEE Transactions on Image Processing (TIP).　DOI:10.1109/TIP.2020.3046872. 2021. (SJR Q1, Impact Factor: 9.34)',
+      },
+      s2: {
+        title: 'Image Compression with Encoder-Decoder Matched Semantic Segmentation',
+        abstract:
+          'In recent years, the layered image compression is demonstrated to be a promising direction, which encodes a compact representation of the input image and apply an up-sampling network to reconstruct the image. To further improve the quality of the reconstructed image, some works transmit the semantic segment together with the compressed image data. Consequently, the compression ratio is also decreased because extra bits are required for transmitting the semantic segment. To solve this problem, we propose a new layered image compression framework with encoder-decoder matched semantic segmentation (EDMS). And then, followed by the semantic segmentation, a special convolution neural network is used to enhance the inaccurate semantic segment. As a result, the accurate semantic segment can be obtained in the decoder without requiring extra bits. The experimental results show that the proposed EDMS framework can get up to 35.31% BD-rate reduction over the HEVC-based (BPG) codec, 5% bitrate and 24% encoding time saving compare to the state-of-the-art semantic-based image codec.',
+        published:
+          '2020 IEEE/CVF Conference on Computer Vision and Pattern Recognition Workshops (CVPRW), Seattle, WA, USA, 2020, pp. 619-623, doi: 10.1109/CVPRW50498.2020.00088.',
+      },
+    },
+  },
+  project_detail_processing: {
+    intro: 'We are developing the deep learning based video coding systems.',
+    labels: {
+      abstract: 'Abstract',
+      published: 'Published',
+      related_papers: 'Related Papers',
+    },
+    links: {
+      paper: 'Paper',
+      code: 'Code',
+      video: 'Video',
+    },
+    video_caption:
+      '[Hosei Research Brand vol.9 (Video)] Next-generation technology for processing enormous dynamic data (Associate Professor Jinjia Zhou, Graduate School of Science and Engineering)',
+    sections: {
+      s2: {
+        title: 'DrawGAN: Text to Image Synthesis with Drawing Generative Adversarial Networks',
+        abstract:
+          'In this paper, we propose a novel drawing generative adversarial networks (DrawGAN) for text-to-image synthesis. The whole model divides the image synthesis into three stages by imitating the process of drawing. The first stage synthesizes the simple contour image based on the text description, the second stage generates the foreground image with detailed information, and the third stage synthesizes the final result. Through the step-by-step synthesis process from simple to complex and easy to difficult, the model can draw the corresponding results step by step and finally achieve the higher-quality image synthesis effect. Our method is validated on the Caltech-UCSD Birds 200 (CUB) dataset and the Microsoft Common Objects in Context (MS COCO) dataset. The experimental results demonstrate the effectiveness and superiority of our method. In terms of both subjective and objective evaluation, our method’s results surpass the existing state-of-the-art methods.',
+        published:
+          'IEEE International Conference on Acoustics, Speach and Signal Processing (ICASSP) Jun. 2021.',
+      },
+      s1: {
+        title: 'Blending and Retouching Photos with Color Style Transfer',
+        abstract:
+          'End-users, without knowledge in photography, desire to beautify their photos to have a similar color style as a well-retouched reference. However, the definition of style in recent image style transfer works is inappropriate. They usually synthesize undesirable results due to transferring exact colors to the wrong destination. It becomes even worse in sensitive cases such as portraits. In this work, we concentrate on learning low-level image transformation, especially color-shifting methods, rather than mixing contextual features, then present a novel scheme to train color style transfer with ground-truth. Furthermore, we propose a color style transfer named Deep Preset. It is designed to 1) generalize the features representing the color transformation from content with natural colors to retouched reference, then blend it into the contextual features of content, 2) predict hyper-parameters (settings or preset) of the applied low-level color transformation methods, 3) stylize content to have a similar color style as reference. We script Lightroom, a powerful tool in editing photos, to generate 600,000 training samples using 1,200 images from the Flick2K dataset and 500 user-generated presets with 69 settings. Experimental results show that our Deep Preset outperforms the previous works in color style transfer quantitatively and qualitatively.',
+        published:
+          'IEEE/CVF Winter Conference on Applications of Computer Vision (WACV), pp. 2113-2121, Jan. 2021 (acceptance rate 35.4%).',
+      },
+    },
+  },
+  aboutUs: {
+    members: {
+      pageTitle: 'Our Members',
+      pageDescription:
+        'Meet the brilliant minds and researchers driving our academic excellence forward.',
+      roles: {
+        professor: 'Professor',
+        lab_director: 'Lab Director',
+        doctoral: 'Doctoral students',
+        masters: 'Master students',
+        b4: 'B4 students',
+        b3: 'B3 students',
+        alumni: 'Alumni',
+      },
+      names: {
+        jinjia_zhou: 'Jinjia Zhou',
+        keren_he: 'Keren He',
+        alaa_zein: 'Alaa Zein El Abdein Marouf',
+        qi_yuanrui: 'Qi yuanrui',
+        ding_jinhao: 'Ding Jinhao',
+        wang_qi: 'Wang Qi',
+        chen_shiyu: 'Chen Shiyu',
+        wang_haixin: 'Wang Haixin (Sato Mirai)',
+        kimishima_fuma: 'Kimishima Fuma',
+        miyamoto_mizuki: 'Miyamoto Mizuki',
+        iwama_kosuke: 'Iwama Kosuke',
+        morita_ryugo: 'Morita Ryugo',
+        yao_zhidi: 'Yao Zhidi',
+        sai: 'UMMITHI Sai Jayaprakash',
+        yang_yu: 'Yang Yu',
+        akihiro_sakurai: 'Akihiro Sakurai',
+        hiroto_sugiura: 'Hiroto Sugiura',
+        riku_takahashi: 'Riku Takahashi',
+        ayumu_seki: 'Ayumu Seki',
+        haruto_domori: 'Haruto Domori',
+        fan_wei: 'Fan Wei',
+        rigen_mo: 'Rigen Mo',
+        mirino_otsubo: 'Mirino Otsubo',
+        shoki_masuda: 'Shoki Masuda',
+        jiaqi_mei: 'Jiaqi Mei',
+        ryosuke_sato: 'Ryosuke Sato',
+        kohta_nakamura: 'Kohta Nakamura',
+        rikuya_maeta: 'Rikuya Maeta',
+        iwasaki_yota: 'Iwasaki Yota',
+        asano_shunsuke: 'Asano Shunsuke',
+        nakajima_sawaki: 'Nakajima Sawaki',
+        ito_tomoki: 'Ito Tomoki',
+        mikano_ryota: 'Mikano Ryota',
+        enomoto_machika: 'Enomoto Machika',
+        nonoo_gaku: 'Nonoo Gaku',
+        ajiki_ren: 'Ajiki Ren',
+        kashiyama_keisuke: 'Kashiyama Keisuke',
+        yagihashi_kaito: 'Yagihashi Kaito',
+        jianbin_zhou: 'Jianbin Zhou',
+        tran_thi_thu_thuy: 'Tran Thi Thu Thuy',
+        nguyen_tan_ho: 'Nguyen Tan Ho',
+        gu_qirui: 'Gu Qirui',
+        trinh_man_hoang: 'Trinh Man Hoang',
+        minh_man_ho: 'Minh Man Ho',
+        jirayu_peetakul: 'Jirayu Peetakul',
+        pham_do_kim_chi: 'Pham Do Kim Chi',
+        catherine_waithera: 'Catherine Waithera Wangari',
+        miyoshi_hayato: 'Miyoshi Hayato',
+        otagiri_kengo: 'Otagiri Kengo',
+        kikuchi_syunshuke: 'Kikuchi Syunshuke',
+        makino_hiroya: 'Makino Hiroya',
+        usukura_riki: 'Usukura Riki',
+        fujii_riku: 'Fujii Riku',
+        hayama_hibiki: 'Hayama Hibiki',
+        zhiqiang_zhang: 'Zhiqiang Zhang',
+        fu_chen: 'Fu Chen',
+        jiayao_xu: 'Jiayao Xu',
+        yang_jian: 'Yang Jian',
+        hayashi_shinkou: 'Hayashi Shinkou',
+        haga_shinkou: 'Haga Shinkou',
+        nakano_kyoka: 'Nakano Kyoka',
+        xin_cheng: 'Xin Cheng',
+      },
+      destinations: {
+        dji: 'DJI',
+        rakuten: 'Rakuten, Tokyo',
+        ficha: 'Ficha Inc, Tokyo, Japan',
+        thoughtworks: 'Thoughtworks Inc, Beijing, China',
+        utah: 'University of Utah, Salt Lake City, UT',
+        muspace: 'muSpace Japan',
+        ando_hazama: 'Ando Hazama Corporation, Japan',
+        kisii: 'Kisii University, Kenya',
+        veriserve: 'Veriserve, Japan',
+        accenture: 'Accenture, Japan',
+        mitsubishi: 'Mitsubishi Electric, Japan',
+        ntt_data: 'NTT DATA SMS, Japan',
+        scsk: 'SCSK Corporation, Japan',
+        toyota: 'TOYOTA Motor Corporation, Japan',
+        kyudenko: 'KYUDENKO Corporation, Japan',
+        swust: 'Southwest University of Sci & Tech, China',
+        chn_energy: 'CHN ENERGY Investment Group',
+        pengcheng: 'PengCheng Laboratory',
+        tokyo_tech: 'Tokyo University of Technology',
+        hitachi: 'Hitachi',
+        capcom: 'CAPCOM CO.',
+        sky: 'Sky',
+      },
+    },
+    facilities: {
+      header: {
+        title: 'Lab Room',
+        description:
+          'Explore the spaces and state-of-the-art equipment that empower our research and innovation.',
+      },
+      notice: {
+        title: 'Lab Relocation Update',
+        description:
+          'We moved the lab room to the South building in April 2021. The photos of our new room will be updated soon.',
+      },
+      sections: {
+        research_facilities: 'Research Facilities',
+        gallery: 'Equipment Gallery',
+      },
+      categories: {
+        library: 'Literature & Library',
+        computing: 'Computing Power',
+        hardware: 'Hardware & Sensors',
+      },
+      texts: {
+        library_p1:
+          'We have a small library in the lab room. Feel free to borrow the books. Currently, most of the books are written in English, and more Japanese books will be purchased to enrich our collection.',
+        computing_p1:
+          'Several high-performance computers with advanced GPUs are equipped to support intensive research workloads, deep learning training, and complex simulations.',
+        hardware_p1:
+          'Moreover, we provide specialized hardware for edge computing, computer vision, and signal processing experiments.',
+      },
+      gallery: {
+        gpu: 'GPU Workstation',
+        testing: 'Testing Environment',
+        sensor: 'Programmable Sensors',
+      },
+    },
+    activities: {
+      header: {
+        title: 'Research Meetings',
+        description:
+          'Regular seminars, study groups, and guidelines to foster collaborative research and continuous learning.',
+      },
+      links: {
+        submission_guide: 'Conferences Link',
+        meeting_link: 'Meeting Link',
+      },
+      frequency: {
+        weekly: 'Weekly',
+        monthly: 'Monthly',
+      },
+      labels: {
+        language: 'Language Requirements',
+        timing: 'Presentation Timing',
+      },
+      seminar: {
+        title: 'Research Seminar',
+        description:
+          'We hold weekly research seminars where all members discuss progress and results. The purpose of this meeting is to exchange diverse ideas among all laboratory members.',
+        lang_slides: 'Slides: Mostly English',
+        lang_talk: 'Talk: English or Japanese (English preferred)',
+        time_phd: 'Doctoral students: 20 minutes',
+        time_others: 'Master / Undergrad students: 10 minutes',
+      },
+      study_groups: {
+        title: 'Study Meetings',
+        reading: {
+          title: 'Paper Reading',
+          desc: 'Every week, the gruadate students introduce a paper or a video. We recommend the undegraduated students to attend it.',
+          note: 'Optional for undergrads',
+        },
+        theory: {
+          title: 'Theoretical Studying',
+          target: 'B3 Seminar',
+          desc: 'To learn the basic knowledge of information processing and machine learning, the students read the book titled. Information Theory, Inference, and Learning Algorithms. Every B3 student read one chapter and introduce to the others by presentation.',
+        },
+        programming: {
+          title: 'Programming Studying',
+          target: 'B3 Seminar',
+          desc: 'Every week, handouts are distributed to learn the programming skills. To enhance the programming skills, some tasks are assigned. ',
+        },
+      },
+      project_report: {
+        title: 'Project Research Progress Report',
+        time: 'Each group: 20 minutes',
+      },
+      weekly_report: {
+        title: 'Weekly Report',
+        desc: 'All members are required to send a weekly report to the mailing list address.',
+        template_btn: 'Download Template',
+      },
+    },
+  },
+  publications: {
+    header: {
+      title: 'Publications & Achievements',
+      description:
+        'A comprehensive collection of our academic papers, patents, and invited talks driving innovation forward.',
+    },
+    sections: {
+      publications: 'Selected Publications',
+      patents: 'Patents',
+      talks: 'Invited Talks',
+    },
+    ui: {
+      search_placeholder: 'Search by title or author or date...',
+      no_results: 'No publications found matching your search.',
+      load_more: 'Load Older Publications',
+    },
+  },
+  activities: {
+    header: {
+      title: 'Activities',
+      description:
+        "A chronicle of our laboratory's journey, from academic milestones to team-building moments.",
+    },
+    ui: {
+      search_placeholder: 'Search activities...',
+      no_results: 'No activities match your search criteria.',
+      load_more: 'Load Older Activities',
+    },
+    types: {
+      ordinary: 'Activity',
+      conference: 'Conference',
+      award: 'Award Recognition',
+    },
+    list: {
+      conf_iconip_2025_gao: {
+        title: 'Research Presentation',
+        venue: 'ICONIP 2025',
+        location: 'Okinawa, Japan',
+      },
+      conf_icip_2025_he: {
+        title: 'Research Presentation',
+        venue: 'ICIP 2025',
+        location: 'Anchorage Alaska, USA',
+      },
+      conf_icmr_2025_takahashi: {
+        title: 'Research Presentation',
+        venue: 'ICMR 2025',
+        location: 'Chicago, USA',
+      },
+      conf_miru_2025_takahashi: {
+        title: 'Research Presentation',
+        venue: 'MIRU 2025',
+        location: 'Kyoto, Japan',
+      },
+      award_kubota_2025_zein: {
+        title: 'Grant Presentation & Reception',
+        venue: 'Kubota Grant Award',
+      },
+      conf_cvpr_2025_morita: {
+        title: 'Research Presentation',
+        venue: 'CVPR 2025',
+        location: 'Nashville, USA',
+      },
+      conf_glsvlsi_2025_ding: {
+        title: 'Research Presentation',
+        venue: 'GLSVLSI 2025',
+        location: 'New Orleans, LA, USA',
+      },
+      event_welcome_2025: { title: 'Welcome Party 2025' },
+      conf_date_2025_ding: {
+        title: 'Research Presentation',
+        venue: 'DATE 2025',
+        location: 'Lyon, France',
+      },
+      event_graduation_2025: { title: 'Graduation Ceremony 2025 🌸' },
+      conf_wcci_2024_shirai_kimishima: {
+        title: 'Research Presentation',
+        venue: 'WCCI 2024',
+        location: 'Yokohama, Japan',
+      },
+      conf_iscas_2024_wang_miyamoto_yang: {
+        title: 'Research Presentation',
+        venue: 'ISCAS 2024',
+        location: 'Singapore',
+      },
+      event_workshop_2024: { title: 'Lab Workshop 📚' },
+      event_welcome_2024: { title: 'Welcome Party 2024 🌸' },
+      event_xmas_2023: { title: "X'mas Party 🎄" },
+      conf_acmmm_2023_wang_iwama: {
+        title: 'Research Presentation',
+        venue: 'ACM MM 2023',
+        location: 'Tainan, Taiwan',
+      },
+      conf_cecnet_2023_fu: {
+        title: 'Research Presentation',
+        venue: 'CECNet 2023',
+        location: 'Macau, China',
+      },
+      conf_insa_2023_yao_keren: {
+        title: 'Research Presentation',
+        venue: 'INSA 2023',
+        location: 'Rennes, France',
+      },
+      conf_icip_2023_zhang_morita: {
+        title: 'Research Presentation',
+        venue: 'ICIP 2023',
+        location: 'Kuala Lumpur, Malaysia',
+      },
+      conf_wacv_2023_morita: {
+        title: 'Research Presentation',
+        venue: 'WACV 2023',
+        location: 'Waikoloa, Hawaii',
+      },
+      conf_insa_2022_yang_fu: {
+        title: 'Research Presentation',
+        venue: 'INSA 2022',
+        location: 'Rennes, France',
+      },
+      conf_iconip_2022_wang_hayashi: {
+        title: 'Paper Presentation',
+        venue: 'ICONIP 2022',
+        location: 'Virtual',
+      },
+      conf_icann_2022_zein: {
+        title: 'Paper Presentation',
+        venue: 'ICANN 2022',
+        location: 'Bristol, UK',
+      },
+      conf_icme_2022_fu_zhiqiang: {
+        title: 'Paper Presentation',
+        venue: 'ICME 2022',
+        location: 'Virtual',
+      },
+      event_defense_2022_zein_catherine: { title: 'Graduation Defense' },
+      conf_mmm_2022_yang_yao: {
+        title: 'Paper Presentation',
+        venue: 'MMM 2022',
+        location: 'Virtual',
+      },
+      event_welcome_2022_park: { title: 'Welcome Party at Koganei Park' },
+      conf_iciap_2022_kimishima: {
+        title: 'Research Presentation',
+        venue: 'ICIAP 2022',
+        location: 'Virtual',
+      },
+      conf_cvmp_2021_man: {
+        title: 'Paper Presentation',
+        venue: 'CVMP 2021',
+        location: 'Virtual',
+      },
+      event_festival_2021: { title: 'The 69th Koganei Campus Festival' },
+      event_poster_2021: { title: 'Poster Presentation' },
+      event_farewell_welcome_2021: { title: 'Online Farewell and Welcome Party' },
+      event_welcome_2021_online: { title: 'Online Welcome Party for New Members' },
+      award_mmm_2020_man: {
+        title: 'Best Paper Runner-up Award',
+        venue: 'MMM 2020',
+        location: 'Daejeon, Korea',
+      },
+      conf_cvmp_2019_man: {
+        title: 'Paper Presentation',
+        venue: 'CVMP 2019',
+        location: 'London, UK',
+      },
+      conf_pcs_2019_hoang: {
+        title: 'Paper Presentation',
+        venue: 'PCS 2019',
+        location: 'Ningbo, China',
+      },
+      event_outing_autumn_2019: { title: 'Autumn Group Outing' },
+      event_entrance_2019: { title: 'Entrance Ceremony' },
+      conf_isair_2019_chi: {
+        title: 'Paper Presentation',
+        venue: 'ISAIR 2019',
+        location: 'Daegu, Korea',
+      },
+      event_outing_summer_2019: { title: 'Summer Group Outing' },
+      event_outing_spring_2019: { title: 'Spring Group Outing' },
+      conf_talk_dcc_2019_jinjia_jay: {
+        title: 'Talk & Conference Attendance',
+        venue: 'Video Live Stack & DCC 2019',
+      },
+      event_visit_taiwan_2019: { title: 'University Visits in Taiwan' },
+      event_visit_singapore_2019: { title: 'Research Institution Visits in Singapore' },
+      event_workshop_media_2019: { title: 'International Workshop on Future Media' },
+      event_bbq_2018: { title: 'Summer BBQ Party' },
+    },
+  },
+  home: {
+    hero: {
+      title: 'Intelligent Media Processing Lab',
+      subtitle: 'Intelligent Media Processing',
+    },
+    intro: {
+      text: 'The Intelligent Media Processing Laboratory is conducting cutting-edge research and real-world applications of multimedia AI technology based on AI, IoT, and big data processing.',
+    },
+    news: {
+      title: 'News',
+      more: 'View More',
+      item1: 'One Project is accepted by Kayamori Foundation of Informational Science Advancement.',
+      item2: '17 Papers were accepted in 2025',
+      item3: 'One Paper is accepted by Pattern Recognition',
+      item4: 'One paper is accepted by CVPR 2025',
+      item5: 'One project is accepted by JSPS KAKENHI',
+    },
+    projects: {
+      title: 'Research Projects',
+      p1: {
+        title:
+          'Adaptive Video Streaming with Layered Neural Codecs for Both Machine and Human Vision',
+        desc: 'Exploring the frontier research and practical applications of multimedia AI technology in AI, IoT and big data processing.',
+      },
+      p2: {
+        title:
+          'An Innovative Ultra-Low Power Imaging System by Integrating Deep Learning and Compressive Sensing',
+        desc: 'Realization of an innovative ultra-low power imaging system combining deep learning and compressive sensing.',
+      },
+      p3: {
+        title: 'Image and Video Compression for Computer Vision Applications',
+        desc: 'Development of a novel AI-based multimedia data analysis method for cross-modal retrieval.',
+      },
+      p4: {
+        title:
+          'A Highly-Distributed Surveillance System with Batteryless and Wireless Video Acquisition',
+        desc: 'Research on advanced multimedia compression technology based on deep learning.',
+      },
+    },
+    videos: {
+      v1: 'Lab Research Overview',
+      v2: 'Video AI Compression Technology',
+    },
+  },
   base: {
     cancel: 'Cancel',
     confirm: 'Confirm',
@@ -9,162 +529,16 @@ export default {
     changeLanguage: 'Switch Language',
     changeColor: 'Change Color',
     home: 'Home',
-    games: 'Games',
-    articles: 'Articles & Thoughts',
-    process: 'Roadmap', // 或者用 Development Process
-    tech: 'Technology',
-    entretament: 'Entertainment',
-    webtools: 'Web Tools',
-  },
-  maintenanceView: {
-    mainInfor: 'UNDER CONSTRUCTION',
-    desc: 'This page is currently under maintenance. Please check back later! O.O',
-    back: 'Back',
-  },
-  heroSection: {
-    athour: 'MOMOCHA',
-    welcome: 'Welcome to',
-    room: 'Room',
-    desc: 'Personal blog based on Vue 3, NuxtUI, and Tailwind. Responsive design with mobile support.',
-    guest: 'Hello, Guest',
-    readArticle: 'Read Articles',
-    github: 'Github',
-  },
-  HomeView: {
-    newArticle: 'News',
-  },
-  tags: {
-    shimokita: 'Shimokitazawa',
-    food: 'Gourmet',
-    interview: 'Interview Tips',
-    roar: 'Roaring Style',
-    mussel: 'Oyster',
-    summer: 'Summer',
-    swimming: 'Swimming',
-    expression: 'Facial Control',
-    eye_power: 'Eye Power',
-    sports: 'Sports',
-    footwork: 'Footwork',
-    philosophy: 'Philosophy',
-    hot_blood: 'Hot-blooded',
-    tech: 'technology',
-    vue: 'Vue.js',
-    original: 'Original',
-    tailwind: 'Tailwind CSS',
-    pinia: 'Pinia',
-    github_actions: 'GitHub Actions',
-    aliyun: 'Alibaba Cloud',
-    nginx: 'Nginx',
-    linux: 'Linux',
-  },
-  post_list: {
-    '1': {
-      title: 'Route Guard-Based i18n Automation',
-      desc: 'Exploring how to leverage full-stack route interception to achieve zero-latency, SEO-friendly language switching.',
-      content: {
-        title: 'Route Guard-Based i18n Automation',
-        desc: 'Exploring how to leverage route interception to achieve zero-latency, SEO-friendly language switching.',
-        intro:
-          'In internationalized web applications, Route Guards serve as the optimal gateway for handling language switching. They ensure the system prepares the correct language pack before the component is rendered.',
-        h2_1: '1. Core Principles',
-        p_1: 'Route guards intercept every navigation action to parse the language identifier (e.g., /en/ or /zh/) from the URL. If the locale is invalid, it can immediately redirect or load the required resources.',
-        h2_2: '2. Implementation Steps',
-        li_1_label: 'Dynamic Route Matching',
-        li_1_desc:
-          'Define routes in /:lang/dashboard format and capture language parameters via Params.',
-        li_2_label: 'Navigation Interception',
-        li_2_desc:
-          'Detect to.params.lang within router.beforeEach and sync it with the Vue I18n instance.',
-        li_3_label: 'Lazy Loading Language Packs',
-        li_3_desc:
-          'Avoid loading all languages at once; use import() to load specific languages dynamically upon switching.',
-        quote:
-          'This approach not only enhances user experience but also allows search engines to crawl different language versions, significantly boosting SEO rankings.',
-        footer_note:
-          'Compared to traditional localStorage storage, a route-based solution supports direct link sharing, making it the current industry best practice.',
-      },
-    },
-    '2': {
-      title: 'Dynamic Dark Mode and Theme Switching with Tailwind CSS',
-      desc: 'Leveraging Tailwind CSS utility classes to implement a theme system supporting dark mode and custom primary colors.',
-      content: {
-        intro:
-          "In modern web development, a Theme System is no longer just a simple toggle between light and dark; it involves deep customization including dynamic branding colors and dark mode variants. By combining Pinia's persistence capabilities, we can build a responsive and flexible UI architecture.",
-        h2_1: '1. Core Strategy',
-        p_1: 'This solution employs a two-pronged approach: manipulating the classList of the root DOM node for dark mode visual toggling, while utilizing CSS Variables to dynamically rewrite the global theme colors.',
-        h2_2: '2. Implementation Details',
-        li_1_label: 'Reactive State Management',
-        li_1_desc:
-          'Define isDark and primaryColor in Pinia. Sync these states to localStorage via watchers to ensure persistence across sessions.',
-        li_2_label: 'Dark Mode Injection',
-        li_2_desc:
-          "Use the applyThemeToDom function. When isDark.value is true, the dark class is added to document.documentElement, triggering Tailwind's dark: variants.",
-        li_3_label: 'Dynamic CSS Variables',
-        li_3_desc:
-          'Directly manipulate the --ui-primary variable using document.documentElement.style.setProperty. This allows brand color changes across the entire site without recompiling CSS.',
-        footer_note:
-          "By variabilizing theme colors and pairing them with Tailwind's flexible configuration, developers can grant users full UI customization at runtime.",
-      },
-    },
-    '3': {
-      title: 'Automating DevOps: A Guide to Deploying Vue Projects via GitHub Actions',
-      desc: 'A comprehensive guide on building a CI/CD pipeline from local push to automated cloud deployment on Alibaba Cloud.',
-      content: {
-        intro:
-          'Manual deployment is a repetitive chore. This article demonstrates how to configure a production-ready GitHub Actions workflow for your Vue 3 + Vite projects.',
-        h2_1: '1. Designing the CI/CD Strategy',
-        p_1: 'The core approach is decoupling "building" from "deployment." A GitHub-hosted runner handles build tasks, while an encrypted SSH tunnel synchronizes the "dist" assets directly to Alibaba Cloud.',
-
-        h2_4: '2. Crafting the deploy.yml File', // Added
-        p_3: 'Create deploy.yml in the .github/workflows directory. It defines the lifecycle of the pipeline: triggering on a push to the main branch, setting up the Node environment, and executing "npm run build". The key is matching the "source" (dist/*) and "target" paths correctly so assets land in the Nginx root.',
-
-        h2_2: '3. Key Configuration Steps',
-        li_1_label: 'Node 24 Environment Locking',
-        li_1_desc:
-          'Specifying node-version: 24.13.0 ensures the cloud build matches your local setup perfectly.',
-        li_2_label: 'Encrypted Secrets Management',
-        li_2_desc:
-          'Store SSH_HOST and SSH_PRIVATE_KEY in GitHub Secrets to keep credentials secure and out of the source code.',
-        li_3_label: 'Automated SCP Synchronization',
-        li_3_desc:
-          'Use the scp-action plugin with strip_components to achieve automated directory cleanup and precise file overwriting.',
-
-        h2_3: '4. Common Troubleshooting',
-        p_2: 'The "ParsePrivateKey" error is common for beginners. Ensure the Secret includes the full BEGIN/END headers with no trailing spaces. Also, verify that the "admin" user has write permissions for the Nginx folder.',
-
-        footer_note:
-          'This CI/CD architecture allows developers to focus 100% on logic. That green checkmark in GitHub Actions represents the true elegance of modern web development.',
-      },
-    },
-    '4': {
-      title: 'The Foundation: Installing Nginx and Configuring SPA Environment',
-      desc: 'Before diving into automation, we must establish a robust Nginx environment on the server to support modern Single Page Applications.',
-      content: {
-        intro:
-          'Nginx is more than just a web server; it is the bridge between your frontend application and its users. Proper configuration of Nginx logic and permissions is a critical prerequisite for any automated deployment.',
-        h2_1: '1. Installation and Basic Management',
-        p_1: 'We install Nginx via the system package manager on Linux and enable it to start on boot. Mastering systemctl commands for starting, stopping, and reloading is fundamental for all future server maintenance.',
-        h2_2: '2. Core Configuration Logic',
-        li_1_label: 'SPA Routing Compatibility',
-        li_1_desc:
-          'For frameworks like Vue using History mode, we use the try_files directive to ensure all unmatched paths redirect to index.html, preventing 404 errors on page refresh.',
-        li_2_label: 'Static Asset Handling',
-        li_2_desc:
-          'Defining specific rules for static asset directories allows for caching strategies and prevents the server from returning HTML for missing JS/CSS files, which avoids MIME type errors.',
-        h2_3: '3. Permissions and Directory Security',
-        p_2: 'It is essential to ensure the web root directory has correct read/write permissions. By assigning ownership to a non-root user (e.g., admin) and setting permissions to 755, we ensure Nginx can serve files while keeping the environment secure for automation scripts.',
-        footer_note:
-          'Configuring Nginx is like laying down the tracks; once finished, your automation pipelines can run smoothly at high speed.',
-      },
-    },
-    //   '5': {
-    //     title: 'Descending Stairs as Art: Footwork Analysis',
-    //     desc: "Is this the so-called 'Royal Road'? Every step is taken with extreme steadiness and rhythmic flow.",
-    //   },
-    //   '6': {
-    //     title: 'Philosophical Thoughts After Three Cups of Tea',
-    //     desc: 'At this point, instead of hesitating, just shout it out loud: I want to do it too!',
-    //   },
+    research: 'Research',
+    sensing: 'Compressive Sensing',
+    coding: 'Video Coding',
+    processing: 'Image Processing',
+    aboutUs: 'About Us',
+    members: 'Members',
+    facilities: 'Lab Facilities',
+    meetings: 'Research Meetings',
+    publications: 'Publications',
+    activities: 'Activities',
   },
   colors: {
     green: 'Green',
@@ -207,119 +581,14 @@ export default {
     next_year: 'next year',
   },
   footer: {
-    desc: '© 2026 MOMOCHA.Log. Built with Vue 3 & Tailwind v4.',
+    address: 'Address',
+    tel: 'Tel',
+    email: 'Email',
+    address_desc: 'S504, 3-7-2 Kajino, Koganei, Tokyo 184-8584, Japan.',
   },
   notFoundView: {
     notFound: 'Page Not Found',
     goHome: 'Back to Home',
     message: 'Sorry, the page you are looking for does not exist.',
-  },
-  processView: {
-    start: {
-      title: 'Project Kickoff',
-      description: 'Initial commit to GitHub.',
-    },
-    mainPage: {
-      title: 'Core Framework Established',
-      description:
-        'Home page completed with mobile responsive design. Achieved modular decoupling within the framework.',
-    },
-    language: {
-      title: 'Framework Refinement',
-      description: 'Implemented real-time theme color switching and multi-language support.',
-    },
-    deployment: {
-      title: 'Future Roadmap',
-      description: 'Continuously developing new features...',
-    },
-    router: {
-      title: 'Navigation Guard Integration',
-      description:
-        'Integrated language prefix into the URL; implemented route filtering and 404 redirection.',
-    },
-    webtools: {
-      title: 'Web Tools Page Added',
-      description: 'Implemented secondary menu logic and launched the Web Tools collection page.',
-    },
-    articles: {
-      title: 'Articles & Thoughts Page Added',
-      description:
-        'Launched the Articles & Thoughts section with expandable content viewing functionality.',
-      title_2: 'Optimized Article Secondary Page Display Logic',
-      description_2:
-        'Optimized the content display logic of the article page to support multiple content structures and HTML customization.',
-    },
-    nginx: {
-      title: 'Backend Migration to Nginx',
-      description:
-        'Migrated the backend from GitHub Pages to an Nginx server, optimizing deployment processes and performance.',
-    },
-    compile: {
-      title: 'Release and Build Process Optimization',
-      description:
-        'Optimized the local build and deployment process to an automated GitHub Actions workflow, improving release efficiency and stability. Eliminated the need for manual server synchronization, achieving true one-click deployment.',
-    },
-    ssh: {
-      title: 'HTTPS Added and Git Repository Structure Optimized',
-      description:
-        'Added HTTPS certificate validation and restructured the Git repository to prepare for future front-end and back-end separation in a single Git project.',
-    },
-  },
-  webtoolsView: {
-    bookmarks: {
-      title: 'Tool Recommendations',
-      subtitle:
-        'A curated collection of my favorite development tools, design inspiration, and productivity hacks.',
-      search_placeholder: 'Search tools...',
-      no_results: 'No tools found matching "{query}"',
-      categories: {
-        dev: 'Frameworks',
-        design: 'Design Inspiration',
-        productivity: 'Productivity',
-        treasure: 'Treasure Sites',
-      },
-      items: {
-        vue_desc:
-          'An approachable, performant, and versatile framework for building web user interfaces.',
-        nuxt_desc: 'A modern UI component library built for Nuxt and Tailwind CSS.',
-        tailwind_desc:
-          'A utility-first CSS framework for rapidly building modern websites without leaving your HTML.',
-        vite_desc: 'Next-generation frontend tooling with lightning-fast cold starts.',
-        dribbble_desc:
-          'The world’s leading community for creatives to share design work and find UI/UX inspiration.',
-        coolors_desc:
-          'The superfast color palettes generator! Create the perfect matching colors for your next project.',
-        lucide_desc:
-          'Beautiful & consistent icons made by the community, perfectly suited for various design styles.',
-        chatgpt_desc: 'An AI chatbot developed by OpenAI, capable of conversational interaction.',
-        gemini_desc:
-          'Google’s multimodal AI model, designed for a wide range of tasks and creative work.',
-        inspira_desc:
-          'A stunning UI library with selective import support, perfectly compatible with Vue and Nuxt UI.',
-        icones_desc:
-          'A comprehensive icon explorer compatible with Nuxt UI, offering free access to various icon sets.',
-        pinia_desc:
-          'The intuitive store for Vue.js. Type-safe, extensible, and modular by design. You’ll forget you’re even using a store.',
-        wix_desc:
-          'Build websites online with one-click cloud deployment and powerful pre-set components.',
-        lorem_picsum_desc:
-          'A free service providing placeholder images of various sizes and styles.',
-        congyu_desc: 'A nifty tool to bypass restrictions and easily access various web resources.',
-        figma_desc:
-          'A cloud-based design tool supporting real-time collaboration and a robust plugin ecosystem.',
-        wplace_desc: 'A global drawing platform to experience the beauty of the world.',
-      },
-    },
-  },
-  articles: {
-    title: 'Articles & Thoughts',
-    subtitle: 'Sharing fragments of thoughts on tech, design, and life.',
-    search_placeholder: 'Search articles...',
-    filter_all: 'All',
-    read_more: 'Read Article',
-    no_results_title: 'No articles found',
-    no_results_desc: 'Try adjusting your search for "{query}" or clear filters.',
-    clear_filter: 'Clear all filters',
-    body_empty: 'No content available.',
   },
 }

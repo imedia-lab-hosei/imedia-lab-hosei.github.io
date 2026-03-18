@@ -1,4 +1,526 @@
 export default {
+  project_detail: {
+    intro:
+      'This research focuses on the whole image acquisition system, and proposes to integrate the compressive sensing (CS) based measurement domain image sensing and the corresponding measurement domain data compression. Comparing with the conventional solution, the power of the whole system is expected to be reduced by more than 90%.',
+    labels: {
+      abstract: 'Abstract',
+      published: 'Published',
+      related_papers: 'Related Papers',
+    },
+    links: {
+      paper: 'Paper',
+      code: 'Code',
+    },
+    video_caption:
+      '[Hosei Research Brand vol.9 (Video)] Next-generation technology for processing enormous dynamic data (Associate Professor Jinjia Zhou, Graduate School of Science and Engineering)',
+    sections: {
+      s1: {
+        title:
+          'CS-MCNet: A Video Compressive Sensing Reconstruction Network with Interpretable Motion Compensation',
+        abstract:
+          'In this paper, a deep neural network with interpretable motion compensation called CS-MCNet is proposed to realize high-quality and real-time decoding of video compressive sensing. Firstly, explicit multi-hypothesis motion compensation is applied in our network to extract correlation information of adjacent frames(as shown in Fig. 1), which improves the recover performance. And then, a residual module further narrows down the gap between reconstruction result and original signal. The overall architecture is interpretable by using algorithm unrolling, which brings the benefits of being able to transfer prior knowledge about the conventional algorithms. As a result, a PSNR of 22dB can be achieved at 64x compression ratio, which is about 4% to 9% better than state-of-the-art methods. In addition, due to the feed-forward architecture, the reconstruction can be processed by our network in real time and up to three orders of magnitude faster than traditional iterative methods.',
+        published: 'Asian Conference on Computer Vision 2020 (ACCV), Virtual Tokyo. Nov. 2020.',
+      },
+      s2: {
+        title:
+          'Bi-directional intra prediction based measurement coding for compressive sensing images',
+        abstract:
+          'This work proposes a bi-directional intra prediction-based measurement coding algorithm for compressive sensing images. Compressive sensing is capable of reducing the size of the sparse signals, in which the high-dimensional signals are represented by the under-determined linear measurements. In order to explore the spatial redundancy in measurements, the corresponding pixel domain information extracted using the structure of measurement matrix. Firstly, the mono-directional prediction modes (i.e. horizontal mode and vertical mode), which refer to the nearest information of neighboring pixel blocks, areobtained by the structure of the measurement matrix. Secondly, we design bi-directional intra prediction modes (i.e. Diagonal +Horizontal, Diagonal + Vertical) base on the already obtained mono-directional prediction modes. Experimental results show that this work improves 0.01 - 0.02 dB PSNR improvement and the birate reductions of on average 19%, up to 36% compared to the state-of-the-art.',
+        published:
+          '2020 IEEE 22nd International Workshop on Multimedia Signal Processing (MMSP), Sep. 2020.',
+      },
+    },
+  },
+  project_detail_coding: {
+    intro: 'We are developing the deep learning based video coding systems.',
+    labels: {
+      abstract: 'Abstract',
+      published: 'Published',
+      related_papers: 'Related Papers',
+    },
+    links: {
+      paper: 'Paper',
+      code: 'Code',
+      video: 'Video',
+    },
+    video_caption:
+      '[Hosei Research Brand vol.9 (Video)] Next-generation technology for processing enormous dynamic data (Associate Professor Jinjia Zhou, Graduate School of Science and Engineering)',
+    sections: {
+      s1: {
+        title:
+          'RR-DnCNN v2.0: Enhanced Restoration-Reconstruction Deep Neural Network for Down-Sampling Based Video Coding',
+        abstract:
+          'we proposed an end-to-end restoration-reconstruction deep neural network (RR-DnCNN) using the degradation-aware technique, which entirely solves degradation from compression and sub-sampling. Besides, we proved that the compression degradation produced by Random Access configuration is rich enough to cover other degradation types, such as Low Delay P and All Intra, for training. Since the straightforward network RR-DnCNN with many layers as a chain has poor learning capability suffering from the gradient vanishing problem, we redesign the network architecture to let reconstruction leverages the captured features from restoration using up-sampling skip connections. Our novel architecture is called restoration-reconstruction u-shaped deep neural network (RR-DnCNN v2.0). As a result, our RR-DnCNN v2.0 outperforms the previous works and can attain 17.02% BD-rate reduction on UHD resolution for all-intra anchored by the standard H.265/HEVC. ',
+        published:
+          'IEEE Transactions on Image Processing (TIP).　DOI:10.1109/TIP.2020.3046872. 2021. (SJR Q1, Impact Factor: 9.34)',
+      },
+      s2: {
+        title: 'Image Compression with Encoder-Decoder Matched Semantic Segmentation',
+        abstract:
+          'In recent years, the layered image compression is demonstrated to be a promising direction, which encodes a compact representation of the input image and apply an up-sampling network to reconstruct the image. To further improve the quality of the reconstructed image, some works transmit the semantic segment together with the compressed image data. Consequently, the compression ratio is also decreased because extra bits are required for transmitting the semantic segment. To solve this problem, we propose a new layered image compression framework with encoder-decoder matched semantic segmentation (EDMS). And then, followed by the semantic segmentation, a special convolution neural network is used to enhance the inaccurate semantic segment. As a result, the accurate semantic segment can be obtained in the decoder without requiring extra bits. The experimental results show that the proposed EDMS framework can get up to 35.31% BD-rate reduction over the HEVC-based (BPG) codec, 5% bitrate and 24% encoding time saving compare to the state-of-the-art semantic-based image codec.',
+        published:
+          '2020 IEEE/CVF Conference on Computer Vision and Pattern Recognition Workshops (CVPRW), Seattle, WA, USA, 2020, pp. 619-623, doi: 10.1109/CVPRW50498.2020.00088.',
+      },
+    },
+  },
+  aboutUs: {
+    members: {
+      pageTitle: 'メンバー',
+      pageDescription: '知能メディア処理研究室のメンバーを紹介します。',
+      roles: {
+        professor: '教員',
+        lab_director: '研究室長',
+        doctoral: '博士課程学生',
+        masters: '修士課程学生',
+        b4: '学部4年生',
+        b3: '学部3年生',
+        alumni: '卒業生',
+      },
+      names: {
+        jinjia_zhou: '​周 金佳',
+        keren_he: '何 可人',
+        alaa_zein: 'Alaa Zein El Abdein Marouf',
+        qi_yuanrui: '戚 原瑞',
+        ding_jinhao: '丁 劲皓',
+        wang_qi: '王 琪',
+        chen_shiyu: '陈 世宇',
+        wang_haixin: '王 海鑫(佐藤 海来)',
+        kimishima_fuma: '君島 楓実',
+        miyamoto_mizuki: '宮本 美月',
+        iwama_kosuke: '岩間 浩介',
+        morita_ryugo: '守田 竜梧',
+        yao_zhidi: '姚 智棣',
+        sai: 'UMMITHI Sai Jayaprakash',
+        yang_yu: '于 洋',
+        akihiro_sakurai: '櫻井 彬浩',
+        hiroto_sugiura: '杉浦 海翔',
+        riku_takahashi: '高橋 陸',
+        ayumu_seki: '関歩 夢',
+        haruto_domori: '堂森 陽都',
+        fan_wei: '魏 凡',
+        rigen_mo: '莫 日根',
+        mirino_otsubo: '大坪 美莉乃',
+        shoki_masuda: '増田 翔希',
+        jiaqi_mei: '梅 嘉麒',
+        ryosuke_sato: '佐藤 亮介',
+        kohta_nakamura: '中村 恒汰',
+        rikuya_maeta: '前田 陸弥',
+        iwasaki_yota: '岩﨑 陽太',
+        asano_shunsuke: '浅野 俊介',
+        nakajima_sawaki: '中島 沢棋',
+        ito_tomoki: '伊藤 朋紀',
+        mikano_ryota: '三甲野 涼太',
+        enomoto_machika: '榎本 真智香',
+        nonoo_gaku: '野々 尾岳',
+        ajiki_ren: '安喰 廉',
+        kashiyama_keisuke: '樫山 敬介',
+        yagihashi_kaito: '八木橋 凱斗',
+        jianbin_zhou: 'Jianbin Zhou',
+        tran_thi_thu_thuy: 'Tran Thi Thu Thuy',
+        nguyen_tan_ho: 'Nguyen Tan Ho',
+        gu_qirui: '古 骐瑞',
+        trinh_man_hoang: 'Trinh Man Hoang',
+        minh_man_ho: 'Minh Man Ho',
+        jirayu_peetakul: 'Jirayu Peetakul',
+        pham_do_kim_chi: 'Pham Do Kim Chi',
+        catherine_waithera: 'Catherine Waithera Wangari',
+        miyoshi_hayato: '三好 颯人',
+        otagiri_kengo: '小田切 健悟',
+        kikuchi_syunshuke: '菊地 峻佑',
+        makino_hiroya: '牧野 浩也',
+        usukura_riki: '薄倉 利生',
+        fujii_riku: '藤井 陸',
+        hayama_hibiki: '葉山 響',
+        zhiqiang_zhang: '张 志强',
+        fu_chen: '傅 晨',
+        jiayao_xu: '徐 嘉瑶',
+        yang_jian: '杨 健',
+        hayashi_shinkou: '林 震浩',
+        haga_shinkou: '芳賀 浩輔 ',
+        nakano_kyoka: '中野 杏香',
+        xin_cheng: '程 鑫',
+      },
+      destinations: {
+        dji: 'DJI',
+        rakuten: 'Rakuten, Tokyo',
+        ficha: 'Ficha Inc, Tokyo, Japan',
+        thoughtworks: 'Thoughtworks Inc, Beijing, China',
+        utah: 'University of Utah, Salt Lake City, UT',
+        muspace: 'muSpace Japan',
+        ando_hazama: 'Ando Hazama Corporation, Japan',
+        kisii: 'Kisii University, Kenya',
+        veriserve: 'Veriserve, Japan',
+        accenture: 'Accenture, Japan',
+        mitsubishi: 'Mitsubishi Electric, Japan',
+        ntt_data: 'NTT DATA SMS, Japan',
+        scsk: 'SCSK Corporation, Japan',
+        toyota: 'TOYOTA Motor Corporation, Japan',
+        kyudenko: 'KYUDENKO Corporation, Japan',
+        swust: 'Southwest University of Sci & Tech, China',
+        chn_energy: 'CHN ENERGY Investment Group',
+        pengcheng: 'PengCheng Laboratory',
+        tokyo_tech: 'Tokyo University of Technology',
+        hitachi: 'Hitachi',
+        capcom: 'CAPCOM CO.',
+        sky: 'Sky',
+      },
+    },
+    facilities: {
+      header: {
+        title: '​研究室',
+        description: '私たちの研究と革新を支える空間と最先端の設備を探求してください。',
+      },
+      notice: {
+        title: '研究室移転のお知らせ',
+        description:
+          '2021年4月に研究室を南館に移設します。これから徐々に研究室を整備していきます。',
+      },
+      sections: {
+        research_facilities: '研究環境',
+        gallery: '設備ギャラリー',
+      },
+      categories: {
+        library: '図書館',
+        computing: 'コンピューティングリソース',
+        hardware: 'ハードウェア',
+      },
+      texts: {
+        library_p1:
+          '研究で必要となる書籍を定期的に購入しており、研究室で誰でも自由に読むことができます。',
+        computing_p1:
+          '研究室では、GPUサーバを含む複数の高性能計算機が稼働しており、日々の研究活動を支えています。',
+        hardware_p1:
+          'さらに、エッジコンピューティング、コンピュータビジョン、および信号処理実験用の専門的なハードウェアを提供しています。',
+      },
+      gallery: {
+        gpu: 'GPU サーバ',
+        testing: 'ハードウェアテスト環境',
+        sensor: 'センサーテスト環境',
+      },
+    },
+    activities: {
+      header: {
+        title: '研究会',
+        description:
+          '共同研究の促進と継続的な学習を目的とした、定期的なセミナー、勉強会、およびガイドライン。',
+      },
+      links: {
+        submission_guide: '会議リンク',
+        meeting_link: '参加用リンク',
+      },
+      frequency: {
+        weekly: '毎週',
+        monthly: '毎月',
+      },
+      labels: {
+        language: '言語',
+        timing: 'タイミング',
+      },
+      seminar: {
+        title: '総合研究会',
+        description:
+          '毎週研究セミナーを開催しています。メンバー全員で進捗状況や成果について話し合います。この会議の目的は、研究室のメンバー全員でさまざまな意見を交換することです。',
+        lang_slides: 'スライド：主に英語',
+        lang_talk: 'トーク：英語または日本語（英語が望ましい）',
+        time_phd: '博士課程学生の発表時間：20分',
+        time_others: '修士・学部生の発表時間：10分 ',
+      },
+      study_groups: {
+        title: '勉強会',
+        reading: {
+          title: '論文輪読会',
+          desc: '毎週、院生は各自が気になった論文や発表動画等を紹介し、最新の研究についての知見を深めます。学部生は任意参加としています。',
+          note: '学部生の方は自由参加です',
+        },
+        theory: {
+          title: '理論基礎勉強会',
+          target: '学部３年生 ゼミナール',
+          desc: '情報処理や機械学習の基礎を学ぶため、Information Theory, Inference, and Learning Algorithmsを読みます。1回毎に学部3年生1人ずつ担当が発表する形で進めます。',
+        },
+        programming: {
+          title: 'プログラミング基礎勉強会',
+          target: '学部３年生 実験IIIとPBL',
+          desc: 'Unix環境でのプログラミング方法，研究室の実験環境を学びます。毎週資料を配布します。卒業研究に向けて、興味がある研究テーマに関連する各種プログラムを実装します。',
+        },
+      },
+      project_report: {
+        title: 'プロジェクト研究成果報告会',
+        time: '各グループの発表時間：20分',
+      },
+      weekly_report: {
+        title: '週報',
+        desc: '全員が週報をMLアドレス宛にメール送信します。',
+        template_btn: '週報 テンプレート',
+      },
+    },
+  },
+  publications: {
+    header: {
+      title: '発表論文・成果',
+      description:
+        '知能メディア処理研究室の研究成果を紹介します。ここでは、私たちの研究活動の成果である論文、特許、講演などを掲載しています。',
+    },
+    sections: {
+      publications: '選択された論文',
+      patents: '特許',
+      talks: '招待講演',
+    },
+    ui: {
+      search_placeholder: 'タイトルまたは著者または日付で検索...',
+      no_results: '検索条件に一致する論文が見つかりませんでした。',
+      load_more: '古い論文を読み込む',
+    },
+  },
+  activities: {
+    header: {
+      title: 'アルバム',
+      description: '研究室の歩み：学術的な節目から親睦の記録まで。',
+    },
+    ui: {
+      search_placeholder: 'タイトルまたは著者または日付で検索...',
+      no_results: '検索条件に一致する活動が見つかりませんでした。',
+      load_more: '古い活動を読み込む',
+    },
+    types: {
+      ordinary: '通常の活動',
+      conference: '会議発表',
+      award: '受賞',
+    },
+    list: {
+      conf_iconip_2025_gao: {
+        title: '研究発表',
+        venue: 'ICONIP 2025',
+        location: '日本、沖縄',
+      },
+      conf_icip_2025_he: {
+        title: '研究発表',
+        venue: 'ICIP 2025',
+        location: 'アメリカ、アラスカ州アンカレッジ',
+      },
+      conf_icmr_2025_takahashi: {
+        title: '研究発表',
+        venue: 'ICMR 2025',
+        location: 'アメリカ、シカゴ',
+      },
+      conf_miru_2025_takahashi: {
+        title: '研究発表',
+        venue: 'MIRU 2025',
+        location: '日本、京都',
+      },
+      award_kubota_2025_zein: {
+        title: '久保田基金 贈呈式・レセプション',
+        venue: '久保田助成金（Kubota Grant Award）',
+      },
+      conf_cvpr_2025_morita: {
+        title: '研究発表',
+        venue: 'CVPR 2025',
+        location: 'アメリカ、ナッシュビル',
+      },
+      conf_glsvlsi_2025_ding: {
+        title: '研究発表',
+        venue: 'GLSVLSI 2025',
+        location: 'アメリカ、ルイジアナ州ニューオーリンズ',
+      },
+      event_welcome_2025: {
+        title: '2025年度 新入生歓迎会',
+      },
+      conf_date_2025_ding: {
+        title: '研究発表',
+        venue: 'DATE 2025',
+        location: 'フランス、リヨン',
+      },
+      event_graduation_2025: {
+        title: '2025年度 卒業式 🌸',
+      },
+      conf_wcci_2024_shirai_kimishima: {
+        title: '研究発表',
+        venue: 'WCCI 2024',
+        location: '日本、横浜',
+      },
+      conf_iscas_2024_wang_miyamoto_yang: {
+        title: '研究発表',
+        venue: 'ISCAS 2024',
+        location: 'シンガポール',
+      },
+      event_workshop_2024: {
+        title: '研究室ワークショップ 📚',
+      },
+      event_welcome_2024: {
+        title: '2024年度 新入生歓迎会 🌸',
+      },
+      event_xmas_2023: {
+        title: 'クリスマスパーティー 🎄',
+      },
+      conf_acmmm_2023_wang_iwama: {
+        title: '研究発表',
+        venue: 'ACM MM 2023',
+        location: '台湾、台南',
+      },
+      conf_cecnet_2023_fu: {
+        title: '研究発表',
+        venue: 'CECNet 2023',
+        location: '中国、マカオ',
+      },
+      conf_insa_2023_yao_keren: {
+        title: '研究発表',
+        venue: 'INSA 2023',
+        location: 'フランス、レンヌ',
+      },
+      conf_icip_2023_zhang_morita: {
+        title: '研究発表',
+        venue: 'ICIP 2023',
+        location: 'マレーシア、クアラルンプール',
+      },
+      conf_wacv_2023_morita: {
+        title: '研究発表',
+        venue: 'WACV 2023',
+        location: 'アメリカ、ハワイ・ワイコロア',
+      },
+      conf_insa_2022_yang_fu: {
+        title: '研究発表',
+        venue: 'INSA 2022',
+        location: 'フランス、レンヌ',
+      },
+      conf_iconip_2022_wang_hayashi: {
+        title: '論文発表',
+        venue: 'ICONIP 2022',
+        location: 'オンライン開催',
+      },
+      conf_icann_2022_zein: {
+        title: '論文発表',
+        venue: 'ICANN 2022',
+        location: 'イギリス、ブリストル',
+      },
+      conf_icme_2022_fu_zhiqiang: {
+        title: '論文発表',
+        venue: 'ICME 2022',
+        location: 'オンライン開催',
+      },
+      event_defense_2022_zein_catherine: {
+        title: '学位論文公聴会（最終審査）',
+      },
+      conf_mmm_2022_yang_yao: {
+        title: '論文発表',
+        venue: 'MMM 2022',
+        location: 'オンライン開催',
+      },
+      event_welcome_2022_park: {
+        title: '小金井公園での歓迎会',
+      },
+      conf_iciap_2022_kimishima: {
+        title: '研究発表',
+        venue: 'ICIAP 2022',
+        location: 'オンライン開催',
+      },
+      conf_cvmp_2021_man: {
+        title: '論文発表',
+        venue: 'CVMP 2021',
+        location: 'オンライン開催',
+      },
+      event_festival_2021: {
+        title: '第69回 小金井祭',
+      },
+      event_poster_2021: {
+        title: 'ポスター発表会',
+      },
+      event_farewell_welcome_2021: {
+        title: 'オンライン歓送迎会',
+      },
+      event_welcome_2021_online: {
+        title: 'オンライン新メンバー歓迎会',
+      },
+      award_mmm_2020_man: {
+        title: '最優秀論文賞ランナーアップ（Best Paper Runner-up Award）',
+        venue: 'MMM 2020',
+        location: '韓国、大田',
+      },
+      conf_cvmp_2019_man: {
+        title: '論文発表',
+        venue: 'CVMP 2019',
+        location: 'イギリス、ロンドン',
+      },
+      conf_pcs_2019_hoang: {
+        title: '論文発表',
+        venue: 'PCS 2019',
+        location: '中国、寧波',
+      },
+      event_outing_autumn_2019: {
+        title: '秋の親睦遠足',
+      },
+      event_entrance_2019: {
+        title: '入学式',
+      },
+      conf_isair_2019_chi: {
+        title: '論文発表',
+        venue: 'ISAIR 2019',
+        location: '韓国、大邱',
+      },
+      event_outing_summer_2019: {
+        title: '夏の親睦遠足',
+      },
+      event_outing_spring_2019: {
+        title: '春の親睦遠足',
+      },
+      conf_talk_dcc_2019_jinjia_jay: {
+        title: '招待講演および学会参加',
+        venue: 'Video Live Stack & DCC 2019',
+      },
+      event_visit_taiwan_2019: {
+        title: '台湾の大学訪問',
+      },
+      event_visit_singapore_2019: {
+        title: 'シンガポールの研究機関訪問',
+      },
+      event_workshop_media_2019: {
+        title: '次世代メディアに関する国際ワークショップ',
+      },
+      event_bbq_2018: {
+        title: '夏季BBQパーティー',
+      },
+    },
+  },
+  home: {
+    hero: {
+      title: '知能メディア処理研究室',
+      subtitle: '知能メディア処理',
+    },
+    intro: {
+      text: '知能メディア処理研究室では、AI、IoT、ビッグデータ処理に基づいたマルチメディアAI技術の最先端研究と実社会への応用を行っています。',
+    },
+    news: {
+      title: 'ニュース',
+      more: '詳細を見る',
+      item1: '1つのプロジェクトが萱森情報科学振興財団に採択されました。',
+      item2: '2025年度に17本の論文が採択されました',
+      item3: '1本の論文が Pattern Recognition に採択されました',
+      item4: '1本の論文が CVPR 2025 に採択されました',
+      item5: '1つのプロジェクトが JSPS 科研費に採択されました',
+    },
+    projects: {
+      title: '研究プロジェクト',
+      p1: {
+        title:
+          'マシンビジョンとヒューマンビジョンのためのレイヤードニューラルコーデックを用いた適応型ビデオストリーミング',
+        desc: 'AI、IoT、およびビッグデータ処理におけるマルチメディアAI技術の最先端の研究と実用的な応用を探索します。',
+      },
+      p2: {
+        title: '深層学習と圧縮センシングを融合した革新的超低消費電力イメージングシステムの実現',
+        desc: 'ディープラーニングとコンプレッシブセンシングを統合した、革新的な超低消費電力イメージングシステムの開発。',
+      },
+      p3: {
+        title: 'マシンビジョンのための画像とビデオ圧縮技術の創出',
+        desc: 'Development of a novel AI-based multimedia data analysis method for cross-modal retrieval.',
+      },
+      p4: {
+        title: 'バッテリーレス・ワイヤレス動画収集機能をもつ高分散型監視システム',
+        desc: 'Research on advanced multimedia compression technology based on deep learning.',
+      },
+    },
+    videos: {
+      v1: '研究室紹介ビデオ',
+      v2: '動画圧縮AI技術の紹介',
+    },
+  },
   base: {
     cancel: 'キャンセル',
     confirm: '確認',
@@ -9,198 +531,16 @@ export default {
     changeLanguage: '言語切り替え',
     changeColor: 'カラー変更',
     home: 'ホーム',
-    games: 'ゲーム',
-    articles: '記事と随筆',
-    process: '開発進捗',
-    tech: '技術',
-    entretament: 'エンタメ',
-    webtools: 'ツール',
-  },
-  maintenanceView: {
-    mainInfor: 'メンテナンス中',
-    desc: 'ただいまページメンテナンス中です。また後で来てくださいね O.O',
-    back: 'ホームページへ',
-  },
-  heroSection: {
-    athour: 'モモチャ',
-    welcome: 'ようこそ',
-    room: 'の茶室へ',
-    desc: 'Vue 3 / NuxtUI / Tailwind ベースの個人ブログ。レスポンシブ対応、モバイル端末をサポート。',
-    guest: 'こんにちは、ゲストさん',
-    readArticle: '記事を読む',
-    github: 'Github',
-  },
-  HomeView: {
-    newArticle: '最新の文書',
-  },
-  tags: {
-    shimokita: '下北沢',
-    food: '美食',
-    interview: '面接テクニック',
-    roar: '咆哮系',
-    mussel: '牡蠣',
-    summer: '真夏',
-    swimming: '水泳',
-    expression: '表情管理',
-    eye_power: '目力',
-    sports: 'スポーツ',
-    footwork: 'フットワーク',
-    philosophy: '哲学',
-    hot_blood: '熱血',
-    tech: '技術',
-    vue: 'Vue.js',
-    original: 'オリジナル',
-    tailwind: 'Tailwind CSS',
-    pinia: 'Pinia',
-    github_actions: 'GitHub Actions',
-    aliyun: 'アリババクラウド',
-    nginx: 'Nginx',
-    linux: 'Linux',
-  },
-  post_list: {
-    '1': {
-      title: 'ナビゲーションガードによる i18n 自動切り替えソリューション',
-      desc: 'ルートインターセプト技術を活用し、低遅延でSEOに強い多言語切り替えエクスペリエンスを実現する方法を探ります。',
-      content: {
-        title: 'ナビゲーションガードによる i18n 自動切り替え',
-        desc: 'ルートインターセプト技術を活用した SEO に強い多言語化...',
-        intro:
-          'グローバルなWebアプリケーションにおいて、ナビゲーションガードは言語切り替えを処理するための最適なゲートウェイです。コンポーネントがレンダリングされる前に、システムが正しい言語リソースを準備することを保証します。',
-        h2_1: '1. 動作原理',
-        p_1: 'ナビゲーションガードはすべてのナビゲーションをインターセプトし、URL内の言語識別子を解析します。期待されるロケールに一致しない場合、即座にリダイレクトやリソースのロードを行います。',
-        h2_2: '2. 実装ステップ',
-        li_1_label: '動的ルートマッチング',
-        li_1_desc:
-          '/:lang/dashboard 形式のルートを定義し、Paramsを利用して言語パラメータをキャプチャします。',
-        li_2_label: 'ガードによるインターセプト',
-        li_2_desc:
-          'router.beforeEach 内で to.params.lang を検出し、Vue I18nインスタンスと同期させます。',
-        li_3_label: '言語パックの非同期ロード',
-        li_3_desc:
-          'すべての言語を一度に読み込むのではなく、切り替え時に import() を使用して動的にロードします。',
-        quote:
-          'この手法はユーザーエクスペリエンスを向上させるだけでなく、検索エンジンが異なる言語バージョンのコンテンツをクロールしやすくなるため、SEO順位の向上にも大きく貢献します。',
-        footer_note:
-          '従来の localStorage による保存策と比較して、ルートベースの構成はリンクの直接共有が可能であり、現在のベストプラクティスとされています。',
-      },
-    },
-    '2': {
-      title: 'Tailwind CSSによるダークモードとテーマカラーの動的切り替え',
-      desc: 'Tailwind CSSのユーティリティ特性を活かし、ダークモードとカスタムテーマカラーに対応したUIレンダリングを実現します。',
-      content: {
-        intro:
-          'モダンなWeb開発において、テーマシステム (Theme System) は単なるライト/ダークの切り替えに留まりません。動的なブランドカラーとダークモードを組み合わせた、高度なカスタマイズが求められています。Piniaの永続化機能と組み合わせることで、応答性が高く、柔軟なUI体系を構築できます。',
-        h2_1: '1. コア技術構成',
-        p_1: '本ソリューションでは「2つのアプローチ」を採用しています。DOMルートノードの classList 操作によるダークモードの切り替えと、CSS変数を利用したグローバルテーマカラーの動的な書き換えです。',
-        h2_2: '2. 実装の詳細',
-        li_1_label: 'リアクティブな状態管理',
-        li_1_desc:
-          'Piniaで isDark と primaryColor を定義します。変更を監視し localStorage と同期させることで、セッションを跨いだ永続化を実現します。',
-        li_2_label: 'ダークモードの注入',
-        li_2_desc:
-          'applyThemeToDom 関数を実行します。isDark.value が真の場合、document.documentElement に dark クラスを付与し、Tailwindの dark: バリアントを有効にします。',
-        li_3_label: '動的なCSS変数',
-        li_3_desc:
-          'document.documentElement.style.setProperty を使用して、コア変数 --ui-primary を直接操作します。これにより、CSSを再コンパイルすることなくサイト全体の配色を変更できます。',
-        footer_note:
-          'テーマカラーを変数化し、Tailwindの柔軟な設定と組み合わせることで、開発者はランタイムでユーザーに完全なインターフェースのカスタマイズ権限を提供できます。',
-      },
-      //     content: `
-      //   <div class="prose prose-slate dark:prose-invert max-w-none">
-      //     <p class="text-balance leading-relaxed ">
-      //       モダンなWeb開発において、<strong class="text-primary">テーマシステム</strong>は単なるライト/ダークの切り替えに留まりません。
-      //       <strong>動的なブランドカラー</strong>と<strong>ダークモード</strong>を組み合わせた、高度なカスタマイズが求められています。
-      //       Piniaの永続化機能と組み合わせることで、応答性が高く、柔軟なUI体系を構築できます。
-      //     </p>
-
-      //     <h2 class="text-primary border-b border-muted pb-2">1. コア技術構成</h2>
-      //     <p>
-      //       本ソリューションでは「2つのアプローチ」を採用しています。DOMルートノードの
-      //       <code>classList</code> 操作によるダークモードの切り替えと、<code>CSS変数</code> を利用したグローバルテーマカラーの動的な書き換えです。
-      //     </p>
-
-      //     <h2 class="text-primary border-b border-muted pb-2">2. 実装の詳細</h2>
-      //     <ul class="marker:text-primary space-y-4">
-      //       <li>
-      //         <strong class="text-main">リアクティブな状態管理：</strong> Piniaで <code>isDark</code> と
-      //         <code>primaryColor</code> を定義します。変更を監視し <code>localStorage</code> と同期させることで、セッションを跨いだ永続化を実現します。
-      //       </li>
-      //       <li>
-      //         <strong class="text-main">ダークモードの注入：</strong> <code>applyThemeToDom</code> 関数を実行します。
-      //         <code>isDark.value</code> が真の場合、<code>document.documentElement</code> に <code>dark</code> クラスを付与し、Tailwindの <code>dark:</code> バリアントを有効にします。
-      //       </li>
-      //       <li>
-      //         <strong class="text-main">動的なCSS変数：</strong> <code>document.documentElement.style.setProperty</code>
-      //         を使用して、コア変数 <code>--ui-primary</code> を直接操作します。これにより、CSSを再コンパイルすることなくサイト全体の配色を変更できます。
-      //       </li>
-      //     </ul>
-
-      //     <p class="text-muted text-sm mt-6">
-      //       テーマカラーを変数化し、Tailwindの柔軟な設定と組み合わせることで、開発者はランタイムでユーザーに完全なインターフェースのカスタマイズ権限を提供できます。
-      //     </p>
-      //   </div>
-      // `,
-    },
-
-    '3': {
-      title: '開発の自動化：GitHub Actions による Vue プロジェクトのデプロイ実践',
-      desc: 'ローカルでのプッシュから GitHub でのビルド、そして Alibaba Cloud への自動同期まで、CI/CD パイプラインの構築方法を解説。',
-      content: {
-        intro:
-          '手動でのデプロイはミスが起きやすい作業です。本記事では、git push するだけで数秒以内に自動更新される GitHub Actions ワークフローの設定方法を紹介します。',
-        h2_1: '1. CI/CD パイプラインの設計',
-        p_1: '「ビルド」と「デプロイ」を分離するのが核心です。GitHub 上のランナーでビルドを実行し、生成された静的資産（dist）を SSH 経由でサーバーの Nginx ディレクトリに同期させます。',
-
-        h2_4: '2. deploy.yml の作成と解説', // 追加
-        p_3: '.github/workflows フォルダに deploy.yml を作成します。このファイルは、main ブランチへのプッシュ、Node 環境の構築、npm run build の実行といった「ライフサイクル」を定義します。source: "dist/*" と target パスを正確に設定し、成果物が Nginx ルートに正しく配置されるようにします。',
-
-        h2_2: '3. 実装の重要ポイント',
-        li_1_label: 'Node 24 環境の固定',
-        li_1_desc:
-          'node-version: 24.13.0 を明示的に指定することで、クラウド上の環境をローカル開発環境と完全に一致させます。',
-        li_2_label: 'シークレット情報の管理',
-        li_2_desc:
-          'SSH_HOST や SSH_PRIVATE_KEY を GitHub Secrets に保存し、ソースコードに認証情報を公開することなく安全にアクセスします。',
-        li_3_label: 'SCP による自動同期',
-        li_3_desc:
-          'appleboy/scp-action プラグインを活用し、strip_components でディレクトリ構造を整理しながらファイルを上書き更新します。',
-
-        h2_3: '4. よくあるトラブルシューティング',
-        p_2: '「ParsePrivateKey」エラーは、鍵の形式が不完全な場合に発生します。BEGIN と END の行が含まれているか、余計な空白がないか確認してください。また、サーバー側のディレクトリに admin ユーザーの書き込み権限があることも確認が必要です。',
-
-        footer_note:
-          'この CI/CD 体系により、開発者はロジックの実装に集中できます。緑色のチェックマークが灯る瞬間、モダンな開発の真の効率性を実感できるはずです。',
-      },
-    },
-    '4': {
-      title: '土台作り：サーバーサイド Nginx のインストールと SPA 環境設定',
-      desc: '自動化パイプラインを構築する前に、モダンなシングルページアプリケーションを支える堅牢な Nginx 環境をサーバー上に構築します。',
-      content: {
-        intro:
-          'Nginx は単なる Web サーバーではなく、フロントエンドアプリとユーザーを繋ぐ架け橋です。自動デプロイを開始する前に、処理ロジックと権限システムを正しく設定しておくことは極めて重要です。',
-        h2_1: '1. インストールと基本管理',
-        p_1: 'Linux サーバーでは、パッケージマネージャー経由で Nginx をインストールし、自動起動を設定します。systemctl による起動、停止、リロードの操作をマスターすることは、その後の全ての運用作業の基礎となります。',
-        h2_2: '2. コア設定のロジック',
-        li_1_label: 'SPA ルーティングの互換性',
-        li_1_desc:
-          'Vue などの History モードを利用するフレームワークでは、try_files ディレクティブを設定することで、パスが見つからない場合でも正しく index.html にリダイレクトし、404 エラーを防ぎます。',
-        li_2_label: '静的資産の最適化',
-        li_2_desc:
-          '静的ファイルディレクトリ専用のアクセスルールを定義し、キャッシュ戦略を設定します。これにより、ファイル欠損時に誤って HTML が返されることによる MIME タイプエラーを回避します。',
-        h2_3: '3. 権限とディレクトリのセキュリティ',
-        p_2: 'Web ルートディレクトリに適切な読み書き権限があることを確認します。通常、非 root ユーザー（admin など）に所有権を付与し、755 パーミッションを設定することで、Nginx の読み取り性能と自動化スクリプトの操作性を両立させます。',
-        footer_note:
-          'Nginx の設定は鉄道のレールを敷くようなものです。一度整えば、その上を自動化パイプラインが加速していきます。',
-      },
-    },
-    //   '5': {
-    //     title: '階段降りも芸術になる：歩法解析',
-    //     desc: 'これがいわゆる「王道を往く」というやつですか？一歩一歩が異常に安定しており、リズミカルです。',
-    //   },
-    //   '6': {
-    //     title: '紅茶三杯の後の哲学的思考',
-    //     desc: '事ここに至っては、悩むより大声で叫ぶべきです。「私もやりたいです」と！',
-    //   },
+    research: '研究',
+    sensing: '圧縮センシング',
+    coding: 'ビデオコーディング',
+    processing: '画像処理',
+    aboutUs: '研究室紹介',
+    members: 'メンバー',
+    facilities: '研究室環境',
+    meetings: '研究会',
+    publications: '業績',
+    activities: 'アルバム',
   },
   colors: {
     green: '緑',
@@ -243,115 +583,14 @@ export default {
     next_year: '来年',
   },
   footer: {
-    desc: '© 2026 MOMOCHA.Log。 Vue 3 & Tailwind v4 で構築。',
+    address: '住所',
+    address_desc: '〒184-8584　東京都小金井市梶野町３−７−２　法政大学',
+    tel: '電話番号',
+    email: 'メールアドレス',
   },
   notFoundView: {
     notFound: 'ページが見つかりません',
     goHome: 'ホームに戻る',
     message: '申し訳ありませんが、お探しのページは存在しません。',
-  },
-  processView: {
-    start: {
-      title: 'プロジェクト始動',
-      description: 'GitHubへの初コミット。',
-    },
-    mainPage: {
-      title: 'サイトの基本フレームワーク完成',
-      description:
-        'ホームページの機能実装とレスポンシブデザインを完了。機能ごとのデカップリング（疎結合化）を実現。',
-    },
-    language: {
-      title: 'フレームワークのブラッシュアップ',
-      description: 'テーマカラーのリアルタイム変更機能と多言語切り替え機能を実装。',
-    },
-    deployment: {
-      title: '今後の開発予定',
-      description: '現在、新機能を開発中...',
-    },
-    router: {
-      title: 'ナビゲーションガードの導入',
-      description:
-        'URLパスへの言語コード自動付与、および不正アクセスのフィルタリングと404リダイレクトを実装。',
-    },
-    webtools: {
-      title: 'ツール紹介ページの追加',
-      description: 'サブメニューのロジックを実装し、実用的なツールをまとめた専用ページを追加。',
-    },
-    articles: {
-      title: '記事と随筆ページの追加',
-      description: '記事と随筆の閲覧機能を実装。クリックで詳細が展開され、内容を確認可能に。',
-      title_2: '記事の二次ページ表示ロジックの最適化',
-      description_2:
-        '記事ページのコンテンツ表示ロジックを最適化し、多様な内容構造の記事レンダリングとHTMLカスタマイズをサポート。',
-    },
-    nginx: {
-      title: 'サイトのバックエンドを変更',
-      description:
-        'サイトのバックエンドをGitHub PagesからNginxサーバーに移行し、デプロイメントプロセスとパフォーマンスを最適化。',
-    },
-    compile: {
-      title: 'リリースとビルドプロセスの最適化',
-      description:
-        'ローカルでのビルドとデプロイメントプロセスをGitHub Actionsによる自動化に最適化し、リリースの効率と安定性を向上。サーバーへの二次的な手動同期も不要になり、真の意味でのワンクリックデプロイメントを実現。',
-    },
-    ssh: {
-      title: 'HTTPSの追加とGitリポジトリ構造の最適化',
-      description:
-        'HTTPS証明書の検証を追加し、Gitリポジトリの構造を分割して、将来の単一Gitプロジェクトでのフロントエンドとバックエンドの分離に備える。',
-    },
-  },
-  webtoolsView: {
-    bookmarks: {
-      title: 'おすすめツール',
-      subtitle:
-        '普段愛用している開発ツール、デザインのインスピレーション、効率化ツールをまとめました。',
-      search_placeholder: 'ツールを検索...',
-      no_results: '"{query}" に一致するツールは見つかりませんでした',
-      categories: {
-        dev: '開発フレームワーク',
-        design: 'デザイン・着想',
-        productivity: '生産性・効率化',
-        treasure: '宝藏サイト',
-      },
-      items: {
-        vue_desc:
-          '学習しやすく、パフォーマンスに優れた、汎用性の高いWebフロントエンドフレームワーク。',
-        nuxt_desc: 'NuxtとTailwind CSSをベースにしたモダンなUIコンポーネントライブラリ。',
-        tailwind_desc:
-          'HTMLから離れることなく、モダンなサイトを迅速に構築できるユーティリティファーストのCSSフレームワーク。',
-        vite_desc: '極速なコールドスタートを実現する、次世代フロントエンド開発・ビルドツール。',
-        dribbble_desc: '世界中のトップデザイナーが集まるコミュニティ。UI/UXデザインの参考に。',
-        coolors_desc: '完璧なカラーパレットを瞬時に作成できる、超便利な配色ジェネレーター。',
-        lucide_desc:
-          '美しく一貫性のあるオープンソース・アイコンライブラリ。あらゆるスタイルにマッチ。',
-        chatgpt_desc: 'OpenAIによって開発された、対話型AIチャットボットプログラム。',
-        gemini_desc: 'Googleが開発したマルチモーダルAI。多様なタスクやクリエイティブ作業に対応。',
-        inspira_desc:
-          '選択的インポートに対応した超クールなUIライブラリ。VueやNuxt UIとの相性も抜群。',
-        icones_desc: 'Nuxt UIに対応したアイコンライブラリ。多種多様なアイコンを無料で利用可能。',
-        pinia_desc:
-          'Vue.jsのための直感的なストア。型安全、拡張可能、そしてモジュール化された設計。',
-        wix_desc:
-          'オンラインでウェブサイトを作成し、ワンクリックでクラウドへデプロイ。強力なプリセットコンポーネントを搭載。',
-        lorem_picsum_desc:
-          '様々なサイズとスタイルのランダム画像を提供する、無料の画像プレースホルダーサービス。',
-        congyu_desc: '城墙を越える妙妙ツール。様々なウェブリソースの取得を簡単にサポート。',
-        figma_desc:
-          'クラウドベースのデザインツール。リアルタイムの共同作業と強力なプラグインエコシステムをサポート。',
-        wplace_desc: 'グローバルな描画プラットフォーム。世界の美しさを感じてください。',
-      },
-    },
-  },
-  articles: {
-    title: '記事と随筆',
-    subtitle: 'Tech、デザイン、生活に関する思考の断片を共有します。',
-    search_placeholder: '記事を検索...',
-    filter_all: 'すべて',
-    read_more: '記事を読む',
-    no_results_title: '記事が見つかりません',
-    no_results_desc:
-      '"{query}" に一致する記事が見つかりませんでした。検索条件を調整するか、フィルターをクリアしてください。',
-    clear_filter: 'フィルターをクリア',
-    body_empty: '本文がありません。',
   },
 }
