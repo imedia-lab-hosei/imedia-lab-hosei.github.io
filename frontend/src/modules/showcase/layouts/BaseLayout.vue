@@ -39,10 +39,10 @@
               <span class="font-semibold mr-1">{{ $t('footer.tel') }}:</span>
               + 042 387 6188
             </div>
-            <div>
+            <!-- <div>
               <span class="font-semibold mr-1">{{ $t('footer.email') }}:</span>
               zhou@hosei.ac.jp
-            </div>
+            </div> -->
           </div>
         </div>
       </UFooter>
