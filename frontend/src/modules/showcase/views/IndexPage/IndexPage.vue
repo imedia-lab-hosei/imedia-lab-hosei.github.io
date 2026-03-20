@@ -209,16 +209,19 @@
 import { computed } from 'vue'
 import { useRoute } from 'vue-router'
 import { useI18n } from 'vue-i18n'
+import { publications } from '../Publications/publications'
+import { currentMemberCount, alumniCount } from '../AboutUs/Members/members'
 
 const { t } = useI18n()
 const route = useRoute()
 
+const totalPublications = publications.reduce((sum, y) => sum + y.items.length, 0)
+
 const statsData = computed(() => [
   { value: '10+', label: t('home.stats.projects') },
-  { value: '148+', label: t('home.stats.publications') },
-  { value: '30+', label: t('home.stats.members') },
-  { value: '20+', label: t('home.stats.alumni_members') },
-  // { value: '7+', label: t('home.stats.years') },
+  { value: `${totalPublications}+`, label: t('home.stats.publications') },
+  { value: `${currentMemberCount}+`, label: t('home.stats.members') },
+  { value: `${alumniCount}+`, label: t('home.stats.alumni_members') },
 ])
 
 const newsData = computed(() => [
