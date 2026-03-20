@@ -88,12 +88,23 @@
             <div
               v-for="member in section.members"
               :key="member.name"
-              class="flex items-center gap-2.5 px-4 py-2.5 rounded-xl bg-card border border-border hover:border-primary/40 hover:bg-primary/5 transition-all group cursor-default"
+              class="flex justify-between items-center gap-2.5 px-4 py-2.5 rounded-xl bg-card border border-border hover:border-primary/40 hover:bg-primary/5 transition-all group cursor-default"
             >
-              <div class="w-1.5 h-1.5 rounded-full bg-primary/50 shrink-0 group-hover:bg-primary transition-colors" />
-              <span class="text-sm text-foreground group-hover:text-primary transition-colors truncate">
-                {{ member.name }}
-              </span>
+              <div class="flex items-center gap-2.5" @click="toLink(member.link)">
+                <div
+                  class="w-1.5 h-1.5 rounded-full bg-primary/50 shrink-0 group-hover:bg-primary transition-colors"
+                />
+                <span
+                  class="text-sm text-foreground group-hover:text-primary transition-colors truncate"
+                >
+                  {{ member.name }}
+                </span>
+              </div>
+              <UIcon
+                v-if="member.link"
+                name="i-heroicons-arrow-right"
+                class="shrink-0 w-4 h-4 text-muted-foreground opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all hidden sm:block"
+              />
             </div>
           </div>
 
@@ -107,16 +118,31 @@
               :key="alumnus.name"
               class="flex items-center justify-between gap-4 px-5 py-3.5 rounded-xl bg-card border border-border hover:border-primary/40 hover:bg-primary/5 transition-all group"
             >
-              <div class="flex items-center gap-3 min-w-0">
-                <div class="w-7 h-7 rounded-full bg-muted flex items-center justify-center shrink-0 group-hover:bg-primary/10 transition-colors">
-                  <UIcon name="i-heroicons-user-circle" class="w-4 h-4 text-muted-foreground group-hover:text-primary transition-colors" />
+              <div class="flex items-center gap-3 min-w-0" @click="toLink(alumnus.link)">
+                <div
+                  class="w-7 h-7 rounded-full bg-muted flex items-center justify-center shrink-0 group-hover:bg-primary/10 transition-colors"
+                >
+                  <UIcon
+                    name="i-heroicons-user-circle"
+                    class="w-4 h-4 text-muted-foreground group-hover:text-primary transition-colors"
+                  />
                 </div>
-                <span class="font-medium text-sm text-foreground truncate group-hover:text-primary transition-colors">
+                <span
+                  class="font-medium text-sm text-foreground truncate group-hover:text-primary transition-colors"
+                >
                   {{ alumnus.name }}
                 </span>
+                <UIcon
+                  v-if="alumnus.link"
+                  name="i-heroicons-arrow-right"
+                  class="shrink-0 w-4 h-4 text-muted-foreground opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all hidden sm:block"
+                />
               </div>
               <div class="flex items-center gap-1.5 shrink-0">
-                <UIcon name="i-heroicons-building-office-2" class="w-3.5 h-3.5 text-muted-foreground" />
+                <UIcon
+                  name="i-heroicons-building-office-2"
+                  class="w-3.5 h-3.5 text-muted-foreground"
+                />
                 <span class="text-xs text-muted-foreground text-right max-w-36 leading-tight">
                   {{ alumnus.destination }}
                 </span>
@@ -139,6 +165,7 @@ interface Member {
   image?: string
   role?: string
   destination?: string
+  link?: string
 }
 
 interface Section {
@@ -172,7 +199,7 @@ const pageContent = computed<PageContent>(() => {
         members: [
           {
             name: t('aboutUs.members.names.jinjia_zhou', 'Jinjia Zhou'),
-            image: '/images/AboutUs/Members/jinjia_zhou.avif',
+            image: '/images/AboutUs/Members/jinjia_zhou_new.png',
             // role: t('aboutUs.members.roles.lab_director', 'Lab Director'),
           },
         ],
@@ -223,8 +250,14 @@ const pageContent = computed<PageContent>(() => {
         members: [
           { name: t('aboutUs.members.names.miyamoto_mizuki', 'Miyamoto Mizuki') },
           { name: t('aboutUs.members.names.iwama_kosuke', 'Iwama Kosuke') },
-          { name: t('aboutUs.members.names.morita_ryugo', 'Morita Ryugo') },
-          { name: t('aboutUs.members.names.yao_zhidi', 'Yao Zhidi') },
+          {
+            name: t('aboutUs.members.names.morita_ryugo', 'Morita Ryugo'),
+            link: 'https://ryugo417.github.io/',
+          },
+          {
+            name: t('aboutUs.members.names.yao_zhidi', 'Yao Zhidi'),
+            link: 'https://www.momocha.icu',
+          },
           { name: t('aboutUs.members.names.sai', 'UMMITHI Sai Jayaprakash') },
           { name: t('aboutUs.members.names.yang_yu', 'Yang Yu') },
           { name: t('aboutUs.members.names.akihiro_sakurai', 'Akihiro Sakurai') },
@@ -300,6 +333,7 @@ const pageContent = computed<PageContent>(() => {
               'aboutUs.members.destinations.utah',
               'University of Utah, Salt Lake City, UT',
             ),
+            link: 'https://minhmanho.github.io/',
           },
           {
             name: t('aboutUs.members.names.jirayu_peetakul', 'Jirayu Peetakul'),
@@ -364,6 +398,7 @@ const pageContent = computed<PageContent>(() => {
           {
             name: t('aboutUs.members.names.jiayao_xu', 'Jiayao Xu'),
             destination: t('aboutUs.members.destinations.pengcheng', 'PengCheng Laboratory'),
+            link: 'https://xu-jiayao.github.io/',
           },
           {
             name: t('aboutUs.members.names.yang_jian', 'Yang Jian'),
@@ -396,4 +431,9 @@ const pageContent = computed<PageContent>(() => {
     ],
   }
 })
+
+const toLink = (link: string | undefined) => {
+  if (!link) return
+  window.open(link, '_blank')
+}
 </script>

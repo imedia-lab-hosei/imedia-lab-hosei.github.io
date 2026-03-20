@@ -215,9 +215,10 @@ const route = useRoute()
 
 const statsData = computed(() => [
   { value: '10+', label: t('home.stats.projects') },
-  { value: '50+', label: t('home.stats.publications') },
+  { value: '148+', label: t('home.stats.publications') },
   { value: '30+', label: t('home.stats.members') },
-  { value: '7+', label: t('home.stats.years') },
+  { value: '20+', label: t('home.stats.alumni_members') },
+  // { value: '7+', label: t('home.stats.years') },
 ])
 
 const newsData = computed(() => [
@@ -229,6 +230,13 @@ const newsData = computed(() => [
 ])
 
 const projectsData = computed(() => [
+  {
+    period: '2026.01-2027.12',
+    tag: 'Kayamori Foundation',
+    title: t('home.projects.p5.title'),
+    description: t('home.projects.p5.desc'),
+    image: '/images/HomePage/Kayamori_Foundation.png',
+  },
   {
     period: '2025.04-2029.03',
     tag: 'JSPS KAKENHI',

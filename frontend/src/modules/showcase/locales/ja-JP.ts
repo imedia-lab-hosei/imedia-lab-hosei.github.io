@@ -505,7 +505,7 @@ export default {
     news: {
       title: 'ニュース',
       more: '詳細を見る',
-      item1: '1つのプロジェクトが萱森情報科学振興財団に採択されました。',
+      item1: '1つのプロジェクトが公益財団法人 栢森情報科学振興財団の研究助成に採択されました',
       item2: '2025年度に17本の論文が採択されました',
       item3: '1本の論文が Pattern Recognition に採択されました',
       item4: '1本の論文が CVPR 2025 に採択されました',
@@ -530,6 +530,10 @@ export default {
         title: 'バッテリーレス・ワイヤレス動画収集機能をもつ高分散型監視システム',
         desc: 'Research on advanced multimedia compression technology based on deep learning.',
       },
+      p5: {
+        title: '高精細画像生成に向けた生成 AI モデル効率化技術の創出',
+        desc: 'Research on advanced multimedia compression technology based on deep learning.',
+      },
     },
     videos: {
       sectionTitle: '紹介動画',
@@ -541,6 +545,7 @@ export default {
       publications: '研究業績',
       members: '研究室メンバー',
       years: '研究年数',
+      alumni_members: '卒業生メンバー',
     },
   },
   research: {

@@ -1,3 +1,5 @@
+import { title } from 'process'
+
 export default {
   project_detail: {
     intro:
@@ -579,6 +581,11 @@ export default {
           'A Highly-Distributed Surveillance System with Batteryless and Wireless Video Acquisition',
         desc: 'Research on advanced multimedia compression technology based on deep learning.',
       },
+      p5: {
+        title:
+          ' Development of Efficiency Optimization Technologies for Generative AI Models Toward High-Definition Image Generation',
+        desc: '',
+      },
     },
     videos: {
       sectionTitle: 'Featured Videos',
@@ -590,6 +597,7 @@ export default {
       publications: 'Publications',
       members: 'Lab Members',
       years: 'Years of Research',
+      alumni_members: 'Alumni Members',
     },
   },
   research: {
