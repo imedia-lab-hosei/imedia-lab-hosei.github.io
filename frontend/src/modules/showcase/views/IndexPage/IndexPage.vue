@@ -40,7 +40,7 @@
             size="lg"
             color="neutral"
             variant="outline"
-            class="border-white/30 text-white hover:bg-white/10"
+            class="border-white/30 text-white bg-white/10 hover:bg-white/30"
             :to="{ name: 'members', params: { locale: route.params.locale } }"
             :label="$t('header.members')"
             trailing-icon="i-heroicons-arrow-right"
@@ -209,7 +209,6 @@
 import { computed } from 'vue'
 import { useRoute } from 'vue-router'
 import { useI18n } from 'vue-i18n'
-import router from '@/router'
 
 const { t } = useI18n()
 const route = useRoute()
