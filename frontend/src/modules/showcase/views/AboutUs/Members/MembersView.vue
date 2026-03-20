@@ -1,86 +1,131 @@
 <template>
-  <div class="max-w-4xl mx-auto px-6 py-24 space-y-24 bg-background min-h-screen">
-    <header class="space-y-6">
-      <h1 class="text-primary text-4xl md:text-5xl font-bold tracking-tight">
-        {{ pageContent.title }}
-      </h1>
-      <p class="text-lg text-muted-foreground max-w-2xl leading-relaxed">
-        {{ pageContent.description }}
-      </p>
-    </header>
+  <div class="min-h-screen bg-background text-foreground font-sans">
+    <!-- Page Header -->
+    <div class="border-b border-border bg-card">
+      <div class="max-w-6xl mx-auto px-6 py-16">
+        <p class="text-primary text-xs font-bold tracking-widest uppercase mb-3">About Us</p>
+        <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight mb-4">
+          {{ pageContent.title }}
+        </h1>
+        <p class="text-muted-foreground text-lg leading-relaxed max-w-2xl">
+          {{ pageContent.description }}
+        </p>
+      </div>
+    </div>
 
-    <template v-for="section in pageContent.sections" :key="section.id">
-      <section class="space-y-12">
-        <div class="space-y-4">
-          <h2 class="text-2xl font-medium tracking-tight text-foreground">
-            {{ section.title }}
-          </h2>
-          <UDivider class="border-border" />
-        </div>
+    <div class="max-w-6xl mx-auto px-6 py-16 space-y-20">
+      <template v-for="section in pageContent.sections" :key="section.id">
+        <section>
+          <!-- Section Title -->
+          <div class="flex items-center gap-4 mb-10">
+            <div class="w-1 h-6 rounded-full bg-primary" />
+            <h2 class="text-xl font-bold tracking-tight text-foreground">
+              {{ section.title }}
+            </h2>
+            <div class="flex-1 h-px bg-border" />
+            <span class="text-xs text-muted-foreground font-mono tabular-nums">
+              {{ section.members.length }}
+            </span>
+          </div>
 
-        <div
-          v-if="section.layout === 'photo-grid'"
-          class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8"
-        >
-          <UCard
-            v-for="member in section.members"
-            :key="member.name"
-            class="group bg-card border-border overflow-hidden transition-all duration-300 hover:shadow-md ring-border"
+          <!-- Photo Grid (professor / doctoral) -->
+          <div
+            v-if="section.layout === 'photo-grid'"
+            class="grid gap-6"
+            :class="
+              section.id === 'professor'
+                ? 'grid-cols-1 max-w-xs'
+                : 'grid-cols-2 sm:grid-cols-3 md:grid-cols-4'
+            "
           >
-            <div class="aspect-4/5 bg-muted relative overflow-hidden">
-              <img
-                v-if="member.image"
-                :src="member.image"
-                :alt="member.name"
-                class="object-cover w-full h-full transition-transform duration-500 group-hover:scale-105"
-              />
-            </div>
-            <template #footer>
+            <div
+              v-for="member in section.members"
+              :key="member.name"
+              class="group flex flex-col items-center gap-3"
+            >
+              <div
+                class="relative w-full aspect-square rounded-2xl overflow-hidden bg-muted border border-border group-hover:border-primary/40 group-hover:shadow-md transition-all duration-300"
+                :class="section.id === 'professor' ? 'rounded-3xl' : ''"
+              >
+                <img
+                  v-if="member.image"
+                  :src="member.image"
+                  :alt="member.name"
+                  class="object-cover w-full h-full transition-transform duration-500 group-hover:scale-105"
+                />
+                <div
+                  v-else
+                  class="w-full h-full flex items-center justify-center text-muted-foreground"
+                >
+                  <UIcon name="i-heroicons-user" class="w-10 h-10" />
+                </div>
+
+                <!-- Hover overlay -->
+                <div
+                  class="absolute inset-0 bg-linear-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                />
+              </div>
+
               <div class="text-center">
-                <span
-                  class="text-base font-medium text-foreground transition-colors duration-300 group-hover:text-primary block"
+                <p
+                  class="font-semibold text-sm text-foreground group-hover:text-primary transition-colors"
+                  :class="section.id === 'professor' ? 'text-base' : ''"
                 >
                   {{ member.name }}
-                </span>
-                <span v-if="member.role" class="text-sm text-muted-foreground mt-1 block">
+                </p>
+                <p v-if="member.role" class="text-xs text-muted-foreground mt-0.5">
                   {{ member.role }}
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Text Grid (masters / b4 / b3) -->
+          <div
+            v-else-if="section.layout === 'text-grid'"
+            class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3"
+          >
+            <div
+              v-for="member in section.members"
+              :key="member.name"
+              class="flex items-center gap-2.5 px-4 py-2.5 rounded-xl bg-card border border-border hover:border-primary/40 hover:bg-primary/5 transition-all group cursor-default"
+            >
+              <div class="w-1.5 h-1.5 rounded-full bg-primary/50 shrink-0 group-hover:bg-primary transition-colors" />
+              <span class="text-sm text-foreground group-hover:text-primary transition-colors truncate">
+                {{ member.name }}
+              </span>
+            </div>
+          </div>
+
+          <!-- Alumni List -->
+          <div
+            v-else-if="section.layout === 'alumni-list'"
+            class="grid grid-cols-1 md:grid-cols-2 gap-3"
+          >
+            <div
+              v-for="alumnus in section.members"
+              :key="alumnus.name"
+              class="flex items-center justify-between gap-4 px-5 py-3.5 rounded-xl bg-card border border-border hover:border-primary/40 hover:bg-primary/5 transition-all group"
+            >
+              <div class="flex items-center gap-3 min-w-0">
+                <div class="w-7 h-7 rounded-full bg-muted flex items-center justify-center shrink-0 group-hover:bg-primary/10 transition-colors">
+                  <UIcon name="i-heroicons-user-circle" class="w-4 h-4 text-muted-foreground group-hover:text-primary transition-colors" />
+                </div>
+                <span class="font-medium text-sm text-foreground truncate group-hover:text-primary transition-colors">
+                  {{ alumnus.name }}
                 </span>
               </div>
-            </template>
-          </UCard>
-        </div>
-
-        <div
-          v-else-if="section.layout === 'text-grid'"
-          class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-y-8 gap-x-4"
-        >
-          <div
-            v-for="member in section.members"
-            :key="member.name"
-            class="flex items-center space-x-3"
-          >
-            <div class="w-1.5 h-1.5 rounded-full bg-muted-foreground/30"></div>
-            <span class="text-foreground text-base tracking-wide">{{ member.name }}</span>
+              <div class="flex items-center gap-1.5 shrink-0">
+                <UIcon name="i-heroicons-building-office-2" class="w-3.5 h-3.5 text-muted-foreground" />
+                <span class="text-xs text-muted-foreground text-right max-w-36 leading-tight">
+                  {{ alumnus.destination }}
+                </span>
+              </div>
+            </div>
           </div>
-        </div>
-
-        <div
-          v-else-if="section.layout === 'alumni-list'"
-          class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8"
-        >
-          <div
-            v-for="alumnus in section.members"
-            :key="alumnus.name"
-            class="flex flex-col sm:flex-row sm:items-center sm:justify-between space-y-2 sm:space-y-0 p-4 rounded-lg bg-card border border-border"
-          >
-            <span class="text-foreground font-medium">{{ alumnus.name }}</span>
-            <UBadge variant="soft" class="w-fit text-center">
-              {{ alumnus.destination }}
-            </UBadge>
-          </div>
-        </div>
-      </section>
-    </template>
+        </section>
+      </template>
+    </div>
   </div>
 </template>
 

@@ -1,110 +1,179 @@
 <template>
   <div class="min-h-screen bg-background text-foreground font-sans">
-    <section
-      class="relative h-[60vh] flex items-center justify-center overflow-hidden bg-slate-900"
-    >
+    <!-- Hero Section -->
+    <section class="relative h-[80vh] flex items-center justify-center overflow-hidden">
       <img
         src="/images/HomePage/TV Screens.avif"
-        class="absolute inset-0 w-full h-full object-cover opacity-60"
+        class="absolute inset-0 w-full h-full object-cover"
       />
-      <div class="relative z-10 text-center px-4">
-        <h1 class="text-4xl md:text-6xl font-extrabold text-white tracking-tight">
+      <div class="absolute inset-0 bg-linear-to-b from-black/20 via-black/55 to-black/85" />
+
+      <div class="relative z-10 text-center px-6 max-w-4xl mx-auto">
+        <div
+          class="inline-flex items-center gap-2.5 bg-white/10 backdrop-blur-md border border-white/20 rounded-full px-5 py-2 mb-8"
+        >
+          <span class="w-2 h-2 rounded-full bg-primary animate-pulse" />
+          <span class="text-sm text-white/90 font-semibold tracking-widest uppercase">
+            {{ $t('home.hero.subtitle') }}
+          </span>
+        </div>
+
+        <h1
+          class="text-4xl md:text-6xl lg:text-7xl font-extrabold text-white tracking-tight leading-tight mb-6"
+        >
           {{ $t('home.hero.title') }}
         </h1>
-        <!-- <p class="mt-4 text-2xl md:text-3xl font-medium text-white/90 tracking-widest">
-          {{ $t('home.hero.subtitle') }}
-        </p> -->
+
+        <p class="text-white/65 text-base md:text-lg leading-relaxed max-w-2xl mx-auto mb-10">
+          {{ $t('home.intro.text') }}
+        </p>
+
+        <div class="flex flex-wrap gap-4 justify-center">
+          <UButton
+            size="lg"
+            color="primary"
+            :to="{ name: 'research', params: { locale: route.params.locale } }"
+            :label="$t('header.research')"
+            icon="i-heroicons-beaker"
+          />
+          <UButton
+            size="lg"
+            color="neutral"
+            variant="outline"
+            class="border-white/30 text-white hover:bg-white/10"
+            :to="{ name: 'members', params: { locale: route.params.locale } }"
+            :label="$t('header.members')"
+            trailing-icon="i-heroicons-arrow-right"
+          />
+        </div>
+      </div>
+
+      <div
+        class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-white/30"
+      >
+        <span class="text-xs tracking-[0.25em] uppercase">Scroll</span>
+        <div class="w-px h-10 bg-linear-to-b from-white/30 to-transparent" />
       </div>
     </section>
 
-    <div class="max-w-4xl mx-auto px-6 py-16 text-center">
-      <p class="text-lg md:text-xl leading-relaxed text-muted-foreground italic">
-        "{{ $t('home.intro.text') }}"
-      </p>
+    <!-- Stats Bar -->
+    <div class="bg-primary">
+      <div class="max-w-5xl mx-auto px-6 py-7">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+          <div v-for="stat in statsData" :key="stat.label" class="text-primary-foreground">
+            <div class="text-3xl font-extrabold tracking-tight">{{ stat.value }}</div>
+            <div class="text-xs font-semibold opacity-75 mt-1 uppercase tracking-wider">
+              {{ stat.label }}
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
-    <section class="max-w-5xl mx-auto px-6 py-12">
-      <div
-        class="flex items-end justify-between mb-8 border-b border-gray-200 dark:border-gray-800 pb-4"
-      >
-        <h2 class="text-3xl font-bold tracking-tight text-primary uppercase">
-          {{ $t('home.news.title') }}
-        </h2>
+    <!-- News Section -->
+    <section class="max-w-6xl mx-auto px-6 py-20">
+      <div class="flex items-end justify-between mb-10">
+        <div>
+          <p class="text-primary text-xs font-bold tracking-widest uppercase mb-2">Latest</p>
+          <h2 class="text-3xl md:text-4xl font-bold tracking-tight">
+            {{ $t('home.news.title') }}
+          </h2>
+        </div>
         <UButton
           color="primary"
           variant="ghost"
-          icon="i-heroicons-arrow-right"
+          trailing-icon="i-heroicons-arrow-right"
           :label="$t('home.news.more')"
         />
       </div>
-      <div class="space-y-3">
+
+      <div class="rounded-2xl overflow-hidden border border-border divide-y divide-border">
         <div
           v-for="(item, index) in newsData"
           :key="index"
-          class="flex flex-col md:flex-row gap-4 p-4 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800/50 transition-colors group"
+          class="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-6 px-6 py-4 bg-card hover:bg-accent/40 transition-colors group cursor-default"
         >
-          <span class="text-primary font-mono font-medium">{{ item.date }}</span>
-          <span class="text-foreground group-hover:translate-x-1 transition-transform">{{
-            item.content
-          }}</span>
+          <span
+            class="shrink-0 text-xs font-bold text-primary bg-primary/10 px-3 py-1 rounded-full font-mono w-fit"
+          >
+            {{ item.date }}
+          </span>
+          <span class="text-sm text-foreground leading-relaxed flex-1">
+            {{ item.content }}
+          </span>
+          <!-- <UIcon
+            name="i-heroicons-arrow-right"
+            class="shrink-0 w-4 h-4 text-muted-foreground opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all hidden sm:block"
+          /> -->
         </div>
       </div>
     </section>
 
-    <section class="bg-gray-50/50 dark:bg-gray-900/50 py-20">
+    <!-- Projects Section -->
+    <section class="bg-muted/30 py-24">
       <div class="max-w-6xl mx-auto px-6">
-        <h2
-          class="text-3xl font-bold text-center mb-16 underline decoration-primary decoration-4 underline-offset-8"
-        >
-          {{ $t('home.projects.title') }}
-        </h2>
-        <div class="grid grid-cols-1 gap-12">
+        <div class="text-center mb-16">
+          <p class="text-primary text-xs font-bold tracking-widest uppercase mb-3">Research</p>
+          <h2 class="text-3xl md:text-4xl font-bold tracking-tight">
+            {{ $t('home.projects.title') }}
+          </h2>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
           <div
             v-for="(project, index) in projectsData"
             :key="index"
-            class="flex flex-col lg:flex-row bg-card rounded-2xl overflow-hidden border border-gray-200 dark:border-gray-800 group shadow-sm hover:shadow-md transition-shadow"
+            class="group bg-card rounded-2xl overflow-hidden border border-border hover:border-primary/40 hover:shadow-lg transition-all duration-300 flex flex-col"
           >
-            <div class="lg:w-2/5 overflow-hidden bg-gray-100 dark:bg-gray-800 h-64 lg:h-auto">
+            <div class="h-52 overflow-hidden bg-muted relative">
               <img
                 v-if="project.image"
                 :src="project.image"
                 :alt="project.title"
                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
               />
-              <div v-else class="w-full h-full flex items-center justify-center text-gray-400">
-                <UIcon name="i-heroicons-photo" class="w-12 h-12" />
+              <div
+                v-else
+                class="w-full h-full flex items-center justify-center text-muted-foreground"
+              >
+                <UIcon name="i-heroicons-photo" class="w-16 h-16" />
               </div>
+              <div
+                class="absolute inset-0 bg-linear-to-t from-card/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+              />
             </div>
 
-            <div class="lg:w-3/5 p-8 flex flex-col justify-center">
-              <span class="text-xs font-bold text-primary tracking-widest uppercase mb-2">
-                {{ project.period }} {{ project.tag }}
-              </span>
+            <div class="p-6 flex flex-col flex-1">
+              <div class="flex flex-wrap items-center gap-2 mb-3">
+                <span class="text-xs font-bold text-primary bg-primary/10 px-2.5 py-1 rounded-full">
+                  {{ project.tag }}
+                </span>
+                <span class="text-xs text-muted-foreground font-mono">{{ project.period }}</span>
+              </div>
               <h3
-                class="text-xl font-bold mb-4 group-hover:text-primary transition-colors leading-snug"
+                class="text-sm font-bold leading-snug group-hover:text-primary transition-colors flex-1"
               >
                 {{ project.title }}
               </h3>
-              <!-- <p class="text-muted-foreground leading-relaxed text-sm">
-                {{ project.description }}
-              </p> -->
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="max-w-7xl mx-auto px-6 py-20">
+    <!-- Videos Section -->
+    <section class="max-w-6xl mx-auto px-6 py-24">
+      <div class="text-center mb-16">
+        <p class="text-primary text-xs font-bold tracking-widest uppercase mb-3">Media</p>
+        <h2 class="text-3xl md:text-4xl font-bold tracking-tight">
+          {{ $t('home.videos.sectionTitle') }}
+        </h2>
+      </div>
+
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
         <div v-for="(video, index) in videosData" :key="index" class="group">
-          <h3
-            class="text-lg font-bold mb-4 text-foreground group-hover:text-primary transition-colors"
-          >
-            {{ video.title }}
-          </h3>
-
           <div
-            class="aspect-video rounded-2xl overflow-hidden shadow-lg border border-gray-200 dark:border-gray-800 bg-black"
+            class="aspect-video rounded-2xl overflow-hidden border border-border group-hover:border-primary/40 group-hover:shadow-lg transition-all duration-300 bg-black"
           >
             <iframe
               class="w-full h-full"
@@ -122,8 +191,13 @@
               "
               referrerpolicy="strict-origin-when-cross-origin"
               allowfullscreen
-            ></iframe>
+            />
           </div>
+          <p
+            class="mt-4 font-semibold text-sm text-foreground group-hover:text-primary transition-colors px-1"
+          >
+            {{ video.title }}
+          </p>
         </div>
       </div>
     </section>
@@ -132,11 +206,19 @@
 
 <script setup lang="ts">
 import { computed } from 'vue'
+import { useRoute } from 'vue-router'
 import { useI18n } from 'vue-i18n'
 
 const { t } = useI18n()
+const route = useRoute()
 
-// News 数据：内容使用 i18n Key
+const statsData = computed(() => [
+  { value: '10+', label: t('home.stats.projects') },
+  { value: '50+', label: t('home.stats.publications') },
+  { value: '30+', label: t('home.stats.members') },
+  { value: '7+', label: t('home.stats.years') },
+])
+
 const newsData = computed(() => [
   { date: '2025.12', content: t('home.news.item1') },
   { date: '2025.12', content: t('home.news.item2') },
@@ -145,7 +227,6 @@ const newsData = computed(() => [
   { date: '2025.02', content: t('home.news.item5') },
 ])
 
-// Project 数据
 const projectsData = computed(() => [
   {
     period: '2025.04-2029.03',
@@ -163,7 +244,7 @@ const projectsData = computed(() => [
   },
   {
     period: '2022.04-2024.03',
-    tag: 'JSPS フランスとの共同研究(MEAE-MESRI)(SAKURAプログラム)',
+    tag: 'JSPS SAKURAプログラム',
     title: t('home.projects.p3.title'),
     description: t('home.projects.p3.desc'),
     image: '/images/HomePage/JSPS3.avif',

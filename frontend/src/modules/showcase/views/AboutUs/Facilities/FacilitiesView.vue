@@ -1,94 +1,122 @@
 <template>
-  <div class="max-w-4xl mx-auto px-6 py-24 space-y-24 bg-background min-h-screen">
-    <header class="space-y-6">
-      <h1 class="text-primary text-4xl md:text-5xl font-bold tracking-tight">
-        {{ pageContent.header.title }}
-      </h1>
-      <p class="text-lg text-muted-foreground leading-relaxed">
-        {{ pageContent.header.description }}
-      </p>
-    </header>
+  <div class="min-h-screen bg-background text-foreground font-sans">
+    <!-- Page Header -->
+    <div class="border-b border-border bg-card">
+      <div class="max-w-6xl mx-auto px-6 py-16">
+        <p class="text-primary text-xs font-bold tracking-widest uppercase mb-3">About Us</p>
+        <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight mb-4">
+          {{ pageContent.header.title }}
+        </h1>
+        <p class="text-muted-foreground text-lg leading-relaxed max-w-2xl">
+          {{ pageContent.header.description }}
+        </p>
+      </div>
+    </div>
 
-    <UAlert
-      v-if="pageContent.labNotice"
-      icon="i-heroicons-information-circle"
-      color="primary"
-      variant="soft"
-      :title="pageContent.labNotice.title"
-      :description="pageContent.labNotice.description"
-      class="border border-primary/20"
-    />
-
-    <section class="space-y-16">
-      <div class="space-y-4">
-        <h2 class="text-2xl font-medium tracking-tight text-foreground">
-          {{ pageContent.facilitiesTitle }}
-        </h2>
-        <UDivider class="border-border" />
+    <div class="max-w-6xl mx-auto px-6 py-16 space-y-20">
+      <!-- Lab Relocation Notice -->
+      <div
+        v-if="pageContent.labNotice"
+        class="flex gap-4 p-5 rounded-2xl border border-primary/30 bg-primary/5"
+      >
+        <div
+          class="w-9 h-9 rounded-xl bg-primary/15 flex items-center justify-center shrink-0 mt-0.5"
+        >
+          <UIcon name="i-heroicons-information-circle" class="w-5 h-5 text-primary" />
+        </div>
+        <div>
+          <p class="font-bold text-foreground mb-1">{{ pageContent.labNotice.title }}</p>
+          <p class="text-sm text-muted-foreground leading-relaxed">
+            {{ pageContent.labNotice.description }}
+          </p>
+        </div>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-12 gap-12">
-        <div
-          v-for="facility in pageContent.facilities"
-          :key="facility.id"
-          class="md:col-span-12 grid grid-cols-1 md:grid-cols-4 gap-6"
-        >
-          <div class="md:col-span-1">
-            <h3 class="text-base font-medium text-foreground top-24">
-              {{ facility.title }}
-            </h3>
-          </div>
+      <!-- Research Facilities -->
+      <section>
+        <div class="flex items-center gap-4 mb-10">
+          <div class="w-1 h-6 rounded-full bg-primary" />
+          <h2 class="text-xl font-bold tracking-tight">{{ pageContent.facilitiesTitle }}</h2>
+          <div class="flex-1 h-px bg-border" />
+        </div>
 
-          <div class="md:col-span-3 space-y-6">
-            <div class="space-y-4 text-muted-foreground leading-relaxed">
-              <p v-for="(para, index) in facility.paragraphs" :key="index">
-                {{ para }}
-              </p>
+        <div class="space-y-6">
+          <div
+            v-for="facility in pageContent.facilities"
+            :key="facility.id"
+            class="flex flex-col md:flex-row gap-8 p-7 rounded-2xl border border-border bg-card hover:border-primary/40 transition-colors group"
+          >
+            <!-- Left: title -->
+            <div class="md:w-48 shrink-0">
+              <div
+                class="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-primary/10 mb-3"
+              >
+                <div class="w-1.5 h-1.5 rounded-full bg-primary" />
+                <span class="text-xs font-bold text-primary tracking-wider uppercase">
+                  {{ facility.id }}
+                </span>
+              </div>
+              <h3 class="text-base font-bold text-foreground group-hover:text-primary transition-colors">
+                {{ facility.title }}
+              </h3>
             </div>
 
-            <div
-              v-if="facility.highlights && facility.highlights.length"
-              class="flex flex-wrap gap-2 pt-2"
-            >
-              <UBadge
-                v-for="tag in facility.highlights"
-                :key="tag"
-                variant="subtle"
-                class="font-mono text-xs tracking-wider"
+            <!-- Right: description + highlights -->
+            <div class="flex-1 space-y-4">
+              <p
+                v-for="(para, index) in facility.paragraphs"
+                :key="index"
+                class="text-muted-foreground leading-relaxed text-sm"
               >
-                {{ tag }}
-              </UBadge>
+                {{ para }}
+              </p>
+              <div
+                v-if="facility.highlights && facility.highlights.length"
+                class="flex flex-wrap gap-2"
+              >
+                <span
+                  v-for="tag in facility.highlights"
+                  :key="tag"
+                  class="text-xs font-mono font-semibold px-3 py-1 rounded-full bg-muted text-foreground border border-border"
+                >
+                  {{ tag }}
+                </span>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section class="space-y-8 pt-8">
-      <h3 class="text-lg font-medium text-foreground">
-        {{ pageContent.galleryTitle }}
-      </h3>
-      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-        <UCard
-          v-for="img in pageContent.gallery"
-          :key="img.src"
-          class="group bg-card border-border overflow-hidden ring-border"
-        >
-          <div class="aspect-video bg-muted relative overflow-hidden">
+      <!-- Gallery -->
+      <section>
+        <div class="flex items-center gap-4 mb-10">
+          <div class="w-1 h-6 rounded-full bg-primary" />
+          <h2 class="text-xl font-bold tracking-tight">{{ pageContent.galleryTitle }}</h2>
+          <div class="flex-1 h-px bg-border" />
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5">
+          <div
+            v-for="img in pageContent.gallery"
+            :key="img.src"
+            class="group relative rounded-2xl overflow-hidden border border-border bg-muted aspect-video"
+          >
             <img
               :src="img.src"
               :alt="img.alt"
-              class="object-cover w-full h-full transition-transform duration-700 group-hover:scale-105"
+              class="object-cover w-full h-full transition-transform duration-500 group-hover:scale-105"
             />
+            <div
+              class="absolute inset-0 bg-linear-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4"
+            >
+              <p v-if="img.caption" class="text-white text-sm font-semibold">
+                {{ img.caption }}
+              </p>
+            </div>
           </div>
-          <template v-if="img.caption" #footer>
-            <p class="text-sm text-center text-muted-foreground font-medium">
-              {{ img.caption }}
-            </p>
-          </template>
-        </UCard>
-      </div>
-    </section>
+        </div>
+      </section>
+    </div>
   </div>
 </template>
 

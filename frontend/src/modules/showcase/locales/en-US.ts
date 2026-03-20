@@ -121,7 +121,7 @@ export default {
         miyamoto_mizuki: 'Miyamoto Mizuki',
         iwama_kosuke: 'Iwama Kosuke',
         morita_ryugo: 'Morita Ryugo',
-        yao_zhidi: 'Yao Zhidi',
+        yao_zhidi: 'Zhidi Yao',
         sai: 'UMMITHI Sai Jayaprakash',
         yang_yu: 'Yang Yu',
         akihiro_sakurai: 'Akihiro Sakurai',
@@ -289,6 +289,7 @@ export default {
   },
   publications: {
     header: {
+      label: 'Research Output',
       title: 'Publications & Achievements',
       description:
         'A comprehensive collection of our academic papers, patents, and invited talks driving innovation forward.',
@@ -302,6 +303,19 @@ export default {
       search_placeholder: 'Search by title or author or date...',
       no_results: 'No publications found matching your search.',
       load_more: 'Load Older Publications',
+      filter_all: 'All',
+      filter_journal: 'Journal',
+      filter_conference: 'Conference',
+      paper_singular: 'paper',
+      paper_plural: 'papers',
+    },
+    stats: {
+      journal_articles: 'Journal Articles',
+      conference_papers: 'Conference Papers',
+    },
+    types: {
+      journal: 'Journal',
+      conference: 'Conference',
     },
   },
   activities: {
@@ -319,6 +333,7 @@ export default {
       ordinary: 'Activity',
       conference: 'Conference',
       award: 'Award Recognition',
+      event: 'Event',
     },
     list: {
       conf_iconip_2025_gao: {
@@ -566,8 +581,23 @@ export default {
       },
     },
     videos: {
+      sectionTitle: 'Featured Videos',
       v1: 'Lab Research Overview',
       v2: 'Video AI Compression Technology',
+    },
+    stats: {
+      projects: 'Research Projects',
+      publications: 'Publications',
+      members: 'Lab Members',
+      years: 'Years of Research',
+    },
+  },
+  research: {
+    overview: {
+      title: 'Research Areas',
+      description:
+        'We conduct cutting-edge research across three major areas of multimedia AI, spanning compression, sensing, and visual processing.',
+      explore: 'Explore',
     },
   },
   base: {

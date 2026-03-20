@@ -11,6 +11,11 @@ export const showcaseRoutes: RouteRecordRaw[] = [
     path: 'research',
     children: [
       {
+        path: '',
+        name: 'research',
+        component: () => import('../views/Research/ResearchView.vue'),
+      },
+      {
         path: 'sensing',
         name: 'sensing',
         component: () => import('../views/Research/Sensing/SensingView.vue'),

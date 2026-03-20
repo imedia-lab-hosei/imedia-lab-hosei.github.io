@@ -1,136 +1,128 @@
 <template>
-  <div class="max-w-4xl mx-auto px-6 py-24 space-y-24 bg-background min-h-screen">
-    <header class="space-y-8">
-      <div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
-        <div class="space-y-4">
-          <h1 class="text-4xl md:text-5xl font-bold tracking-tight text-primary">
-            {{ t('activities.header.title') }}
-          </h1>
-          <p class="text-lg text-muted-foreground leading-relaxed max-w-xl">
-            {{ t('activities.header.description') }}
-          </p>
-        </div>
+  <div class="min-h-screen bg-background text-foreground font-sans">
+    <!-- Page Header -->
+    <div class="border-b border-border bg-card">
+      <div class="max-w-6xl mx-auto px-6 py-16">
+        <p class="text-primary text-xs font-bold tracking-widest uppercase mb-3">Lab Life</p>
+        <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight mb-4">
+          {{ t('activities.header.title') }}
+        </h1>
+        <p class="text-muted-foreground text-lg leading-relaxed max-w-2xl">
+          {{ t('activities.header.description') }}
+        </p>
+      </div>
+    </div>
 
+    <div class="max-w-6xl mx-auto px-6 py-12">
+      <!-- Search + Filter Row -->
+      <div class="flex flex-col sm:flex-row gap-3 items-start sm:items-center mb-12">
         <UInput
           v-model="searchQuery"
           icon="i-heroicons-magnifying-glass"
           :placeholder="t('activities.ui.search_placeholder')"
-          class="w-full md:w-80"
+          class="w-full sm:w-72"
           variant="outline"
-          size="lg"
         />
-      </div>
-      <UDivider class="border-border" />
-    </header>
-
-    <div class="space-y-8">
-      <div class="space-y-16">
-        <div v-if="displayedActivities.length === 0" class="py-20 text-center space-y-4">
-          <UIcon name="i-heroicons-camera" class="w-12 h-12 text-muted-foreground/30 mx-auto" />
-          <p class="text-muted-foreground italic">
-            {{ t('activities.ui.no_results') }}
-          </p>
-        </div>
-
-        <div class="space-y-32">
-          <section
-            v-for="activity in displayedActivities"
-            :key="activity.id"
-            class="group relative animate-in fade-in slide-in-from-bottom-8 duration-1000"
+        <div class="flex gap-2 flex-wrap">
+          <button
+            v-for="tab in filterTabs"
+            :key="tab.value"
+            class="text-xs font-bold px-4 py-1.5 rounded-full transition-all"
+            :class="
+              typeFilter === tab.value
+                ? 'bg-primary text-primary-foreground'
+                : 'bg-muted text-muted-foreground hover:bg-primary/10 hover:text-primary'
+            "
+            @click="typeFilter = tab.value"
           >
-            <div
-              class="absolute -left-4 top-0 bottom-0 w-px bg-gradient-to-b from-primary/50 via-border/20 to-transparent hidden md:block"
-            />
+            {{ tab.label }}
+          </button>
+        </div>
+      </div>
 
-            <div class="md:pl-10 space-y-8">
-              <header class="space-y-4">
-                <div class="flex flex-wrap items-center gap-3">
-                  <time class="text-sm font-mono tracking-widest text-muted-foreground uppercase">
-                    {{ activity.date }}
-                  </time>
+      <!-- No results -->
+      <div
+        v-if="displayedActivities.length === 0"
+        class="py-20 text-center text-muted-foreground"
+      >
+        <UIcon name="i-heroicons-camera" class="w-12 h-12 mx-auto mb-3 opacity-30" />
+        <p>{{ t('activities.ui.no_results') }}</p>
+      </div>
 
-                  <UBadge
-                    v-if="activity.type !== 'ordinary'"
-                    variant="subtle"
-                    size="xs"
-                    class="font-mono uppercase tracking-tighter"
-                  >
-                    {{ t(`activities.types.${activity.type}`) }}
-                  </UBadge>
-                </div>
-
-                <h2
-                  class="text-3xl md:text-5xl font-light tracking-tight text-foreground transition-all duration-500 group-hover:text-primary leading-tight"
-                >
-                  {{ t(`activities.list.${activity.title}`) }}
-                </h2>
-
-                <div
-                  v-if="activity.type !== 'ordinary'"
-                  class="flex flex-wrap gap-y-3 gap-x-6 pt-2"
-                >
-                  <div class="flex items-center gap-2 text-foreground font-medium">
-                    <UIcon
-                      :name="
-                        activity.type === 'award'
-                          ? 'i-heroicons-trophy'
-                          : 'i-heroicons-academic-cap'
-                      "
-                      class="w-5 h-5 text-primary"
-                    />
-                    <span>{{ t(`activities.list.${activity.venue}`) }}</span>
-                  </div>
-
-                  <div
-                    v-if="activity.location"
-                    class="flex items-center gap-2 text-muted-foreground"
-                  >
-                    <UIcon name="i-heroicons-map-pin" class="w-4 h-4" />
-                    <span class="text-sm">{{ t(`activities.list.${activity.location}`) }}</span>
-                  </div>
-
-                  <div
-                    v-if="activity.participants"
-                    class="flex items-center gap-2 text-muted-foreground"
-                  >
-                    <UIcon name="i-heroicons-user-group" class="w-4 h-4" />
-                    <span class="text-sm">{{ activity.participants }}</span>
-                  </div>
-                </div>
-
-                <div v-if="activity.description" class="max-w-3xl pt-2">
-                  <p
-                    class="text-lg text-muted-foreground/90 leading-relaxed border-l-2 border-primary/10 pl-6 italic"
-                  >
-                    {{ activity.description }}
-                  </p>
-                </div>
-              </header>
-
-              <div
-                class="pt-4 group/gallery transition-transform duration-500 hover:-translate-y-1"
+      <!-- Activity Cards -->
+      <div class="space-y-10">
+        <article
+          v-for="activity in displayedActivities"
+          :key="activity.id"
+          class="rounded-2xl border border-border bg-card overflow-hidden hover:border-primary/40 transition-colors group"
+        >
+          <!-- Card Header -->
+          <div class="p-6 space-y-3">
+            <div class="flex flex-wrap items-center gap-2">
+              <!-- Date -->
+              <span class="text-xs font-bold font-mono text-primary bg-primary/10 px-3 py-1 rounded-full">
+                {{ activity.date }}
+              </span>
+              <!-- Type badge -->
+              <span
+                v-if="activity.type !== 'ordinary'"
+                class="text-xs font-bold px-2.5 py-1 rounded-full"
+                :class="
+                  activity.type === 'award'
+                    ? 'bg-amber-500/10 text-amber-600 dark:text-amber-400'
+                    : 'bg-blue-500/10 text-blue-600 dark:text-blue-400'
+                "
               >
-                <ExpandableGallery
-                  :images="activity.images"
-                  class="rounded-2xl overflow-hidden shadow-sm group-hover/gallery:shadow-2xl group-hover/gallery:shadow-primary/5 transition-all duration-700"
+                {{ t(`activities.types.${activity.type}`) }}
+              </span>
+            </div>
+
+            <h2 class="text-lg font-bold text-foreground group-hover:text-primary transition-colors leading-snug">
+              {{ t(`activities.list.${activity.title}`) }}
+            </h2>
+
+            <!-- Metadata row -->
+            <div v-if="activity.type !== 'ordinary'" class="flex flex-wrap gap-x-5 gap-y-1.5 pt-1">
+              <div v-if="activity.venue" class="flex items-center gap-1.5 text-sm text-foreground">
+                <UIcon
+                  :name="activity.type === 'award' ? 'i-heroicons-trophy' : 'i-heroicons-academic-cap'"
+                  class="w-4 h-4 text-primary shrink-0"
                 />
+                <span class="font-medium">{{ t(`activities.list.${activity.venue}`) }}</span>
+              </div>
+              <div v-if="activity.location" class="flex items-center gap-1.5 text-sm text-muted-foreground">
+                <UIcon name="i-heroicons-map-pin" class="w-4 h-4 shrink-0" />
+                <span>{{ t(`activities.list.${activity.location}`) }}</span>
+              </div>
+              <div v-if="activity.participants" class="flex items-center gap-1.5 text-sm text-muted-foreground">
+                <UIcon name="i-heroicons-user-group" class="w-4 h-4 shrink-0" />
+                <span>{{ activity.participants }}</span>
               </div>
             </div>
-          </section>
-        </div>
-      </div>
-    </div>
 
-    <div v-if="hasMore && !searchQuery" class="flex justify-center pt-12">
-      <UButton
-        variant="soft"
-        size="lg"
-        icon="i-heroicons-chevron-down"
-        class="ring-border hover:bg-muted px-8 transition-colors"
-        @click="loadMore"
-      >
-        {{ t('activities.ui.load_more') }}
-      </UButton>
+            <p v-if="activity.description" class="text-sm text-muted-foreground leading-relaxed border-l-[3px] border-primary/30 pl-4">
+              {{ activity.description }}
+            </p>
+          </div>
+
+          <!-- Gallery -->
+          <div class="px-6 pb-6">
+            <ExpandableGallery :images="activity.images" class="rounded-xl overflow-hidden" />
+          </div>
+        </article>
+      </div>
+
+      <!-- Load More -->
+      <div v-if="hasMore && !searchQuery && typeFilter === 'all'" class="flex justify-center pt-10">
+        <UButton
+          variant="soft"
+          color="primary"
+          icon="i-heroicons-arrow-down"
+          @click="loadMore"
+        >
+          {{ t('activities.ui.load_more') }}
+        </UButton>
+      </div>
     </div>
   </div>
 </template>
@@ -169,7 +161,16 @@ const { t } = useI18n()
 
 // 2. 响应式状态
 const searchQuery = ref('')
+const typeFilter = ref('all')
 const visibleCount = ref(2) // 初始显示 2 个活动
+
+// 过滤标签
+const filterTabs = computed(() => [
+  { label: 'All', value: 'all' },
+  { label: t('activities.types.conference'), value: 'conference' },
+  { label: t('activities.types.award'), value: 'award' },
+  { label: t('activities.types.event'), value: 'ordinary' },
+])
 
 // 3. 原始数据 (Data-Driven)
 // 注意：title 和 description 依然使用 t()，但不设默认值，强制从 JSON 读取
@@ -773,23 +774,22 @@ const allActivities = computed<ActivityItem[]>(() => [
 ])
 
 // 4. 数据管道处理
-// 步骤 A：搜索过滤
+// 步骤 A：搜索 + 类型过滤
 const filteredActivities = computed(() => {
-  if (!searchQuery.value.trim()) return allActivities.value
-
-  const query = searchQuery.value.toLowerCase()
-  return allActivities.value.filter(
-    (item) =>
-      item.title.toLowerCase().includes(query) || item.description?.toLowerCase().includes(query),
-  )
+  const query = searchQuery.value.toLowerCase().trim()
+  return allActivities.value.filter((item) => {
+    const matchesQuery =
+      !query ||
+      item.title.toLowerCase().includes(query) ||
+      item.description?.toLowerCase().includes(query)
+    const matchesType = typeFilter.value === 'all' || item.type === typeFilter.value
+    return matchesQuery && matchesType
+  })
 })
 
 // 步骤 B：分页/渐进显示
 const displayedActivities = computed(() => {
-  // 如果正在搜索，展示所有匹配结果以防遗漏
-  if (searchQuery.value.trim()) return filteredActivities.value
-
-  // 否则根据 visibleCount 截取
+  if (searchQuery.value.trim() || typeFilter.value !== 'all') return filteredActivities.value
   return filteredActivities.value.slice(0, visibleCount.value)
 })
 

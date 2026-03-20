@@ -1,112 +1,158 @@
 <template>
-  <div class="max-w-4xl mx-auto px-6 py-24 space-y-24 bg-background min-h-screen">
-    <header class="space-y-8">
-      <div class="space-y-4">
-        <h1 class="text-4xl md:text-5xl font-bold tracking-tight text-primary">
+  <div class="min-h-screen bg-background text-foreground font-sans">
+    <!-- Page Header -->
+    <div class="border-b border-border bg-card">
+      <div class="max-w-6xl mx-auto px-6 py-16">
+        <p class="text-primary text-xs font-bold tracking-widest uppercase mb-3">About Us</p>
+        <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight mb-4">
           {{ pageContent.header.title }}
         </h1>
-        <p class="text-lg text-muted-foreground leading-relaxed max-w-2xl">
+        <p class="text-muted-foreground text-lg leading-relaxed max-w-2xl mb-8">
           {{ pageContent.header.description }}
         </p>
-      </div>
 
-      <div class="flex flex-wrap gap-4">
-        <UButton
-          v-for="link in pageContent.quickLinks"
-          :key="link.label"
-          :icon="link.icon"
-          :to="link.url"
-          variant="solid"
-          class="shadow-sm ring-border"
-        >
-          {{ link.label }}
-        </UButton>
-      </div>
-    </header>
-
-    <section v-for="section in pageContent.sections" :key="section.id" class="space-y-12">
-      <div class="space-y-4">
-        <div class="flex items-center space-x-4">
-          <h2 class="text-2xl font-medium tracking-tight text-foreground">
-            {{ section.title }}
-          </h2>
-          <UBadge
-            v-if="section.frequency"
+        <!-- Quick Links -->
+        <div class="flex flex-wrap gap-3">
+          <UButton
+            v-for="link in pageContent.quickLinks"
+            :key="link.label"
+            :icon="link.icon"
+            :to="link.url"
+            target="_blank"
             color="primary"
-            variant="subtle"
-            class="font-mono text-xs tracking-wider"
+            variant="soft"
+            size="sm"
           >
-            {{ section.frequency }}
-          </UBadge>
+            {{ link.label }}
+          </UButton>
         </div>
-        <UDivider class="border-border" />
       </div>
+    </div>
 
-      <div v-if="section.layout === 'seminar'" class="space-y-8">
-        <p class="text-muted-foreground leading-relaxed">
-          {{ section.description }}
-        </p>
+    <div class="max-w-6xl mx-auto px-6 py-16 space-y-16">
+      <template v-for="section in pageContent.sections" :key="section.id">
+        <!-- Seminar layout -->
+        <section v-if="section.layout === 'seminar'" class="space-y-8">
+          <div class="flex items-center gap-4">
+            <div class="w-1 h-6 rounded-full bg-primary" />
+            <h2 class="text-xl font-bold tracking-tight">{{ section.title }}</h2>
+            <span
+              v-if="section.frequency"
+              class="text-xs font-bold text-primary bg-primary/10 px-3 py-1 rounded-full"
+            >
+              {{ section.frequency }}
+            </span>
+            <div class="flex-1 h-px bg-border" />
+          </div>
 
-        <UCard class="bg-card border-border ring-border shadow-none">
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div v-for="info in section.metadata" :key="info.label" class="space-y-2">
-              <div class="flex items-center space-x-2 text-foreground font-medium">
-                <UIcon :name="info.icon" class="w-5 h-5 text-muted-foreground" />
-                <span>{{ info.label }}</span>
+          <p v-if="section.description" class="text-muted-foreground leading-relaxed max-w-3xl">
+            {{ section.description }}
+          </p>
+
+          <div
+            v-if="section.metadata"
+            class="grid grid-cols-1 md:grid-cols-2 gap-5"
+          >
+            <div
+              v-for="info in section.metadata"
+              :key="info.label"
+              class="flex gap-4 p-5 rounded-2xl border border-border bg-card"
+            >
+              <div
+                class="w-9 h-9 rounded-xl bg-muted flex items-center justify-center shrink-0 mt-0.5"
+              >
+                <UIcon :name="info.icon" class="w-4 h-4 text-primary" />
               </div>
-              <ul class="space-y-1 text-sm text-muted-foreground pl-7">
-                <li
-                  v-for="(val, idx) in info.values"
-                  :key="idx"
-                  class="relative before:content-[''] before:absolute before:w-1 before:h-1 before:bg-muted-foreground/50 before:rounded-full before:left-[-12px] before:top-2"
-                >
-                  {{ val }}
-                </li>
-              </ul>
+              <div class="space-y-2">
+                <p class="text-sm font-bold text-foreground">{{ info.label }}</p>
+                <ul class="space-y-1">
+                  <li
+                    v-for="(val, idx) in info.values"
+                    :key="idx"
+                    class="flex items-start gap-2 text-sm text-muted-foreground"
+                  >
+                    <div class="w-1 h-1 rounded-full bg-primary/50 shrink-0 mt-2" />
+                    {{ val }}
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
-        </UCard>
-      </div>
+        </section>
 
-      <div
-        v-else-if="section.layout === 'study-groups'"
-        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
-      >
-        <UCard
-          v-for="group in section.subGroups"
-          :key="group.title"
-          class="bg-card border-border ring-border hover:shadow-md transition-shadow duration-300 flex flex-col h-full"
-        >
-          <template #header>
-            <h3 class="text-lg font-medium text-foreground leading-snug">
-              {{ group.title }}
-            </h3>
-            <span v-if="group.target" class="text-xs text-muted-foreground mt-1 block">
-              {{ group.target }}
-            </span>
-          </template>
-          <p class="text-sm text-muted-foreground leading-relaxed flex-1">
-            {{ group.description }}
-          </p>
-          <template v-if="group.note" #footer>
-            <span class="text-xs font-medium text-foreground bg-muted px-2 py-1 rounded-md">
-              {{ group.note }}
-            </span>
-          </template>
-        </UCard>
-      </div>
+        <!-- Study groups layout -->
+        <section v-else-if="section.layout === 'study-groups'" class="space-y-8">
+          <div class="flex items-center gap-4">
+            <div class="w-1 h-6 rounded-full bg-primary" />
+            <h2 class="text-xl font-bold tracking-tight">{{ section.title }}</h2>
+            <div class="flex-1 h-px bg-border" />
+          </div>
 
-      <div v-else-if="section.layout === 'action-alert'">
-        <UAlert
-          icon="i-heroicons-envelope"
-          variant="soft"
-          class="border border-border"
-          :title="section.title"
-          :description="section.description"
-          :actions="section.actions"
-        />
-      </div>
-    </section>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+            <div
+              v-for="group in section.subGroups"
+              :key="group.title"
+              class="flex flex-col gap-3 p-6 rounded-2xl border border-border bg-card hover:border-primary/40 hover:bg-primary/5 transition-all group"
+            >
+              <div>
+                <h3 class="text-base font-bold text-foreground group-hover:text-primary transition-colors mb-1">
+                  {{ group.title }}
+                </h3>
+                <span v-if="group.target" class="text-xs text-muted-foreground">
+                  {{ group.target }}
+                </span>
+              </div>
+              <p class="text-sm text-muted-foreground leading-relaxed flex-1">
+                {{ group.description }}
+              </p>
+              <span
+                v-if="group.note"
+                class="text-xs font-semibold text-foreground bg-muted px-3 py-1.5 rounded-lg w-fit"
+              >
+                {{ group.note }}
+              </span>
+            </div>
+          </div>
+        </section>
+
+        <!-- Action alert layout -->
+        <section v-else-if="section.layout === 'action-alert'" class="space-y-8">
+          <div class="flex items-center gap-4">
+            <div class="w-1 h-6 rounded-full bg-primary" />
+            <h2 class="text-xl font-bold tracking-tight">{{ section.title }}</h2>
+            <div class="flex-1 h-px bg-border" />
+          </div>
+
+          <div
+            class="flex flex-col sm:flex-row sm:items-center justify-between gap-5 p-6 rounded-2xl border border-border bg-card"
+          >
+            <div class="flex gap-4 items-start">
+              <div
+                class="w-9 h-9 rounded-xl bg-primary/10 flex items-center justify-center shrink-0"
+              >
+                <UIcon name="i-heroicons-envelope" class="w-5 h-5 text-primary" />
+              </div>
+              <p class="text-sm text-muted-foreground leading-relaxed max-w-lg">
+                {{ section.description }}
+              </p>
+            </div>
+            <div class="flex gap-2 shrink-0">
+              <UButton
+                v-for="action in section.actions"
+                :key="action.label"
+                :to="action.to"
+                target="_blank"
+                :icon="action.icon"
+                :label="action.label"
+                :color="action.color"
+                :variant="action.variant"
+                size="sm"
+              />
+            </div>
+          </div>
+        </section>
+      </template>
+    </div>
   </div>
 </template>
 

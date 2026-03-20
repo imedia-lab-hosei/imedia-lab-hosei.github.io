@@ -1,145 +1,146 @@
 <template>
-  <div class="max-w-4xl mx-auto px-6 py-24 space-y-24 bg-background min-h-screen">
-    <header class="space-y-6">
-      <div class="space-y-2">
-        <h1 class="text-4xl md:text-5xl font-bold tracking-tight text-primary leading-tight">
+  <div class="min-h-screen bg-background text-foreground font-sans">
+    <!-- Page Header -->
+    <div class="border-b border-border bg-card">
+      <div class="max-w-6xl mx-auto px-6 py-16">
+        <p class="text-primary text-xs font-bold tracking-widest uppercase mb-3">Prospective Students</p>
+        <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight mb-3">
           {{ t('visit.header.title') }}
         </h1>
-        <p class="text-xs font-mono text-muted-foreground uppercase tracking-widest">
+        <p class="text-xs font-mono text-muted-foreground uppercase tracking-widest mb-4">
           {{ t('visit.header.update_info') }}
         </p>
-      </div>
-      <p class="text-lg text-muted-foreground leading-relaxed max-w-2xl">
-        {{ t('visit.header.description') }}
-      </p>
-    </header>
-
-    <section class="space-y-12">
-      <div class="space-y-4">
-        <h2 class="text-2xl font-medium tracking-tight text-foreground">
-          {{ t('visit.themes.title') }}
-        </h2>
-        <UDivider class="border-border" />
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <UCard
-          v-for="theme in researchThemes"
-          :key="theme.id"
-          class="bg-card border-border ring-border hover:shadow-xl transition-all duration-500 flex flex-col"
-        >
-          <template #header>
-            <UIcon :name="theme.icon" class="w-8 h-8 text-primary mb-2" />
-            <h3 class="text-lg font-medium text-foreground leading-snug">
-              {{ t(theme.title) }}
-            </h3>
-          </template>
-          <p class="text-sm text-muted-foreground leading-relaxed italic">
-            {{ t(theme.description) }}
-          </p>
-        </UCard>
-      </div>
-    </section>
-
-    <section
-      class="py-12 px-8 bg-muted/30 rounded-3xl border border-border/50 relative overflow-hidden"
-    >
-      <div class="relative z-10 space-y-6">
-        <h2 class="text-2xl font-medium text-foreground">
-          {{ t('visit.environment.title') }}
-        </h2>
-        <p
-          class="text-lg text-muted-foreground leading-relaxed italic max-w-3xl border-l-2 border-primary/20 pl-8 py-2"
-        >
-          {{ t('visit.environment.description') }}
+        <p class="text-muted-foreground text-lg leading-relaxed max-w-2xl">
+          {{ t('visit.header.description') }}
         </p>
       </div>
-      <UIcon
-        name="i-heroicons-globe-alt"
-        class="absolute -right-12 -bottom-12 w-64 h-64 text-foreground/5 opacity-10"
-      />
-    </section>
+    </div>
 
-    <section class="space-y-12">
-      <div class="space-y-4">
-        <h2 class="text-2xl font-medium tracking-tight text-foreground">
-          {{ t('visit.resources.title') }}
-        </h2>
-        <UDivider class="border-border" />
-      </div>
+    <div class="max-w-6xl mx-auto px-6 py-16 space-y-20">
+      <!-- Research Themes -->
+      <section class="space-y-8">
+        <div class="flex items-center gap-4">
+          <div class="w-1 h-6 rounded-full bg-primary" />
+          <h2 class="text-xl font-bold tracking-tight">{{ t('visit.themes.title') }}</h2>
+          <div class="flex-1 h-px bg-border" />
+        </div>
 
-      <div class="flex flex-wrap gap-4">
-        <UButton
-          v-for="link in resourceLinks"
-          :key="link.id"
-          :icon="link.icon"
-          variant="soft"
-          :to="link.url"
-          class="ring-border transition-colors hover:bg-muted"
-        >
-          {{ t(link.label) }}
-        </UButton>
-      </div>
-    </section>
-
-    <section class="space-y-12 pb-24">
-      <div class="space-y-4">
-        <h2 class="text-2xl font-medium tracking-tight text-foreground flex items-center gap-3">
-          <UIcon name="i-heroicons-calendar-days" class="w-7 h-7 text-primary" />
-          {{ t('visit.tours.title') }}
-        </h2>
-        <UDivider class="border-border" />
-      </div>
-
-      <div class="space-y-6">
-        <div
-          v-for="(event, index) in labTours"
-          :key="index"
-          class="group flex flex-col md:flex-row gap-6 p-6 rounded-2xl border border-border/40 bg-card hover:shadow-xl hover:border-primary/20 transition-all duration-500 relative overflow-hidden"
-        >
-          <div class="flex-1 space-y-4">
-            <div class="flex flex-wrap items-center gap-3">
-              <UBadge
-                size="sm"
-                color="primary"
-                variant="soft"
-                class="font-mono tracking-widest uppercase"
-              >
-                {{ t(event.category) }}
-              </UBadge>
-              <div class="flex items-center gap-1.5 text-sm font-medium text-muted-foreground">
-                <UIcon name="i-heroicons-map-pin" class="w-4 h-4" />
-                {{ event.location }}
-              </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+          <div
+            v-for="theme in researchThemes"
+            :key="theme.id"
+            class="flex flex-col gap-4 p-6 rounded-2xl border border-border bg-card hover:border-primary/40 hover:bg-primary/5 transition-all group"
+          >
+            <div class="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center">
+              <UIcon :name="theme.icon" class="w-5 h-5 text-primary" />
             </div>
-
             <div class="space-y-2">
-              <h3
-                class="text-xl md:text-2xl font-medium text-foreground group-hover:text-primary transition-colors duration-300"
-              >
+              <h3 class="text-base font-bold text-foreground group-hover:text-primary transition-colors">
+                {{ t(theme.title) }}
+              </h3>
+              <p class="text-sm text-muted-foreground leading-relaxed">
+                {{ t(theme.description) }}
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Global Environment -->
+      <section class="space-y-8">
+        <div class="flex items-center gap-4">
+          <div class="w-1 h-6 rounded-full bg-primary" />
+          <h2 class="text-xl font-bold tracking-tight">{{ t('visit.environment.title') }}</h2>
+          <div class="flex-1 h-px bg-border" />
+        </div>
+
+        <div class="flex gap-4 p-6 rounded-2xl border border-primary/20 bg-primary/5">
+          <div class="w-10 h-10 rounded-xl bg-primary/15 flex items-center justify-center shrink-0 mt-0.5">
+            <UIcon name="i-heroicons-globe-alt" class="w-5 h-5 text-primary" />
+          </div>
+          <p class="text-base text-foreground leading-relaxed">
+            {{ t('visit.environment.description') }}
+          </p>
+        </div>
+      </section>
+
+      <!-- Resources & Links -->
+      <section class="space-y-8">
+        <div class="flex items-center gap-4">
+          <div class="w-1 h-6 rounded-full bg-primary" />
+          <h2 class="text-xl font-bold tracking-tight">{{ t('visit.resources.title') }}</h2>
+          <div class="flex-1 h-px bg-border" />
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+          <a
+            v-for="link in resourceLinks"
+            :key="link.id"
+            :href="link.url"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="flex items-center gap-3 p-4 rounded-2xl border border-border bg-card hover:border-primary/40 hover:bg-primary/5 transition-all group"
+          >
+            <div class="w-9 h-9 rounded-xl bg-muted flex items-center justify-center shrink-0">
+              <UIcon :name="link.icon" class="w-4 h-4 text-primary" />
+            </div>
+            <span class="text-sm font-semibold text-foreground group-hover:text-primary transition-colors flex-1">
+              {{ t(link.label) }}
+            </span>
+            <UIcon name="i-heroicons-arrow-top-right-on-square" class="w-4 h-4 text-muted-foreground group-hover:text-primary transition-colors shrink-0" />
+          </a>
+        </div>
+      </section>
+
+      <!-- Lab Tours & Schedule -->
+      <section class="space-y-8 pb-8">
+        <div class="flex items-center gap-4">
+          <div class="w-1 h-6 rounded-full bg-primary" />
+          <h2 class="text-xl font-bold tracking-tight">{{ t('visit.tours.title') }}</h2>
+          <div class="flex-1 h-px bg-border" />
+        </div>
+
+        <div class="space-y-5">
+          <div
+            v-for="(event, index) in labTours"
+            :key="index"
+            class="flex flex-col md:flex-row gap-0 rounded-2xl border border-border bg-card overflow-hidden hover:border-primary/40 transition-colors group"
+          >
+            <!-- Left: info -->
+            <div class="flex-1 p-6 space-y-3">
+              <div class="flex flex-wrap items-center gap-2">
+                <span class="text-xs font-bold text-primary bg-primary/10 px-3 py-1 rounded-full">
+                  {{ t(event.category) }}
+                </span>
+                <span class="flex items-center gap-1 text-xs text-muted-foreground font-mono">
+                  <UIcon name="i-heroicons-map-pin" class="w-3.5 h-3.5" />
+                  {{ event.location }}
+                </span>
+              </div>
+
+              <h3 class="text-base font-bold text-foreground group-hover:text-primary transition-colors">
                 {{ t(event.label) }}
               </h3>
 
               <div
                 v-if="event.note"
-                class="flex items-start gap-1.5 text-sm text-amber-600 dark:text-amber-400 font-medium bg-amber-50 dark:bg-amber-950/30 inline-flex px-3 py-1.5 rounded-md mt-2"
+                class="flex items-start gap-1.5 text-xs font-semibold text-amber-600 dark:text-amber-400 bg-amber-500/10 px-3 py-1.5 rounded-lg w-fit"
               >
-                <UIcon name="i-heroicons-exclamation-triangle" class="w-4 h-4 shrink-0 mt-0.5" />
+                <UIcon name="i-heroicons-exclamation-triangle" class="w-3.5 h-3.5 shrink-0 mt-0.5" />
                 <span>{{ t(event.note) }}</span>
               </div>
             </div>
-          </div>
 
-          <div
-            class="md:w-80 shrink-0 bg-muted/40 rounded-xl p-5 border border-border/50 flex flex-col justify-center"
-          >
-            <div class="space-y-3.5">
+            <!-- Right: dates -->
+            <div class="md:w-72 shrink-0 bg-muted/40 border-t md:border-t-0 md:border-l border-border p-6 flex flex-col justify-center gap-3">
               <div
                 v-for="(dateKey, dIdx) in event.dates"
                 :key="dIdx"
-                class="flex items-start gap-3"
+                class="flex items-start gap-2.5"
               >
-                <UIcon name="i-heroicons-clock" class="w-5 h-5 text-primary/70 shrink-0" />
+                <div class="w-6 h-6 rounded-lg bg-primary/10 flex items-center justify-center shrink-0 mt-0.5">
+                  <UIcon name="i-heroicons-clock" class="w-3.5 h-3.5 text-primary" />
+                </div>
                 <span class="text-sm font-medium text-foreground leading-snug">
                   {{ t(dateKey) }}
                 </span>
@@ -147,8 +148,8 @@
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </div>
   </div>
 </template>
 
@@ -214,7 +215,6 @@ const resourceLinks = [
 const labTours = [
   {
     category: 'visit.tours.cat_open',
-    // 使用数组存放 i18n 键
     dates: ['visit.tours.date_open'],
     label: 'visit.tours.open_semi',
     note: 'visit.tours.open_semi_note',
@@ -228,7 +228,6 @@ const labTours = [
   },
   {
     category: 'visit.tours.cat_qa',
-    // 包含所有的具体时间段
     dates: ['visit.tours.date_qa_1', 'visit.tours.date_qa_2', 'visit.tours.date_qa_3'],
     label: 'visit.tours.prof_qa',
     location: 'South S504',

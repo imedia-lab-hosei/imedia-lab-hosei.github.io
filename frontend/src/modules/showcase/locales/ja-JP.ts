@@ -256,6 +256,7 @@ export default {
   },
   publications: {
     header: {
+      label: '研究成果',
       title: '発表論文・成果',
       description:
         '知能メディア処理研究室の研究成果を紹介します。ここでは、私たちの研究活動の成果である論文、特許、講演などを掲載しています。',
@@ -269,6 +270,19 @@ export default {
       search_placeholder: 'タイトルまたは著者または日付で検索...',
       no_results: '検索条件に一致する論文が見つかりませんでした。',
       load_more: '古い論文を読み込む',
+      filter_all: 'すべて',
+      filter_journal: '論文誌',
+      filter_conference: '国際会議',
+      paper_singular: '件',
+      paper_plural: '件',
+    },
+    stats: {
+      journal_articles: '論文誌論文',
+      conference_papers: '国際会議論文',
+    },
+    types: {
+      journal: '論文誌',
+      conference: '国際会議',
     },
   },
   activities: {
@@ -285,6 +299,7 @@ export default {
       ordinary: '通常の活動',
       conference: '会議発表',
       award: '受賞',
+      event: 'イベント',
     },
     list: {
       conf_iconip_2025_gao: {
@@ -517,8 +532,23 @@ export default {
       },
     },
     videos: {
+      sectionTitle: '紹介動画',
       v1: '研究室紹介ビデオ',
       v2: '動画圧縮AI技術の紹介',
+    },
+    stats: {
+      projects: '研究プロジェクト',
+      publications: '研究業績',
+      members: '研究室メンバー',
+      years: '研究年数',
+    },
+  },
+  research: {
+    overview: {
+      title: '研究分野',
+      description:
+        '私たちは、圧縮・センシング・視覚処理という3つの主要な分野でマルチメディアAIの最先端研究を行っています。',
+      explore: '詳細を見る',
     },
   },
   base: {
