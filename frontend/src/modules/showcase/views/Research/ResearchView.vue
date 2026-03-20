@@ -20,7 +20,7 @@
       <div class="grid grid-cols-1 gap-8">
         <RouterLink
           v-for="area in researchAreas"
-          :key="area.name"
+          :key="area.routeName"
           :to="{ name: area.routeName, params: { locale: route.params.locale } }"
           class="group flex flex-col lg:flex-row bg-card rounded-2xl overflow-hidden border border-border hover:border-primary/40 hover:shadow-lg transition-all duration-300"
         >
@@ -36,7 +36,9 @@
           <!-- Content -->
           <div class="flex flex-col justify-center p-8 lg:p-10 gap-4">
             <div class="flex items-center gap-3">
-              <div class="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
+              <div
+                class="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center shrink-0"
+              >
                 <UIcon :name="area.icon" class="w-4 h-4 text-primary" />
               </div>
               <span class="text-xs font-bold text-primary tracking-widest uppercase">
@@ -44,7 +46,9 @@
               </span>
             </div>
 
-            <h2 class="text-2xl md:text-3xl font-extrabold tracking-tight group-hover:text-primary transition-colors">
+            <h2
+              class="text-2xl md:text-3xl font-extrabold tracking-tight group-hover:text-primary transition-colors"
+            >
               {{ area.title }}
             </h2>
 
