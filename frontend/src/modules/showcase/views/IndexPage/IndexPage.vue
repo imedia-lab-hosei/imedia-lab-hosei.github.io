@@ -84,6 +84,7 @@
           variant="ghost"
           trailing-icon="i-heroicons-arrow-right"
           :label="$t('home.news.more')"
+          :to="{ name: 'activities', params: { locale: route.params.locale } }"
         />
       </div>
 
@@ -208,6 +209,7 @@
 import { computed } from 'vue'
 import { useRoute } from 'vue-router'
 import { useI18n } from 'vue-i18n'
+import router from '@/router'
 
 const { t } = useI18n()
 const route = useRoute()
