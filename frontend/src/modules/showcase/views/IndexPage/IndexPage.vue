@@ -1,7 +1,7 @@
 <template>
   <div class="min-h-screen bg-background text-foreground font-sans">
     <!-- Hero Section -->
-    <section class="relative h-[80vh] flex items-center justify-center overflow-hidden">
+    <section class="relative h-[55vh] flex items-center justify-center overflow-hidden">
       <img
         src="/images/HomePage/TV Screens.avif"
         class="absolute inset-0 w-full h-full object-cover"
@@ -10,12 +10,9 @@
 
       <div class="relative z-10 text-center px-6 max-w-4xl mx-auto">
         <div
-          class="inline-flex items-center gap-2.5 bg-white/10 backdrop-blur-md border border-white/20 rounded-full px-5 py-2 mb-8"
+          class="inline-flex mb-8 px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20"
         >
-          <span class="w-2 h-2 rounded-full bg-primary animate-pulse" />
-          <span class="text-sm text-white/90 font-semibold tracking-widest uppercase">
-            {{ $t('home.hero.subtitle') }}
-          </span>
+          <img src="/images/hosei.png" alt="Hosei University" class="h-8 w-auto" />
         </div>
 
         <h1

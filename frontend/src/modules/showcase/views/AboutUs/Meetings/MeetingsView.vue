@@ -49,10 +49,7 @@
             {{ section.description }}
           </p>
 
-          <div
-            v-if="section.metadata"
-            class="grid grid-cols-1 md:grid-cols-2 gap-5"
-          >
+          <div v-if="section.metadata" class="grid grid-cols-1 md:grid-cols-2 gap-5">
             <div
               v-for="info in section.metadata"
               :key="info.label"
@@ -95,7 +92,9 @@
               class="flex flex-col gap-3 p-6 rounded-2xl border border-border bg-card hover:border-primary/40 hover:bg-primary/5 transition-all group"
             >
               <div>
-                <h3 class="text-base font-bold text-foreground group-hover:text-primary transition-colors mb-1">
+                <h3
+                  class="text-base font-bold text-foreground group-hover:text-primary transition-colors mb-1"
+                >
                   {{ group.title }}
                 </h3>
                 <span v-if="group.target" class="text-xs text-muted-foreground">
@@ -299,21 +298,21 @@ const pageContent = computed<PageContent>(() => {
           },
         ],
       },
-      {
-        id: 'weekly-report',
-        title: t('aboutUs.activities.weekly_report.title'),
-        layout: 'action-alert',
-        description: t('aboutUs.activities.weekly_report.desc'),
-        actions: [
-          {
-            label: t('aboutUs.activities.weekly_report.template_btn'),
-            to: 'https://docs.google.com/document/d/1K-rSwjxMvNE7hcaTka-ZcBs6gNSpwFba/edit', // 替换为模板链接
-            color: 'primary',
-            variant: 'solid',
-            icon: 'i-heroicons-arrow-down-tray',
-          },
-        ],
-      },
+      // {
+      //   id: 'weekly-report',
+      //   title: t('aboutUs.activities.weekly_report.title'),
+      //   layout: 'action-alert',
+      //   description: t('aboutUs.activities.weekly_report.desc'),
+      //   actions: [
+      //     {
+      //       label: t('aboutUs.activities.weekly_report.template_btn'),
+      //       to: 'https://docs.google.com/document/d/1K-rSwjxMvNE7hcaTka-ZcBs6gNSpwFba/edit', // 替换为模板链接
+      //       color: 'primary',
+      //       variant: 'solid',
+      //       icon: 'i-heroicons-arrow-down-tray',
+      //     },
+      //   ],
+      // },
     ],
   }
 })
