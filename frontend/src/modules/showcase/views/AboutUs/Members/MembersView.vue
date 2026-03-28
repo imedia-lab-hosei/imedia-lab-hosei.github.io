@@ -42,14 +42,14 @@
               v-for="member in section.members"
               :key="member.name"
               class="group flex flex-col items-center gap-3"
-              :class="member.link ? 'cursor-pointer' : 'cursor-default'"
-              @click="toLink(member.link)"
+              :class="member.link || member.internalLink ? 'cursor-pointer' : 'cursor-default'"
+              @click="toLink(member.link, member.internalLink)"
             >
               <div
                 class="relative w-full aspect-square rounded-2xl overflow-hidden bg-muted border border-border transition-all duration-300"
                 :class="[
                   section.id === 'professor' ? 'rounded-3xl' : '',
-                  member.link
+                  member.link || member.internalLink
                     ? 'group-hover:border-primary/40 group-hover:shadow-md'
                     : 'group-hover:border-border/80',
                 ]"
@@ -69,11 +69,11 @@
 
                 <!-- Hover overlay — only shown when member has a link -->
                 <div
-                  v-if="member.link"
+                  v-if="member.link || member.internalLink"
                   class="absolute inset-0 bg-linear-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-end p-2"
                 >
                   <UIcon
-                    name="i-heroicons-arrow-top-right-on-square"
+                    :name="member.internalLink ? 'i-heroicons-user-circle' : 'i-heroicons-arrow-top-right-on-square'"
                     class="w-4 h-4 text-white/80"
                   />
                 </div>
@@ -112,7 +112,7 @@
                   ? 'border-border hover:border-primary/40 hover:bg-primary/5 cursor-pointer'
                   : 'border-border/60 cursor-default'
               "
-              @click="toLink(member.link)"
+              @click="toLink(member.link, member.internalLink)"
             >
               <div class="flex items-center truncate gap-2.5">
                 <div
@@ -156,7 +156,7 @@
                   ? 'border-border hover:border-primary/40 hover:bg-primary/5 cursor-pointer'
                   : 'border-border/60 cursor-default'
               "
-              @click="toLink(alumnus.link)"
+              @click="toLink(alumnus.link, alumnus.internalLink)"
             >
               <div class="flex items-center gap-3 min-w-0">
                 <div
@@ -209,9 +209,12 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import { useI18n } from 'vue-i18n'
+import { useRouter, useRoute } from 'vue-router'
 import { memberSections } from './members'
 
 const { t } = useI18n()
+const router = useRouter()
+const route = useRoute()
 
 const pageContent = computed(() => ({
   title: t('aboutUs.members.pageTitle', 'Our Members'),
@@ -233,8 +236,11 @@ const pageContent = computed(() => ({
   })),
 }))
 
-const toLink = (link: string | undefined) => {
-  if (!link) return
-  window.open(link, '_blank')
+const toLink = (link: string | undefined, internalLink: string | undefined) => {
+  if (internalLink) {
+    router.push(`/${route.params.locale}/aboutUs/members/${internalLink}`)
+  } else if (link) {
+    window.open(link, '_blank')
+  }
 }
 </script>

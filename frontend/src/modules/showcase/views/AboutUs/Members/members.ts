@@ -9,6 +9,8 @@ export interface Member {
   /** i18n key suffix for destination */
   destinationKey?: string
   link?: string
+  /** Internal route path (relative to current route) — navigates without opening new tab */
+  internalLink?: string
 }
 
 export interface MemberSection {
@@ -29,6 +31,7 @@ export const memberSections: MemberSection[] = [
         nameKey: 'jinjia_zhou',
         name: 'Jinjia Zhou',
         image: '/images/AboutUs/Members/jinjia_zhou_new.png',
+        internalLink: 'jinjia-zhou',
       },
     ],
   },

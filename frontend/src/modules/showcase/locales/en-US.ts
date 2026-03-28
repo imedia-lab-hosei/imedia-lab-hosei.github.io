@@ -97,6 +97,26 @@ export default {
     },
   },
   aboutUs: {
+    profile: {
+      jinjia_zhou: {
+        breadcrumb_members: 'Members',
+        breadcrumb_profile: 'Profile',
+        subtitle: 'Zhou Jinjia ／ しゅう きんか',
+        role: 'Professor',
+        institution: 'Hosei University',
+        research_tag: 'VLSI · Multimedia Signal Processing',
+        bio_title: 'Biography',
+        bio_p1:
+          'Jinjia Zhou received the B.E. degree from Shanghai Jiao Tong University, China, in 2007, and the M.E. and Ph.D. degrees from Waseda University, Japan, in 2010 and 2013, respectively. From 2013 to 2016, she served as a Junior Researcher at Waseda University. She was an Associate Professor at Hosei University from 2016 to 2025. Starting from April 2026, she holds the position of Professor at Hosei University.',
+        bio_p2:
+          'Additionally, from 2017 to 2021, she served as a senior visiting scholar at the State Key Laboratory of ASIC & System, Fudan University, China. From 2020 to 2021, she was also appointed as a specially appointed Associate Professor at Osaka University. Since 2025, she has served as the Director of the IIST program at Hosei University.',
+        bio_p3:
+          'Her research interests focus on algorithms and VLSI architectures for multimedia signal processing.',
+        career_title: 'Career',
+        awards_title: 'Awards & Recognition',
+        academic_title: 'Academic Activities',
+      },
+    },
     members: {
       pageTitle: 'Our Members',
       pageDescription:

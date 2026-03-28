@@ -41,6 +41,11 @@ export const showcaseRoutes: RouteRecordRaw[] = [
         component: () => import('../views/AboutUs/Members/MembersView.vue'),
       },
       {
+        path: 'members/jinjia-zhou',
+        name: 'members-jinjia-zhou',
+        component: () => import('../views/AboutUs/Members/JinjiaZhouProfile.vue'),
+      },
+      {
         path: 'facilities',
         name: 'facilities',
         component: () => import('../views/AboutUs/Facilities/FacilitiesView.vue'),
