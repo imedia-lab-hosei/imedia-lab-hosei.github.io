@@ -338,6 +338,12 @@ export default {
       event: 'Event',
     },
     list: {
+      event_xmas_2025: {
+        title: '2025 Christmas Party 🎄',
+      },
+      event_graduation_2026: {
+        title: '2026 Graduation Ceremony 🌸',
+      },
       conf_iconip_2025_gao: {
         title: 'Research Presentation',
         venue: 'ICONIP 2025',

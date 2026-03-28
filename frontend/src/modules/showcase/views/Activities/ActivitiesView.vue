@@ -41,10 +41,7 @@
       </div>
 
       <!-- No results -->
-      <div
-        v-if="displayedActivities.length === 0"
-        class="py-20 text-center text-muted-foreground"
-      >
+      <div v-if="displayedActivities.length === 0" class="py-20 text-center text-muted-foreground">
         <UIcon name="i-heroicons-camera" class="w-12 h-12 mx-auto mb-3 opacity-30" />
         <p>{{ t('activities.ui.no_results') }}</p>
       </div>
@@ -60,7 +57,9 @@
           <div class="p-6 space-y-3">
             <div class="flex flex-wrap items-center gap-2">
               <!-- Date -->
-              <span class="text-xs font-bold font-mono text-primary bg-primary/10 px-3 py-1 rounded-full">
+              <span
+                class="text-xs font-bold font-mono text-primary bg-primary/10 px-3 py-1 rounded-full"
+              >
                 {{ activity.date }}
               </span>
               <!-- Type badge -->
@@ -77,7 +76,9 @@
               </span>
             </div>
 
-            <h2 class="text-lg font-bold text-foreground group-hover:text-primary transition-colors leading-snug">
+            <h2
+              class="text-lg font-bold text-foreground group-hover:text-primary transition-colors leading-snug"
+            >
               {{ t(`activities.list.${activity.title}`) }}
             </h2>
 
@@ -85,22 +86,33 @@
             <div v-if="activity.type !== 'ordinary'" class="flex flex-wrap gap-x-5 gap-y-1.5 pt-1">
               <div v-if="activity.venue" class="flex items-center gap-1.5 text-sm text-foreground">
                 <UIcon
-                  :name="activity.type === 'award' ? 'i-heroicons-trophy' : 'i-heroicons-academic-cap'"
+                  :name="
+                    activity.type === 'award' ? 'i-heroicons-trophy' : 'i-heroicons-academic-cap'
+                  "
                   class="w-4 h-4 text-primary shrink-0"
                 />
                 <span class="font-medium">{{ t(`activities.list.${activity.venue}`) }}</span>
               </div>
-              <div v-if="activity.location" class="flex items-center gap-1.5 text-sm text-muted-foreground">
+              <div
+                v-if="activity.location"
+                class="flex items-center gap-1.5 text-sm text-muted-foreground"
+              >
                 <UIcon name="i-heroicons-map-pin" class="w-4 h-4 shrink-0" />
                 <span>{{ t(`activities.list.${activity.location}`) }}</span>
               </div>
-              <div v-if="activity.participants" class="flex items-center gap-1.5 text-sm text-muted-foreground">
+              <div
+                v-if="activity.participants"
+                class="flex items-center gap-1.5 text-sm text-muted-foreground"
+              >
                 <UIcon name="i-heroicons-user-group" class="w-4 h-4 shrink-0" />
                 <span>{{ activity.participants }}</span>
               </div>
             </div>
 
-            <p v-if="activity.description" class="text-sm text-muted-foreground leading-relaxed border-l-[3px] border-primary/30 pl-4">
+            <p
+              v-if="activity.description"
+              class="text-sm text-muted-foreground leading-relaxed border-l-[3px] border-primary/30 pl-4"
+            >
               {{ activity.description }}
             </p>
           </div>
@@ -114,12 +126,7 @@
 
       <!-- Load More -->
       <div v-if="hasMore && !searchQuery && typeFilter === 'all'" class="flex justify-center pt-10">
-        <UButton
-          variant="soft"
-          color="primary"
-          icon="i-heroicons-arrow-down"
-          @click="loadMore"
-        >
+        <UButton variant="soft" color="primary" icon="i-heroicons-arrow-down" @click="loadMore">
           {{ t('activities.ui.load_more') }}
         </UButton>
       </div>
@@ -175,7 +182,31 @@ const filterTabs = computed(() => [
 // 3. 原始数据 (Data-Driven)
 // 注意：title 和 description 依然使用 t()，但不设默认值，强制从 JSON 读取
 const allActivities = computed<ActivityItem[]>(() => [
+  // 2026
+  {
+    id: 'event_graduation_2026',
+    type: 'ordinary',
+    date: 'Apr. 2026',
+    images: [
+      '/images/Activities/event_graduation_2026_1.webp',
+      '/images/Activities/event_graduation_2026_2.webp',
+      '/images/Activities/event_graduation_2026_3.webp',
+    ],
+    title: 'event_graduation_2026.title',
+  },
+
   // 2025
+  {
+    id: 'event_xmas_2025',
+    type: 'ordinary',
+    date: 'Dec. 2025',
+    images: [
+      '/images/Activities/event_xmas_2025_1.webp',
+      '/images/Activities/event_xmas_2025_2.webp',
+      '/images/Activities/event_xmas_2025_3.webp',
+    ],
+    title: 'event_xmas_2025.title',
+  },
   {
     id: 'conf_iconip_2025_gao',
     type: 'conference',

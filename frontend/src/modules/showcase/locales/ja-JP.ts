@@ -302,6 +302,12 @@ export default {
       event: 'イベント',
     },
     list: {
+      event_xmas_2025: {
+        title: '2025年度 クリスマスパーティー 🎄',
+      },
+      event_graduation_2026: {
+        title: '2026年度 卒業式 🌸',
+      },
       conf_iconip_2025_gao: {
         title: '研究発表',
         venue: 'ICONIP 2025',
