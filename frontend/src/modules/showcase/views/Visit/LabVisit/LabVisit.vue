@@ -238,7 +238,7 @@ const resourceLinks = [
   },
 ]
 
-const labTours = [
+const labTours: { category: string; dates: string[]; label: string; location: string; note?: string }[] = [
   // {
   //   category: 'visit.tours.cat_open',
   //   dates: ['visit.tours.date_open'],
