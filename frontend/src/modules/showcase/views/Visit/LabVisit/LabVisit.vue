@@ -204,13 +204,13 @@ const resourceLinks = [
     id: 'overview',
     icon: 'i-heroicons-document-text',
     label: 'visit.resources.overview',
-    url: 'https://www.dropbox.com/scl/fi/uriwtcl1brgo6kzritpba/B3.pdf?rlkey=9tdli48a7gneiyraeqf9o1s8g&st=g62ptct9&dl=0',
+    url: 'https://drive.google.com/file/d/1BVQt9oIWYOzq7rE9vwMI5heW_mPw3DBA/view?usp=sharing',
   },
   {
     id: 'themes',
     icon: 'i-heroicons-presentation-chart-bar',
     label: 'visit.resources.themes',
-    url: 'https://www.zhou-lab.info/_files/ugd/c47b12_93d51d5963ca4999bb24152bcb255210.pdf',
+    url: 'https://drive.google.com/file/d/1_SPhHkZK0JFHdxqExVUHoXTH_uMsSupy/view?usp=sharing',
   },
   {
     id: 'video_1',
@@ -229,6 +229,12 @@ const resourceLinks = [
     icon: 'i-heroicons-play-circle',
     label: 'visit.resources.video_3',
     url: 'https://www.jst.go.jp/kisoken/aip/jyonetsu/interview/r04/zhou.html',
+  },
+  {
+    id: 'video_4',
+    icon: 'i-heroicons-play-circle',
+    label: 'visit.resources.video_4',
+    url: 'https://drive.google.com/file/d/1bHcOP3ghy-S5SR7EMwQurjY50Qjn5RCw/view?usp=sharing',
   },
 ]
 

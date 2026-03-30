@@ -698,6 +698,7 @@ export default {
       video_1: '研究室紹介動画 1',
       video_2: '研究室紹介動画 2',
       video_3: '研究室紹介動画 3',
+      video_4: '研究室紹介動画 4',
     },
     tours: {
       title: '研究室見学＆質疑応答スケジュール',

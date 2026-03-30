@@ -579,6 +579,7 @@ export default {
       video_1: 'Intro Video 1',
       video_2: 'Intro Video 2',
       video_3: 'Intro Video 3',
+      video_4: 'Intro Video 4',
     },
     tours: {
       title: 'Lab Tours & Q&A Schedule',
