@@ -15,7 +15,7 @@
 
     <div class="max-w-6xl mx-auto px-6 py-16 space-y-20">
       <!-- Lab Relocation Notice -->
-      <!-- <div
+      <div
         v-if="pageContent.labNotice"
         class="flex gap-4 p-5 rounded-2xl border border-primary/30 bg-primary/5"
       >
@@ -30,10 +30,10 @@
             {{ pageContent.labNotice.description }}
           </p>
         </div>
-      </div> -->
+      </div>
 
       <!-- Relocation Gallery -->
-      <section v-if="relocationPhotos.length > 0">
+      <!-- <section v-if="relocationPhotos.length > 0">
         <div class="flex items-center gap-4 mb-8">
           <div class="w-1 h-6 rounded-full bg-primary" />
           <h2 class="text-xl font-bold tracking-tight">
@@ -42,7 +42,7 @@
           <div class="flex-1 h-px bg-border" />
         </div>
         <ExpandableGallery :images="relocationPhotos" class="rounded-xl overflow-hidden" />
-      </section>
+      </section> -->
 
       <!-- Research Facilities -->
       <section>
@@ -199,7 +199,7 @@ const pageContent = computed<PageContent>(() => {
         id: 'computing',
         title: t('aboutUs.facilities.categories.computing'),
         paragraphs: [t('aboutUs.facilities.texts.computing_p1')],
-        highlights: ['Tesla V100', 'RTX 2080 Ti', 'GTX 1080 Ti'],
+        highlights: ['Tesla V100', 'RTX 2080 Ti', 'RTX 3090', 'Mac Mini M4', 'iMac'],
       },
       {
         id: 'hardware',
