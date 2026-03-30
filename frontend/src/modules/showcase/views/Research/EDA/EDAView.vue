@@ -158,8 +158,9 @@ const relatedPapers = ref([
     journal: 'Great Lakes Symposium on VLSI (GLSVLSI) Jun. 2025.',
   },
   {
-    authors: 'Man M. Ho, Jinjia Zhou',
-    title: 'Deep Preset: Blending and Retouching Photos with Color Style Transfer',
+    authors:
+      'Jinghao Ding, Jiazhi Wen, Hao Tang, Zhaoqi Fu, Mengshi Gong, Yuanrui Qi, Wenxin Yu and Jinjia Zhou',
+    title: 'An Effective and Efficient Cross-Link Insertion for Non-Tree Clock Network Synthesis',
     journal: '2025 Design, Automation & Test in Europe Conference (DATE) Apr. 2025.',
   },
 ])
