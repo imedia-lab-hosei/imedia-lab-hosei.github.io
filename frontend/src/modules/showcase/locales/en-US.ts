@@ -133,11 +133,11 @@ export default {
         research_tag: 'VLSI · Multimedia Signal Processing',
         bio_title: 'Biography',
         bio_p1:
-          'Jinjia Zhou received the B.E. degree from Shanghai Jiao Tong University, China, in 2007, and the M.E. and Ph.D. degrees from Waseda University, Japan, in 2010 and 2013, respectively. From 2013 to 2016, she served as a Junior Researcher at Waseda University.',
+          'Received a B.S. degree from Shanghai Jiao Tong University in 2007, followed by M.S. and Ph.D. degrees from Waseda University in 2010 and 2013, respectively. Served as a Junior Researcher at Waseda University from 2013 to 2016.',
         bio_p2:
-          'She served as an Associate Professor at Hosei University from 2016 to 2025, and has held the position of Professor at the same university since April 2026. Additionally, from 2017 to 2021, she served as a Senior Visiting Scholar at the State Key Laboratory of ASIC & System, Fudan University, China. From 2020 to 2021, she was also appointed as a Specially Appointed Associate Professor at Osaka University. Since 2025, she has served as the Director of the IIST program at Hosei University.',
+          'Held the position of Associate Professor at Hosei University from 2016 to 2025, and assumed the role of Professor at the same institution in April 2026. Additionally, served as a Senior Visiting Researcher at the State Key Laboratory of ASIC & System, Fudan University, from 2017 to 2021. Furthermore, held a concurrent position as a Specially Appointed Associate Professor at Osaka University from 2020 to 2021. Has been serving as the Director of the IIST program at Hosei University since 2025.',
         bio_p3:
-          'Her research interests encompass algorithm design and VLSI architecture development for multimedia signal processing, as well as research in computer vision and generative AI.',
+          'Research interests encompass algorithm design and VLSI architecture development for multimedia signal processing, as well as computer vision and generative AI.',
         career_title: 'Career',
         awards_title: 'Awards & Recognition',
         academic_title: 'Academic Activities',
