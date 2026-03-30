@@ -100,5 +100,12 @@ const researchAreas = computed(() => [
     image: '/images/Research/Processing/image1.avif',
     icon: 'i-heroicons-photo',
   },
+  {
+    routeName: 'eda',
+    title: t('header.eda'),
+    intro: t('project_detail_eda.intro'),
+    image: '/images/Research/EDA/eda.png',
+    icon: 'heroicons:cpu-chip',
+  },
 ])
 </script>

@@ -15,7 +15,7 @@
 
     <div class="max-w-6xl mx-auto px-6 py-16 space-y-20">
       <!-- Lab Relocation Notice -->
-      <div
+      <!-- <div
         v-if="pageContent.labNotice"
         class="flex gap-4 p-5 rounded-2xl border border-primary/30 bg-primary/5"
       >
@@ -30,7 +30,19 @@
             {{ pageContent.labNotice.description }}
           </p>
         </div>
-      </div>
+      </div> -->
+
+      <!-- Relocation Gallery -->
+      <section v-if="relocationPhotos.length > 0">
+        <div class="flex items-center gap-4 mb-8">
+          <div class="w-1 h-6 rounded-full bg-primary" />
+          <h2 class="text-xl font-bold tracking-tight">
+            {{ t('aboutUs.facilities.sections.relocation_gallery') }}
+          </h2>
+          <div class="flex-1 h-px bg-border" />
+        </div>
+        <ExpandableGallery :images="relocationPhotos" class="rounded-xl overflow-hidden" />
+      </section>
 
       <!-- Research Facilities -->
       <section>
@@ -48,15 +60,15 @@
           >
             <!-- Left: title -->
             <div class="md:w-48 shrink-0">
-              <div
-                class="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-primary/10 mb-3"
-              >
+              <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-primary/10 mb-3">
                 <div class="w-1.5 h-1.5 rounded-full bg-primary" />
                 <span class="text-xs font-bold text-primary tracking-wider uppercase">
                   {{ facility.id }}
                 </span>
               </div>
-              <h3 class="text-base font-bold text-foreground group-hover:text-primary transition-colors">
+              <h3
+                class="text-base font-bold text-foreground group-hover:text-primary transition-colors"
+              >
                 {{ facility.title }}
               </h3>
             </div>
@@ -156,6 +168,14 @@ interface PageContent {
 }
 
 const { t } = useI18n()
+
+// 搬迁画廊图片（可配置）
+const relocationPhotos: string[] = [
+  '/images/AboutUs/Facilities/labRoom_1.jpg',
+  '/images/AboutUs/Facilities/labRoom_2.jpg',
+  '/images/AboutUs/Facilities/labRoom_3.jpg',
+  '/images/AboutUs/Facilities/labRoom_4.jpg',
+]
 
 // 数据驱动与响应式国际化
 const pageContent = computed<PageContent>(() => {

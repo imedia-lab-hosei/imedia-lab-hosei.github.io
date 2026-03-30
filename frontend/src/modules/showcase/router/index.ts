@@ -30,6 +30,11 @@ export const showcaseRoutes: RouteRecordRaw[] = [
         name: 'processing',
         component: () => import('../views/Research/Processing/ProcessingView.vue'),
       },
+      {
+        path: 'eda',
+        name: 'eda',
+        component: () => import('../views/Research/EDA/EDAView.vue'),
+      },
     ],
   },
   {

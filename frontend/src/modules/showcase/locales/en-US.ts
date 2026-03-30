@@ -96,6 +96,32 @@ export default {
       },
     },
   },
+  project_detail_eda: {
+    intro:
+      'Designing modern integrated circuits requires an immense amount of precision in how components are arranged on a chip. For example, to build a processor that is both fast and energy-efficient, we need to determine the optimal coordinates for macros, which are the large functional blocks such as memory arrays, on a tiny silicon floorplan. On the other hand, finding the perfect layout manually is an incredibly complex puzzle that typically takes human experts weeks of iterative effort, so AI systems that can automate this spatial optimization are being explored. Our research focuses on applying reinforcement learning to the macro placement problem to accelerate the design cycle. Specifically, by treating the chip floorplan as a virtual environment and the placement process as a sequence of strategic moves, we have developed an AI technology that learns to maximize performance through self-exploration. This approach allows the system to discover high-efficiency layouts that minimize wire length and power consumption without requiring exhaustive manual guidance, ultimately matching or even surpassing human-level design quality in a fraction of the time.',
+
+    labels: {
+      abstract: 'Abstract',
+      published: 'Published',
+      related_papers: 'Related Papers',
+    },
+    links: {
+      paper: 'Paper',
+      code: 'Code',
+      video: 'Video',
+    },
+    video_caption:
+      '[Hosei Research Brand vol.9 (Video)] Next-generation technology for processing enormous dynamic data (Associate Professor Jinjia Zhou, Graduate School of Science and Engineering)',
+    sections: {
+      s2: {
+        title:
+          'An Effective and Efficient Cross-Link Insertion for Non-Tree Clock Network Synthesis',
+        abstract:
+          'Clock skew introduces significant challenge to the overall system performance. Existing non-tree solutions like cross-link insertion often come with limitations, such as the over-consumption of resource and power. In this work, we propose a cross-link insertion algorithm that effectively reduces the clock skew with minimal power overhead, and prioritize delay optimization on the paths with high sensitivity to the skew. The experimental results from the ISPD 2010 benchmarks show a 17% reduction in the mean of clock skew, a 45% decrease in the standard deviation of clock skew, and a 13% lower power consumption versus the advanced non-tree solutions in literature.',
+        published: '2025 Design, Automation & Test in Europe Conference (DATE) Apr. 2025.',
+      },
+    },
+  },
   aboutUs: {
     profile: {
       jinjia_zhou: {
@@ -107,11 +133,11 @@ export default {
         research_tag: 'VLSI · Multimedia Signal Processing',
         bio_title: 'Biography',
         bio_p1:
-          'Jinjia Zhou received the B.E. degree from Shanghai Jiao Tong University, China, in 2007, and the M.E. and Ph.D. degrees from Waseda University, Japan, in 2010 and 2013, respectively. From 2013 to 2016, she served as a Junior Researcher at Waseda University. She was an Associate Professor at Hosei University from 2016 to 2025. Starting from April 2026, she holds the position of Professor at Hosei University.',
+          'Jinjia Zhou received the B.E. degree from Shanghai Jiao Tong University, China, in 2007, and the M.E. and Ph.D. degrees from Waseda University, Japan, in 2010 and 2013, respectively. From 2013 to 2016, she served as a Junior Researcher at Waseda University.',
         bio_p2:
-          'Additionally, from 2017 to 2021, she served as a senior visiting scholar at the State Key Laboratory of ASIC & System, Fudan University, China. From 2020 to 2021, she was also appointed as a specially appointed Associate Professor at Osaka University. Since 2025, she has served as the Director of the IIST program at Hosei University.',
+          'She served as an Associate Professor at Hosei University from 2016 to 2025, and has held the position of Professor at the same university since April 2026. Additionally, from 2017 to 2021, she served as a Senior Visiting Scholar at the State Key Laboratory of ASIC & System, Fudan University, China. From 2020 to 2021, she was also appointed as a Specially Appointed Associate Professor at Osaka University. Since 2025, she has served as the Director of the IIST program at Hosei University.',
         bio_p3:
-          'Her research interests focus on algorithms and VLSI architectures for multimedia signal processing.',
+          'Her research interests encompass algorithm design and VLSI architecture development for multimedia signal processing, as well as research in computer vision and generative AI.',
         career_title: 'Career',
         awards_title: 'Awards & Recognition',
         academic_title: 'Academic Activities',
@@ -233,6 +259,7 @@ export default {
       sections: {
         research_facilities: 'Research Facilities',
         gallery: 'Equipment Gallery',
+        relocation_gallery: 'New Lab Photos',
       },
       categories: {
         library: 'Literature & Library',
@@ -520,8 +547,8 @@ export default {
   },
   visit: {
     header: {
-      title: 'Information for Prospective Students 2025',
-      update_info: 'Last Updated: 2025/3/25',
+      title: 'Information for Prospective Students 2026',
+      update_info: 'Last Updated: 2026/3/30',
       description:
         'We are developing Intelligent Media Processing Systems based on AI, image processing, and hardware implementation technologies to contribute to the next-generation information society.',
     },
@@ -563,10 +590,11 @@ export default {
       senior_qa: 'Lab Intro & Q&A by Senior Students',
       prof_qa: 'Consultation with Professor',
       date_open: '2025/4/7 (Mon) 2nd Period',
-      date_intro: '2025/4/7 (Mon) - 4/10 (Thu) 13:20~15:00',
-      date_qa_1: '2025/4/7 (Mon) 13:20~15:00',
-      date_qa_2: '2025/4/8 (Tue) 13:20~15:00',
-      date_qa_3: '2025/4/9 (Wed) 15:10~17:00',
+      date_intro: '2026/4/3 (Fri) 15:20~17:00',
+      date_intro_2: '2026/4/6 (Mon) - 4/9 (Thu) 13:20~15:00',
+      date_qa_1: '2026/4/3 (Fri) 15:20~17:00',
+      date_qa_2: '2026/4/6 (Mon) - 4/8 (Wed) 15:20~17:00',
+      location_south_s504: 'South S504',
     },
   },
   home: {
@@ -647,6 +675,7 @@ export default {
     research: 'Research',
     sensing: 'Compressive Sensing',
     coding: 'Video Coding',
+    eda: 'Electronic Design Automation',
     processing: 'Image Processing',
     aboutUs: 'About Us',
     members: 'Members',

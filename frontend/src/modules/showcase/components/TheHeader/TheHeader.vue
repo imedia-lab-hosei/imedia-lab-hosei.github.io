@@ -76,6 +76,12 @@ const items = computed<NavigationMenuItem[]>(() => [
         // icon: 'lucide:tool-case',
         active: isAPIActive('processing'),
       },
+      {
+        label: t('header.eda'),
+        to: { name: 'eda', params: { locale: locale.value } },
+        // icon: 'lucide:tool-case',
+        active: isAPIActive('eda'),
+      },
     ],
   },
   {

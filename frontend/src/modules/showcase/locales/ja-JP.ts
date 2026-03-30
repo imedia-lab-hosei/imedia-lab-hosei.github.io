@@ -1,7 +1,7 @@
 export default {
   project_detail: {
     intro:
-      'This research focuses on the whole image acquisition system, and proposes to integrate the compressive sensing (CS) based measurement domain image sensing and the corresponding measurement domain data compression. Comparing with the conventional solution, the power of the whole system is expected to be reduced by more than 90%.',
+      '本研究は画像取得システム全体に着目し、圧縮センシング（CS）に基づく測定領域での画像センシングと測定領域データ圧縮を統合した手法を提案しています。従来手法と比較して、システム全体の消費電力を90%以上削減することが期待されます。',
     labels: {
       abstract: 'Abstract',
       published: 'Published',
@@ -32,7 +32,7 @@ export default {
     },
   },
   project_detail_coding: {
-    intro: 'We are developing the deep learning based video coding systems.',
+    intro: 'ディープラーニングに基づく動画像符号化システムの研究開発を行っています。',
     labels: {
       abstract: 'Abstract',
       published: 'Published',
@@ -63,6 +63,13 @@ export default {
       },
     },
   },
+  project_detail_processing: {
+    intro: 'ディープラーニングに基づくマルチメディア信号処理システムの研究開発を行っています。',
+  },
+  project_detail_eda: {
+    intro:
+      '現代の集積回路設計では、チップ上のコンポーネント配置において極めて高い精度が要求されます。例えば、高速かつ電力効率に優れたプロセッサを構築するには、メモリ配列などの巨大な機能ブロックである「マクロ」を、微細なシリコン・フロアプラン上の最適な座標に配置する必要があります。一方で、手作業で完璧なレイアウトを見つけ出すことは非常に複雑なパズルを解くようなものであり、通常、専門家が反復作業に数週間を費やします。そのため、この空間最適化を自動化できるAIシステムの研究が進められています。 私たちの研究は、設計サイクルを加速させるために、マクロ配置問題に**強化学習**を適用することに焦点を当てています。具体的には、チップのフロアプランを仮想環境、配置プロセスを一連の戦略的行動として捉えることで、自己探索を通じてパフォーマンスを最大化するように学習するAI技術を開発しました。この手法により、網羅的な手動ガイドを必要とせず、配線長や消費電力を最小限に抑える高効率なレイアウトを発見することが可能になります。最終的には、人間レベルの設計品質に匹敵、あるいはそれを凌駕する成果を、わずか数分の一の時間で達成しました。',
+  },
   aboutUs: {
     profile: {
       jinjia_zhou: {
@@ -74,11 +81,11 @@ export default {
         research_tag: 'VLSI・マルチメディア信号処理',
         bio_title: '略歴',
         bio_p1:
-          '2007年に上海交通大学電子電気工学学部を卒業後、2010年・2013年に早稲田大学大学院で修士・博士号を取得。2013年から2016年まで早稲田大学次席研究員を務め、2016年から2025年まで法政大学准教授として勤務。2026年4月より同大学教授に就任。',
+          '2007年に上海交通大学にて学士号を取得し、2010年および2013年に早稲田大学にてそれぞれ修士号および博士号を取得した。2013年から2016年まで同大学にて次席研究員を務めた。',
         bio_p2:
-          '2017年から2020年にかけて中国・復旦大学 国家集積回路与系统重点実験室の客員研究員、2017年から2021年までJSTさきがけ研究員、2020年から2021年まで大阪大学大学院情報科学研究科特任准教授を兼任。2025年より法政大学IISTプログラムディレクターを務める。',
+          '2016年から2025年まで法政大学の准教授を務め、2026年4月より同大学教授に就任している。また、2017年から2021年まで復旦大学のState Key Laboratory of ASIC & Systemにて上級訪問研究員を務めた。さらに、2020年から2021年まで大阪大学にて特任准教授を兼任した。2025年より法政大学においてIISTプログラムのディレクターを務めている。',
         bio_p3:
-          '研究分野はマルチメディア信号処理のためのアルゴリズムおよびVLSIアーキテクチャ。',
+          '研究分野は、マルチメディア信号処理に関するアルゴリズム設計およびVLSIアーキテクチャの開発に加え、コンピュータビジョンおよび生成AIに関する研究である。',
         career_title: '職歴',
         awards_title: '受賞歴',
         academic_title: '学術活動',
@@ -198,6 +205,7 @@ export default {
       sections: {
         research_facilities: '研究環境',
         gallery: '設備ギャラリー',
+        relocation_gallery: '新研究室の写真',
       },
       categories: {
         library: '図書館',
@@ -603,6 +611,7 @@ export default {
     publications: '業績',
     activities: 'アルバム',
     visit: '研究室見学',
+    eda: '電子設計自動化',
   },
   colors: {
     green: '緑',
@@ -657,8 +666,8 @@ export default {
   },
   visit: {
     header: {
-      title: '2025年度 研究室配属予定の学生向け情報',
-      update_info: '最終更新日：2025/3/25',
+      title: '2026年度 研究室配属予定の学生向け情報',
+      update_info: '最終更新日：2026/3/30',
       description:
         '次世代情報社会への貢献を目指して、人工知能、画像処理、ハードウェア実装等の技術に基づいて Intelligent Media Processing System の開発に取り組んでいます。学生は大きく3つのグループに分かれ、協力しながら連携して研究をしています。',
     },
@@ -691,19 +700,20 @@ export default {
       video_3: '研究室紹介動画 3',
     },
     tours: {
-      title: '研究室見学・相談会スケジュール',
+      title: '研究室見学＆質疑応答スケジュール',
       cat_open: 'オープンゼミ',
-      cat_intro: '先輩による紹介',
-      cat_qa: '教員による相談',
-      open_semi: 'ゼミ体験会',
-      open_semi_note: '場所が W211 から W202 に変更となりました',
-      senior_qa: '先輩による研究室紹介と質問受付',
-      prof_qa: '教員による質問対応',
-      date_open: '2025年4月7日(月) 2限',
-      date_intro: '2025年4月7日(月)～4月10日(木) 13:20～15:00',
-      date_qa_1: '2025年4月7日(月) 13:20～15:00',
-      date_qa_2: '2025年4月8日(火) 13:20～15:00',
-      date_qa_3: '2025年4月9日(水) 15:10～17:00',
+      cat_intro: '先輩によるサポート',
+      cat_qa: '教授との質疑応答',
+      open_semi: 'オープンゼミ体験',
+      open_semi_note: '会場がW211からW202に変更になりました',
+      senior_qa: '先輩による研究室紹介と質間受付け',
+      prof_qa: '教員による質間对応',
+      date_open: '2025/4/7 (月) 2限',
+      date_intro: '2026/4/3 (金) 15:20~17:00',
+      date_intro_2: '2026/4/6 (月) - 4/9 (木) 13:20~15:00',
+      date_qa_1: '2026/4/3 (金) 15:20~17:00',
+      date_qa_2: '2026/4/6 (月) - 4/8 (水) 15:20~17:00',
+      location_south_s504: '南館 S504',
     },
   },
 }

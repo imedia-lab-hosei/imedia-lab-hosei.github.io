@@ -3,7 +3,9 @@
     <!-- Page Header -->
     <div class="border-b border-border bg-card">
       <div class="max-w-6xl mx-auto px-6 py-16">
-        <p class="text-primary text-xs font-bold tracking-widest uppercase mb-3">Prospective Students</p>
+        <p class="text-primary text-xs font-bold tracking-widest uppercase mb-3">
+          Prospective Students
+        </p>
         <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight mb-3">
           {{ t('visit.header.title') }}
         </h1>
@@ -35,7 +37,9 @@
               <UIcon :name="theme.icon" class="w-5 h-5 text-primary" />
             </div>
             <div class="space-y-2">
-              <h3 class="text-base font-bold text-foreground group-hover:text-primary transition-colors">
+              <h3
+                class="text-base font-bold text-foreground group-hover:text-primary transition-colors"
+              >
                 {{ t(theme.title) }}
               </h3>
               <p class="text-sm text-muted-foreground leading-relaxed">
@@ -55,7 +59,9 @@
         </div>
 
         <div class="flex gap-4 p-6 rounded-2xl border border-primary/20 bg-primary/5">
-          <div class="w-10 h-10 rounded-xl bg-primary/15 flex items-center justify-center shrink-0 mt-0.5">
+          <div
+            class="w-10 h-10 rounded-xl bg-primary/15 flex items-center justify-center shrink-0 mt-0.5"
+          >
             <UIcon name="i-heroicons-globe-alt" class="w-5 h-5 text-primary" />
           </div>
           <p class="text-base text-foreground leading-relaxed">
@@ -84,10 +90,15 @@
             <div class="w-9 h-9 rounded-xl bg-muted flex items-center justify-center shrink-0">
               <UIcon :name="link.icon" class="w-4 h-4 text-primary" />
             </div>
-            <span class="text-sm font-semibold text-foreground group-hover:text-primary transition-colors flex-1">
+            <span
+              class="text-sm font-semibold text-foreground group-hover:text-primary transition-colors flex-1"
+            >
               {{ t(link.label) }}
             </span>
-            <UIcon name="i-heroicons-arrow-top-right-on-square" class="w-4 h-4 text-muted-foreground group-hover:text-primary transition-colors shrink-0" />
+            <UIcon
+              name="i-heroicons-arrow-top-right-on-square"
+              class="w-4 h-4 text-muted-foreground group-hover:text-primary transition-colors shrink-0"
+            />
           </a>
         </div>
       </section>
@@ -114,11 +125,13 @@
                 </span>
                 <span class="flex items-center gap-1 text-xs text-muted-foreground font-mono">
                   <UIcon name="i-heroicons-map-pin" class="w-3.5 h-3.5" />
-                  {{ event.location }}
+                  {{ t(event.location) }}
                 </span>
               </div>
 
-              <h3 class="text-base font-bold text-foreground group-hover:text-primary transition-colors">
+              <h3
+                class="text-base font-bold text-foreground group-hover:text-primary transition-colors"
+              >
                 {{ t(event.label) }}
               </h3>
 
@@ -126,19 +139,26 @@
                 v-if="event.note"
                 class="flex items-start gap-1.5 text-xs font-semibold text-amber-600 dark:text-amber-400 bg-amber-500/10 px-3 py-1.5 rounded-lg w-fit"
               >
-                <UIcon name="i-heroicons-exclamation-triangle" class="w-3.5 h-3.5 shrink-0 mt-0.5" />
+                <UIcon
+                  name="i-heroicons-exclamation-triangle"
+                  class="w-3.5 h-3.5 shrink-0 mt-0.5"
+                />
                 <span>{{ t(event.note) }}</span>
               </div>
             </div>
 
             <!-- Right: dates -->
-            <div class="md:w-72 shrink-0 bg-muted/40 border-t md:border-t-0 md:border-l border-border p-6 flex flex-col justify-center gap-3">
+            <div
+              class="md:w-72 shrink-0 bg-muted/40 border-t md:border-t-0 md:border-l border-border p-6 flex flex-col justify-center gap-3"
+            >
               <div
                 v-for="(dateKey, dIdx) in event.dates"
                 :key="dIdx"
                 class="flex items-start gap-2.5"
               >
-                <div class="w-6 h-6 rounded-lg bg-primary/10 flex items-center justify-center shrink-0 mt-0.5">
+                <div
+                  class="w-6 h-6 rounded-lg bg-primary/10 flex items-center justify-center shrink-0 mt-0.5"
+                >
                   <UIcon name="i-heroicons-clock" class="w-3.5 h-3.5 text-primary" />
                 </div>
                 <span class="text-sm font-medium text-foreground leading-snug">
@@ -184,7 +204,7 @@ const resourceLinks = [
     id: 'overview',
     icon: 'i-heroicons-document-text',
     label: 'visit.resources.overview',
-    url: 'https://www.zhou-lab.info/_files/ugd/c47b12_6250286067aa41849417477523437e8d.pdf',
+    url: 'https://www.dropbox.com/scl/fi/uriwtcl1brgo6kzritpba/B3.pdf?rlkey=9tdli48a7gneiyraeqf9o1s8g&st=g62ptct9&dl=0',
   },
   {
     id: 'themes',
@@ -213,24 +233,24 @@ const resourceLinks = [
 ]
 
 const labTours = [
-  {
-    category: 'visit.tours.cat_open',
-    dates: ['visit.tours.date_open'],
-    label: 'visit.tours.open_semi',
-    note: 'visit.tours.open_semi_note',
-    location: 'W202',
-  },
+  // {
+  //   category: 'visit.tours.cat_open',
+  //   dates: ['visit.tours.date_open'],
+  //   label: 'visit.tours.open_semi',
+  //   note: 'visit.tours.open_semi_note',
+  //   location: 'W202',
+  // },
   {
     category: 'visit.tours.cat_intro',
-    dates: ['visit.tours.date_intro'],
+    dates: ['visit.tours.date_intro', 'visit.tours.date_intro_2'],
     label: 'visit.tours.senior_qa',
-    location: 'South S504',
+    location: 'visit.tours.location_south_s504',
   },
   {
     category: 'visit.tours.cat_qa',
-    dates: ['visit.tours.date_qa_1', 'visit.tours.date_qa_2', 'visit.tours.date_qa_3'],
+    dates: ['visit.tours.date_qa_1', 'visit.tours.date_qa_2'],
     label: 'visit.tours.prof_qa',
-    location: 'South S504',
+    location: 'visit.tours.location_south_s504',
   },
 ]
 </script>
