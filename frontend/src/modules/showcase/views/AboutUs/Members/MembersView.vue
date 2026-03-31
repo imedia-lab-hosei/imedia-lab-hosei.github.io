@@ -1,17 +1,34 @@
 <template>
   <div class="min-h-screen bg-background text-foreground font-sans">
     <!-- Page Header -->
-    <div class="border-b border-border bg-card">
-      <div class="max-w-6xl mx-auto px-6 py-16">
-        <p class="text-primary text-xs font-bold tracking-widest uppercase mb-3">About Us</p>
-        <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight mb-4">
+    <button
+      type="button"
+      class="relative block w-full overflow-hidden border-b border-border bg-card text-left cursor-zoom-in"
+      aria-label="Open hero image preview"
+      @click="isHeroPreviewOpen = true"
+    >
+      <img
+        src="/images/AboutUs/Members/lab.png"
+        alt=""
+        aria-hidden="true"
+        class="absolute inset-0 h-[115%] w-full object-cover will-change-transform"
+        :style="{ transform: `translateY(${heroParallaxOffset}px)` }"
+      />
+      <div class="absolute inset-0 bg-black/55" />
+      <div class="absolute inset-0 bg-linear-to-r from-black/70 via-black/45 to-black/20" />
+
+      <div class="relative max-w-6xl mx-auto px-6 py-20 md:py-24">
+        <p class="text-primary-foreground/80 text-xs font-bold tracking-widest uppercase mb-3">
+          About Us
+        </p>
+        <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight mb-4 text-white">
           {{ pageContent.title }}
         </h1>
-        <p class="text-muted-foreground text-lg leading-relaxed max-w-2xl">
+        <p class="text-white/80 text-lg leading-relaxed max-w-2xl">
           {{ pageContent.description }}
         </p>
       </div>
-    </div>
+    </button>
 
     <div class="max-w-6xl mx-auto px-6 py-16 space-y-20">
       <template v-for="section in pageContent.sections" :key="section.id">
@@ -203,11 +220,33 @@
         </section>
       </template>
     </div>
+
+    <div
+      v-if="isHeroPreviewOpen"
+      class="fixed inset-0 z-50 flex items-center justify-center bg-black/80 px-6 py-10"
+      @click="isHeroPreviewOpen = false"
+    >
+      <div class="relative max-w-6xl w-full" @click.stop>
+        <button
+          type="button"
+          class="absolute -top-12 right-0 inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/10 text-white hover:bg-white/20 transition-colors"
+          aria-label="Close hero image preview"
+          @click="isHeroPreviewOpen = false"
+        >
+          <UIcon name="i-heroicons-x-mark" class="w-5 h-5" />
+        </button>
+        <img
+          src="/images/AboutUs/Members/lab.png"
+          alt="Members hero background"
+          class="w-full max-h-[84vh] object-contain rounded-2xl border border-white/10 shadow-2xl"
+        />
+      </div>
+    </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import { computed } from 'vue'
+import { computed, onBeforeUnmount, onMounted, ref } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { useRouter, useRoute } from 'vue-router'
 import { memberSections } from './members'
@@ -215,6 +254,8 @@ import { memberSections } from './members'
 const { t } = useI18n()
 const router = useRouter()
 const route = useRoute()
+const heroParallaxOffset = ref(0)
+const isHeroPreviewOpen = ref(false)
 
 const pageContent = computed(() => ({
   title: t('aboutUs.members.pageTitle', 'Our Members'),
@@ -243,4 +284,17 @@ const toLink = (link: string | undefined, internalLink: string | undefined) => {
     window.open(link, '_blank')
   }
 }
+
+const updateHeroParallax = () => {
+  heroParallaxOffset.value = Math.min(window.scrollY * 0.28, 72)
+}
+
+onMounted(() => {
+  updateHeroParallax()
+  window.addEventListener('scroll', updateHeroParallax, { passive: true })
+})
+
+onBeforeUnmount(() => {
+  window.removeEventListener('scroll', updateHeroParallax)
+})
 </script>
