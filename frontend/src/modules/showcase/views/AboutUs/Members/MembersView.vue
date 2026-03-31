@@ -90,7 +90,11 @@
                   class="absolute inset-0 bg-linear-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-end p-2"
                 >
                   <UIcon
-                    :name="member.internalLink ? 'i-heroicons-user-circle' : 'i-heroicons-arrow-top-right-on-square'"
+                    :name="
+                      member.internalLink
+                        ? 'i-heroicons-user-circle'
+                        : 'i-heroicons-arrow-top-right-on-square'
+                    "
                     class="w-4 h-4 text-white/80"
                   />
                 </div>
@@ -101,9 +105,7 @@
                   class="font-semibold text-sm transition-colors"
                   :class="[
                     section.id === 'professor' ? 'text-base' : '',
-                    member.link
-                      ? 'text-foreground group-hover:text-primary'
-                      : 'text-foreground',
+                    member.link ? 'text-foreground group-hover:text-primary' : 'text-foreground',
                   ]"
                 >
                   {{ member.name }}
@@ -135,17 +137,13 @@
                 <div
                   class="w-1.5 h-1.5 rounded-full shrink-0 transition-colors"
                   :class="
-                    member.link
-                      ? 'bg-primary/50 group-hover:bg-primary'
-                      : 'bg-muted-foreground/30'
+                    member.link ? 'bg-primary/50 group-hover:bg-primary' : 'bg-muted-foreground/30'
                   "
                 />
                 <span
                   class="text-sm truncate transition-colors"
                   :class="
-                    member.link
-                      ? 'text-foreground group-hover:text-primary'
-                      : 'text-foreground/70'
+                    member.link ? 'text-foreground group-hover:text-primary' : 'text-foreground/70'
                   "
                 >
                   {{ member.name }}
@@ -193,9 +191,7 @@
                 <span
                   class="font-medium text-sm truncate transition-colors"
                   :class="
-                    alumnus.link
-                      ? 'text-foreground group-hover:text-primary'
-                      : 'text-foreground/80'
+                    alumnus.link ? 'text-foreground group-hover:text-primary' : 'text-foreground/80'
                   "
                 >
                   {{ alumnus.name }}
@@ -236,7 +232,7 @@
           <UIcon name="i-heroicons-x-mark" class="w-5 h-5" />
         </button>
         <img
-          src="/images/AboutUs/Members/lab.png"
+          src="/images/AboutUs/Members/lab2.png"
           alt="Members hero background"
           class="w-full max-h-[84vh] object-contain rounded-2xl border border-white/10 shadow-2xl"
         />
