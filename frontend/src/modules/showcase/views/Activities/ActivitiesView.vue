@@ -202,8 +202,8 @@ const allActivities = computed<ActivityItem[]>(() => [
     date: 'Dec. 2025',
     images: [
       '/images/Activities/event_xmas_2025_1.webp',
-      '/images/Activities/event_xmas_2025_2.webp',
-      '/images/Activities/event_xmas_2025_3.webp',
+      '/images/Activities/event_xmas_2025_4.jpg',
+      '/images/Activities/event_xmas_2025_5.jpg',
     ],
     title: 'event_xmas_2025.title',
   },
