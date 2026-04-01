@@ -94,6 +94,13 @@ const researchAreas = computed(() => [
     icon: 'i-heroicons-film',
   },
   {
+    routeName: 'compression',
+    title: t('header.compression'),
+    intro: t('project_detail_compression.intro'),
+    image: '/images/Research/Coding/image3.png',
+    icon: 'i-heroicons-archive-box',
+  },
+  {
     routeName: 'processing',
     title: t('header.processing'),
     intro: t('project_detail_processing.intro'),

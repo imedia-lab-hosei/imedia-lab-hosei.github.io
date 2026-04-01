@@ -63,6 +63,37 @@ export default {
       },
     },
   },
+  project_detail_compression: {
+    intro:
+      'iMedia Labでは、従来のコーデック設計から最新のニューラル圧縮まで、画像・動画圧縮に関する幅広い研究に取り組んでいます。研究テーマは、ニューラル強調、トーキングヘッド圧縮、適応型ハイブリッド符号化、そして圧縮センシングまで多岐にわたります。',
+    labels: {
+      abstract: 'Abstract',
+      published: 'Published',
+      related_papers: 'Selected Publications',
+    },
+    sections: {
+      s1: {
+        title:
+          'High-Frequency Semantic Enhancement in Compressed Scenarios for Robust Visual and Machine Vision Applications',
+        abstract:
+          'With the growing demand for video processing in both human and machine vision, optimizing post-processing techniques has become a crucial challenge. To address the limitations of current post-processing techniques in these domains, this paper introduces a novel post-processing method that enhances high-frequency information through semantic enhancement, significantly improving performance in both domains. We propose a High Semantic Extraction (HSE) model to capture more recognizable details, and design a High-Frequency Semantic Fusion (HFSF) strategy that preserves critical details while suppressing noise. Experimental results demonstrate that our method effectively enhances performance in object detection, semantic segmentation, and video quality, achieving a significant advancement in optimizing video processing for both human and machine vision.',
+        published: '2025 IEEE International Conference on Image Processing (ICIP)',
+      },
+      s2: {
+        title:
+          'A Comprehensive Study of MCS-TCL: Multi-Functional Sampling for Trustworthy Compressive Learning',
+        abstract:
+          'Compressive Learning (CL) is an emerging paradigm that allows machine learning models to perform inference directly from compressed measurements, significantly reducing sensing and computational costs. While existing CL approaches have achieved competitive accuracy compared to traditional image-domain methods, they typically rely on reconstruction to address information loss and often neglect uncertainty arising from ambiguous or insufficient data. In this work, we propose MCS-TCL, a novel and trustworthy CL framework based on Multi-functional Compressive Sensing Sampling. Our approach unifies sampling, compression, and feature extraction into a single operation by leveraging the compatibility between compressive sensing and convolutional feature learning. This joint design enables efficient signal acquisition while preserving discriminative information, leading to feature representations that remain robust across varying sampling ratios. To enhance the model’s reliability, we incorporate evidential deep learning (EDL) during training. EDL estimates the distribution of evidence over output classes, enabling the model to quantify predictive uncertainty and assign higher confidence to well-supported predictions. Extensive experiments on image classification tasks show that MCS-TCL outperforms existing CL methods, achieving state-of-the-art accuracy at a low sampling rate of 6%. Additionally, our framework reduces model size by 85.76% while providing meaningful uncertainty estimates, demonstrating its effectiveness in resource-constrained learning scenarios.',
+        published: 'Information 2025',
+      },
+      s3: {
+        title: 'Audio-Visual Driven Compression for Low-Bitrate Talking Head Videos',
+        abstract:
+          'Talking head video compression has advanced with neural rendering and keypoint-based methods, but challenges remain, especially at low bit rates, including handling large head movements, suboptimal lip synchronization, and distorted facial reconstructions. To address these problems, we propose a novel audio-visual driven video codec that integrates compact 3D motion features and audio signals. This approach robustly models significant head rotations and aligns lip movements with speech, improving both compression efficiency and reconstruction quality. Experiments on the CelebV-HQ dataset show that our method reduces bitrate by 22% compared to VVC and by 8.5% over state-of-the-art learning-based codec. Furthermore, it provides superior lip-sync accuracy and visual fidelity at comparable bitrates, highlighting its effectiveness in bandwidth-constrained scenarios.',
+        published: 'International Conference on Multimedia Retrieval (ICMR) 2025',
+      },
+    },
+  },
   project_detail_processing: {
     intro: 'ディープラーニングに基づくマルチメディア信号処理システムの研究開発を行っています。',
   },
@@ -592,7 +623,7 @@ export default {
     overview: {
       title: '研究分野',
       description:
-        '私たちは、圧縮・センシング・視覚処理という3つの主要な分野でマルチメディアAIの最先端研究を行っています。',
+        'We conduct cutting-edge research across multiple areas of multimedia AI, spanning compression, sensing, visual processing, and electronic design automation.',
       explore: '詳細を見る',
     },
   },
@@ -609,6 +640,7 @@ export default {
     research: '研究',
     sensing: '圧縮センシング',
     coding: 'ビデオコーディング',
+    compression: '情報・画像・動画圧縮',
     processing: '画像処理',
     aboutUs: '研究室紹介',
     members: 'メンバー',

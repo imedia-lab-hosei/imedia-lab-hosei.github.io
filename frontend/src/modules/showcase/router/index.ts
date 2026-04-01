@@ -26,6 +26,11 @@ export const showcaseRoutes: RouteRecordRaw[] = [
         component: () => import('../views/Research/Coding/CodingView.vue'),
       },
       {
+        path: 'compression',
+        name: 'compression',
+        component: () => import('../views/Research/Compression/CompressionView.vue'),
+      },
+      {
         path: 'processing',
         name: 'processing',
         component: () => import('../views/Research/Processing/ProcessingView.vue'),

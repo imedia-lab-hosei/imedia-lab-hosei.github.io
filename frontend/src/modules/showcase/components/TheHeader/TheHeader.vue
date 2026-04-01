@@ -4,7 +4,11 @@
       <div class="font-bold"><span class="text-primary">iMedia</span> Lab</div>
     </template>
 
-    <UNavigationMenu content-orientation="vertical" :items="items" />
+    <UNavigationMenu
+      content-orientation="vertical"
+      :items="items"
+      :ui="navigationMenuUi"
+    />
 
     <template #right>
       <!-- <UColorModeSwitch /> -->
@@ -19,7 +23,12 @@
     </template>
 
     <template #body>
-      <UNavigationMenu :items="items" class="-mx-2.5" orientation="vertical" />
+      <UNavigationMenu
+        :items="items"
+        :ui="navigationMenuUi"
+        class="-mx-2.5"
+        orientation="vertical"
+      />
     </template>
   </UHeader>
 </template>
@@ -38,6 +47,14 @@ const { t, locale } = useI18n()
 
 const route = useRoute()
 
+const navigationMenuUi = {
+  content: 'min-w-[20rem] max-w-[28rem]',
+  childItem: 'min-w-0',
+  childLink: 'items-start',
+  childLinkWrapper: 'min-w-0',
+  childLinkLabel: 'whitespace-normal break-words leading-snug',
+}
+
 // 辅助函数：判断当前路由名称是否匹配
 const isAPIActive = (name: string) => route.name === name
 const isGroupActive = (names: string[]) => names.includes(route.name as string)
@@ -54,7 +71,7 @@ const items = computed<NavigationMenuItem[]>(() => [
   {
     label: t('header.research'),
     // icon: 'lucide:text-search',
-    active: isGroupActive(['sensing', 'coding', 'processing']),
+    active: isGroupActive(['sensing', 'coding', 'compression', 'processing', 'eda']),
     children: [
       {
         label: t('header.sensing'),
@@ -68,6 +85,11 @@ const items = computed<NavigationMenuItem[]>(() => [
         to: { name: 'coding', params: { locale: locale.value } },
         // icon: 'lucide:code',
         active: isAPIActive('coding'),
+      },
+      {
+        label: t('header.compression'),
+        to: { name: 'compression', params: { locale: locale.value } },
+        active: isAPIActive('compression'),
       },
 
       {
