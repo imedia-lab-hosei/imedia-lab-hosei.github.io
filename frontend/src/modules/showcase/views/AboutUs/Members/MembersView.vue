@@ -76,7 +76,6 @@
                   :src="member.image"
                   :alt="member.name"
                   class="object-cover w-full h-full transition-transform duration-500 group-hover:scale-105"
-                  :style="{ objectPosition: member.imagePosition ?? 'center 28%' }"
                 />
                 <div
                   v-else
@@ -106,9 +105,7 @@
                   class="font-semibold text-sm transition-colors"
                   :class="[
                     section.id === 'professor' ? 'text-base' : '',
-                    member.link || member.internalLink
-                      ? 'text-foreground group-hover:text-primary'
-                      : 'text-foreground',
+                    member.link ? 'text-foreground group-hover:text-primary' : 'text-foreground',
                   ]"
                 >
                   {{ member.name }}
@@ -130,42 +127,30 @@
               :key="member.name"
               class="flex justify-between items-center gap-2.5 px-4 py-2.5 rounded-xl bg-card border transition-all group"
               :class="
-                member.link || member.internalLink
+                member.link
                   ? 'border-border hover:border-primary/40 hover:bg-primary/5 cursor-pointer'
                   : 'border-border/60 cursor-default'
               "
               @click="toLink(member.link, member.internalLink)"
             >
               <div class="flex items-center truncate gap-2.5">
-                <img
-                  v-if="member.image"
-                  :src="member.image"
-                  :alt="member.name"
-                  class="w-10 h-10 rounded-full shrink-0 object-cover border border-border"
-                  :style="{ objectPosition: member.imagePosition ?? 'center 24%' }"
-                />
                 <div
-                  v-else
                   class="w-1.5 h-1.5 rounded-full shrink-0 transition-colors"
                   :class="
-                    member.link || member.internalLink
-                      ? 'bg-primary/50 group-hover:bg-primary'
-                      : 'bg-muted-foreground/30'
+                    member.link ? 'bg-primary/50 group-hover:bg-primary' : 'bg-muted-foreground/30'
                   "
                 />
                 <span
                   class="text-sm truncate transition-colors"
                   :class="
-                    member.link || member.internalLink
-                      ? 'text-foreground group-hover:text-primary'
-                      : 'text-foreground/70'
+                    member.link ? 'text-foreground group-hover:text-primary' : 'text-foreground/70'
                   "
                 >
                   {{ member.name }}
                 </span>
               </div>
               <UIcon
-                v-if="member.link || member.internalLink"
+                v-if="member.link"
                 name="i-heroicons-arrow-top-right-on-square"
                 class="shrink-0 w-3.5 h-3.5 text-muted-foreground/40 group-hover:text-primary transition-colors hidden sm:block"
               />
@@ -182,7 +167,7 @@
               :key="alumnus.name"
               class="flex items-center justify-between gap-4 px-5 py-3.5 rounded-xl bg-card border transition-all group"
               :class="
-                alumnus.link || alumnus.internalLink
+                alumnus.link
                   ? 'border-border hover:border-primary/40 hover:bg-primary/5 cursor-pointer'
                   : 'border-border/60 cursor-default'
               "
@@ -191,13 +176,13 @@
               <div class="flex items-center gap-3 min-w-0">
                 <div
                   class="w-7 h-7 rounded-full bg-muted flex items-center justify-center shrink-0 transition-colors"
-                  :class="alumnus.link || alumnus.internalLink ? 'group-hover:bg-primary/10' : ''"
+                  :class="alumnus.link ? 'group-hover:bg-primary/10' : ''"
                 >
                   <UIcon
                     name="i-heroicons-user-circle"
                     class="w-4 h-4 transition-colors"
                     :class="
-                      alumnus.link || alumnus.internalLink
+                      alumnus.link
                         ? 'text-muted-foreground group-hover:text-primary'
                         : 'text-muted-foreground/60'
                     "
@@ -206,15 +191,13 @@
                 <span
                   class="font-medium text-sm truncate transition-colors"
                   :class="
-                    alumnus.link || alumnus.internalLink
-                      ? 'text-foreground group-hover:text-primary'
-                      : 'text-foreground/80'
+                    alumnus.link ? 'text-foreground group-hover:text-primary' : 'text-foreground/80'
                   "
                 >
                   {{ alumnus.name }}
                 </span>
                 <UIcon
-                  v-if="alumnus.link || alumnus.internalLink"
+                  v-if="alumnus.link"
                   name="i-heroicons-arrow-top-right-on-square"
                   class="shrink-0 w-3.5 h-3.5 text-muted-foreground/40 group-hover:text-primary transition-colors hidden sm:block"
                 />

@@ -4,7 +4,6 @@ export interface Member {
   /** English fallback name */
   name: string
   image?: string
-  imagePosition?: string
   /** i18n key suffix for role */
   roleKey?: string
   /** i18n key suffix for destination */
@@ -69,12 +68,6 @@ export const memberSections: MemberSection[] = [
         image: '/images/AboutUs/Members/wang_haixin.avif',
       },
       {
-        nameKey: 'yuan_lingfan',
-        name: 'Yuan Lingfan',
-        image: '/images/AboutUs/Members/yuan_lingfan.jpg',
-        imagePosition: 'center 26%',
-      },
-      {
         nameKey: 'kimishima_fuma',
         name: 'Kimishima Fuma',
         image: '/images/AboutUs/Members/kimishima_fuma.avif',
@@ -88,7 +81,7 @@ export const memberSections: MemberSection[] = [
     members: [
       { nameKey: 'miyamoto_mizuki', name: 'Miyamoto Mizuki' },
       { nameKey: 'iwama_kosuke', name: 'Iwama Kosuke' },
-      { nameKey: 'wu_zijian', name: 'Wu Zijian' },
+      { nameKey: 'morita_ryugo', name: 'Morita Ryugo', link: 'https://ryugo417.github.io/' },
       { nameKey: 'yao_zhidi', name: 'Yao Zhidi', link: 'https://www.momocha.icu' },
       { nameKey: 'sai', name: 'UMMITHI Sai Jayaprakash' },
       { nameKey: 'yang_yu', name: 'Yang Yu' },
@@ -163,12 +156,6 @@ export const memberSections: MemberSection[] = [
       { nameKey: 'hayama_hibiki', name: 'Hayama Hibiki', destinationKey: 'kyudenko' },
       { nameKey: 'zhiqiang_zhang', name: 'Zhiqiang Zhang', destinationKey: 'swust' },
       { nameKey: 'fu_chen', name: 'Fu Chen', destinationKey: 'chn_energy' },
-      {
-        nameKey: 'morita_ryugo',
-        name: 'Morita Ryugo',
-        destinationKey: 'sds_dfki',
-        link: 'https://ryugo417.github.io/',
-      },
       {
         nameKey: 'jiayao_xu',
         name: 'Jiayao Xu',
