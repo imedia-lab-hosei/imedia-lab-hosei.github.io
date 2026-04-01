@@ -39,6 +39,10 @@
 }
 
 :root {
+  --font-sans:
+    "Hiragino Sans", "Yu Gothic UI", "Yu Gothic", "Meiryo", "Noto Sans JP",
+    "Noto Sans", ui-sans-serif, system-ui, sans-serif;
+
   --background: var(--ui-bg);
   --foreground: var(--ui-text);
 
@@ -67,4 +71,8 @@
   --destructive-foreground: var(--ui-text-inverted);
 
   --ring: var(--ui-primary);
+}
+
+body {
+  font-family: var(--font-sans);
 }
