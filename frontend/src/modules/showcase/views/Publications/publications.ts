@@ -13,6 +13,33 @@ export interface PublicationYear {
 }
 export const publications: PublicationYear[] = [
   {
+    year: '2026',
+    items: [
+      {
+        title: 'Macro Placement Optimization via Dynamic Tree Search Guided Reinforcement Learning',
+        authors: 'Jinghao Ding, Yuanrui Qi, Jinjia Zhou',
+        venue: 'Microelectronics',
+        date: 'May. 2026',
+        type: 'Journal',
+      },
+      {
+        title: 'On Demand Secure Scalable Video Streaming for Both Human and Machine Applications',
+        authors: 'Alaa Zain, Yibo Fan, Jinjia Zhou',
+        venue: 'Sensors',
+        date: 'Feb. 2026',
+        type: 'Journal',
+      },
+      {
+        title:
+          'Leveraging Temporal Down-sampling Structure and Spatio-Temporal Fusion for Efficient Video Coding',
+        authors: 'Keren He, Yufei Gao, Qi Wang, Haixin Wang, Jinjia Zhou',
+        venue: 'Sensors',
+        date: 'Feb. 2026',
+        type: 'Journal',
+      },
+    ],
+  },
+  {
     year: '2025',
     items: [
       {
