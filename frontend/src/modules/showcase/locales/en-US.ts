@@ -129,8 +129,7 @@ export default {
   },
   project_detail_eda: {
     intro:
-      'Designing modern integrated circuits requires an immense amount of precision in how components are arranged on a chip. For example, to build a processor that is both fast and energy-efficient, we need to determine the optimal coordinates for macros, which are the large functional blocks such as memory arrays, on a tiny silicon floorplan. On the other hand, finding the perfect layout manually is an incredibly complex puzzle that typically takes human experts weeks of iterative effort, so AI systems that can automate this spatial optimization are being explored. Our research focuses on applying reinforcement learning to the macro placement problem to accelerate the design cycle. Specifically, by treating the chip floorplan as a virtual environment and the placement process as a sequence of strategic moves, we have developed an AI technology that learns to maximize performance through self-exploration. This approach allows the system to discover high-efficiency layouts that minimize wire length and power consumption without requiring exhaustive manual guidance, ultimately matching or even surpassing human-level design quality in a fraction of the time.',
-
+      'This study proposes a method for formulating this placement problem as a reinforcement learning task and automating the process. By treating the chips as the environment and the placement as an action, the system learns to maximize performance through self-exploration. As a result, it becomes possible to generate highly efficient layouts—rivaling or surpassing those created by humans—in a short amount of time.',
     labels: {
       abstract: 'Abstract',
       published: 'Published',
