@@ -628,7 +628,7 @@ export default {
       prof_qa: 'Consultation with Professor',
       date_open: '2025/4/7 (Mon) 2nd Period',
       date_intro: '2026/4/3 (Fri) 15:20~17:00',
-      date_intro_2: '2026/4/6 (Mon) - 4/9 (Thu) 13:20~15:00',
+      date_intro_2: '2026/4/6 (Mon) - 4/8 (Wed) 13:20~15:00',
       date_qa_1: '2026/4/3 (Fri) 15:20~17:00',
       date_qa_2: '2026/4/6 (Mon) - 4/8 (Wed) 15:20~17:00',
       location_south_s504: 'South S504',
