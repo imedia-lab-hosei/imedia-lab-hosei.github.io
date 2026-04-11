@@ -26,7 +26,7 @@
           </div>
 
           <div class="flex-1 min-w-0">
-            <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight mb-2">Jinjia Zhou</h1>
+            <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight mb-2">{{ t('aboutUs.profile.jinjia_zhou.name') }}</h1>
             <p class="text-muted-foreground text-lg mb-1">
               {{ t('aboutUs.profile.jinjia_zhou.subtitle') }}
             </p>

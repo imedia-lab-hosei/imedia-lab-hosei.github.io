@@ -106,7 +106,8 @@ export default {
       jinjia_zhou: {
         breadcrumb_members: 'メンバー',
         breadcrumb_profile: 'プロフィール',
-        subtitle: '周 金佳 ／ しゅう きんか',
+        name: '周 金佳',
+        subtitle: 'しゅう きんか',
         role: '教授',
         institution: '法政大学',
         research_tag: 'VLSI・マルチメディア信号処理',
