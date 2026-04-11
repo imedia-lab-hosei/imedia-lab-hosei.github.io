@@ -1,71 +1,66 @@
 <template>
   <div class="min-h-screen bg-background text-foreground font-sans">
     <!-- Hero Section -->
-    <section class="relative h-[55vh] flex items-center justify-center overflow-hidden">
+    <section class="relative flex flex-col overflow-hidden" style="min-height: 55vh">
       <img
         src="/images/HomePage/TV Screens.avif"
         class="absolute inset-0 w-full h-full object-cover"
       />
       <div class="absolute inset-0 bg-linear-to-b from-black/20 via-black/55 to-black/85" />
 
-      <div class="relative z-10 text-center px-6 max-w-4xl mx-auto">
-        <div
-          class="inline-flex mb-8 px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20"
-        >
-          <img src="/images/hosei.png" alt="Hosei University" class="h-8 w-auto" />
-        </div>
+      <div class="relative z-10 flex-1 flex items-center justify-center py-16">
+        <div class="text-center px-6 max-w-4xl mx-auto">
+          <div
+            class="inline-flex mb-8 px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20"
+          >
+            <img src="/images/hosei.png" alt="Hosei University" class="h-8 w-auto" />
+          </div>
 
-        <h1
-          class="text-4xl md:text-6xl lg:text-7xl font-extrabold text-white tracking-tight leading-tight mb-6"
-        >
-          {{ $t('home.hero.title') }}
-        </h1>
+          <h1
+            class="text-4xl md:text-6xl lg:text-7xl font-extrabold text-white tracking-tight leading-tight mb-6"
+          >
+            {{ $t('home.hero.title') }}
+          </h1>
 
-        <p class="text-white/65 text-base md:text-lg leading-relaxed max-w-2xl mx-auto mb-10">
-          {{ $t('home.intro.text') }}
-        </p>
+          <p class="text-white/65 text-base md:text-lg leading-relaxed max-w-2xl mx-auto mb-10">
+            {{ $t('home.intro.text') }}
+          </p>
 
-        <div class="flex flex-wrap gap-4 justify-center">
-          <UButton
-            size="lg"
-            color="primary"
-            :to="{ name: 'research', params: { locale: route.params.locale } }"
-            :label="$t('header.research')"
-            icon="i-heroicons-beaker"
-          />
-          <UButton
-            size="lg"
-            color="neutral"
-            variant="outline"
-            class="border-white/30 text-white bg-white/10 hover:bg-white/30"
-            :to="{ name: 'members', params: { locale: route.params.locale } }"
-            :label="$t('header.members')"
-            trailing-icon="i-heroicons-arrow-right"
-          />
+          <div class="flex flex-wrap gap-4 justify-center">
+            <UButton
+              size="lg"
+              color="primary"
+              :to="{ name: 'research', params: { locale: route.params.locale } }"
+              :label="$t('header.research')"
+              icon="i-heroicons-beaker"
+            />
+            <UButton
+              size="lg"
+              color="neutral"
+              variant="outline"
+              class="border-white/30 text-white bg-white/10 hover:bg-white/30"
+              :to="{ name: 'members', params: { locale: route.params.locale } }"
+              :label="$t('header.members')"
+              trailing-icon="i-heroicons-arrow-right"
+            />
+          </div>
         </div>
       </div>
 
-      <div
-        class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-white/30"
-      >
-        <span class="text-xs tracking-[0.25em] uppercase">Scroll</span>
-        <div class="w-px h-10 bg-linear-to-b from-white/30 to-transparent" />
-      </div>
-    </section>
-
-    <!-- Stats Bar -->
-    <div class="bg-primary">
-      <div class="max-w-5xl mx-auto px-6 py-7">
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
-          <div v-for="stat in statsData" :key="stat.label" class="text-primary-foreground">
-            <div class="text-3xl font-extrabold tracking-tight">{{ stat.value }}</div>
-            <div class="text-xs font-semibold opacity-75 mt-1 uppercase tracking-wider">
-              {{ stat.label }}
+      <!-- Stats Bar - below the intro text container -->
+      <div class="relative z-10 bg-primary">
+        <div class="max-w-5xl mx-auto px-6 py-7">
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+            <div v-for="stat in statsData" :key="stat.label" class="text-primary-foreground">
+              <div class="text-3xl font-extrabold tracking-tight">{{ stat.value }}</div>
+              <div class="text-xs font-semibold opacity-75 mt-1 uppercase tracking-wider">
+                {{ stat.label }}
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </section>
 
     <!-- News Section -->
     <section class="max-w-6xl mx-auto px-6 py-20">

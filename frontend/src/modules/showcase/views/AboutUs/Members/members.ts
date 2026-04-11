@@ -57,7 +57,12 @@ export const memberSections: MemberSection[] = [
         name: 'Ding Jinhao',
         image: '/images/AboutUs/Members/ding_jinhao.avif',
       },
-      { nameKey: 'wang_qi', name: 'Wang Qi', image: '/images/AboutUs/Members/wang_qi.avif' },
+      {
+        nameKey: 'wang_qi',
+        name: 'Wang Qi',
+        image: '/images/AboutUs/Members/wangqi_new.jpg',
+        imagePosition: 'center 6%',
+      },
       {
         nameKey: 'chen_shiyu',
         name: 'Chen Shiyu',
@@ -71,7 +76,7 @@ export const memberSections: MemberSection[] = [
       {
         nameKey: 'yuan_lingfan',
         name: 'Yuan Lingfan',
-        image: '/images/AboutUs/Members/yuan_lingfan.jpg',
+        image: '/images/AboutUs/Members/ylf_new.png',
         imagePosition: 'center 26%',
       },
       {
