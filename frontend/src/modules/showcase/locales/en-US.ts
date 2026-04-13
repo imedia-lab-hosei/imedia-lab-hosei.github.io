@@ -187,8 +187,18 @@ export default {
         b3: 'B3 students',
         alumni: 'Alumni',
       },
+      linkLabels: {
+        profile: 'Profile',
+        homepage: 'Homepage',
+      },
+      linkDescriptions: {
+        viewProfile: 'View profile',
+        visitHomepage: 'Visit homepage',
+      },
       names: {
         jinjia_zhou: 'Jinjia Zhou',
+        gao_yufei: 'Yufei Gao',
+        zhu_shuliang: 'Shuliang Zhu',
         keren_he: 'Keren He',
         alaa_zein: 'Alaa Zein El Abdein Marouf',
         qi_yuanrui: 'Yuanrui Qi',

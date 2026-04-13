@@ -135,8 +135,18 @@ export default {
         b3: '学部3年生',
         alumni: '卒業生',
       },
+      linkLabels: {
+        profile: '研究紹介',
+        homepage: '個人主页',
+      },
+      linkDescriptions: {
+        viewProfile: '研究紹介を見る',
+        visitHomepage: '個人主页を見る',
+      },
       names: {
         jinjia_zhou: '​周 金佳',
+        gao_yufei: '高 宇飞',
+        zhu_shuliang: '朱 书良',
         keren_he: '何 可人',
         alaa_zein: 'Alaa Zein El Abdein Marouf',
         qi_yuanrui: '戚 原瑞',

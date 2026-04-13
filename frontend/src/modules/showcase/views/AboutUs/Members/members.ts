@@ -41,6 +41,8 @@ export const memberSections: MemberSection[] = [
     titleKey: 'doctoral',
     layout: 'photo-grid',
     members: [
+      { nameKey: 'gao_yufei', name: 'Yufei Gao' },
+      { nameKey: 'zhu_shuliang', name: 'Shuliang Zhu' },
       { nameKey: 'keren_he', name: 'Keren He', image: '/images/AboutUs/Members/keren_he.avif' },
       {
         nameKey: 'alaa_zein',
@@ -97,7 +99,12 @@ export const memberSections: MemberSection[] = [
       { nameKey: 'rigen_mo', name: 'Rigen Mo' },
       { nameKey: 'handa_takuma', name: 'Takuma Handa' },
       { nameKey: 'wu_zijian', name: 'Zijian Wu' },
-      { nameKey: 'yao_zhidi', name: 'Zhidi Yao', link: 'https://www.momocha.icu' },
+      {
+        nameKey: 'yao_zhidi',
+        name: 'Zhidi Yao',
+        link: 'https://www.momocha.icu/en/resume',
+        image: '/images/AboutUs/Members/yao_zhidi.jpg',
+      },
       { nameKey: 'sai', name: 'Sai Jayaprakash Ummithi' },
       { nameKey: 'yang_yu', name: 'Yu Yang' },
       { nameKey: 'akihiro_sakurai', name: 'Akihiro Sakurai' },
