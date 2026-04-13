@@ -50,7 +50,7 @@ export const memberSections: MemberSection[] = [
       {
         nameKey: 'qi_yuanrui',
         name: 'Yuanrui Qi',
-        image: '/images/AboutUs/Members/qi_yuanrui.avif',
+        image: '/images/AboutUs/Members/qi_new.jpg',
       },
       {
         nameKey: 'ding_jinhao',
@@ -71,7 +71,7 @@ export const memberSections: MemberSection[] = [
       {
         nameKey: 'wang_haixin',
         name: 'Haixin Wang (Mirai Sato)',
-        image: '/images/AboutUs/Members/wang_haixin.avif',
+        image: '/images/AboutUs/Members/sato_new.jpg',
       },
       {
         nameKey: 'yuan_lingfan',
