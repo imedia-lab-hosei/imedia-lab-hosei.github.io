@@ -41,7 +41,7 @@ export const memberSections: MemberSection[] = [
     titleKey: 'doctoral',
     layout: 'photo-grid',
     members: [
-      { nameKey: 'gao_yufei', name: 'Yufei Gao' },
+      { nameKey: 'gao_yufei', name: 'Yufei Gao', image: '/images/AboutUs/Members/gyf.png' },
       { nameKey: 'zhu_shuliang', name: 'Shuliang Zhu' },
       { nameKey: 'keren_he', name: 'Keren He', image: '/images/AboutUs/Members/keren_he.avif' },
       {
@@ -98,7 +98,7 @@ export const memberSections: MemberSection[] = [
       { nameKey: 'jiaqi_mei', name: 'Jiaqi Mei' },
       { nameKey: 'rigen_mo', name: 'Rigen Mo' },
       { nameKey: 'handa_takuma', name: 'Takuma Handa' },
-      { nameKey: 'wu_zijian', name: 'Zijian Wu' },
+      { nameKey: 'wu_zijian', name: 'Zijian Wu', image: '/images/AboutUs/Members/wzj.png' },
       {
         nameKey: 'yao_zhidi',
         name: 'Zhidi Yao',
