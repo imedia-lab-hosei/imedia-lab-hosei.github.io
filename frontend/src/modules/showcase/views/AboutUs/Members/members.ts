@@ -104,7 +104,7 @@ export const memberSections: MemberSection[] = [
         nameKey: 'yao_zhidi',
         name: 'Zhidi Yao',
         link: 'https://www.momocha.icu/en/resume',
-        image: '/images/AboutUs/Members/yao_zhidi.jpg',
+        image: '/images/AboutUs/Members/yzd_new.jpg',
       },
       { nameKey: 'sai', name: 'Sai Jayaprakash Ummithi' },
       { nameKey: 'yang_yu', name: 'Yu Yang' },
