@@ -43,7 +43,7 @@ export const memberSections: MemberSection[] = [
     members: [
       { nameKey: 'gao_yufei', name: 'Yufei Gao', image: '/images/AboutUs/Members/gyf.png' },
       { nameKey: 'zhu_shuliang', name: 'Shuliang Zhu' },
-      { nameKey: 'keren_he', name: 'Keren He', image: '/images/AboutUs/Members/keren_he.avif' },
+      { nameKey: 'keren_he', name: 'Keren He', image: '/images/AboutUs/Members/heren_new.jpg' },
       {
         nameKey: 'alaa_zein',
         name: 'Alaa Zein El Abdein Marouf',
@@ -74,6 +74,7 @@ export const memberSections: MemberSection[] = [
         nameKey: 'wang_haixin',
         name: 'Haixin Wang (Mirai Sato)',
         image: '/images/AboutUs/Members/sato_new.jpg',
+        link: 'https://whx0.github.io/my-website/',
       },
       {
         nameKey: 'yuan_lingfan',
