@@ -42,7 +42,12 @@ export const memberSections: MemberSection[] = [
     layout: 'photo-grid',
     members: [
       { nameKey: 'gao_yufei', name: 'Yufei Gao', image: '/images/AboutUs/Members/gyf.png' },
-      { nameKey: 'zhu_shuliang', name: 'Shuliang Zhu' },
+      {
+        nameKey: 'zhu_shuliang',
+        name: 'Shuliang Zhu',
+        image: '/images/AboutUs/Members/zsl.jpg',
+        imagePosition: 'center 6%',
+      },
       { nameKey: 'keren_he', name: 'Keren He', image: '/images/AboutUs/Members/heren_new.jpg' },
       {
         nameKey: 'alaa_zein',
