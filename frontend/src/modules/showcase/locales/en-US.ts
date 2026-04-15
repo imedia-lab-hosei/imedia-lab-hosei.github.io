@@ -491,7 +491,7 @@ export default {
       },
       event_workshop_2024: { title: 'Lab Workshop 📚' },
       event_welcome_2024: { title: 'Welcome Party 2024 🌸' },
-      event_xmas_2023: { title: "X'mas Party 🎄" },
+      event_xmas_2023: { title: 'Christmas Party 🎄' },
       conf_acmmm_2023_wang_iwama: {
         title: 'Research Presentation',
         venue: 'ACM MM 2023',
