@@ -78,7 +78,7 @@ export const memberSections: MemberSection[] = [
       {
         nameKey: 'yuan_lingfan',
         name: 'Lingfan Yuan',
-        image: '/images/AboutUs/Members/ylf_new.png',
+        image: '/images/AboutUs/Members/ylf_new.jpg',
         imagePosition: 'center 26%',
       },
       {
