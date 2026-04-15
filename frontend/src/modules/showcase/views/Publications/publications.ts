@@ -16,6 +16,13 @@ export const publications: PublicationYear[] = [
     year: '2026',
     items: [
       {
+        title: 'Top-KD: Top-scaled contrastive knowledge distillation',
+        authors: 'Qi Wang, Jinjia Zhou',
+        venue: 'Neurocomputing',
+        date: 'March. 2026',
+        type: 'Journal',
+      },
+      {
         title: 'Macro Placement Optimization via Dynamic Tree Search Guided Reinforcement Learning',
         authors: 'Jinghao Ding, Yuanrui Qi, Jinjia Zhou',
         venue: 'Microelectronics',
