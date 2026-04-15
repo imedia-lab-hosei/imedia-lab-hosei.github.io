@@ -42,8 +42,13 @@ export const memberSections: MemberSection[] = [
     layout: 'photo-grid',
     members: [
       { nameKey: 'gao_yufei', name: 'Yufei Gao', image: '/images/AboutUs/Members/gyf.png' },
-      { nameKey: 'zhu_shuliang', name: 'Shuliang Zhu' },
-      { nameKey: 'keren_he', name: 'Keren He', image: '/images/AboutUs/Members/keren_he.avif' },
+      {
+        nameKey: 'zhu_shuliang',
+        name: 'Shuliang Zhu',
+        image: '/images/AboutUs/Members/zsl.jpg',
+        imagePosition: 'center 6%',
+      },
+      { nameKey: 'keren_he', name: 'Keren He', image: '/images/AboutUs/Members/heren_new.jpg' },
       {
         nameKey: 'alaa_zein',
         name: 'Alaa Zein El Abdein Marouf',
@@ -74,6 +79,7 @@ export const memberSections: MemberSection[] = [
         nameKey: 'wang_haixin',
         name: 'Haixin Wang (Mirai Sato)',
         image: '/images/AboutUs/Members/sato_new.jpg',
+        link: 'https://whx0.github.io/my-website/',
       },
       {
         nameKey: 'yuan_lingfan',
@@ -103,7 +109,7 @@ export const memberSections: MemberSection[] = [
         nameKey: 'yao_zhidi',
         name: 'Zhidi Yao',
         link: 'https://www.momocha.icu/en/resume',
-        image: '/images/AboutUs/Members/yao_zhidi.jpg',
+        image: '/images/AboutUs/Members/yzd_new.jpg',
       },
       { nameKey: 'sai', name: 'Sai Jayaprakash Ummithi' },
       { nameKey: 'yang_yu', name: 'Yu Yang' },
