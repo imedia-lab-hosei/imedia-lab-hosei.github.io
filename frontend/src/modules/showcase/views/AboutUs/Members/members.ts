@@ -111,7 +111,7 @@ export const memberSections: MemberSection[] = [
         link: 'https://www.momocha.icu/en/resume',
         image: '/images/AboutUs/Members/yzd_new.jpg',
       },
-      { nameKey: 'sai', name: 'Sai Jayaprakash Ummithi' },
+      { nameKey: 'sai', name: 'Sai Jayaprakash Ummithi', image: '/images/AboutUs/Members/sai.jpg' },
       { nameKey: 'yang_yu', name: 'Yu Yang' },
       { nameKey: 'akihiro_sakurai', name: 'Akihiro Sakurai' },
       { nameKey: 'hiroto_sugiura', name: 'Hiroto Sugiura' },
