@@ -16,6 +16,20 @@ export const publications: PublicationYear[] = [
     year: '2026',
     items: [
       {
+        title: 'Statistical Routing Order Optimization in Global Routing',
+        authors: 'Yuanrui Qi, Jinghao Ding, Jinjia Zhou',
+        venue: '2026 IEEE International Symposium on Circuits and Systems (ISCAS)',
+        date: 'May. 2025',
+        type: 'Conference',
+      },
+      {
+        title: 'Compressive Light-Field Image Coding with Spatial-Angular Measurement Prediction',
+        authors: 'Ayumu Seki, Akihiro Sakurai, Jinjia Zhou',
+        venue: '2026 IEEE International Symposium on Circuits and Systems (ISCAS)',
+        date: 'May. 2025',
+        type: 'Conference',
+      },
+      {
         title: 'Top-KD: Top-scaled contrastive knowledge distillation',
         authors: 'Qi Wang, Jinjia Zhou',
         venue: 'Neurocomputing',
