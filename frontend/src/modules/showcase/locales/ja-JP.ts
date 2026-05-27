@@ -384,6 +384,9 @@ export default {
       event_graduation_2026: {
         title: '2026年度 卒業式 🌸',
       },
+      event_welcome_2026: {
+        title: '2026年度 新入生歓迎会',
+      },
       conf_iconip_2025_gao: {
         title: '研究発表',
         venue: 'ICONIP 2025',

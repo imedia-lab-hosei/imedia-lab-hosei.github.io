@@ -184,6 +184,17 @@ const filterTabs = computed(() => [
 const allActivities = computed<ActivityItem[]>(() => [
   // 2026
   {
+    id: 'event_welcome_2026',
+    type: 'ordinary',
+    date: 'Apr. 2026',
+    images: [
+      '/images/Activities/event_welcome_2026_1.webp',
+      '/images/Activities/event_welcome_2026_2.webp',
+      '/images/Activities/event_welcome_2026_3.webp',
+    ],
+    title: 'event_welcome_2026.title',
+  },
+  {
     id: 'event_graduation_2026',
     type: 'ordinary',
     date: 'Apr. 2026',

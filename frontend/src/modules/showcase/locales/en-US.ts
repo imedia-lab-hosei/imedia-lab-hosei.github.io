@@ -438,6 +438,9 @@ export default {
       event_graduation_2026: {
         title: '2026 Graduation Ceremony 🌸',
       },
+      event_welcome_2026: {
+        title: 'Welcome Party 2026',
+      },
       conf_iconip_2025_gao: {
         title: 'Research Presentation',
         venue: 'ICONIP 2025',
