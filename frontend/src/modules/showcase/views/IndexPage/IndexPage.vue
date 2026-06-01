@@ -217,6 +217,7 @@ const statsData = computed(() => [
 ])
 
 const newsData = computed(() => [
+  { date: '2026.06', content: t('home.news.item0') },
   { date: '2025.12', content: t('home.news.item1') },
   { date: '2025.12', content: t('home.news.item2') },
   { date: '2025.11', content: t('home.news.item3') },

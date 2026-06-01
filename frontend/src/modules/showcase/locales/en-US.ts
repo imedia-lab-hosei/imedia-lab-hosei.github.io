@@ -659,6 +659,8 @@ export default {
     news: {
       title: 'News',
       more: 'View More',
+      item0:
+        'One research project was selected for the FY2026 Young Researchers\' Joint Research Project.',
       item1: 'One Project is accepted by Kayamori Foundation of Informational Science Advancement.',
       item2: '17 Papers were accepted in 2025',
       item3: 'One Paper is accepted by Pattern Recognition',
