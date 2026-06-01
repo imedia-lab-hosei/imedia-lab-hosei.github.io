@@ -16,6 +16,21 @@ export const publications: PublicationYear[] = [
     year: '2026',
     items: [
       {
+        title:
+          'BWCA-Net: Bidirectional Wavelet Cross-Attention Unfolding Network for Image Compressive Sensing Reconstruction',
+        authors: 'Zhidi Yao, Jinjia Zhou',
+        venue: '2026 IEEE International Conference on Image Processing (ICIP)',
+        date: 'Sep. 2026',
+        type: 'Conference',
+      },
+      {
+        title: 'Facial Feature-guided Adaptation for Talking Head Video Compression',
+        authors: 'Riku Takahashi, Ryugo Morita, Jinjia Zhou',
+        venue: '2026 IEEE International Conference on Image Processing (ICIP)',
+        date: 'Sep. 2026',
+        type: 'Conference',
+      },
+      {
         title: 'Statistical Routing Order Optimization in Global Routing',
         authors: 'Yuanrui Qi, Jinghao Ding, Jinjia Zhou',
         venue: '2026 IEEE International Symposium on Circuits and Systems (ISCAS)',
