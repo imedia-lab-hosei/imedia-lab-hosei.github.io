@@ -31,6 +31,13 @@ export const publications: PublicationYear[] = [
         type: 'Conference',
       },
       {
+        title: 'Music-to-dance generation: A survey',
+        authors: 'Qian Wu, Yufei Gao, Jinjia Zhou',
+        venue: 'Computational Visual Media (CVMJ)',
+        date: 'June. 2026',
+        type: 'Journal',
+      },
+      {
         title: 'Statistical Routing Order Optimization in Global Routing',
         authors: 'Yuanrui Qi, Jinghao Ding, Jinjia Zhou',
         venue: '2026 IEEE International Symposium on Circuits and Systems (ISCAS)',
