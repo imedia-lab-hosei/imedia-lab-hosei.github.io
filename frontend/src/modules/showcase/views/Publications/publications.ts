@@ -16,6 +16,13 @@ export const publications: PublicationYear[] = [
     year: '2026',
     items: [
       {
+        title: 'ChoreDiffusion: Beat-Aware Diffusion for Music-to-Dance Generation',
+        authors: 'Yufei Gao, Qian Wu, Shuliang Zhu, Keren He, Wei Weng, Jinjia Zhou',
+        venue: 'Information',
+        date: 'Aug. 2026',
+        type: 'Journal',
+      },
+      {
         title: 'Statistical Routing Order Optimization in Global Routing',
         authors: 'Yuanrui Qi, Jinghao Ding, Jinjia Zhou',
         venue: '2026 IEEE International Symposium on Circuits and Systems (ISCAS)',
@@ -56,6 +63,13 @@ export const publications: PublicationYear[] = [
         authors: 'Keren He, Yufei Gao, Qi Wang, Haixin Wang, Jinjia Zhou',
         venue: 'Sensors',
         date: 'Feb. 2026',
+        type: 'Journal',
+      },
+      {
+        title: 'PoseCodec: Specialized Human Action Compression via Pose Guidance and Adaptive Learning',
+        authors: 'Yufei Gao, Qian Wu, Keren He, Jinjia Zhou',
+        venue: 'IEEE Access',
+        date: 'Jan. 2026',
         type: 'Journal',
       },
     ],
