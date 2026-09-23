@@ -16,6 +16,21 @@ export const publications: PublicationYear[] = [
     year: '2026',
     items: [
       {
+        title: 'HetReg: Structuring Heterogeneous Latent Geometry for Visual World Models',
+        authors: 'L. Yuan, X. Li, Hitoshi Iyatomi, Jinjia Zhou',
+        venue: '2026 Asian Conference on Computer Vision (ACCV)',
+        date: 'Dec. 2026',
+        type: 'Conference',
+      },
+      {
+        title: 'LDT: Linear Differential Transformer for All-in-One Image Restoration',
+        authors: 'L. Yuan, Jinjia Zhou',
+        venue: '2026 International Conference on Neural Information Processing (ICONIP)',
+        date: 'Nov. 2026',
+        type: 'Conference',
+      },
+
+      {
         title:
           'BWCA-Net: Bidirectional Wavelet Cross-Attention Unfolding Network for Image Compressive Sensing Reconstruction',
         authors: 'Zhidi Yao, Jinjia Zhou',
