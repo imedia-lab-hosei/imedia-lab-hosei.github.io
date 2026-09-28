@@ -191,6 +191,7 @@ const allActivities = computed<ActivityItem[]>(() => [
     images: [
       '/images/Activities/conf_icann_2026_wang_1.webp',
       '/images/Activities/conf_icann_2026_wang_2.webp',
+      '/images/Activities/conf_icann_2026_wang_3.webp',
     ],
     title: 'conf_icann_2026_wang.title',
     venue: 'conf_icann_2026_wang.venue',
@@ -200,7 +201,10 @@ const allActivities = computed<ActivityItem[]>(() => [
     id: 'event_iist_entrance_autumn_2026',
     type: 'ordinary',
     date: 'Sep. 2026',
-    images: ['/images/Activities/event_iist_entrance_autumn_2026_1.webp'],
+    images: [
+      '/images/Activities/event_iist_entrance_autumn_2026_1.webp',
+      '/images/Activities/event_iist_entrance_autumn_2026_2.webp',
+    ],
     title: 'event_iist_entrance_autumn_2026.title',
   },
   {
