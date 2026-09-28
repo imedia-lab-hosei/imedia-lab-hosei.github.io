@@ -184,6 +184,16 @@ const filterTabs = computed(() => [
 const allActivities = computed<ActivityItem[]>(() => [
   // 2026
   {
+    id: 'conf_icip_2026_yao',
+    type: 'conference',
+    date: 'Sep. 2026',
+    participants: 'Zhidi Yao',
+    images: ['/images/Activities/conf_icip_2026_yao_1.webp'],
+    title: 'conf_icip_2026_yao.title',
+    venue: 'conf_icip_2026_yao.venue',
+    location: 'conf_icip_2026_yao.location',
+  },
+  {
     id: 'conf_icann_2026_wang',
     type: 'conference',
     date: 'Sep. 2026',

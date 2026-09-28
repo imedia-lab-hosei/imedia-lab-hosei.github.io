@@ -389,8 +389,13 @@ export default {
       event: 'イベント',
     },
     list: {
+      conf_icip_2026_yao: {
+        title: '研究発表',
+        venue: 'ICIP 2026',
+        location: 'フィンランド・タンペレ',
+      },
       conf_icann_2026_wang: {
-        title: '王 琪さんがICANN 2026に参加',
+        title: '研究発表',
         venue: 'ICANN 2026',
         location: 'イタリア・パドヴァ',
       },

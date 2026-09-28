@@ -443,8 +443,13 @@ export default {
       event: 'Event',
     },
     list: {
+      conf_icip_2026_yao: {
+        title: 'Research Presentation',
+        venue: 'ICIP 2026',
+        location: 'Tampere, Finland',
+      },
       conf_icann_2026_wang: {
-        title: 'Qi Wang at ICANN 2026',
+        title: 'Research Presentation',
         venue: 'ICANN 2026',
         location: 'Padua, Italy',
       },
