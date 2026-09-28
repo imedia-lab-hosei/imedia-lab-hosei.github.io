@@ -184,6 +184,26 @@ const filterTabs = computed(() => [
 const allActivities = computed<ActivityItem[]>(() => [
   // 2026
   {
+    id: 'conf_icann_2026_wang',
+    type: 'conference',
+    date: 'Sep. 2026',
+    participants: 'Qi Wang',
+    images: [
+      '/images/Activities/conf_icann_2026_wang_1.webp',
+      '/images/Activities/conf_icann_2026_wang_2.webp',
+    ],
+    title: 'conf_icann_2026_wang.title',
+    venue: 'conf_icann_2026_wang.venue',
+    location: 'conf_icann_2026_wang.location',
+  },
+  {
+    id: 'event_iist_entrance_autumn_2026',
+    type: 'ordinary',
+    date: 'Sep. 2026',
+    images: ['/images/Activities/event_iist_entrance_autumn_2026_1.webp'],
+    title: 'event_iist_entrance_autumn_2026.title',
+  },
+  {
     id: 'event_welcome_2026',
     type: 'ordinary',
     date: 'Apr. 2026',

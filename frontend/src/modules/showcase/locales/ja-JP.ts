@@ -389,6 +389,14 @@ export default {
       event: 'イベント',
     },
     list: {
+      conf_icann_2026_wang: {
+        title: '王 琪さんがICANN 2026に参加',
+        venue: 'ICANN 2026',
+        location: 'イタリア・パドヴァ',
+      },
+      event_iist_entrance_autumn_2026: {
+        title: '2026年度秋季 IIST 入学式',
+      },
       event_xmas_2025: {
         title: '2025年度 クリスマスパーティー 🎄',
       },

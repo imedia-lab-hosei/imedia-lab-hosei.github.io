@@ -443,6 +443,14 @@ export default {
       event: 'Event',
     },
     list: {
+      conf_icann_2026_wang: {
+        title: 'Qi Wang at ICANN 2026',
+        venue: 'ICANN 2026',
+        location: 'Padua, Italy',
+      },
+      event_iist_entrance_autumn_2026: {
+        title: 'IIST Fall 2026 Entrance Ceremony',
+      },
       event_xmas_2025: {
         title: '2025 Christmas Party 🎄',
       },
