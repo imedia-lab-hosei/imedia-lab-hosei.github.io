@@ -160,6 +160,8 @@ export default {
         iwama_kosuke: '岩間 浩介',
         morita_ryugo: '守田 竜梧',
         wu_zijian: '武 子健',
+        wu_ziyun: '武 子云',
+        phuritat_suntiphap: 'Phuritat Suntiphap',
         handa_takuma: '半田 琢馬',
         yao_zhidi: '姚 智棣',
         sai: 'UMMITHI Sai Jayaprakash',

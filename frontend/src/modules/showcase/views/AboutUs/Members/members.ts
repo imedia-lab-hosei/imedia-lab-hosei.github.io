@@ -92,6 +92,12 @@ export const memberSections: MemberSection[] = [
         name: 'Fuma Kimishima',
         image: '/images/AboutUs/Members/kimishima_fuma.avif',
       },
+      {
+        nameKey: 'yao_zhidi',
+        name: 'Zhidi Yao',
+        link: 'https://www.momocha.icu/en/resume',
+        image: '/images/AboutUs/Members/yzd_new.jpg',
+      },
     ],
   },
   {
@@ -105,13 +111,8 @@ export const memberSections: MemberSection[] = [
       { nameKey: 'rigen_mo', name: 'Rigen Mo' },
       { nameKey: 'handa_takuma', name: 'Takuma Handa' },
       { nameKey: 'wu_zijian', name: 'Zijian Wu', image: '/images/AboutUs/Members/wzj.png' },
-      {
-        nameKey: 'yao_zhidi',
-        name: 'Zhidi Yao',
-        link: 'https://www.momocha.icu/en/resume',
-        image: '/images/AboutUs/Members/yzd_new.jpg',
-      },
-      { nameKey: 'sai', name: 'Sai Jayaprakash Ummithi', image: '/images/AboutUs/Members/sai.jpg' },
+      { nameKey: 'wu_ziyun', name: 'Ziyun Wu' },
+      { nameKey: 'phuritat_suntiphap', name: 'Phuritat Suntiphap' },
       { nameKey: 'yang_yu', name: 'Yu Yang' },
       { nameKey: 'akihiro_sakurai', name: 'Akihiro Sakurai' },
       { nameKey: 'hiroto_sugiura', name: 'Hiroto Sugiura' },
@@ -159,6 +160,7 @@ export const memberSections: MemberSection[] = [
     titleKey: 'alumni',
     layout: 'alumni-list',
     members: [
+      { nameKey: 'sai', name: 'Sai Jayaprakash Ummithi', image: '/images/AboutUs/Members/sai.jpg' },
       { nameKey: 'miyamoto_mizuki', name: 'Mizuki Miyamoto', destinationKey: 'docomo' },
       { nameKey: 'iwama_kosuke', name: 'Kosuke Iwama' },
       { nameKey: 'fan_wei', name: 'Wei Fan' },

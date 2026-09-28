@@ -29,7 +29,14 @@ export const publications: PublicationYear[] = [
         date: 'Nov. 2026',
         type: 'Conference',
       },
-
+      {
+        title:
+          'Training-Free Adaptive Sampling Scheduler for Discrete-Time Consistency Distillation',
+        authors: 'Qi Wang, Jinjia Zhou',
+        venue: '2026 International Conference on Artificial Neural Networks (ICANN)',
+        date: 'Sep. 2026',
+        type: 'Conference',
+      },
       {
         title:
           'BWCA-Net: Bidirectional Wavelet Cross-Attention Unfolding Network for Image Compressive Sensing Reconstruction',

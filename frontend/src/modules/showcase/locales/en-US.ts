@@ -212,6 +212,8 @@ export default {
         iwama_kosuke: 'Kosuke Iwama',
         morita_ryugo: 'Ryugo Morita',
         wu_zijian: 'Zijian Wu',
+        wu_ziyun: 'Ziyun Wu',
+        phuritat_suntiphap: 'Phuritat Suntiphap',
         handa_takuma: 'Takuma Handa',
         yao_zhidi: 'Zhidi Yao',
         sai: 'Sai Jayaprakash Ummithi',
