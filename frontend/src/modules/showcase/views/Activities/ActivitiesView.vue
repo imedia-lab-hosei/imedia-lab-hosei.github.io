@@ -184,6 +184,19 @@ const filterTabs = computed(() => [
 const allActivities = computed<ActivityItem[]>(() => [
   // 2026
   {
+    id: 'event_sports_day_2026',
+    type: 'ordinary',
+    date: 'Oct. 2026',
+    images: [
+      '/images/Activities/event_sports_day_2026_1.webp',
+      '/images/Activities/event_sports_day_2026_2.webp',
+      '/images/Activities/event_sports_day_2026_3.webp',
+      '/images/Activities/event_sports_day_2026_4.webp',
+      '/images/Activities/event_sports_day_2026_5.webp',
+    ],
+    title: 'event_sports_day_2026.title',
+  },
+  {
     id: 'conf_icip_2026_yao',
     type: 'conference',
     date: 'Sep. 2026',
@@ -192,6 +205,16 @@ const allActivities = computed<ActivityItem[]>(() => [
     title: 'conf_icip_2026_yao.title',
     venue: 'conf_icip_2026_yao.venue',
     location: 'conf_icip_2026_yao.location',
+  },
+  {
+    id: 'conf_icip_2026_takahashi',
+    type: 'conference',
+    date: 'Sep. 2026',
+    participants: 'Riku Takahashi',
+    images: ['/images/Activities/conf_icip_2026_takahashi_1.webp'],
+    title: 'conf_icip_2026_takahashi.title',
+    venue: 'conf_icip_2026_takahashi.venue',
+    location: 'conf_icip_2026_takahashi.location',
   },
   {
     id: 'conf_icann_2026_wang',
@@ -216,6 +239,16 @@ const allActivities = computed<ActivityItem[]>(() => [
       '/images/Activities/event_iist_entrance_autumn_2026_2.webp',
     ],
     title: 'event_iist_entrance_autumn_2026.title',
+  },
+  {
+    id: 'conf_miru_2026_asano',
+    type: 'conference',
+    date: 'Aug. 2026',
+    participants: 'Shunsuke Asano',
+    images: ['/images/Activities/conf_miru_2026_asano_1.webp'],
+    title: 'conf_miru_2026_asano.title',
+    venue: 'conf_miru_2026_asano.venue',
+    location: 'conf_miru_2026_asano.location',
   },
   {
     id: 'event_welcome_2026',

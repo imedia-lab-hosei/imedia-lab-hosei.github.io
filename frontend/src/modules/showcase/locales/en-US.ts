@@ -445,6 +445,19 @@ export default {
       event: 'Event',
     },
     list: {
+      event_sports_day_2026: {
+        title: 'Sports Day 2026',
+      },
+      conf_icip_2026_takahashi: {
+        title: 'Research Presentation',
+        venue: 'ICIP 2026',
+        location: 'Tampere, Finland',
+      },
+      conf_miru_2026_asano: {
+        title: 'Research Presentation',
+        venue: 'MIRU 2026',
+        location: 'Nagasaki, Japan',
+      },
       conf_icip_2026_yao: {
         title: 'Research Presentation',
         venue: 'ICIP 2026',

@@ -391,6 +391,19 @@ export default {
       event: 'イベント',
     },
     list: {
+      event_sports_day_2026: {
+        title: '2026年度 スポーツ大会',
+      },
+      conf_icip_2026_takahashi: {
+        title: '研究発表',
+        venue: 'ICIP 2026',
+        location: 'フィンランド・タンペレ',
+      },
+      conf_miru_2026_asano: {
+        title: '研究発表',
+        venue: 'MIRU 2026',
+        location: '日本・長崎',
+      },
       conf_icip_2026_yao: {
         title: '研究発表',
         venue: 'ICIP 2026',
