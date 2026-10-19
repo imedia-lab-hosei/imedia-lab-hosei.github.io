@@ -111,7 +111,12 @@ export const memberSections: MemberSection[] = [
       { nameKey: 'rigen_mo', name: 'Rigen Mo' },
       { nameKey: 'handa_takuma', name: 'Takuma Handa' },
       { nameKey: 'wu_zijian', name: 'Zijian Wu', image: '/images/AboutUs/Members/wzj.png' },
-      { nameKey: 'wu_ziyun', name: 'Ziyun Wu' },
+      {
+        nameKey: 'wu_ziyun',
+        name: 'Ziyun Wu',
+        image: '/images/AboutUs/Members/wu_ziyun.jpg',
+        imagePosition: 'center 0%',
+      },
       { nameKey: 'phuritat_suntiphap', name: 'Phuritat Suntiphap' },
       { nameKey: 'yang_yu', name: 'Yu Yang' },
       { nameKey: 'akihiro_sakurai', name: 'Akihiro Sakurai' },
